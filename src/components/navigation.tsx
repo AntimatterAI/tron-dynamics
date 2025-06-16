@@ -12,7 +12,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
-  const navRef = useRef<HTMLNavElement>(null)
+  const navRef = useRef<HTMLElement>(null)
   const logoRef = useRef<HTMLHeadingElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
