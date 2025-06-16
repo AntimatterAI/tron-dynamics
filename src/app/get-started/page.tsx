@@ -458,7 +458,7 @@ export default function GetStartedPage() {
               Get in <span className="text-violet-300">Touch</span>
             </h2>
             <p className="text-lg text-violet-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Prefer to reach out directly? We're here to help in whatever way works best for you.
+              Prefer to reach out directly? We&apos;re here to help in whatever way works best for you.
             </p>
           </AnimatedElement>
 

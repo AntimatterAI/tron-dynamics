@@ -25,7 +25,7 @@ export default function StudiosPage() {
       type: "Documentary Series",
       status: "In Production",
       year: "2025",
-      description: "A powerful documentary series chronicling Dr. Alvin Glay's journey from Liberian refugee to distinguished executive.",
+      description: "A powerful documentary series chronicling Dr. Alvin Glay&apos;s journey from Liberian refugee to distinguished executive.",
       budget: "$75K",
       image: "/dr-alvin-glay-portrait.jpg",
       tags: ["Refugee Story", "Triumph", "Resilience", "American Dream"]
@@ -192,7 +192,7 @@ export default function StudiosPage() {
               Current <span className="text-amber-300">Projects</span>
             </h2>
             <p className="text-lg text-amber-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              From documentaries to feature films, we're developing groundbreaking content that celebrates African stories and global perspectives.
+              From documentaries to feature films, we&apos;re developing groundbreaking content that celebrates African stories and global perspectives.
             </p>
           </AnimatedElement>
 
