@@ -13,7 +13,6 @@ import {
   BookOpen,
   School,
   MapPin,
-  Phone,
   Leaf
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
