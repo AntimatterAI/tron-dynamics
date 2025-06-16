@@ -189,7 +189,7 @@ export default function HomePage() {
             <div className="group text-center">
               <div className="flex items-center justify-center mb-3">
                 <div 
-                  ref={(el) => statsRefs.current[0] = el}
+                  ref={(el) => { statsRefs.current[0] = el }}
                   className="text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
                   style={{ fontFamily: 'var(--font-orbitron)' }}
                 >
@@ -202,7 +202,7 @@ export default function HomePage() {
             <div className="group text-center">
               <div className="flex items-center justify-center mb-3">
                 <div 
-                  ref={(el) => statsRefs.current[1] = el}
+                  ref={(el) => { statsRefs.current[1] = el }}
                   className="text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
                   style={{ fontFamily: 'var(--font-orbitron)' }}
                 >
@@ -215,7 +215,7 @@ export default function HomePage() {
             <div className="group text-center">
               <div className="flex items-center justify-center mb-3">
                 <div 
-                  ref={(el) => statsRefs.current[2] = el}
+                  ref={(el) => { statsRefs.current[2] = el }}
                   className="text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
                   style={{ fontFamily: 'var(--font-orbitron)' }}
                 >
