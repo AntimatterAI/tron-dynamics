@@ -82,58 +82,8 @@ export default function VenturesPage() {
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950/20">
       <MeteorBackground />
       
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 transition-all duration-200 bg-transparent" style={{backdropFilter: 'blur(20px) saturate(180%)', background: 'rgba(15, 23, 42, 0.3)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)'}}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-center h-20">
-            <div className="will-change-transform z-50">
-              <Link href="/" className="group">
-                <h1 className="text-2xl md:text-3xl font-light text-white group-hover:text-green-300 transition-colors duration-150" style={{fontFamily: 'var(--font-orbitron)', fontWeight: 300, letterSpacing: '-0.02em'}}>
-                  TRON DYNAMICS
-                </h1>
-              </Link>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <div className="will-change-transform relative group">
-                <Link href="/studios" className="relative py-2 px-3 text-sm font-light transition-all duration-150 text-white/70 hover:text-white" style={{fontWeight: 300}}>
-                  Studios
-                  <span className="absolute bottom-0 left-3 right-3 h-px bg-green-300 transition-all duration-150 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
-                </Link>
-              </div>
-              <div className="will-change-transform relative group">
-                <Link href="/ventures" className="relative py-2 px-3 text-sm font-light transition-all duration-150 text-white" style={{fontWeight: 300}}>
-                  Ventures
-                  <span className="absolute bottom-0 left-3 right-3 h-px bg-green-300 transition-all duration-150 opacity-100 scale-x-100"></span>
-                </Link>
-              </div>
-              <div className="will-change-transform relative group">
-                <Link href="/impact" className="relative py-2 px-3 text-sm font-light transition-all duration-150 text-white/70 hover:text-white" style={{fontWeight: 300}}>
-                  Impact
-                  <span className="absolute bottom-0 left-3 right-3 h-px bg-green-300 transition-all duration-150 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
-                </Link>
-              </div>
-              <div className="will-change-transform relative group">
-                <Link href="/about" className="relative py-2 px-3 text-sm font-light transition-all duration-150 text-white/70 hover:text-white" style={{fontWeight: 300}}>
-                  About
-                  <span className="absolute bottom-0 left-3 right-3 h-px bg-green-300 transition-all duration-150 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
-                </Link>
-              </div>
-              <div className="will-change-transform">
-                <Button className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-xl glow-electric h-11 relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-5 py-2 text-sm font-light rounded-lg border border-white/20 hover:border-white/30 transition-all duration-150" style={{backdropFilter: 'blur(20px)', fontWeight: 300}}>
-                  <div className="relative z-10 flex items-center gap-2">
-                    <Phone className="w-4 h-4" />
-                    <span>Call</span>
-                  </div>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - with proper top spacing for fixed nav */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div>
