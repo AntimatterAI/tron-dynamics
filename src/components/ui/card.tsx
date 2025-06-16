@@ -1,6 +1,5 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
@@ -33,34 +32,28 @@ const cardVariants = cva(
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof cardVariants> {
-  hover?: boolean
   glow?: boolean
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, padding, hover = true, glow, children, ...props }, ref) => {
-    const Component = hover ? motion.div : "div"
-    
-    const hoverProps = hover ? {
-      whileHover: { y: -4, scale: 1.02 },
-      transition: { type: "spring", stiffness: 300, damping: 20 }
-    } : {}
+  ({ className, variant, padding, glow, children, ...props }, ref) => {
+    const cardClassName = cn(
+      cardVariants({ variant, padding }),
+      glow && variant === "glow" && "glow-golden",
+      glow && variant === "electric" && "glow-electric", 
+      glow && variant === "copper" && "glow-copper",
+      className
+    )
 
+    // Temporarily disable motion.div to fix TypeScript conflicts
     return (
-      <Component
+      <div
         ref={ref}
-        className={cn(
-          cardVariants({ variant, padding }),
-          glow && variant === "glow" && "glow-golden",
-          glow && variant === "electric" && "glow-electric", 
-          glow && variant === "copper" && "glow-copper",
-          className
-        )}
-        {...hoverProps}
+        className={cardClassName}
         {...props}
       >
         {children}
-      </Component>
+      </div>
     )
   }
 )
