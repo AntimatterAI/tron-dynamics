@@ -37,11 +37,11 @@ export const metadata: Metadata = {
   
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" }
+      { url: "/favicon.svg?v=2", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=2", sizes: "32x32" }
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/apple-touch-icon.svg?v=2",
   },
   
   openGraph: {
@@ -121,7 +121,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#3b82f6" />
         <link rel="manifest" href="/manifest.json" />
         
-        <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/favicon.svg?v=2" as="image" type="image/svg+xml" />
+        
+        {/* Explicit favicon declarations for better compatibility */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.svg?v=2" />
       </head>
       <body className={`${inter.className} antialiased bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white overflow-x-hidden font-fallback`}>
         <SmoothScrollProvider>

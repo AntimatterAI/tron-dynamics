@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- High contrast circular favicon for .ico compatibility -->
+  <circle cx="16" cy="16" r="16" fill="#3b82f6"/>
+  
+  <!-- Bold white T for maximum visibility -->
+  <g transform="translate(8, 8)">
+    <path d="M2 4h12M8 4v10" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg> 
