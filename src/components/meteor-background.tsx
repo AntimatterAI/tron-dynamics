@@ -27,6 +27,9 @@ export default function MeteorBackground() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    // Detect mobile for performance optimization
+    const isMobile = window.innerWidth < 768
+
     // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
@@ -51,8 +54,8 @@ export default function MeteorBackground() {
           vy: 0,
           life: 0,
           maxLife: 2000 + Math.random() * 3000,
-          size: 0.5 + Math.random() * 1,
-          opacity: 0.2 + Math.random() * 0.6,
+          size: isMobile ? 0.3 + Math.random() * 0.5 : 0.5 + Math.random() * 1,
+          opacity: isMobile ? 0.1 + Math.random() * 0.3 : 0.2 + Math.random() * 0.6,
           color: colors.stars[Math.floor(Math.random() * colors.stars.length)],
           type: 'star'
         }
@@ -64,8 +67,8 @@ export default function MeteorBackground() {
           vy: 0.5 + Math.random() * 1,
           life: 0,
           maxLife: 200 + Math.random() * 150,
-          size: 1 + Math.random() * 1.5,
-          opacity: 0.8,
+          size: isMobile ? 0.5 + Math.random() * 0.8 : 1 + Math.random() * 1.5,
+          opacity: isMobile ? 0.4 : 0.8,
           color: colors.meteors[Math.floor(Math.random() * colors.meteors.length)],
           type: 'meteor'
         }
@@ -76,8 +79,9 @@ export default function MeteorBackground() {
     const initParticles = () => {
       particlesRef.current = []
       
-      // Only 20 subtle background stars
-      for (let i = 0; i < 20; i++) {
+      // Reduced particles on mobile
+      const starCount = isMobile ? 8 : 20
+      for (let i = 0; i < starCount; i++) {
         particlesRef.current.push(createParticle('star'))
       }
     }
@@ -99,10 +103,12 @@ export default function MeteorBackground() {
         
         if (particle.type === 'star') {
           // Very subtle twinkling
-          particle.opacity = 0.1 + 0.4 * Math.sin(particle.life * 0.01)
+          particle.opacity = isMobile 
+            ? 0.05 + 0.2 * Math.sin(particle.life * 0.005)
+            : 0.1 + 0.4 * Math.sin(particle.life * 0.01)
         } else {
           // Meteor fading
-          particle.opacity = Math.max(0, 0.8 - lifeRatio)
+          particle.opacity = Math.max(0, (isMobile ? 0.4 : 0.8) - lifeRatio)
         }
         
         // Remove dead particles
@@ -111,8 +117,9 @@ export default function MeteorBackground() {
         }
       }
       
-      // Very rarely add a meteor
-      if (Math.random() < 0.001) {
+      // Very rarely add a meteor (less frequent on mobile)
+      const meteorChance = isMobile ? 0.0005 : 0.001
+      if (Math.random() < meteorChance) {
         particles.push(createParticle('meteor'))
       }
     }
@@ -132,9 +139,11 @@ export default function MeteorBackground() {
           ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
           ctx.fill()
         } else {
-          // Simple meteor with minimal trail
-          ctx.shadowBlur = 8
-          ctx.shadowColor = particle.color
+          // Simple meteor with minimal trail (reduced on mobile)
+          if (!isMobile) {
+            ctx.shadowBlur = 6
+            ctx.shadowColor = particle.color
+          }
           ctx.beginPath()
           ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
           ctx.fill()
@@ -144,16 +153,23 @@ export default function MeteorBackground() {
       })
     }
 
-    // Animation loop
-    const animate = () => {
-      updateParticles()
-      renderParticles()
+    // Animation loop with mobile optimization
+    let lastTime = 0
+    const targetFPS = isMobile ? 30 : 60
+    const interval = 1000 / targetFPS
+
+    const animate = (currentTime: number) => {
+      if (currentTime - lastTime >= interval) {
+        updateParticles()
+        renderParticles()
+        lastTime = currentTime
+      }
       animationRef.current = requestAnimationFrame(animate)
     }
 
     // Initialize and start
     initParticles()
-    animate()
+    animate(0)
 
     // Cleanup
     return () => {

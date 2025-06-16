@@ -1,43 +1,70 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Performance optimizations
   experimental: {
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ['lucide-react', 'gsap'],
   },
+  
+  // Performance optimizations
+  compress: true,
+  poweredByHeader: false,
+  
+  // Font optimization
+  optimizeFonts: true,
   
   // Image optimization
   images: {
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 86400,
   },
   
-  // Compression
-  compress: true,
+  // Bundle analyzer (only in development)
+  webpack: (config, { dev, isServer }) => {
+    // Bundle optimization
+    if (!dev && !isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+          animations: {
+            test: /[\\/]node_modules[\\/](gsap|framer-motion|@studio-freight\/lenis|lenis)[\\/]/,
+            name: 'animations',
+            chunks: 'all',
+            priority: 10,
+          },
+        },
+      }
+    }
+    
+    return config
+  },
   
-  // Headers for performance
+  // Security headers
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
           {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
             key: 'X-Frame-Options',
             value: 'DENY',
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
           },
         ],
       },
-    ];
+    ]
   },
-};
+}
 
-export default nextConfig;
+module.exports = nextConfig
 
