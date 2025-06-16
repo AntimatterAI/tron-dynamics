@@ -7,15 +7,15 @@ import SmoothScrollProvider from "@/components/smooth-scroll-provider";
 const orbitron = Orbitron({
   subsets: ["latin"],
   variable: "--font-orbitron",
-  display: "swap",
-  preload: true,
+  display: "optional",
+  preload: false,
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-  preload: true,
+  display: "optional",
+  preload: false,
 });
 
 export const viewport: Viewport = {
@@ -102,14 +102,28 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${orbitron.variable} ${inter.variable}`}>
       <head>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .font-fallback { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+            .font-mono-fallback { font-family: 'SF Mono', Monaco, 'Inconsolata', 'Roboto Mono', monospace; }
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+          `
+        }} />
+        
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-TileColor" content="#22c55e" />
         <meta name="theme-color" content="#22c55e" />
         <link rel="manifest" href="/manifest.json" />
+        
+        <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
       </head>
-      <body className={`${inter.className} antialiased bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white overflow-x-hidden`}>
+      <body className={`${inter.className} antialiased bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white overflow-x-hidden font-fallback`}>
         <SmoothScrollProvider>
           <Navigation />
           <main className="relative">

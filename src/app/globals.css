@@ -422,6 +422,14 @@ a:hover {
     animation: none;
   }
   
+  /* Simplified animations on mobile */
+  .animate-fade-in,
+  .animate-fade-in-delayed,
+  .animate-fade-in-stats,
+  .animate-fade-in-scroll {
+    animation-duration: 0.4s;
+  }
+  
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
     * {
@@ -533,5 +541,78 @@ a:hover {
   ::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Critical font loading optimization */
+@font-face {
+  font-family: 'System';
+  src: local('.SFNS-Display'), local('.SFNSDisplay-Regular'), local('.SF NS Display'), local('.SF NS Display Regular'),
+       local('Helvetica Neue'), local('Helvetica'), local('Arial'), local('sans-serif');
+  font-weight: 300 900;
+  font-display: optional;
+}
+
+/* Preload critical elements */
+.critical-element {
+  contain: layout style paint;
+}
+
+/* Lightweight animations for homepage */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-delayed {
+  0%, 20% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-stats {
+  0%, 40% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scroll {
+  0%, 60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-in-delayed {
+  animation: fade-in-delayed 1s ease-out 0.4s both;
+}
+
+.animate-fade-in-stats {
+  animation: fade-in-stats 1.2s ease-out 0.6s both;
+}
+
+.animate-fade-in-scroll {
+  animation: fade-in-scroll 1s ease-out 0.8s both;
 }
 
