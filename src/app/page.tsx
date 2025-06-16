@@ -39,15 +39,15 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-12">
         {/* Simplified ambient lighting */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/3 left-1/4 w-48 h-48 md:w-80 md:h-80 bg-green-500/2 md:bg-green-500/4 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-48 h-48 md:w-80 md:h-80 bg-emerald-500/2 md:bg-emerald-500/4 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 left-1/4 w-48 h-48 md:w-80 md:h-80 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(229, 62, 62, 0.03)' }}></div>
+          <div className="absolute bottom-1/3 right-1/4 w-48 h-48 md:w-80 md:h-80 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(0, 255, 135, 0.03)' }}></div>
         </div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
           
           {/* Simple Badge */}
           <div className="mb-8 md:mb-12 opacity-0 animate-fade-in">
-            <div className="inline-flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-green-200/80 text-xs md:text-sm font-medium tracking-wide">
+            <div className="inline-flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-gray-300/80 text-xs md:text-sm font-medium tracking-wide">
               <span className="hidden sm:inline">Entertainment × Innovation × Impact</span>
               <span className="sm:hidden">Innovation × Impact</span>
             </div>
@@ -57,12 +57,15 @@ export default function HomePage() {
           <div className="mb-6 md:mb-8">
             <h1 
               ref={heroTitleRef}
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light bg-gradient-to-r from-white via-green-200 to-emerald-300 bg-clip-text text-transparent mb-6 md:mb-8 tracking-tight leading-[0.9] px-2"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light bg-gradient-to-r from-white via-red-400 to-green-400 bg-clip-text text-transparent mb-6 md:mb-8 tracking-tight leading-[0.9] px-2"
               style={{ 
                 fontFamily: 'var(--font-orbitron), -apple-system, BlinkMacSystemFont, sans-serif',
                 fontWeight: 300,
                 letterSpacing: '-0.02em',
                 opacity: 1,
+                background: 'linear-gradient(135deg, #E53E3E, #FF6B35, #00FF87)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
               }}
             >
               TRON DYNAMICS
@@ -73,7 +76,7 @@ export default function HomePage() {
           <div className="mb-12 md:mb-16">
             <p 
               ref={heroSubtitleRef}
-              className="lcp-text text-base sm:text-lg md:text-xl lg:text-2xl text-green-100/60 font-light tracking-wide max-w-3xl mx-auto leading-relaxed px-4"
+              className="lcp-text text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300/80 font-light tracking-wide max-w-3xl mx-auto leading-relaxed px-4"
               style={{ fontWeight: 300, opacity: 1 }}
             >
               Where Innovation Meets Impact
@@ -97,7 +100,8 @@ export default function HomePage() {
 
             <Link href="/about" className="w-full max-w-xs md:max-w-none">
               <Button
-                className="group relative overflow-hidden bg-transparent border border-green-400/30 text-green-300/90 hover:text-white hover:border-green-400/50 px-6 md:px-8 py-4 text-sm md:text-base font-medium rounded-xl transition-all duration-200 w-full md:min-w-[220px]"
+                className="group relative overflow-hidden bg-transparent border border-emerald-400/40 text-emerald-300/90 hover:text-white hover:border-emerald-400/60 px-6 md:px-8 py-4 text-sm md:text-base font-medium rounded-xl transition-all duration-200 w-full md:min-w-[220px]"
+                style={{ borderColor: 'rgba(0, 255, 135, 0.4)', color: 'rgba(0, 255, 135, 0.9)' }}
               >
                 <div className="relative z-10 flex items-center justify-center gap-2 md:gap-3">
                   <Globe className="w-4 h-4" />
@@ -158,9 +162,9 @@ export default function HomePage() {
           <div className="text-center mb-12 md:mb-20">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4 md:mb-6 tracking-tight px-4" 
                 style={{ fontFamily: 'var(--font-orbitron), -apple-system, sans-serif' }}>
-              Our <span className="text-green-300">Divisions</span>
+              Our <span style={{ color: '#00FF87' }}>Divisions</span>
             </h2>
-            <p className="text-base md:text-lg text-green-100/50 max-w-2xl mx-auto font-light leading-relaxed px-4">
+            <p className="text-base md:text-lg text-gray-300/60 max-w-2xl mx-auto font-light leading-relaxed px-4">
               Three interconnected pillars driving transformational change
             </p>
           </div>
@@ -169,11 +173,11 @@ export default function HomePage() {
             
             {/* TRON Studios */}
             <Link href="/studios" className="group relative md:col-span-2 lg:col-span-1">
-              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]">
+              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-red-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(229, 62, 62, 0.1)', '--hover-border': 'rgba(229, 62, 62, 0.3)' }}>
                 <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-green-500/30 transition-colors duration-150">
-                      <Film className="w-5 h-5 md:w-6 md:h-6 text-green-300" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(229, 62, 62, 0.2)' }}>
+                      <Film className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#E53E3E' }} />
                     </div>
                     <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
                       TRON Studios
@@ -182,7 +186,7 @@ export default function HomePage() {
                       Revolutionary film production pushing the boundaries of storytelling and visual innovation.
                     </p>
                   </div>
-                  <div className="flex items-center justify-between text-green-300/70 group-hover:text-green-300 transition-colors duration-150">
+                  <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(229, 62, 62, 0.7)' }}>
                     <span className="text-sm font-medium">Explore Studios</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
@@ -192,20 +196,20 @@ export default function HomePage() {
 
             {/* TRON Ventures */}
             <Link href="/ventures" className="group relative">
-              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]">
+              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(255, 107, 53, 0.1)' }}>
                 <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-amber-500/30 transition-colors duration-150">
-                      <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-amber-300" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(255, 107, 53, 0.2)' }}>
+                      <Briefcase className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#FF6B35' }} />
                     </div>
                     <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
                       TRON Ventures
                     </h3>
-                    <p className="text-amber-100/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
+                    <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
                       Strategic angel investment in groundbreaking startups, funding the future of innovation.
                     </p>
                   </div>
-                  <div className="flex items-center justify-between text-amber-300/70 group-hover:text-amber-300 transition-colors duration-150">
+                  <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(255, 107, 53, 0.7)' }}>
                     <span className="text-sm font-medium">Explore Ventures</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
@@ -215,20 +219,20 @@ export default function HomePage() {
 
             {/* TRON Impact */}
             <Link href="/impact" className="group relative">
-              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-cyan-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]">
+              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(0, 255, 135, 0.1)' }}>
                 <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-cyan-500/30 transition-colors duration-150">
-                      <Heart className="w-5 h-5 md:w-6 md:h-6 text-cyan-300" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(0, 255, 135, 0.2)' }}>
+                      <Heart className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#00FF87' }} />
                     </div>
                     <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
                       TRON Impact
                     </h3>
-                    <p className="text-cyan-100/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
+                    <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
                       Philanthropic initiatives creating lasting positive change in communities worldwide.
                     </p>
                   </div>
-                  <div className="flex items-center justify-between text-cyan-300/70 group-hover:text-cyan-300 transition-colors duration-150">
+                  <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(0, 255, 135, 0.7)' }}>
                     <span className="text-sm font-medium">Explore Impact</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
@@ -247,9 +251,9 @@ export default function HomePage() {
           <div className="mb-8 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 md:mb-6 tracking-tight px-4" 
                 style={{ fontFamily: 'var(--font-orbitron), -apple-system, sans-serif' }}>
-              Ready to <span className="text-green-300">Transform</span> the Future?
+              Ready to <span style={{ color: '#00FF87' }}>Transform</span> the Future?
             </h2>
-            <p className="text-base md:text-lg text-green-100/50 max-w-2xl mx-auto font-light leading-relaxed px-4">
+            <p className="text-base md:text-lg text-gray-300/60 max-w-2xl mx-auto font-light leading-relaxed px-4">
               Join us in creating revolutionary entertainment, funding breakthrough innovations, and making a lasting impact.
             </p>
           </div>

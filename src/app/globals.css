@@ -29,22 +29,26 @@
     --ring: 45 96% 53%;
     --radius: 0.75rem;
 
-    /* TRON DYNAMICS Custom Variables */
+    /* TRON DYNAMICS Brand Colors */
     --obsidian: 222.2 84% 4.9%;
-    --golden: 85 30% 85%;
-    --copper: 30 75% 47%;
-    --electric: 155 70% 50%;
+    --tron-red: #E53E3E;
+    --tron-orange: #FF6B35;
+    --tron-green: #00FF87;
+    --tron-green-dark: #00CC6A;
     --void: 160 20% 8%;
     
     /* Performance optimizations */
     --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-orbitron: 'Orbitron', monospace;
     
-    /* Green Theme Colors */
-    --primary-green: #22c55e;
-    --emerald-light: #34d399;
-    --emerald-dark: #10b981;
-    --green-glow: rgba(34, 197, 94, 0.15);
+    /* TRON Brand Theme Colors */
+    --primary-red: #E53E3E;
+    --primary-orange: #FF6B35;
+    --primary-green: #00FF87;
+    --green-bright: #00FF87;
+    --green-dark: #00CC6A;
+    --red-glow: rgba(229, 62, 62, 0.15);
+    --green-glow: rgba(0, 255, 135, 0.15);
     
     /* Ultra-fast animation variables */
     --animation-ultra: 50ms;
@@ -127,24 +131,24 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(34, 197, 94, 0.3);
+    background: rgba(0, 255, 135, 0.3);
     border-radius: 10px;
     transition: background var(--animation-fast) var(--ease-smooth);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(34, 197, 94, 0.5);
+    background: rgba(0, 255, 135, 0.5);
   }
 
   /* Selection styles */
   ::selection {
-    background: rgba(34, 197, 94, 0.3);
+    background: rgba(0, 255, 135, 0.3);
     color: white;
   }
 
   /* Focus styles */
   :focus-visible {
-    outline: 2px solid rgba(34, 197, 94, 0.5);
+    outline: 2px solid rgba(0, 255, 135, 0.5);
     outline-offset: 2px;
     transition: outline var(--animation-ultra) var(--ease-sharp);
   }
@@ -158,7 +162,7 @@
 
   /* Text gradients */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--electric)), hsl(var(--golden)), hsl(var(--electric)));
+    background: linear-gradient(135deg, var(--tron-red), var(--tron-orange), var(--tron-green));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -166,7 +170,15 @@
   }
 
   .text-gradient-green {
-    background: linear-gradient(135deg, #22c55e, #16a34a, #34d399);
+    background: linear-gradient(135deg, var(--tron-green), var(--tron-green-dark), var(--tron-green));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .text-gradient-red {
+    background: linear-gradient(135deg, var(--tron-red), var(--tron-orange), var(--tron-red));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -184,7 +196,11 @@
 
   /* Glow effects */
   .glow-green {
-    box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+    box-shadow: 0 0 30px rgba(0, 255, 135, 0.2);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 30px rgba(229, 62, 62, 0.2);
   }
 
   /* Hover effects */
@@ -261,10 +277,10 @@
   .btn-primary {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to right, #22c55e, #10b981);
+    background: linear-gradient(to right, var(--tron-green), var(--tron-green-dark));
     color: white;
     font-weight: 600;
-    border: 1px solid rgba(34, 197, 94, 0.3);
+    border: 1px solid rgba(0, 255, 135, 0.3);
     border-radius: 0.75rem;
     padding: 0.75rem 1.5rem;
     transition: all 0.3s ease;
@@ -272,10 +288,30 @@
   }
 
   .btn-primary:hover {
-    background: linear-gradient(to right, #16a34a, #059669);
-    border-color: rgba(34, 197, 94, 0.6);
+    background: linear-gradient(to right, var(--tron-green-dark), var(--tron-green));
+    border-color: rgba(0, 255, 135, 0.6);
     transform: scale(1.05);
-    box-shadow: 0 25px 50px -12px rgba(34, 197, 94, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(0, 255, 135, 0.25);
+  }
+
+  .btn-red {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, var(--tron-red), var(--tron-orange));
+    color: white;
+    font-weight: 600;
+    border: 1px solid rgba(229, 62, 62, 0.3);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-red:hover {
+    background: linear-gradient(to right, var(--tron-orange), var(--tron-red));
+    border-color: rgba(229, 62, 62, 0.6);
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(229, 62, 62, 0.25);
   }
 
   .btn-secondary {
@@ -300,10 +336,10 @@
   .card-glass {
     backdrop-filter: blur(20px);
     background: rgba(15, 23, 42, 0.4);
-    border: 1px solid rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(0, 255, 135, 0.2);
     border-radius: 1rem;
     padding: 1.5rem;
-    box-shadow: 0 25px 50px -12px rgba(34, 197, 94, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 255, 135, 0.1);
   }
 
   .card-sophisticated {
@@ -317,14 +353,39 @@
 
   .card-sophisticated:hover {
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(34, 197, 94, 0.2);
+    border-color: rgba(0, 255, 135, 0.2);
+  }
+
+  .card-red {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(229, 62, 62, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.7s ease;
+  }
+
+  .card-red:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(229, 62, 62, 0.3);
   }
 
   /* Typography */
   .heading-primary {
     font-family: var(--font-orbitron);
     font-weight: 700;
-    background: linear-gradient(to right, #4ade80, #34d399, #22c55e);
+    background: linear-gradient(to right, var(--tron-green), var(--tron-green-dark), var(--tron-green));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+
+  .heading-red {
+    font-family: var(--font-orbitron);
+    font-weight: 700;
+    background: linear-gradient(to right, var(--tron-red), var(--tron-orange), var(--tron-red));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -349,7 +410,7 @@
     width: 1.5rem;
     height: 1.5rem;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    border-top: 2px solid #4ade80;
+    border-top: 2px solid var(--tron-green);
     border-radius: 50%;
     animation: spin 1.5s linear infinite;
   }
@@ -373,7 +434,11 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border-color: rgba(34, 197, 94, 0.5);
+  border-color: rgba(0, 255, 135, 0.5);
+}
+
+input:focus.red-focus, textarea:focus.red-focus {
+  border-color: rgba(229, 62, 62, 0.5);
 }
 
 /* Links */
@@ -514,7 +579,7 @@ a:hover {
 
 /* Focus styles for accessibility */
 .focus-visible:focus-visible {
-  outline: 2px solid #22c55e;
+  outline: 2px solid var(--tron-green);
   outline-offset: 2px;
 }
 
