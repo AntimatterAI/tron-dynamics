@@ -8,9 +8,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   
-  // Font optimization
-  optimizeFonts: true,
-  
   // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
