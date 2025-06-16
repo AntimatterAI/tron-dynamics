@@ -7,7 +7,6 @@ import { Globe, Phone, Heart, Film, Briefcase, ArrowRight, ChevronDown } from 'l
 
 // Lazy load heavy components
 const MeteorBackground = lazy(() => import('@/components/meteor-background'))
-const AnimatedElement = lazy(() => import('@/components/animated-element'))
 
 // Lightweight animations for mobile
 const useSimpleAnimations = () => {
