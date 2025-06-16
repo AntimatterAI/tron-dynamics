@@ -23,7 +23,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#22c55e",
+  themeColor: "#3b82f6",
   colorScheme: "dark",
 };
 
@@ -117,8 +117,8 @@ export default function RootLayout({
         }} />
         
         <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-TileColor" content="#22c55e" />
-        <meta name="theme-color" content="#22c55e" />
+        <meta name="msapplication-TileColor" content="#3b82f6" />
+        <meta name="theme-color" content="#3b82f6" />
         <link rel="manifest" href="/manifest.json" />
         
         <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
