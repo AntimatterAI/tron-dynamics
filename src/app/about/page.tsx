@@ -1,0 +1,339 @@
+"use client"
+
+import Link from "next/link"
+import Image from "next/image"
+import { ArrowRight, Users, Award, Globe, Film, Target, Heart, Phone, Info, CheckCircle } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import AnimatedElement from "@/components/animated-element"
+import MeteorBackground from "@/components/meteor-background"
+
+export default function AboutPage() {
+  const founders = [
+    {
+      name: "Dr. Alvin Glay",
+      title: "Co-Founder & CEO",
+      image: "/dr-alvin-glay-portrait.jpg",
+      description: "Dr. Glay's journey from a Liberian refugee to a distinguished marketing executive is chronicled in his memoir, \"LIBERIAN BOY: TRIUMPH OVER WAR'S SHADOW.\"",
+      credentials: [
+        "Doctorate in Business - Georgia State University",
+        "MBA - Mercer University", 
+        "BBA in Finance - Georgia State University"
+      ],
+      expertise: "His expertise in marketing and business development, combined with his personal experience as a refugee, brings unique insight to TRON DYNAMICS' mission of amplifying underrepresented voices."
+    },
+    {
+      name: "Jonathan Massaquoi",
+      title: "Co-Founder & CTO",
+      image: "/jonathan-massaquoi-portrait.jpg",
+      description: "A former NFL athlete turned entrepreneur, Jonathan brings a passion for community development, creative storytelling, and investment in African business ecosystems.",
+      credentials: [
+        "Former NFL Linebacker (Falcons, Titans, Chiefs)",
+        "Troy University Football - 128 tackles, 19.5 sacks",
+        "Born in Monrovia, Liberia"
+      ],
+      expertise: "His leadership and network in sports, entertainment, and business make him a key driver of TRON DYNAMICS' mission to elevate voices from the African diaspora."
+    }
+  ]
+
+  const timeline = [
+    {
+      period: "Years 1-2 (2025-2027)",
+      title: "Establishing TRON Studios",
+      goals: [
+        "Produce three short series starting with \"LIBERIAN BOY\"",
+        "Publish content on YouTube and social media platforms",
+        "Secure production and distribution deals",
+        "Build audience and industry relationships"
+      ],
+      color: "from-amber-500/20 to-yellow-600/20"
+    },
+    {
+      period: "Year 3 (2027-2028)",
+      title: "Launching TRON Ventures",
+      goals: [
+        "Officially launch angel investment arm",
+        "Invest in 3-5 early-stage West African startups",
+        "Form partnerships with accelerators and VCs",
+        "Develop startup incubation programs"
+      ],
+      color: "from-orange-500/20 to-red-600/20"
+    },
+    {
+      period: "Years 4-5 (2028-2030)",
+      title: "Expansion and Impact",
+      goals: [
+        "Scale TRON Studios with feature-length productions",
+        "Secure deals with Netflix, Amazon Prime, Disney+",
+        "Establish TRON Impact initiatives across Africa",
+        "Develop media training academy for young filmmakers"
+      ],
+      color: "from-green-500/20 to-emerald-600/20"
+    }
+  ]
+
+  return (
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950/20">
+      <MeteorBackground />
+      
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 transition-all duration-200 bg-transparent" style={{backdropFilter: 'blur(20px) saturate(180%)', background: 'rgba(15, 23, 42, 0.3)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)'}}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-center h-20">
+            <div className="will-change-transform z-50">
+              <Link href="/" className="group">
+                <h1 className="text-2xl md:text-3xl font-light text-white group-hover:text-green-300 transition-colors duration-150" style={{fontFamily: 'var(--font-orbitron)', fontWeight: 300, letterSpacing: '-0.02em'}}>
+                  TRON DYNAMICS
+                </h1>
+              </Link>
+            </div>
+            
+            <div className="hidden md:flex items-center space-x-8">
+              <div className="will-change-transform relative group">
+                <Link href="/studios" className="relative py-2 px-3 text-sm font-light transition-all duration-150 text-white/70 hover:text-white" style={{fontWeight: 300}}>
+                  Studios
+                  <span className="absolute bottom-0 left-3 right-3 h-px bg-green-300 transition-all duration-150 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
+                </Link>
+              </div>
+              <div className="will-change-transform relative group">
+                <Link href="/ventures" className="relative py-2 px-3 text-sm font-light transition-all duration-150 text-white/70 hover:text-white" style={{fontWeight: 300}}>
+                  Ventures
+                  <span className="absolute bottom-0 left-3 right-3 h-px bg-green-300 transition-all duration-150 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
+                </Link>
+              </div>
+              <div className="will-change-transform relative group">
+                <Link href="/impact" className="relative py-2 px-3 text-sm font-light transition-all duration-150 text-white/70 hover:text-white" style={{fontWeight: 300}}>
+                  Impact
+                  <span className="absolute bottom-0 left-3 right-3 h-px bg-green-300 transition-all duration-150 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
+                </Link>
+              </div>
+              <div className="will-change-transform relative group">
+                <Link href="/about" className="relative py-2 px-3 text-sm font-light transition-all duration-150 text-white" style={{fontWeight: 300}}>
+                  About
+                  <span className="absolute bottom-0 left-3 right-3 h-px bg-green-300 transition-all duration-150 opacity-100 scale-x-100"></span>
+                </Link>
+              </div>
+              <div className="will-change-transform">
+                <Button className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-xl glow-electric h-11 relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-5 py-2 text-sm font-light rounded-lg border border-white/20 hover:border-white/30 transition-all duration-150" style={{backdropFilter: 'blur(20px)', fontWeight: 300}}>
+                  <div className="relative z-10 flex items-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    <span>Call</span>
+                  </div>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto text-center relative z-10">
+          <AnimatedElement animation="fade" delay={0.1} className="mb-12">
+            <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-blue-200/80 text-sm font-medium tracking-wide">
+              <Info className="w-4 h-4" />
+              OUR STORY
+            </div>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.2} className="mb-8">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent mb-8 tracking-tight leading-[0.9] max-w-full" style={{fontFamily: 'var(--font-orbitron)', fontWeight: 300, letterSpacing: '-0.02em'}}>
+              Our Story
+            </h1>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.4} className="mb-16">
+            <p className="text-lg sm:text-xl md:text-2xl text-blue-100/60 font-light tracking-wide max-w-4xl mx-auto leading-relaxed" style={{fontWeight: 300}}>
+              From refugee to entrepreneur, from athlete to investor - the journey that shaped TRON DYNAMICS and our mission to amplify nomadic voices.
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.6} className="inline-block">
+            <Link href="#founders">
+              <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-8 py-4 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150 min-w-[220px]" style={{backdropFilter: 'blur(20px)'}}>
+                <div className="relative z-10 flex items-center justify-center gap-3">
+                  <Users className="w-4 h-4" />
+                  <span>Meet Our Founders</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-100" />
+                </div>
+              </Button>
+            </Link>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Founders Section */}
+      <section id="founders" className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Meet Our <span className="text-blue-300">Founders</span>
+            </h2>
+            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Two visionaries united by their commitment to empowering the African diaspora and driving transformational change.
+            </p>
+          </AnimatedElement>
+
+          <div className="grid md:grid-cols-2 gap-16">
+            {founders.map((founder, index) => (
+              <AnimatedElement key={index} animation="slide" direction={index === 0 ? "left" : "right"} delay={index * 0.2}>
+                <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] p-8">
+                  <div className="relative z-10">
+                    <div className="flex flex-col items-center text-center mb-8">
+                      <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center">
+                        <Users className="w-24 h-24 text-blue-300" />
+                      </div>
+                      <h3 className="text-3xl font-light text-white mb-2 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                        {founder.name}
+                      </h3>
+                      <p className="text-blue-400 font-medium text-lg">{founder.title}</p>
+                    </div>
+                    
+                    <div className="space-y-6 text-white/80">
+                      <p className="leading-relaxed font-light">{founder.description}</p>
+                      
+                      <div className="space-y-3">
+                        {founder.credentials.map((credential, credIndex) => (
+                          <div key={credIndex} className="flex items-center gap-3">
+                            <Award className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                            <span className="text-sm">{credential}</span>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      <p className="leading-relaxed font-light">{founder.expertise}</p>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16">
+            <AnimatedElement animation="slide" direction="left">
+              <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] p-8 h-full">
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
+                    <Target className="w-6 h-6 text-blue-300" />
+                  </div>
+                  <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                    Our Mission
+                  </h3>
+                  <p className="text-blue-100/60 leading-relaxed font-light">
+                    To amplify nomadic voices and drive transformational change by investing in creative storytelling, groundbreaking innovations, and economic empowerment. Through film, technology, and education, we aim to eradicate global challenges and foster sustainable growth.
+                  </p>
+                </div>
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement animation="slide" direction="right" delay={0.2}>
+              <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-purple-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] p-8 h-full">
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
+                    <Globe className="w-6 h-6 text-purple-300" />
+                  </div>
+                  <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                    Our Vision
+                  </h3>
+                  <p className="text-purple-100/60 leading-relaxed font-light">
+                    To drive transformational change by amplifying nomadic voices and fostering groundbreaking solutions that eradicate global challenges. Through storytelling, innovation, technology, and education, we aim to empower and reshape underserved communities and industries.
+                  </p>
+                </div>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Timeline */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Five-Year <span className="text-blue-300">Strategic Plan</span>
+            </h2>
+            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Our roadmap to transformational impact across film, investment, and philanthropy.
+            </p>
+          </AnimatedElement>
+
+          <div className="space-y-16">
+            {timeline.map((phase, index) => (
+              <AnimatedElement key={index} animation="slide" direction={index % 2 === 0 ? "left" : "right"} delay={index * 0.1}>
+                <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}>
+                  <div className="lg:w-1/3">
+                    <div className="bg-white/10 backdrop-blur-xl text-white px-6 py-3 rounded-full font-medium text-center border border-white/20">
+                      {phase.period}
+                    </div>
+                  </div>
+                  <div className="lg:w-2/3">
+                    <div className={`relative bg-gradient-to-br ${phase.color} backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8`}>
+                      <div className="relative z-10">
+                        <h3 className="text-2xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                          {phase.title}
+                        </h3>
+                        <div className="space-y-3">
+                          {phase.goals.map((goal, goalIndex) => (
+                            <div key={goalIndex} className="flex items-start gap-3">
+                              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                              <span className="text-white/90 font-light">{goal}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <AnimatedElement animation="slide" direction="up" className="mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Join Our <span className="text-blue-300">Journey</span>
+            </h2>
+            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Be part of the transformation. Whether you're a storyteller, entrepreneur, or changemaker, there's a place for you in the TRON DYNAMICS ecosystem.
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.2} className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/get-started">
+              <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-8 py-4 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150 min-w-[220px]" style={{backdropFilter: 'blur(20px)'}}>
+                <div className="relative z-10 flex items-center justify-center gap-3">
+                  <Heart className="w-4 h-4" />
+                  <span>Partner With Us</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-100" />
+                </div>
+              </Button>
+            </Link>
+
+            <Link href="/">
+              <Button className="group relative overflow-hidden bg-transparent border border-blue-400/30 text-blue-300/90 hover:text-white hover:border-blue-400/50 px-8 py-4 text-base font-medium rounded-xl transition-all duration-150 min-w-[220px]">
+                <div className="relative z-10 flex items-center justify-center gap-3">
+                  <ArrowRight className="w-4 h-4 rotate-180" />
+                  <span>Back to Home</span>
+                </div>
+              </Button>
+            </Link>
+          </AnimatedElement>
+        </div>
+      </section>
+    </div>
+  )
+}
+
