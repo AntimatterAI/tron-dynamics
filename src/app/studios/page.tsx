@@ -367,5 +367,4 @@ export default function StudiosPage() {
       </section>
     </div>
   )
-} 
-} 
+}
