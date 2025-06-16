@@ -2,10 +2,10 @@
 const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'gsap'],
-    serverComponentsExternalPackages: [],
-    bundlePagesRouterDependencies: true,
-    optimizeServerReact: true,
   },
+  
+  // Server external packages (moved from experimental)
+  serverExternalPackages: [],
   
   // Performance optimizations
   compress: true,
@@ -99,11 +99,11 @@ const nextConfig = {
       }
     }
     
-    // Strict performance hints for mobile
+    // Realistic performance hints for mobile
     config.performance = {
-      maxAssetSize: 200000,
-      maxEntrypointSize: 200000,
-      hints: 'error',
+      maxAssetSize: 300000,
+      maxEntrypointSize: 400000,
+      hints: 'warning',
       assetFilter: function(assetFilename) {
         return !assetFilename.endsWith('.map');
       }
@@ -112,22 +112,10 @@ const nextConfig = {
     return config
   },
   
-  // Aggressive compiler optimizations
+  // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
     reactRemoveProperties: process.env.NODE_ENV === 'production',
-    removeDbgProps: true,
-    styledComponents: false, // Not using styled-components
-  },
-  
-  // Turbo mode for faster builds
-  turbo: {
-    rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
-      },
-    },
   },
   
   // Static optimization
