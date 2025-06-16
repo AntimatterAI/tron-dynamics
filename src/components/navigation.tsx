@@ -194,7 +194,7 @@ export default function Navigation() {
             <div className="py-6 space-y-4 bg-slate-900/40 backdrop-blur-2xl rounded-2xl mt-4 border border-white/10"
               style={{ backdropFilter: 'blur(40px) saturate(150%)' }}
             >
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}

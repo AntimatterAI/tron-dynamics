@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Globe, Phone, Users, Award, TrendingUp, Heart, Film, Briefcase, Target, ArrowRight, ChevronDown } from 'lucide-react'
+import { Globe, Phone, Heart, Film, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
 import MeteorBackground from '@/components/meteor-background'
 import AnimatedElement from '@/components/animated-element'
 import { createAdvancedTyping, createCounterAnimation, createParticleBurst, DURATION, STAGGER } from '@/lib/animations'
@@ -401,7 +401,7 @@ export default function HomePage() {
               <div className="relative z-10 flex items-center justify-center gap-4">
                 <Phone className="w-5 h-5" />
                 <div className="flex flex-col items-center">
-                  <span>Let's Create Together</span>
+                  <span>Let&apos;s Create Together</span>
                   <span className="text-sm opacity-70 font-normal">+1 (404) 823-3384</span>
                 </div>
               </div>

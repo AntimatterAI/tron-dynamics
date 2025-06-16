@@ -230,7 +230,6 @@ interface MagneticProps {
 
 export function Magnetic({ children, className, strength = 0.3 }: MagneticProps) {
   const [position, setPosition] = React.useState({ x: 0, y: 0 })
-  const [isHovered, setIsHovered] = React.useState(false)
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -245,14 +244,12 @@ export function Magnetic({ children, className, strength = 0.3 }: MagneticProps)
 
   const handleMouseLeave = () => {
     setPosition({ x: 0, y: 0 })
-    setIsHovered(false)
   }
 
   return (
     <motion.div
       className={className}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       animate={{
         x: position.x,
@@ -273,11 +270,10 @@ export function Magnetic({ children, className, strength = 0.3 }: MagneticProps)
 interface TypingAnimationProps {
   text: string
   className?: string
-  delay?: number
   speed?: number
 }
 
-export function TypingAnimation({ text, className, delay = 0, speed = 50 }: TypingAnimationProps) {
+export function TypingAnimation({ text, className, speed = 50 }: TypingAnimationProps) {
   const [displayedText, setDisplayedText] = React.useState("")
   const [isComplete, setIsComplete] = React.useState(false)
 

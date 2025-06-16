@@ -2,23 +2,17 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { 
   Heart, 
   Users, 
   GraduationCap, 
-  Globe, 
   HandHeart, 
   Lightbulb,
   ArrowRight,
   Star,
-  Award,
   BookOpen,
   School,
-  Building2,
   MapPin,
-  Target,
-  Zap,
   Phone,
   Leaf
 } from "lucide-react"

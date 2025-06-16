@@ -1,8 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, Users, Award, Globe, Film, Target, Heart, Phone, Info, CheckCircle } from "lucide-react"
+import { ArrowRight, Users, Award, Globe, Target, Heart, Phone, Info, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 import MeteorBackground from "@/components/meteor-background"
@@ -13,13 +12,13 @@ export default function AboutPage() {
       name: "Dr. Alvin Glay",
       title: "Co-Founder & CEO",
       image: "/dr-alvin-glay-portrait.jpg",
-      description: "Dr. Glay's journey from a Liberian refugee to a distinguished marketing executive is chronicled in his memoir, \"LIBERIAN BOY: TRIUMPH OVER WAR'S SHADOW.\"",
+      description: "Dr. Glay&apos;s journey from a Liberian refugee to a distinguished marketing executive is chronicled in his memoir, &quot;LIBERIAN BOY: TRIUMPH OVER WAR&apos;S SHADOW.&quot;",
       credentials: [
         "Doctorate in Business - Georgia State University",
         "MBA - Mercer University", 
         "BBA in Finance - Georgia State University"
       ],
-      expertise: "His expertise in marketing and business development, combined with his personal experience as a refugee, brings unique insight to TRON DYNAMICS' mission of amplifying underrepresented voices."
+      expertise: "His expertise in marketing and business development, combined with his personal experience as a refugee, brings unique insight to TRON DYNAMICS&apos; mission of amplifying underrepresented voices."
     },
     {
       name: "Jonathan Massaquoi",
@@ -31,7 +30,7 @@ export default function AboutPage() {
         "Troy University Football - 128 tackles, 19.5 sacks",
         "Born in Monrovia, Liberia"
       ],
-      expertise: "His leadership and network in sports, entertainment, and business make him a key driver of TRON DYNAMICS' mission to elevate voices from the African diaspora."
+      expertise: "His leadership and network in sports, entertainment, and business make him a key driver of TRON DYNAMICS&apos; mission to elevate voices from the African diaspora."
     }
   ]
 
@@ -307,7 +306,7 @@ export default function AboutPage() {
               Join Our <span className="text-blue-300">Journey</span>
             </h2>
             <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Be part of the transformation. Whether you're a storyteller, entrepreneur, or changemaker, there's a place for you in the TRON DYNAMICS ecosystem.
+                             Be part of the transformation. Whether you&apos;re a storyteller, entrepreneur, or changemaker, there&apos;s a place for you in the TRON DYNAMICS ecosystem.
             </p>
           </AnimatedElement>
 

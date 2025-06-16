@@ -16,10 +16,7 @@ import {
   Calendar,
   CheckCircle,
   Phone,
-  MapPin,
-  Globe,
-  Zap,
-  Info
+  MapPin
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
@@ -109,7 +106,7 @@ export default function GetStartedPage() {
       answer: "Absolutely! While we focus on African stories and markets, we welcome collaborators from around the world who share our vision of authentic, impactful storytelling and innovation."
     },
     {
-      question: "What's the minimum investment or project size?",
+      question: "What&apos;s the minimum investment or project size?",
       answer: "We work with projects of all sizes. For TRON Ventures, our range is $5K-$100K. For TRON Studios, budgets start at $25K. TRON Impact partnerships vary based on scope and impact potential."
     }
   ]
@@ -204,7 +201,7 @@ export default function GetStartedPage() {
 
           <AnimatedElement animation="slide" direction="up" delay={0.4} className="mb-16">
             <p className="text-lg sm:text-xl md:text-2xl text-violet-100/60 font-light tracking-wide max-w-3xl mx-auto leading-relaxed" style={{fontWeight: 300}}>
-              Whether you're a filmmaker, entrepreneur, or changemaker, TRON DYNAMICS is here to amplify your impact and accelerate your success.
+              Whether you&apos;re a filmmaker, entrepreneur, or changemaker, TRON DYNAMICS is here to amplify your impact and accelerate your success.
             </p>
           </AnimatedElement>
 
@@ -229,7 +226,7 @@ export default function GetStartedPage() {
               Choose Your <span className="text-violet-300">Path</span>
             </h2>
             <p className="text-lg text-violet-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Select the division that aligns with your goals and let's start your journey together.
+              Select the division that aligns with your goals and let&apos;s start your journey together.
             </p>
           </AnimatedElement>
 
@@ -290,13 +287,13 @@ export default function GetStartedPage() {
                 <div className="relative z-10">
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-light text-white mb-2 tracking-tight">
-                      Great choice! Let's get started with{" "}
+                      Great choice! Let&apos;s get started with{" "}
                       <span className="text-violet-300">
                         {pathways.find(p => p.id === selectedPath)?.subtitle}
                       </span>
                     </h3>
                     <p className="text-violet-100/60 font-light">
-                      Fill out the form below and we'll get back to you within 24 hours.
+                      Fill out the form below and we&apos;ll get back to you within 24 hours.
                     </p>
                   </div>
 

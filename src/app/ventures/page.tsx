@@ -1,21 +1,14 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { 
   Target, 
   TrendingUp, 
-  DollarSign, 
-  Users, 
   Building, 
   Zap,
   ArrowRight,
   Globe,
-  CheckCircle,
   BarChart3,
-  PieChart,
-  Award,
   Rocket,
   Phone,
   Briefcase
@@ -270,7 +263,7 @@ export default function VenturesPage() {
               Portfolio <span className="text-orange-300">Companies</span>
             </h2>
             <p className="text-lg text-orange-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Meet the innovative companies we're proud to support as they transform industries.
+              Meet the innovative companies we&apos;re proud to support as they transform industries.
             </p>
           </AnimatedElement>
 

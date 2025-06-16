@@ -45,13 +45,11 @@ export const createCinematicEntrance = (element: HTMLElement, options?: {
   delay?: number
   duration?: number
   from?: 'bottom' | 'top' | 'left' | 'right'
-  blur?: boolean
 }) => {
   const { 
     delay = 0, 
     duration = DURATION.fast, 
-    from = 'bottom',
-    blur = false // Disabled for speed
+    from = 'bottom'
   } = options || {}
 
   const directions = {
@@ -165,12 +163,10 @@ export const createAdvancedTyping = (
   element: HTMLElement, 
   text: string, 
   options?: {
-    speed?: number
     stagger?: number
-    scramble?: boolean
   }
 ) => {
-  const { speed = 15, stagger = 0.01, scramble = false } = options || {}
+  const { stagger = 0.01 } = options || {}
   
   // Split text into spans for character-by-character animation
   const chars = text.split('').map(char => 

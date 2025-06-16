@@ -2,20 +2,15 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { 
   Film, 
   Phone, 
-  Calendar, 
   Users, 
   Award, 
   Zap,
   ArrowRight,
-  Star,
   Download,
-  Camera,
-  Globe,
-  ChevronDown
+  Camera
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
@@ -26,7 +21,7 @@ export default function StudiosPage() {
 
   const projects = [
     {
-      title: "LIBERIAN BOY: TRIUMPH OVER WAR'S SHADOW",
+      title: "LIBERIAN BOY: TRIUMPH OVER WAR&apos;S SHADOW",
       type: "Documentary Series",
       status: "In Production",
       year: "2025",

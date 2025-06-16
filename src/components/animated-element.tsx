@@ -2,15 +2,13 @@
 
 import React, { ReactNode, useEffect, useRef, forwardRef } from 'react'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { 
   createCinematicEntrance, 
   createMagneticHover, 
   create3DTilt, 
   createLiquidHover,
   createScrollAnimation,
-  DURATION,
-  STAGGER
+  DURATION
 } from '@/lib/animations'
 
 interface AnimatedElementProps {
@@ -39,8 +37,6 @@ const AnimatedElement = forwardRef<HTMLElement, AnimatedElementProps>(({
   stagger = 0,
   hover = 'none',
   scrollTrigger = true,
-  triggerStart = 'top 80%',
-  triggerEnd = 'bottom 20%',
   className = '',
   style = {},
   tag: Tag = 'div',
@@ -174,7 +170,7 @@ const AnimatedElement = forwardRef<HTMLElement, AnimatedElementProps>(({
         cleanup()
       }
     }
-  }, [animation, direction, delay, duration, hover, scrollTrigger, stagger])
+  }, [animation, direction, delay, duration, hover, scrollTrigger, stagger, combinedRef])
 
   return (
     <Tag
