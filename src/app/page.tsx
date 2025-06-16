@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, Suspense, lazy } from 'react'
+import { useRef, Suspense, lazy } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Globe, Phone, Heart, Film, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
