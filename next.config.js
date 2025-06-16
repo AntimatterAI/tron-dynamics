@@ -9,7 +9,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   
   // Image optimization
   images: {
@@ -66,12 +65,6 @@ const nextConfig = {
       
       // Module concatenation
       config.optimization.concatenateModules = true
-      
-      // Reduce bundle size
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@': require('path').resolve(__dirname, 'src'),
-      }
     }
     
     // Performance hints
