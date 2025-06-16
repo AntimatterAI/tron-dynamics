@@ -2,7 +2,6 @@
 const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'gsap'],
-    optimizeCss: true,
   },
   
   // Performance optimizations
