@@ -173,7 +173,7 @@ export default function HomePage() {
             
             {/* TRON Studios */}
             <Link href="/studios" className="group relative md:col-span-2 lg:col-span-1">
-              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-red-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(229, 62, 62, 0.1)', '--hover-border': 'rgba(229, 62, 62, 0.3)' }}>
+              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-red-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(229, 62, 62, 0.1)' }}>
                 <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(229, 62, 62, 0.2)' }}>
