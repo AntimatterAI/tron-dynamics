@@ -8,42 +8,13 @@ import { Globe, Phone, Heart, Film, Briefcase, ArrowRight, ChevronDown } from 'l
 // Lazy load heavy components
 const MeteorBackground = lazy(() => import('@/components/meteor-background'))
 
-// Lightweight animations for mobile
+// Minimal animations - no blocking JavaScript
 const useSimpleAnimations = () => {
   const heroTitleRef = useRef<HTMLHeadingElement>(null)
   const heroSubtitleRef = useRef<HTMLParagraphElement>(null)
   
-  useEffect(() => {
-    const isMobile = window.innerWidth < 768
-    
-    if (heroTitleRef.current) {
-      if (isMobile) {
-        // Instant reveal on mobile
-        heroTitleRef.current.textContent = 'TRON DYNAMICS'
-        heroTitleRef.current.style.opacity = '1'
-      } else {
-        // Simple fade-in on desktop
-        heroTitleRef.current.textContent = 'TRON DYNAMICS'
-        heroTitleRef.current.style.transition = 'opacity 0.6s ease-out'
-        heroTitleRef.current.style.opacity = '1'
-      }
-    }
-    
-    if (heroSubtitleRef.current) {
-      if (isMobile) {
-        heroSubtitleRef.current.textContent = 'Where Innovation Meets Impact'
-        heroSubtitleRef.current.style.opacity = '1'
-      } else {
-        setTimeout(() => {
-          if (heroSubtitleRef.current) {
-            heroSubtitleRef.current.textContent = 'Where Innovation Meets Impact'
-            heroSubtitleRef.current.style.transition = 'opacity 0.6s ease-out'
-            heroSubtitleRef.current.style.opacity = '1'
-          }
-        }, 300)
-      }
-    }
-  }, [])
+  // No JavaScript animations to avoid blocking main thread
+  // All content is immediately visible for optimal LCP
   
   return { heroTitleRef, heroSubtitleRef }
 }
@@ -86,25 +57,26 @@ export default function HomePage() {
           <div className="mb-6 md:mb-8">
             <h1 
               ref={heroTitleRef}
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light bg-gradient-to-r from-white via-green-200 to-emerald-300 bg-clip-text text-transparent mb-6 md:mb-8 tracking-tight leading-[0.9] px-2 opacity-0"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light bg-gradient-to-r from-white via-green-200 to-emerald-300 bg-clip-text text-transparent mb-6 md:mb-8 tracking-tight leading-[0.9] px-2"
               style={{ 
                 fontFamily: 'var(--font-orbitron), -apple-system, BlinkMacSystemFont, sans-serif',
                 fontWeight: 300,
                 letterSpacing: '-0.02em',
+                opacity: 1,
               }}
             >
-              {/* Text populated by animation */}
+              TRON DYNAMICS
             </h1>
           </div>
 
-          {/* Optimized Subtitle */}
+          {/* Optimized Subtitle - LCP Element */}
           <div className="mb-12 md:mb-16">
             <p 
               ref={heroSubtitleRef}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-green-100/60 font-light tracking-wide max-w-3xl mx-auto leading-relaxed px-4 opacity-0"
-              style={{ fontWeight: 300 }}
+              className="lcp-text text-base sm:text-lg md:text-xl lg:text-2xl text-green-100/60 font-light tracking-wide max-w-3xl mx-auto leading-relaxed px-4"
+              style={{ fontWeight: 300, opacity: 1 }}
             >
-              {/* Text populated by animation */}
+              Where Innovation Meets Impact
             </p>
           </div>
 

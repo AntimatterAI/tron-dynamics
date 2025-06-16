@@ -2,6 +2,9 @@
 const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'gsap'],
+    serverComponentsExternalPackages: [],
+    bundlePagesRouterDependencies: true,
+    optimizeServerReact: true,
   },
   
   // Performance optimizations
@@ -20,65 +23,111 @@ const nextConfig = {
   // Advanced webpack optimization
   webpack: (config, { dev, isServer, webpack }) => {
     if (!dev && !isServer) {
-      // Aggressive code splitting
+      // Ultra-aggressive code splitting for mobile performance
       config.optimization.splitChunks = {
         chunks: 'all',
-        minSize: 20000,
-        maxSize: 244000,
+        minSize: 10000,
+        maxSize: 200000,
+        maxAsyncRequests: 30,
+        maxInitialRequests: 25,
         cacheGroups: {
           default: {
             minChunks: 1,
             priority: -20,
             reuseExistingChunk: true,
+            enforce: false,
           },
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             priority: -10,
             chunks: 'all',
+            maxSize: 150000,
+          },
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'react',
+            chunks: 'all',
+            priority: 20,
           },
           animations: {
             test: /[\\/]node_modules[\\/](gsap|framer-motion|@studio-freight\/lenis|lenis)[\\/]/,
             name: 'animations',
             chunks: 'async',
-            priority: 20,
+            priority: 15,
           },
           ui: {
             test: /[\\/]src[\\/]components[\\/]ui[\\/]/,
             name: 'ui',
-            chunks: 'all',
+            chunks: 'async',
             priority: 10,
           },
           icons: {
             test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
             name: 'icons',
             chunks: 'async',
-            priority: 15,
+            priority: 12,
           }
         },
       }
       
-      // Tree shaking optimization
+      // Aggressive tree shaking optimization
       config.optimization.usedExports = true
       config.optimization.sideEffects = false
+      config.optimization.providedExports = true
+      config.optimization.innerGraph = true
       
       // Module concatenation
       config.optimization.concatenateModules = true
+      
+      // Modern JS target for smaller bundles
+      config.target = ['web', 'es2017']
+      
+      // Additional bundle optimizations
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        // Reduce bundle size by using lighter alternatives
+        'framer-motion': false, // Already removed but ensure it's not loaded
+      }
+      
+      // Exclude heavy polyfills for modern browsers
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      }
     }
     
-    // Performance hints
+    // Strict performance hints for mobile
     config.performance = {
-      maxAssetSize: 250000,
-      maxEntrypointSize: 250000,
-      hints: 'warning',
+      maxAssetSize: 200000,
+      maxEntrypointSize: 200000,
+      hints: 'error',
+      assetFilter: function(assetFilename) {
+        return !assetFilename.endsWith('.map');
+      }
     }
     
     return config
   },
   
-  // Compiler optimizations
+  // Aggressive compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+    reactRemoveProperties: process.env.NODE_ENV === 'production',
+    removeDbgProps: true,
+    styledComponents: false, // Not using styled-components
+  },
+  
+  // Turbo mode for faster builds
+  turbo: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
   },
   
   // Static optimization

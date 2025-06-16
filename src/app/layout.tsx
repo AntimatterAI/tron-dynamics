@@ -9,13 +9,15 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
   display: "optional",
   preload: false,
+  fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "optional",
+  display: "optional", 
   preload: false,
+  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 export const viewport: Viewport = {
@@ -110,9 +112,23 @@ export default function RootLayout({
         
         <style dangerouslySetInnerHTML={{
           __html: `
-            .font-fallback { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-            .font-mono-fallback { font-family: 'SF Mono', Monaco, 'Inconsolata', 'Roboto Mono', monospace; }
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+            :root {
+              --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+              --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+            }
+            body { 
+              font-family: var(--font-primary);
+              font-display: swap;
+            }
+            .font-fallback { font-family: var(--font-primary); }
+            .font-mono-fallback { font-family: var(--font-mono); }
+            /* Critical CSS for LCP optimization */
+            .lcp-text {
+              font-family: var(--font-primary);
+              font-weight: 300;
+              opacity: 1;
+              will-change: auto;
+            }
           `
         }} />
         
