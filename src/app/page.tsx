@@ -27,7 +27,6 @@ export default function HomePage() {
       setTimeout(() => {
         createAdvancedTyping(heroTitleRef.current!, 'TRON DYNAMICS', {
           stagger: 0.02,
-          scramble: false,
         })
       }, 200)
     }
@@ -37,7 +36,6 @@ export default function HomePage() {
       setTimeout(() => {
         createAdvancedTyping(heroSubtitleRef.current!, 'Where Innovation Meets Impact', {
           stagger: 0.01,
-          scramble: false,
         })
       }, 600)
     }
