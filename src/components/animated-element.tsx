@@ -63,7 +63,6 @@ const AnimatedElement = forwardRef<HTMLElement, AnimatedElementProps>(({
             delay,
             duration,
             from: cinematicDirection as 'bottom' | 'top' | 'left' | 'right',
-            blur: false, // Disabled for speed
           })
           break
         case 'fade':
