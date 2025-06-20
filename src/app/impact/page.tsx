@@ -36,7 +36,8 @@ export default function ImpactPage() {
       budget: "$250K",
       status: "Active",
       image: "/african-landscape-hero.jpg",
-      year: "2023"
+      year: "2023",
+      slug: "liberian-education-fund"
     },
     {
       title: "Tech Skills Africa",
@@ -51,7 +52,8 @@ export default function ImpactPage() {
       budget: "$180K",
       status: "Expanding",
       image: "/african-landscape-hero.jpg",
-      year: "2022"
+      year: "2022",
+      slug: "tech-skills-africa"
     },
     {
       title: "Women Entrepreneurs Initiative",
@@ -66,7 +68,8 @@ export default function ImpactPage() {
       budget: "$120K",
       status: "Active",
       image: "/african-landscape-hero.jpg",
-      year: "2024"
+      year: "2024",
+      slug: "women-entrepreneurs"
     }
   ]
 
@@ -214,7 +217,7 @@ export default function ImpactPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {focusAreas.map((area, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className="relative h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
+                <div className="relative min-h-[400px] md:h-auto bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
                   <div className="relative z-10 p-8 h-full flex flex-col">
                     <div className="mb-6">
                       <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-500/30 transition-colors duration-150">
@@ -303,12 +306,14 @@ export default function ImpactPage() {
                             <p className="text-sm text-white/60">Investment</p>
                             <p className="text-lg font-bold text-green-400">{initiative.budget}</p>
                           </div>
-                          <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150">
-                            <div className="flex items-center gap-2">
-                              <span>Learn More</span>
-                              <ArrowRight className="w-4 h-4" />
-                            </div>
-                          </Button>
+                          <Link href={`/impact/initiatives/${initiative.slug}`}>
+                            <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150">
+                              <div className="flex items-center gap-2">
+                                <span>Learn More</span>
+                                <ArrowRight className="w-4 h-4" />
+                              </div>
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -335,7 +340,7 @@ export default function ImpactPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {getInvolvedOptions.map((option, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className="relative h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] text-center p-8 group">
+                <div className="relative min-h-[400px] md:h-auto bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] text-center p-8 group">
                   <div className="relative z-10 h-full flex flex-col justify-center">
                     <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-500/30 transition-colors duration-150">
                       {option.icon}

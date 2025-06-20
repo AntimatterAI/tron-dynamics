@@ -27,7 +27,8 @@ export default function VenturesPage() {
       description: "Digital payment infrastructure for small businesses across West Africa",
       metrics: { users: "500K+", revenue: "$2M ARR", growth: "+150%" },
       logo: "/african-landscape-hero.jpg",
-      founded: "2022"
+      founded: "2022",
+      slug: "payflow-africa"
     },
     {
       name: "EduConnect",
@@ -37,7 +38,8 @@ export default function VenturesPage() {
       description: "AI-powered learning platform connecting students with quality education",
       metrics: { users: "100K+", revenue: "$500K ARR", growth: "+200%" },
       logo: "/african-landscape-hero.jpg",
-      founded: "2023"
+      founded: "2023",
+      slug: "educonnect"
     },
     {
       name: "AgriTech Solutions",
@@ -47,7 +49,8 @@ export default function VenturesPage() {
       description: "Smart farming solutions for sustainable agriculture in East Africa",
       metrics: { users: "50K+", revenue: "$200K ARR", growth: "+300%" },
       logo: "/african-landscape-hero.jpg",
-      founded: "2024"
+      founded: "2024",
+      slug: "agritech-solutions"
     }
   ]
 
@@ -179,7 +182,7 @@ export default function VenturesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {investmentCriteria.map((criteria, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className="relative h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
+                <div className="relative min-h-[400px] md:h-auto bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
                   <div className="relative z-10 p-8 h-full flex flex-col">
                     <div className="mb-6">
                       <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-500/30 transition-colors duration-150">
@@ -259,12 +262,14 @@ export default function VenturesPage() {
                       </div>
                       
                       <div className="flex justify-end">
-                        <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150">
-                          <div className="flex items-center gap-2">
-                            <span>View Details</span>
-                            <ArrowRight className="w-4 h-4" />
-                          </div>
-                        </Button>
+                        <Link href={`/ventures/portfolio/${company.slug}`}>
+                          <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150">
+                            <div className="flex items-center gap-2">
+                              <span>View Details</span>
+                              <ArrowRight className="w-4 h-4" />
+                            </div>
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </div>
