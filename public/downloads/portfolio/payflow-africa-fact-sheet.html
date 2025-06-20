@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayFlow Africa - Company Fact Sheet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: white;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 30px;
+        }
+        
+        .company-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 48px;
+            font-weight: 400;
+            color: #2563eb;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .company-tagline {
+            font-size: 18px;
+            color: #6b7280;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        .sector-badge {
+            background: #2563eb;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .stage-badge {
+            background: #059669;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 10px;
+            display: inline-block;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 28px;
+            font-weight: 400;
+            color: #1f2937;
+            margin-bottom: 20px;
+            border-left: 4px solid #2563eb;
+            padding-left: 20px;
+        }
+        
+        .subsection-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        
+        .content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4b5563;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #dbeafe 0%, #60a5fa 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #2563eb;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .metric-box {
+            text-align: center;
+            padding: 25px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+        
+        .metric-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2563eb;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .team-card {
+            padding: 25px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+        
+        .team-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        
+        .team-title {
+            font-size: 16px;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .team-bio {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .investment-details {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .investment-item {
+            text-align: center;
+        }
+        
+        .investment-label {
+            font-size: 14px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .investment-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .milestones {
+            background: #fefce8;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #eab308;
+            margin: 30px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+            .container { padding: 20px; }
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+        
+        .product-feature {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin: 15px 0;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="company-logo">PayFlow Africa</div>
+            <div class="company-tagline">Digital Payment Infrastructure for West Africa</div>
+            <div class="sector-badge">FinTech</div>
+            <div class="stage-badge">Series A</div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Company Overview</h2>
+            <div class="content">
+                <p>PayFlow Africa is revolutionizing digital payments for small and medium businesses across West Africa. Our comprehensive payment infrastructure connects traditional cash-based economies with modern digital financial services, enabling economic growth and financial inclusion for underserved communities.</p>
+                
+                <div class="highlight">
+                    <strong>Mission Statement:</strong> To democratize access to digital financial services by providing simple, secure, and affordable payment solutions that empower African businesses to participate fully in the digital economy.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Key Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="metric-value">500K+</span>
+                    <div class="metric-label">Active Users</div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-value">$2M</span>
+                    <div class="metric-label">Annual Recurring Revenue</div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-value">+150%</span>
+                    <div class="metric-label">Year-over-Year Growth</div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-value">15K+</span>
+                    <div class="metric-label">Merchant Partners</div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-value">$50M+</span>
+                    <div class="metric-label">Payments Processed</div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-value">6</span>
+                    <div class="metric-label">Countries</div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-value">98.9%</span>
+                    <div class="metric-label">Uptime</div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-value">4.8/5</span>
+                    <div class="metric-label">User Rating</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Product Portfolio</h2>
+            <div class="content">
+                <div class="product-feature">
+                    <div class="feature-title">PayFlow Mobile</div>
+                    <p>Mobile money platform enabling peer-to-peer transfers, bill payments, and merchant transactions through USSD and smartphone app interfaces.</p>
+                </div>
+                
+                <div class="product-feature">
+                    <div class="feature-title">PayFlow Business</div>
+                    <p>Comprehensive payment acceptance solution for SMEs including POS systems, payment links, and e-commerce integration tools.</p>
+                </div>
+                
+                <div class="product-feature">
+                    <div class="feature-title">PayFlow API</div>
+                    <p>Developer-friendly payment infrastructure enabling fintech innovation and custom payment solutions for enterprise clients.</p>
+                </div>
+                
+                <div class="product-feature">
+                    <div class="feature-title">PayFlow Credit</div>
+                    <p>AI-powered micro-lending platform providing working capital to small businesses based on transaction history and behavioral data.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-name">Kwame Asante</div>
+                    <div class="team-title">Chief Executive Officer</div>
+                    <div class="team-bio">Former MTN Mobile Money executive with 12+ years in African fintech. Stanford MBA with extensive experience scaling payment platforms across emerging markets.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">Amina Diallo</div>
+                    <div class="team-title">Chief Technology Officer</div>
+                    <div class="team-bio">Former Google software engineer specializing in distributed systems and financial technology. MIT graduate with expertise in blockchain and mobile payment infrastructure.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">Olumide Adebayo</div>
+                    <div class="team-title">Chief Financial Officer</div>
+                    <div class="team-bio">Former EY financial advisory partner with deep experience in African banking and fintech. CPA and INSEAD MBA with track record in fintech scaling and fundraising.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">Fatima Ibrahim</div>
+                    <div class="team-title">Head of Operations</div>
+                    <div class="team-bio">Former Interswitch operations director with expertise in payment processing and regulatory compliance across West African markets. Lagos Business School MBA.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Investment Details</h2>
+            <div class="investment-details">
+                <div class="investment-grid">
+                    <div class="investment-item">
+                        <div class="investment-label">Total Funding Raised</div>
+                        <div class="investment-value">$1.2M</div>
+                    </div>
+                    <div class="investment-item">
+                        <div class="investment-label">Current Valuation</div>
+                        <div class="investment-value">$12M</div>
+                    </div>
+                    <div class="investment-item">
+                        <div class="investment-label">Founded</div>
+                        <div class="investment-value">2022</div>
+                    </div>
+                    <div class="investment-item">
+                        <div class="investment-label">Headquarters</div>
+                        <div class="investment-value">Lagos, Nigeria</div>
+                    </div>
+                    <div class="investment-item">
+                        <div class="investment-label">Employees</div>
+                        <div class="investment-value">45</div>
+                    </div>
+                    <div class="investment-item">
+                        <div class="investment-label">Next Funding Round</div>
+                        <div class="investment-value">Series A: $5M</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Market Opportunity</h2>
+            <div class="content">
+                <div class="subsection-title">Total Addressable Market</div>
+                <ul>
+                    <li>West African digital payments market: $15B by 2027</li>
+                    <li>SME banking services market: $8B across target markets</li>
+                    <li>Mobile money transactions growing at 25% annually</li>
+                    <li>Financial inclusion gap: 60% of adults remain unbanked</li>
+                </ul>
+                
+                <div class="subsection-title">Competitive Advantages</div>
+                <ul>
+                    <li>Multi-country regulatory compliance and licensing</li>
+                    <li>Proprietary fraud detection and risk management systems</li>
+                    <li>Local language support and culturally relevant UX design</li>
+                    <li>Strategic partnerships with major banks and telecom operators</li>
+                    <li>Robust offline-to-online payment bridge technology</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Key Milestones & Achievements</h2>
+            <div class="milestones">
+                <ul>
+                    <li><strong>Q4 2024:</strong> Reached 500K+ active users milestone</li>
+                    <li><strong>Q3 2024:</strong> Launched in Ghana and Senegal markets</li>
+                    <li><strong>Q2 2024:</strong> Secured Central Bank of Nigeria payment license</li>
+                    <li><strong>Q1 2024:</strong> Achieved $2M ARR and positive unit economics</li>
+                    <li><strong>Q4 2023:</strong> Completed integration with 5 major Nigerian banks</li>
+                    <li><strong>Q3 2023:</strong> Launched PayFlow Credit micro-lending product</li>
+                    <li><strong>Q2 2023:</strong> Secured seed funding from TRON Ventures</li>
+                    <li><strong>Q1 2023:</strong> Beta launch with 1,000 merchant partners</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Growth Strategy</h2>
+            <div class="content">
+                <div class="subsection-title">2025 Expansion Plans</div>
+                <ul>
+                    <li>Launch in Ivory Coast and Burkina Faso</li>
+                    <li>Introduce cryptocurrency payment options</li>
+                    <li>Launch PayFlow Insurance and savings products</li>
+                    <li>Expand API partnerships with 50+ fintech companies</li>
+                    <li>Target 1M+ active users by end of 2025</li>
+                </ul>
+                
+                <div class="subsection-title">Strategic Partnerships</div>
+                <ul>
+                    <li>Visa Africa partnership for card processing</li>
+                    <li>Orange Money integration across Francophone Africa</li>
+                    <li>Mastercard collaboration on financial inclusion initiatives</li>
+                    <li>Local bank partnerships for cash-in/cash-out services</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 PayFlow Africa. This fact sheet contains confidential and proprietary information intended for qualified investors.</p>
+            <p>For additional information, contact: investors@payflow-africa.com | +234 1 234 5678</p>
+        </div>
+    </div>
+</body>
+</html> 

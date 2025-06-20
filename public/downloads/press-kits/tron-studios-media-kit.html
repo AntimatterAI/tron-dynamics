@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRON Studios - Media Kit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: white;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 3px solid #dc2626;
+            padding-bottom: 30px;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 48px;
+            font-weight: 300;
+            color: #1f2937;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .studios-logo {
+            color: #dc2626;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: #6b7280;
+            font-weight: 300;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 28px;
+            font-weight: 400;
+            color: #1f2937;
+            margin-bottom: 20px;
+            border-left: 4px solid #dc2626;
+            padding-left: 20px;
+        }
+        
+        .subsection-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        
+        .content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4b5563;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #fecaca 0%, #ef4444 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #dc2626;
+            color: white;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .project-card {
+            padding: 30px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: #f9fafb;
+        }
+        
+        .project-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #dc2626;
+            margin-bottom: 8px;
+        }
+        
+        .project-type {
+            font-size: 14px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .project-description {
+            font-size: 16px;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .project-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #374151;
+            min-width: 80px;
+        }
+        
+        .detail-value {
+            color: #6b7280;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 25px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 32px;
+            font-weight: 700;
+            color: #dc2626;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .team-card {
+            padding: 25px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+        }
+        
+        .team-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        
+        .team-title {
+            font-size: 16px;
+            color: #dc2626;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .team-bio {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .contact-info {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .contact-label {
+            font-weight: 600;
+            color: #374151;
+            min-width: 100px;
+        }
+        
+        .contact-value {
+            color: #6b7280;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+            .container { padding: 20px; }
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">TRON <span class="studios-logo">Studios</span></div>
+            <div class="tagline">Authentic African Narratives for Global Audiences</div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">About TRON Studios</h2>
+            <div class="content">
+                <p>TRON Studios is the media production division of TRON DYNAMIC, specializing in creating compelling documentary films, series, and feature content that authentically represents African stories, challenges, and triumphs. Our mission is to bridge cultural gaps and showcase the rich diversity of African experiences to global audiences.</p>
+                
+                <div class="highlight">
+                    <strong>Our Vision:</strong> To become the premier destination for authentic African storytelling, creating content that educates, inspires, and drives positive change while elevating African voices on the global stage.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Production Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">15+</span>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">8</span>
+                    <div class="stat-label">Countries Featured</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">50M+</span>
+                    <div class="stat-label">Global Viewership</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">12</span>
+                    <div class="stat-label">Film Festival Awards</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">25+</span>
+                    <div class="stat-label">Industry Partners</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">100+</span>
+                    <div class="stat-label">Stories Told</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Featured Productions</h2>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-title">Liberian Boy: Triumph Over War's Shadow</div>
+                    <div class="project-type">Documentary Series • 3 Episodes</div>
+                    <div class="project-description">
+                        A powerful three-part documentary series following Dr. Alvin Glay's extraordinary journey from child refugee during Liberia's civil war to becoming a successful executive in international development. The series explores themes of resilience, identity, and the power of education in transforming lives.
+                    </div>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Runtime:</span>
+                            <span class="detail-value">180 minutes total</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Genre:</span>
+                            <span class="detail-value">Biography/Documentary</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Release:</span>
+                            <span class="detail-value">Q2 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Languages:</span>
+                            <span class="detail-value">English, Bassa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Diaspora Voices</div>
+                    <div class="project-type">Anthology Series • 6 Episodes</div>
+                    <div class="project-description">
+                        An anthology series exploring the diverse experiences of African diaspora communities across six major cities: London, Paris, Toronto, São Paulo, Berlin, and Atlanta. Each episode tells a unique story of cultural identity, belonging, and the connections that bind the global African community.
+                    </div>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Runtime:</span>
+                            <span class="detail-value">45 minutes per episode</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Genre:</span>
+                            <span class="detail-value">Drama/Cultural</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Release:</span>
+                            <span class="detail-value">Q4 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Languages:</span>
+                            <span class="detail-value">Multi-language</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Rising Tides</div>
+                    <div class="project-type">Feature Film • 120 Minutes</div>
+                    <div class="project-description">
+                        A compelling feature film about three young entrepreneurs in Lagos who navigate the challenges of building a tech startup while addressing gender inequality and social justice issues in Nigeria's rapidly evolving business landscape.
+                    </div>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Runtime:</span>
+                            <span class="detail-value">120 minutes</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Genre:</span>
+                            <span class="detail-value">Drama/Thriller</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Release:</span>
+                            <span class="detail-value">Q1 2025</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Languages:</span>
+                            <span class="detail-value">English, Yoruba</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Key Creative Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-name">Fatou Diallo</div>
+                    <div class="team-title">Head of Studios & Executive Producer</div>
+                    <div class="team-bio">Award-winning filmmaker with 12+ years in documentary production. NYU Tisch graduate specializing in African narrative storytelling and social impact media.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">David Okonkwo</div>
+                    <div class="team-title">Creative Director</div>
+                    <div class="team-bio">Former BBC and CNN documentary director with expertise in cross-cultural storytelling. BAFTA-nominated for work on African migration stories.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">Amina Hassan</div>
+                    <div class="team-title">Director of Photography</div>
+                    <div class="team-bio">Internationally acclaimed cinematographer known for her visual storytelling in conflict and post-conflict regions. Multiple film festival awards for documentary cinematography.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">Samuel Adebayo</div>
+                    <div class="team-title">Post-Production Supervisor</div>
+                    <div class="team-bio">Industry veteran with 15+ years in film editing and post-production. Former head of post-production at major African film studios.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="content">
+                <ul>
+                    <li><strong>2024:</strong> Best Documentary Series - African International Film Festival ("Liberian Boy")</li>
+                    <li><strong>2024:</strong> Excellence in Cultural Storytelling - Pan-African Media Awards</li>
+                    <li><strong>2023:</strong> Emerging Producer Award - Toronto International Film Festival</li>
+                    <li><strong>2023:</strong> Best Cinematography - Durban International Film Festival</li>
+                    <li><strong>2023:</strong> Audience Choice Award - New York African Film Festival</li>
+                    <li><strong>2022:</strong> Rising Star Studio - African Movie Academy Awards</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Production Capabilities</h2>
+            <div class="content">
+                <div class="subsection-title">Equipment & Technology</div>
+                <ul>
+                    <li>Full 4K/8K production capabilities with state-of-the-art cameras</li>
+                    <li>Professional drone operations for aerial cinematography</li>
+                    <li>Complete post-production facilities with advanced editing suites</li>
+                    <li>Multi-language subtitling and dubbing capabilities</li>
+                    <li>Color grading and sound design facilities</li>
+                </ul>
+                
+                <div class="subsection-title">Distribution Partnerships</div>
+                <ul>
+                    <li>Netflix Africa content partnership</li>
+                    <li>BBC documentary distribution agreements</li>
+                    <li>Film festival circuit relationships across 20+ festivals</li>
+                    <li>Educational institution licensing programs</li>
+                    <li>Community screening network across Africa</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Upcoming Projects</h2>
+            <div class="content">
+                <ul>
+                    <li><strong>Women of the Sahel:</strong> Documentary series about female entrepreneurs in West Africa (Pre-production)</li>
+                    <li><strong>Digital Bridges:</strong> Feature documentary on technology connecting rural African communities (Development)</li>
+                    <li><strong>Sounds of Home:</strong> Musical documentary exploring African diaspora music traditions (Pre-production)</li>
+                    <li><strong>Climate Champions:</strong> Series profiling young African environmental activists (Development)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3 class="subsection-title">Media & Partnership Contacts</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-label">Studios Director:</span>
+                    <span class="contact-value">Fatou Diallo</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Media Inquiries:</span>
+                    <span class="contact-value">studios@trondynamic.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Distribution:</span>
+                    <span class="contact-value">distribution@trondynamic.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Press Materials:</span>
+                    <span class="contact-value">press@trondynamic.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone:</span>
+                    <span class="contact-value">+1 (404) 939-4238</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Website:</span>
+                    <span class="contact-value">studios.trondynamic.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 TRON Studios. All rights reserved. This media kit contains confidential and proprietary information.</p>
+            <p>For screening requests, high-resolution images, and additional materials, please contact our media team.</p>
+        </div>
+    </div>
+</body>
+</html> 

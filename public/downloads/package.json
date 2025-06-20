@@ -1,0 +1,35 @@
+{
+  "name": "tron-dynamic-pdf-converter",
+  "version": "1.0.0",
+  "description": "PDF generation scripts for TRON DYNAMIC marketing materials",
+  "main": "convert-to-pdf.js",
+  "scripts": {
+    "convert": "node convert-to-pdf.js",
+    "install-deps": "npm install",
+    "convert-all": "npm run install-deps && npm run convert",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pdf",
+    "conversion",
+    "marketing",
+    "tron-dynamic"
+  ],
+  "author": "TRON DYNAMIC",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.5.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tron-dynamic/marketing-materials"
+  },
+  "bugs": {
+    "url": "https://github.com/tron-dynamic/marketing-materials/issues"
+  },
+  "homepage": "https://trondynamic.com"
+} 
