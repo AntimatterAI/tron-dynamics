@@ -28,7 +28,8 @@ export default function StudiosPage() {
       description: "A powerful documentary series chronicling Dr. Alvin Glay&apos;s journey from Liberian refugee to distinguished executive.",
       budget: "$75K",
       image: "/dr-alvin-glay-portrait.jpg",
-      tags: ["Refugee Story", "Triumph", "Resilience", "American Dream"]
+      tags: ["Refugee Story", "Triumph", "Resilience", "American Dream"],
+      slug: "liberian-boy"
     },
     {
       title: "DIASPORA VOICES",
@@ -38,7 +39,8 @@ export default function StudiosPage() {
       description: "An anthology exploring diverse experiences across the African diaspora through intimate personal narratives.",
       budget: "$150K",
       image: "/african-landscape-hero.jpg",
-      tags: ["Anthology", "Cultural Identity", "Heritage", "Global"]
+      tags: ["Anthology", "Cultural Identity", "Heritage", "Global"],
+      slug: "diaspora-voices"
     },
     {
       title: "RISING TIDES",
@@ -48,7 +50,8 @@ export default function StudiosPage() {
       description: "A dramatic feature film about young entrepreneurs building tech startups across West Africa.",
       budget: "$500K",
       image: "/jonathan-massaquoi-portrait.jpg",
-      tags: ["Entrepreneurship", "Technology", "West Africa", "Innovation"]
+      tags: ["Entrepreneurship", "Technology", "West Africa", "Innovation"],
+      slug: "rising-tides"
     }
   ]
 
@@ -149,9 +152,9 @@ export default function StudiosPage() {
           <div className="space-y-8">
             {projects.map((project, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className={`relative h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] cursor-pointer ${activeProject === index ? 'ring-2 ring-amber-500 bg-amber-500/5' : ''}`} onClick={() => setActiveProject(index)}>
-                  <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                    <div className="grid lg:grid-cols-3 gap-8 items-center">
+                <div className={`relative min-h-[400px] md:h-auto bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] cursor-pointer ${activeProject === index ? 'ring-2 ring-amber-500 bg-amber-500/5' : ''}`} onClick={() => setActiveProject(index)}>
+                  <div className="relative z-10 p-6 md:p-8">
+                    <div className="grid lg:grid-cols-3 gap-6 md:gap-8 items-start">
                       <div className="relative aspect-video rounded-2xl overflow-hidden">
                         <div className="w-full h-full bg-gradient-to-br from-amber-500/20 to-yellow-600/20 flex items-center justify-center">
                           <Film className="w-12 h-12 text-amber-300" />
@@ -167,14 +170,14 @@ export default function StudiosPage() {
                         </div>
                       </div>
                       
-                      <div className="lg:col-span-2 space-y-6">
+                      <div className="lg:col-span-2 space-y-4 md:space-y-6">
                         <div>
-                          <div className="flex items-center gap-4 mb-2">
-                            <h3 className="text-2xl font-light text-white tracking-tight">{project.title}</h3>
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-2">
+                            <h3 className="text-xl md:text-2xl font-light text-white tracking-tight">{project.title}</h3>
                             <span className="text-amber-400 text-sm font-medium">{project.year}</span>
                           </div>
                           <p className="text-amber-400 font-medium mb-4">{project.type}</p>
-                          <p className="text-white/80 leading-relaxed font-light">{project.description}</p>
+                          <p className="text-white/80 leading-relaxed font-light text-sm md:text-base">{project.description}</p>
                         </div>
                         
                         <div className="flex flex-wrap gap-2">
@@ -185,19 +188,21 @@ export default function StudiosPage() {
                           ))}
                         </div>
                         
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                           <div className="flex items-center gap-6">
                             <div>
                               <p className="text-sm text-white/60">Budget</p>
                               <p className="text-lg font-bold text-amber-400">{project.budget}</p>
                             </div>
                           </div>
-                          <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150">
-                            <div className="flex items-center gap-2">
-                              <span>Learn More</span>
-                              <ArrowRight className="w-4 h-4" />
-                            </div>
-                          </Button>
+                          <Link href={`/studios/projects/${project.slug}`}>
+                            <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150 w-full sm:w-auto">
+                              <div className="flex items-center justify-center gap-2">
+                                <span>Learn More</span>
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-100" />
+                              </div>
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </div>
