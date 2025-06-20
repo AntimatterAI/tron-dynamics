@@ -18,7 +18,7 @@ export default function AboutPage() {
         "MBA - Mercer University", 
         "BBA in Finance - Georgia State University"
       ],
-      expertise: "His expertise in marketing and business development, combined with his personal experience as a refugee, brings unique insight to TRON DYNAMICS&apos; mission of amplifying underrepresented voices."
+      expertise: "His expertise in marketing and business development, combined with his personal experience as a refugee, brings unique insight to TRON DYNAMIC&apos;s mission of amplifying underrepresented voices."
     },
     {
       name: "Jonathan Massaquoi",
@@ -30,7 +30,7 @@ export default function AboutPage() {
         "Troy University Football - 128 tackles, 19.5 sacks",
         "Born in Monrovia, Liberia"
       ],
-      expertise: "His leadership and network in sports, entertainment, and business make him a key driver of TRON DYNAMICS&apos; mission to elevate voices from the African diaspora."
+      expertise: "His leadership and network in sports, entertainment, and business make him a key driver of TRON DYNAMIC&apos;s mission to elevate voices from the African diaspora."
     }
   ]
 
@@ -97,7 +97,7 @@ export default function AboutPage() {
 
           <AnimatedElement animation="slide" direction="up" delay={0.4} className="mb-16">
             <p className="text-lg sm:text-xl md:text-2xl text-blue-100/60 font-light tracking-wide max-w-4xl mx-auto leading-relaxed" style={{fontWeight: 300}}>
-              From refugee to entrepreneur, from athlete to investor - the journey that shaped TRON DYNAMICS and our mission to amplify nomadic voices.
+              From refugee to entrepreneur, from athlete to investor - the journey that shaped TRON DYNAMIC and our mission to amplify nomadic voices.
             </p>
           </AnimatedElement>
 
@@ -256,7 +256,7 @@ export default function AboutPage() {
               Join Our <span className="text-blue-300">Journey</span>
             </h2>
             <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-                             Be part of the transformation. Whether you&apos;re a storyteller, entrepreneur, or changemaker, there&apos;s a place for you in the TRON DYNAMICS ecosystem.
+                             Be part of the transformation. Whether you&apos;re a storyteller, entrepreneur, or changemaker, there&apos;s a place for you in the TRON DYNAMIC ecosystem.
             </p>
           </AnimatedElement>
 

@@ -28,7 +28,7 @@ export default function Navigation() {
   }, [])
 
   const handleCallClick = () => {
-    window.location.href = 'tel:+14048233384'
+    window.location.href = 'tel:+14049394238'
   }
 
   return (
@@ -56,7 +56,7 @@ export default function Navigation() {
                   letterSpacing: '-0.02em',
                 }}
               >
-                TRON DYNAMICS
+                TRON DYNAMIC
               </h1>
             </Link>
 
@@ -157,7 +157,7 @@ export default function Navigation() {
                   style={{ fontWeight: 300 }}
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  Call Us: (404) 823-3384
+                  Call Us: (404) 939-4238
                 </Button>
               </div>
             </div>

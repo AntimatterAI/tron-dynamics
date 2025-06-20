@@ -79,9 +79,9 @@ export default function GetStartedPage() {
     {
       icon: <Phone className="w-8 h-8" />,
       title: "Call Us",
-      content: "+1 (404) 823-3384",
+      content: "+1 (404) 939-4238",
       action: "Schedule Call",
-      href: "tel:+14048233384"
+              href: "tel:+14049394238"
     },
     {
       icon: <MapPin className="w-8 h-8" />,
@@ -98,7 +98,7 @@ export default function GetStartedPage() {
       answer: "Our team reviews all applications within 48 hours. The full process from application to decision typically takes 1-2 weeks, depending on the complexity of your project."
     },
     {
-      question: "What makes TRON DYNAMICS different?",
+              question: "What makes TRON DYNAMIC different?",
       answer: "We focus specifically on African narratives and diaspora stories, combining entertainment, investment, and impact initiatives under one unified vision of amplifying African voices globally."
     },
     {
@@ -151,7 +151,7 @@ export default function GetStartedPage() {
 
           <AnimatedElement animation="slide" direction="up" delay={0.4} className="mb-16">
             <p className="text-lg sm:text-xl md:text-2xl text-violet-100/60 font-light tracking-wide max-w-3xl mx-auto leading-relaxed" style={{fontWeight: 300}}>
-              Whether you&apos;re a filmmaker, entrepreneur, or changemaker, TRON DYNAMICS is here to amplify your impact and accelerate your success.
+              Whether you&apos;re a filmmaker, entrepreneur, or changemaker, TRON DYNAMIC is here to amplify your impact and accelerate your success.
             </p>
           </AnimatedElement>
 

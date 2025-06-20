@@ -20,7 +20,7 @@ export default function LoadingScreen() {
       <div className="text-center">
         <div className="text-2xl md:text-3xl font-light text-green-300 mb-4 animate-pulse"
              style={{ fontFamily: 'var(--font-orbitron), monospace' }}>
-          TRON DYNAMICS
+          TRON DYNAMIC
         </div>
         <div className="w-8 h-8 border-2 border-green-300/30 border-t-green-300 rounded-full animate-spin mx-auto"></div>
       </div>

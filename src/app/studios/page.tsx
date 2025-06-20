@@ -116,7 +116,7 @@ export default function StudiosPage() {
                 <Phone className="w-4 h-4" />
                 <div className="flex flex-col items-center">
                   <span>Give us a call</span>
-                  <span className="text-xs opacity-70 font-normal">+1 (404) 823-3384</span>
+                  <span className="text-xs opacity-70 font-normal">+1 (404) 939-4238</span>
                 </div>
               </div>
             </Button>
@@ -303,7 +303,7 @@ export default function StudiosPage() {
                 <Phone className="w-5 h-5" />
                 <div className="flex flex-col items-center">
                   <span>Start Your Project</span>
-                  <span className="text-sm opacity-70 font-normal">+1 (404) 823-3384</span>
+                  <span className="text-sm opacity-70 font-normal">+1 (404) 939-4238</span>
                 </div>
               </div>
             </Button>

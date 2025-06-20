@@ -30,12 +30,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "TRON DYNAMICS | Entertainment, Innovation & Impact",
+  title: "TRON DYNAMIC | Entertainment, Innovation & Impact",
   description: "Driving transformational change through storytelling, strategic investment, and philanthropy. Three divisions united under one vision of innovation and impact.",
-  keywords: ["entertainment", "film production", "angel investment", "venture capital", "philanthropy", "West Africa", "innovation", "storytelling", "TRON DYNAMICS"],
-  authors: [{ name: "TRON DYNAMICS" }],
-  creator: "TRON DYNAMICS",
-  publisher: "TRON DYNAMICS",
+  keywords: ["entertainment", "film production", "angel investment", "venture capital", "philanthropy", "West Africa", "innovation", "storytelling", "TRON DYNAMIC"],
+  authors: [{ name: "TRON DYNAMIC" }],
+  creator: "TRON DYNAMIC",
+  publisher: "TRON DYNAMIC",
   
   icons: {
     icon: [
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   
   openGraph: {
     type: "website",
-    siteName: "TRON DYNAMICS",
-    title: "TRON DYNAMICS | Entertainment, Innovation & Impact",
+    siteName: "TRON DYNAMIC",
+    title: "TRON DYNAMIC | Entertainment, Innovation & Impact",
     description: "Driving transformational change through storytelling, strategic investment, and philanthropy. Built in Africa. Ready for the World.",
     url: "https://tron-dynamics.vercel.app",
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "TRON DYNAMICS - Entertainment, Innovation & Impact",
+        alt: "TRON DYNAMIC - Entertainment, Innovation & Impact",
       },
     ],
     locale: "en_US",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@trondynamics",
     creator: "@trondynamics",
-    title: "TRON DYNAMICS | Entertainment, Innovation & Impact",
+    title: "TRON DYNAMIC | Entertainment, Innovation & Impact",
     description: "Driving transformational change through storytelling, strategic investment, and philanthropy. Built in Africa. Ready for the World.",
     images: ["/twitter-image.jpg"],
   },
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
-    "apple-mobile-web-app-title": "TRON DYNAMICS",
+    "apple-mobile-web-app-title": "TRON DYNAMIC",
   },
 };
 

@@ -339,7 +339,7 @@ export const createCinematicLoader = (onComplete?: () => void) => {
   `
 
   const logo = document.createElement('div')
-  logo.innerHTML = 'TRON DYNAMICS'
+  logo.innerHTML = 'TRON DYNAMIC'
   logo.style.cssText = `
     font-size: 3rem;
     font-weight: bold;

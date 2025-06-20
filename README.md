@@ -1,8 +1,8 @@
-# TRON DYNAMICS
+# TRON DYNAMIC
 
 **Built in Africa. Ready for the World.**
 
-A stunning, modern, and futuristic website for TRON DYNAMICS - an entertainment company driving transformational change through storytelling, innovation, and economic empowerment.
+A stunning, modern, and futuristic website for TRON DYNAMIC - an entertainment company driving transformational change through storytelling, innovation, and economic empowerment.
 
 ## 🚀 Performance Optimized
 
@@ -242,7 +242,7 @@ To drive transformational change by amplifying nomadic voices and fostering grou
 
 ## 📝 License
 
-Copyright © 2024 TRON DYNAMICS. All rights reserved.
+Copyright © 2024 TRON DYNAMIC. All rights reserved.
 
 ---
 

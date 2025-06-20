@@ -50,7 +50,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // TRON DYNAMICS Brand Colors
+        // TRON DYNAMIC Brand Colors
         'obsidian': {
           50: '#f8f8f8',
           100: '#f0f0f0',

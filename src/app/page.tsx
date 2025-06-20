@@ -24,7 +24,7 @@ export default function HomePage() {
 
   const handleCtaClick = (type: 'call' | 'learn') => {
     if (type === 'call') {
-      window.location.href = 'tel:+14048233384'
+      window.location.href = 'tel:+14049394238'
     }
   }
 
@@ -68,7 +68,7 @@ export default function HomePage() {
                 backgroundClip: 'text',
               }}
             >
-              TRON DYNAMICS
+              TRON DYNAMIC
             </h1>
           </div>
 
@@ -93,7 +93,7 @@ export default function HomePage() {
                 <Phone className="w-4 h-4" />
                 <div className="flex flex-col items-center">
                   <span>Give us a call</span>
-                  <span className="text-xs opacity-70 font-normal">(404) 823-3384</span>
+                                      <span className="text-xs opacity-70 font-normal">(404) 939-4238</span>
                 </div>
               </div>
             </Button>
@@ -267,7 +267,7 @@ export default function HomePage() {
                 <Phone className="w-4 h-4 md:w-5 md:h-5" />
                 <div className="flex flex-col items-center">
                   <span>Let&apos;s Create Together</span>
-                  <span className="text-xs md:text-sm opacity-70 font-normal">(404) 823-3384</span>
+                  <span className="text-xs md:text-sm opacity-70 font-normal">(404) 939-4238</span>
                 </div>
               </div>
             </Button>
