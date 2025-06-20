@@ -9,7 +9,6 @@ import {
   Film, 
   MapPin, 
   Clock, 
-  Award,
   Play,
   Download,
   Phone,

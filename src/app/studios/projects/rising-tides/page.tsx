@@ -352,7 +352,7 @@ export default function RisingTidesPage() {
               Join the <span className="text-purple-300">Innovation</span>
             </h2>
             <p className="text-lg text-white/60 max-w-2xl mx-auto font-light leading-relaxed">
-              We're seeking co-producers, distributors, and investors to help bring this groundbreaking story of African innovation to global audiences.
+              We&apos;re seeking co-producers, distributors, and investors to help bring this groundbreaking story of African innovation to global audiences.
             </p>
           </AnimatedElement>
 

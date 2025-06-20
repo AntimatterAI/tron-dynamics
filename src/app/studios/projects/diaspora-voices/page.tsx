@@ -6,7 +6,6 @@ import {
   Calendar, 
   DollarSign, 
   Users, 
-  Film, 
   MapPin, 
   Clock, 
   Globe,
@@ -322,7 +321,7 @@ export default function DiasporaVoicesPage() {
               Join Our <span className="text-blue-300">Global Story</span>
             </h2>
             <p className="text-lg text-white/60 max-w-2xl mx-auto font-light leading-relaxed">
-              We're seeking co-producers, distributors, and cultural consultants to help bring these important stories to global audiences.
+              We&apos;re seeking co-producers, distributors, and cultural consultants to help bring these important stories to global audiences.
             </p>
           </AnimatedElement>
 
