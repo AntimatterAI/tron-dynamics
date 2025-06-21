@@ -25,11 +25,12 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#dc2626",
+  themeColor: "#1e293b",
   colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://trondynamic.com'),
   title: "TRON DYNAMIC | Entertainment, Innovation & Impact",
   description: "Driving transformational change through storytelling, strategic investment, and philanthropy. Three divisions united under one vision of innovation and impact.",
   keywords: ["entertainment", "film production", "angel investment", "venture capital", "philanthropy", "West Africa", "innovation", "storytelling", "TRON DYNAMIC"],
@@ -43,7 +44,10 @@ export const metadata: Metadata = {
       { url: "/favicon.ico?v=4", sizes: "32x32" }
     ],
     shortcut: "/favicon.ico?v=4",
-    apple: "/apple-touch-icon.svg?v=4",
+    apple: [
+      { url: "/apple-touch-icon.png?v=4", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.svg?v=4", type: "image/svg+xml" }
+    ],
   },
   
   openGraph: {
@@ -54,10 +58,11 @@ export const metadata: Metadata = {
     url: "https://tron-dynamics.vercel.app",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "TRON DYNAMIC - Entertainment, Innovation & Impact",
+        type: "image/png",
       },
     ],
     locale: "en_US",
@@ -69,7 +74,7 @@ export const metadata: Metadata = {
     creator: "@trondynamics",
     title: "TRON DYNAMIC | Entertainment, Innovation & Impact",
     description: "Driving transformational change through storytelling, strategic investment, and philanthropy. Built in Africa. Ready for the World.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   
   robots: {
@@ -133,8 +138,8 @@ export default function RootLayout({
         }} />
         
         <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-TileColor" content="#dc2626" />
-        <meta name="theme-color" content="#dc2626" />
+        <meta name="msapplication-TileColor" content="#1e293b" />
+        <meta name="theme-color" content="#1e293b" />
         <link rel="manifest" href="/manifest.json" />
         
         <link rel="preload" href="/favicon.svg?v=4" as="image" type="image/svg+xml" />
@@ -143,7 +148,16 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
         <link rel="shortcut icon" href="/favicon.ico?v=4" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" sizes="180x180" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.svg?v=4" />
+        
+        {/* Additional meta tags for better social sharing */}
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </head>
       <body className={`${inter.className} antialiased bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white overflow-x-hidden font-fallback`}>
         <SmoothScrollProvider>

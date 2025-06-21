@@ -184,9 +184,9 @@ export default function VenturesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {investmentCriteria.map((criteria, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className="relative min-h-[400px] md:h-auto bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
-                  <div className="relative z-10 p-8 h-full flex flex-col">
-                    <div className="mb-6">
+                <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group h-full flex flex-col">
+                  <div className="relative z-10 p-8 flex-1 flex flex-col">
+                    <div className="flex-1">
                       <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-500/30 transition-colors duration-150">
                         {criteria.icon}
                       </div>
