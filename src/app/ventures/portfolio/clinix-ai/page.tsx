@@ -62,28 +62,39 @@ export default function ClinixAIPage() {
 
   const teamHighlights = [
     {
+      name: "Robby Gulri",
+      role: "CEO",
+      background: "Experienced healthcare technology leader and entrepreneur",
+      experience: "Expert in scaling AI-powered healthcare solutions",
+      linkedin: "https://www.linkedin.com/in/robbygulri/"
+    },
+    {
       name: "Paul Wallace",
-      role: "CEO & Co-Founder",
+      role: "CTO",
       background: "Healthcare technology entrepreneur and strategic leader",
-      experience: "Expert in AI healthcare solutions"
+      experience: "Expert in AI healthcare solutions architecture",
+      linkedin: "https://www.linkedin.com/in/paul-wallace-08664b223/"
     },
     {
       name: "Matthew Bravo",
-      role: "CTO & Co-Founder", 
-      background: "Senior technology executive and AI systems architect",
-      experience: "Proven track record in scalable tech platforms"
+      role: "CMO", 
+      background: "Senior marketing executive and growth strategist",
+      experience: "Proven track record in healthcare market expansion",
+      linkedin: "https://www.linkedin.com/in/matt-bravo-703424a4/"
     },
     {
       name: "Dr. Elvis Francois",
       role: "Chief Medical Officer",
       background: "Mayo Clinic-trained spine surgeon, Harvard fellowship",
-      experience: "Renowned physician and healthcare innovation leader"
+      experience: "Renowned physician and healthcare innovation leader",
+      linkedin: "https://www.tryclinixai.com/post/clinix-ai-welcomes-dr-elvis-francois-as-chief-medical-officer-partner"
     },
     {
       name: "Dr. Grigoriy Arutyunyan",
       role: "Medical Advisor",
       background: "Board-certified spine surgeon, Mayo Clinic residency",
-      experience: "UCSF fellowship, Memorial Sloan Kettering training"
+      experience: "UCSF fellowship, Memorial Sloan Kettering training",
+      linkedin: "https://www.bigappleortho.com/provider/dr-grigoriy-arutyunyan"
     }
   ]
 
@@ -288,17 +299,19 @@ export default function ClinixAIPage() {
             <h2 className="text-3xl font-light text-white mb-8 tracking-tight text-center" style={{fontFamily: 'var(--font-orbitron)'}}>
               Leadership <span className="text-orange-300">Team</span>
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               {teamHighlights.map((member, index) => (
-                <div key={index} className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-orange-300" />
+                <Link key={index} href={member.linkedin} target="_blank" rel="noopener noreferrer" className="group">
+                  <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 cursor-pointer">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-orange-500/30 group-hover:to-red-600/30 transition-all duration-300">
+                      <Users className="w-8 h-8 text-orange-300 group-hover:text-orange-200 transition-colors duration-300" />
+                    </div>
+                    <h3 className="text-lg font-medium text-white mb-2 group-hover:text-orange-100 transition-colors duration-300">{member.name}</h3>
+                    <p className="text-orange-400 font-medium mb-3 text-sm group-hover:text-orange-300 transition-colors duration-300">{member.role}</p>
+                    <p className="text-white/80 font-light text-sm leading-relaxed mb-2 group-hover:text-white/90 transition-colors duration-300">{member.background}</p>
+                    <p className="text-white/60 font-light text-xs group-hover:text-white/70 transition-colors duration-300">{member.experience}</p>
                   </div>
-                  <h3 className="text-lg font-medium text-white mb-2">{member.name}</h3>
-                  <p className="text-orange-400 font-medium mb-3 text-sm">{member.role}</p>
-                  <p className="text-white/80 font-light text-sm leading-relaxed mb-2">{member.background}</p>
-                  <p className="text-white/60 font-light text-xs">{member.experience}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </AnimatedElement>
