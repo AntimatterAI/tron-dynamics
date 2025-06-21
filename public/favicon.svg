@@ -1,7 +1,7 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Circular background with strong contrast -->
-  <circle cx="16" cy="16" r="16" fill="#1e3a8a"/>
-  <circle cx="16" cy="16" r="14" fill="#3b82f6"/>
+  <!-- Circular background with TRON brand colors -->
+  <circle cx="16" cy="16" r="16" fill="#dc2626"/>
+  <circle cx="16" cy="16" r="14" fill="#ea580c"/>
   
   <!-- Simplified TRON T symbol for small sizes -->
   <g transform="translate(8, 8)">

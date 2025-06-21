@@ -302,14 +302,18 @@ export default function ClinixAIPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               {teamHighlights.map((member, index) => (
                 <Link key={index} href={member.linkedin} target="_blank" rel="noopener noreferrer" className="group">
-                  <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 cursor-pointer">
+                  <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 cursor-pointer h-full flex flex-col">
                     <div className="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-orange-500/30 group-hover:to-red-600/30 transition-all duration-300">
                       <Users className="w-8 h-8 text-orange-300 group-hover:text-orange-200 transition-colors duration-300" />
                     </div>
-                    <h3 className="text-lg font-medium text-white mb-2 group-hover:text-orange-100 transition-colors duration-300">{member.name}</h3>
-                    <p className="text-orange-400 font-medium mb-3 text-sm group-hover:text-orange-300 transition-colors duration-300">{member.role}</p>
-                    <p className="text-white/80 font-light text-sm leading-relaxed mb-2 group-hover:text-white/90 transition-colors duration-300">{member.background}</p>
-                    <p className="text-white/60 font-light text-xs group-hover:text-white/70 transition-colors duration-300">{member.experience}</p>
+                    <div className="flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-lg font-medium text-white mb-2 group-hover:text-orange-100 transition-colors duration-300">{member.name}</h3>
+                        <p className="text-orange-400 font-medium mb-3 text-sm group-hover:text-orange-300 transition-colors duration-300">{member.role}</p>
+                        <p className="text-white/80 font-light text-sm leading-relaxed mb-2 group-hover:text-white/90 transition-colors duration-300">{member.background}</p>
+                      </div>
+                      <p className="text-white/60 font-light text-xs group-hover:text-white/70 transition-colors duration-300 mt-auto">{member.experience}</p>
+                    </div>
                   </div>
                 </Link>
               ))}

@@ -1,7 +1,7 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Circular background with strong contrast -->
-  <circle cx="90" cy="90" r="90" fill="#1e3a8a"/>
-  <circle cx="90" cy="90" r="80" fill="#3b82f6"/>
+  <!-- Circular background with TRON brand colors -->
+  <circle cx="90" cy="90" r="90" fill="#dc2626"/>
+  <circle cx="90" cy="90" r="80" fill="#ea580c"/>
   
   <!-- TRON T symbol for Apple touch icon -->
   <g transform="translate(45, 45)">

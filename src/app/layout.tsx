@@ -25,7 +25,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#0f172a",
+  themeColor: "#dc2626",
   colorScheme: "dark",
 };
 
@@ -39,11 +39,11 @@ export const metadata: Metadata = {
   
   icons: {
     icon: [
-      { url: "/favicon.svg?v=3", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=3", sizes: "32x32" }
+      { url: "/favicon.svg?v=4", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=4", sizes: "32x32" }
     ],
-    shortcut: "/favicon.ico?v=3",
-    apple: "/apple-touch-icon.svg?v=3",
+    shortcut: "/favicon.ico?v=4",
+    apple: "/apple-touch-icon.svg?v=4",
   },
   
   openGraph: {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     url: "https://tron-dynamics.vercel.app",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
         alt: "TRON DYNAMIC - Entertainment, Innovation & Impact",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     creator: "@trondynamics",
     title: "TRON DYNAMIC | Entertainment, Innovation & Impact",
     description: "Driving transformational change through storytelling, strategic investment, and philanthropy. Built in Africa. Ready for the World.",
-    images: ["/twitter-image.jpg"],
+    images: ["/og-image.svg"],
   },
   
   robots: {
@@ -133,17 +133,17 @@ export default function RootLayout({
         }} />
         
         <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-TileColor" content="#0f172a" />
-        <meta name="theme-color" content="#0f172a" />
+        <meta name="msapplication-TileColor" content="#dc2626" />
+        <meta name="theme-color" content="#dc2626" />
         <link rel="manifest" href="/manifest.json" />
         
-        <link rel="preload" href="/favicon.svg?v=3" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/favicon.svg?v=4" as="image" type="image/svg+xml" />
         
         {/* Explicit favicon declarations for better compatibility */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
-        <link rel="shortcut icon" href="/favicon.ico?v=3" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.svg?v=3" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
+        <link rel="shortcut icon" href="/favicon.ico?v=4" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.svg?v=4" />
       </head>
       <body className={`${inter.className} antialiased bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white overflow-x-hidden font-fallback`}>
         <SmoothScrollProvider>
