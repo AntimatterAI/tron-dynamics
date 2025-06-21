@@ -113,7 +113,7 @@ export default function HomePage() {
               <div className="flex items-center justify-center mb-2 md:mb-3">
                 <div className="text-2xl md:text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
                      style={{ fontFamily: 'var(--font-orbitron), monospace' }}>
-                  2025
+                  2027
                 </div>
               </div>
               <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Strategic Vision</div>
@@ -123,7 +123,7 @@ export default function HomePage() {
               <div className="flex items-center justify-center mb-2 md:mb-3">
                 <div className="text-2xl md:text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
                      style={{ fontFamily: 'var(--font-orbitron), monospace' }}>
-                  $2M+
+                  $20M+
                 </div>
               </div>
               <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Target Revenue</div>

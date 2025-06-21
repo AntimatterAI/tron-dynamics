@@ -1,11 +1,10 @@
 "use client"
 
-import { useState, Suspense, lazy } from "react"
+import { Suspense, lazy } from "react"
 import Link from "next/link"
 import { 
   Film, 
   Phone, 
-  ArrowRight,
   Download,
   Camera,
   Zap,
@@ -19,7 +18,6 @@ import AnimatedElement from "@/components/animated-element"
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
 
 export default function StudiosPage() {
-  const [activeProject, setActiveProject] = useState(0)
 
   const projects = [
     {
@@ -130,7 +128,6 @@ export default function StudiosPage() {
                 <div className="relative z-10 flex items-center justify-center gap-3">
                   <Download className="w-4 h-4" />
                   <span>Press Kit</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-100" />
                 </div>
               </Button>
             </Link>
@@ -150,60 +147,44 @@ export default function StudiosPage() {
             </p>
           </AnimatedElement>
 
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className={`relative min-h-[400px] md:h-auto bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] cursor-pointer ${activeProject === index ? 'ring-2 ring-amber-500 bg-amber-500/5' : ''}`} onClick={() => setActiveProject(index)}>
-                  <div className="relative z-10 p-6 md:p-8">
-                    <div className="grid lg:grid-cols-3 gap-6 md:gap-8 items-start">
-                      <div className="relative aspect-video rounded-2xl overflow-hidden">
-                        <div className="w-full h-full bg-gradient-to-br from-amber-500/20 to-yellow-600/20 flex items-center justify-center">
-                          <Film className="w-12 h-12 text-amber-300" />
-                        </div>
-                        <div className="absolute top-4 left-4">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            project.status === 'In Production' ? 'bg-green-500/20 text-green-400' :
-                            project.status === 'Development' ? 'bg-blue-500/20 text-blue-400' :
-                            'bg-yellow-500/20 text-yellow-400'
-                          }`}>
-                            {project.status}
-                          </span>
-                        </div>
+                <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group h-full flex flex-col">
+                  <div className="relative z-10 p-6 flex-1 flex flex-col">
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          project.status === 'In Production' ? 'bg-green-500/20 text-green-400' :
+                          project.status === 'Development' ? 'bg-blue-500/20 text-blue-400' :
+                          'bg-yellow-500/20 text-yellow-400'
+                        }`}>
+                          {project.status}
+                        </span>
+                        <span className="text-amber-400 text-sm font-medium">{project.year}</span>
                       </div>
                       
-                      <div className="lg:col-span-2 space-y-4 md:space-y-6">
+                      <h3 className="text-xl font-light text-white tracking-tight mb-2">{project.title}</h3>
+                      <p className="text-amber-400 font-medium mb-4 text-sm">{project.type}</p>
+                      <p className="text-white/80 leading-relaxed font-light text-sm mb-6">{project.description}</p>
+                      
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tags.map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="mt-auto">
+                      <div className="flex items-center justify-between">
                         <div>
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-2">
-                            <h3 className="text-xl md:text-2xl font-light text-white tracking-tight">{project.title}</h3>
-                            <span className="text-amber-400 text-sm font-medium">{project.year}</span>
-                          </div>
-                          <p className="text-amber-400 font-medium mb-4">{project.type}</p>
-                          <p className="text-white/80 leading-relaxed font-light text-sm md:text-base">{project.description}</p>
+                          <p className="text-xs text-white/60">Budget</p>
+                          <p className="text-sm font-bold text-amber-400">{project.budget}</p>
                         </div>
-                        
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span key={tagIndex} className="px-3 py-1 bg-white/10 rounded-full text-xs text-white/80">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                          <div className="flex items-center gap-6">
-                            <div>
-                              <p className="text-sm text-white/60">Budget</p>
-                              <p className="text-lg font-bold text-amber-400">{project.budget}</p>
-                            </div>
-                          </div>
-                          <Link href={`/studios/projects/${project.slug}`}>
-                            <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150 w-full sm:w-auto">
-                              <div className="flex items-center justify-center gap-2">
-                                <span>Learn More</span>
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-100" />
-                              </div>
-                            </Button>
-                          </Link>
+                        <div className="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center group-hover:bg-amber-500/30 transition-colors duration-150">
+                          <Film className="w-4 h-4 text-amber-300" />
                         </div>
                       </div>
                     </div>

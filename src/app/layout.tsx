@@ -151,13 +151,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" sizes="180x180" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.svg?v=4" />
         
-        {/* Additional meta tags for better social sharing */}
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:image" content="/og-image.png" />
-        <meta name="twitter:card" content="summary_large_image" />
+
       </head>
       <body className={`${inter.className} antialiased bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white overflow-x-hidden font-fallback`}>
         <SmoothScrollProvider>
