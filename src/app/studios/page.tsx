@@ -211,7 +211,7 @@ export default function StudiosPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {capabilities.map((capability, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className="relative h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
+                <div className="relative min-h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
                   <div className="relative z-10 p-8 h-full flex flex-col">
                     <div className="mb-6">
                       <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/30 transition-colors duration-150">
@@ -221,13 +221,15 @@ export default function StudiosPage() {
                       <p className="text-amber-100/60 mb-8 leading-relaxed font-light">{capability.description}</p>
                     </div>
                     
-                    <div className="mt-auto space-y-3">
-                      {capability.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start gap-3">
-                          <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-white/80 text-sm leading-relaxed">{feature}</span>
-                        </div>
-                      ))}
+                    <div className="mt-auto">
+                      <ul className="space-y-3">
+                        {capability.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-amber-400 rounded-full mt-1.5 flex-shrink-0" />
+                            <span className="text-white/80 text-sm leading-relaxed flex-1">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
