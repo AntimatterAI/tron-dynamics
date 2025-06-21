@@ -7,16 +7,11 @@ import {
   Film, 
   Target, 
   Heart, 
-  Send, 
   ArrowRight,
-  User,
-  Mail,
-  Building,
-  MessageSquare,
-  Calendar,
   CheckCircle,
   Phone,
-  MapPin
+  MapPin,
+  Mail
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
@@ -24,16 +19,6 @@ import MeteorBackground from "@/components/meteor-background"
 
 export default function GetStartedPage() {
   const [selectedPath, setSelectedPath] = useState("")
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    interest: "",
-    message: "",
-    budget: "",
-    timeline: ""
-  })
 
   const pathways = [
     {
@@ -110,19 +95,6 @@ export default function GetStartedPage() {
       answer: "We work with projects of all sizes. For TRON Ventures, our range is $5K-$100K. For TRON Studios, budgets start at $25K. TRON Impact partnerships vary based on scope and impact potential."
     }
   ]
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-  }
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950/20">
@@ -243,7 +215,7 @@ export default function GetStartedPage() {
                       </span>
                     </h3>
                     <p className="text-violet-100/60 font-light">
-                      Ready to begin your journey? Give us a call and we'll get started right away.
+                      Ready to begin your journey? Give us a call and we&apos;ll get started right away.
                     </p>
                   </div>
 
