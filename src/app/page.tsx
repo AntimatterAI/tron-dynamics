@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Globe, Phone, Heart, Film, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
 
 // Lazy load heavy components
-const MeteorBackground = lazy(() => import('@/components/meteor-background'))
+const EnhancedHeroEffects = lazy(() => import('@/components/enhanced-hero-effects'))
 
 // Minimal animations - no blocking JavaScript
 const useSimpleAnimations = () => {
@@ -30,18 +30,13 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/20">
-      {/* Lazy load meteor background only on desktop */}
+      {/* Enhanced Hero Effects */}
       <Suspense fallback={null}>
-        {typeof window !== 'undefined' && window.innerWidth >= 768 && <MeteorBackground />}
+        <EnhancedHeroEffects />
       </Suspense>
       
       {/* Hero Section - Performance Optimized */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-12">
-        {/* Simplified ambient lighting */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/3 left-1/4 w-48 h-48 md:w-80 md:h-80 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(229, 62, 62, 0.03)' }}></div>
-          <div className="absolute bottom-1/3 right-1/4 w-48 h-48 md:w-80 md:h-80 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(0, 255, 135, 0.03)' }}></div>
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-12 z-10">
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
           

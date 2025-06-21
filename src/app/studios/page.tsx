@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense, lazy } from "react"
 import Link from "next/link"
 import { 
   Film, 
@@ -14,7 +14,9 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
-import MeteorBackground from "@/components/meteor-background"
+
+// Lazy load enhanced effects
+const PageHeroEffects = lazy(() => import("@/components/page-hero-effects"))
 
 export default function StudiosPage() {
   const [activeProject, setActiveProject] = useState(0)
@@ -84,14 +86,13 @@ export default function StudiosPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/20">
-      <MeteorBackground />
+      {/* Enhanced Studio Effects */}
+      <Suspense fallback={null}>
+        <PageHeroEffects variant="studios" />
+      </Suspense>
       
       {/* Hero Section - with proper top spacing for fixed nav */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl"></div>
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 z-10">
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <AnimatedElement animation="fade" delay={0.1} className="mb-12">
