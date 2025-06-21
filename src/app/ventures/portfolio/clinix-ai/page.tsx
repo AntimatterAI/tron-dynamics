@@ -27,19 +27,19 @@ export default function ClinixAIPage() {
     sector: "HealthTech",
     stage: "Series A",
     location: "Atlanta, Georgia",
-    founded: "2023",
-    employees: "25+",
-    valuation: "$8M",
+    founded: "2024",
+    employees: "13",
+    valuation: "$18M",
     totalRaised: "$2.1M"
   }
 
   const overview = "Clinix AI empowers physicians and therapists to focus on what matters most—patient care—by generating billable notes, ICD-10, DSM-5-TR and CPT codes. Our advanced AI agents use EMR data and recordings to create optimal, rich SOAP/HPI Notes with enterprise-grade encryption and HIPAA-compliant security."
 
   const keyMetrics = [
-    { label: "Healthcare Providers", value: "30K+", growth: "+300%" },
-    { label: "Annual Revenue", value: "$2.8M", growth: "+250%" },
-    { label: "Hours Saved Daily", value: "2+ hrs", growth: "per provider" },
-    { label: "Note Accuracy", value: "99%+", growth: "AI-powered" }
+    { label: "Note Accuracy", value: "99%", growth: "AI-powered" },
+    { label: "ICD-10 CPT & DSM-5-TR", value: "Auto-Gen", growth: "codes" },
+    { label: "AI Analytics", value: "Real-time", growth: "insights" },
+    { label: "Session Length", value: "2 Hours", growth: "maximum" }
   ]
 
   const products = [
@@ -62,45 +62,51 @@ export default function ClinixAIPage() {
 
   const teamHighlights = [
     {
-      name: "Dr. Michael Chen",
+      name: "Paul Wallace",
       role: "CEO & Co-Founder",
-      background: "Former Johns Hopkins physician, Stanford Medicine",
-      experience: "12+ years in clinical practice"
+      background: "Healthcare technology entrepreneur and strategic leader",
+      experience: "Expert in AI healthcare solutions"
     },
     {
-      name: "Sarah Rodriguez",
+      name: "Matthew Bravo",
       role: "CTO & Co-Founder", 
-      background: "Ex-Google Health engineer, MIT AI graduate",
-      experience: "8+ years in medical AI"
+      background: "Senior technology executive and AI systems architect",
+      experience: "Proven track record in scalable tech platforms"
     },
     {
-      name: "Dr. James Patterson",
+      name: "Dr. Elvis Francois",
       role: "Chief Medical Officer",
-      background: "Former Mayo Clinic department head",
-      experience: "15+ years in healthcare innovation"
+      background: "Mayo Clinic-trained spine surgeon, Harvard fellowship",
+      experience: "Renowned physician and healthcare innovation leader"
+    },
+    {
+      name: "Dr. Grigoriy Arutyunyan",
+      role: "Medical Advisor",
+      background: "Board-certified spine surgeon, Mayo Clinic residency",
+      experience: "UCSF fellowship, Memorial Sloan Kettering training"
     }
   ]
 
   const milestones = [
     {
-      date: "Q1 2023",
+      date: "Q1 2024",
       title: "Company Founded",
       description: "Launched with HIPAA-compliant AI documentation platform"
     },
     {
-      date: "Q3 2023", 
-      title: "Seed Funding",
-      description: "Raised $800K seed round led by TRON Ventures"
-    },
-    {
-      date: "Q1 2024",
-      title: "30K Providers",
-      description: "Reached 30,000+ healthcare providers milestone"
+      date: "Q2 2024", 
+      title: "Product Launch",
+      description: "Deployed AI-powered SOAP note generation with ICD-10/CPT coding"
     },
     {
       date: "Q3 2024",
-      title: "Series A",
-      description: "Completed $1.3M Series A for product enhancement"
+      title: "Leadership Team",
+      description: "Welcomed Dr. Elvis Francois as Chief Medical Officer"
+    },
+    {
+      date: "Q4 2024",
+      title: "Series A Funding",
+      description: "Completed Series A round, reached $18M valuation"
     }
   ]
 
