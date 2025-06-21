@@ -36,9 +36,9 @@ export default function ShadowShieldAIPage() {
   const overview = "ShadowShield AI delivers next-generation AI security capabilities with enterprise-grade guardrails, ensuring organizations can innovate boldly without compromising on control, privacy, or security. Our platform provides real-time monitoring, DLP enforcement, and comprehensive AI governance for enterprise environments."
 
   const keyMetrics = [
-    { label: "Enterprise Clients", value: "200+", growth: "+300%" },
-    { label: "Annual Revenue", value: "$800K", growth: "+250%" },
-    { label: "Data Breaches Prevented", value: "50+", growth: "real-time" },
+    { label: "Enterprise Clients", value: "500+", growth: "+350%" },
+    { label: "Cost Savings", value: "$2.2M", growth: "avg. per client" },
+    { label: "Customer Rating", value: "4.8/5", growth: "50+ reviews" },
     { label: "DLP Rule Presets", value: "100+", growth: "industry coverage" }
   ]
 
@@ -159,11 +159,13 @@ export default function ShadowShieldAIPage() {
 
               <AnimatedElement animation="slide" direction="up" delay={0.5}>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="group relative overflow-hidden bg-orange-500/20 hover:bg-orange-500/30 backdrop-blur-xl text-orange-300 hover:text-white px-6 py-3 text-base font-medium rounded-xl border border-orange-400/30 hover:border-orange-400/50 transition-all duration-150">
-                    <div className="relative z-10 flex items-center justify-center gap-3">
-                      <Globe className="w-4 h-4" />
-                      <span>Visit Website</span>
-                    </div>
+                  <Button className="group relative overflow-hidden bg-orange-500/20 hover:bg-orange-500/30 backdrop-blur-xl text-orange-300 hover:text-white px-6 py-3 text-base font-medium rounded-xl border border-orange-400/30 hover:border-orange-400/50 transition-all duration-150" asChild>
+                    <Link href="https://www.shadowshieldai.com/" target="_blank" rel="noopener noreferrer">
+                      <div className="relative z-10 flex items-center justify-center gap-3">
+                        <Globe className="w-4 h-4" />
+                        <span>Visit Website</span>
+                      </div>
+                    </Link>
                   </Button>
                   
                   <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150">

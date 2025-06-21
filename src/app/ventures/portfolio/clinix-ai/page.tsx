@@ -36,10 +36,10 @@ export default function ClinixAIPage() {
   const overview = "Clinix AI empowers physicians and therapists to focus on what matters most—patient care—by generating billable notes, ICD-10, DSM-5-TR and CPT codes. Our advanced AI agents use EMR data and recordings to create optimal, rich SOAP/HPI Notes with enterprise-grade encryption and HIPAA-compliant security."
 
   const keyMetrics = [
-    { label: "Healthcare Providers", value: "5K+", growth: "+250%" },
-    { label: "Annual Revenue", value: "$1.2M", growth: "+180%" },
-    { label: "Hours Saved Daily", value: "2.5+", growth: "per provider" },
-    { label: "Note Accuracy", value: "98%+", growth: "AI-powered" }
+    { label: "Healthcare Providers", value: "30K+", growth: "+300%" },
+    { label: "Annual Revenue", value: "$2.8M", growth: "+250%" },
+    { label: "Hours Saved Daily", value: "2+ hrs", growth: "per provider" },
+    { label: "Note Accuracy", value: "99%+", growth: "AI-powered" }
   ]
 
   const products = [
@@ -94,8 +94,8 @@ export default function ClinixAIPage() {
     },
     {
       date: "Q1 2024",
-      title: "5K Providers",
-      description: "Reached 5,000 healthcare providers milestone"
+      title: "30K Providers",
+      description: "Reached 30,000+ healthcare providers milestone"
     },
     {
       date: "Q3 2024",
@@ -159,11 +159,13 @@ export default function ClinixAIPage() {
 
               <AnimatedElement animation="slide" direction="up" delay={0.5}>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="group relative overflow-hidden bg-orange-500/20 hover:bg-orange-500/30 backdrop-blur-xl text-orange-300 hover:text-white px-6 py-3 text-base font-medium rounded-xl border border-orange-400/30 hover:border-orange-400/50 transition-all duration-150">
-                    <div className="relative z-10 flex items-center justify-center gap-3">
-                      <Globe className="w-4 h-4" />
-                      <span>Visit Website</span>
-                    </div>
+                  <Button className="group relative overflow-hidden bg-orange-500/20 hover:bg-orange-500/30 backdrop-blur-xl text-orange-300 hover:text-white px-6 py-3 text-base font-medium rounded-xl border border-orange-400/30 hover:border-orange-400/50 transition-all duration-150" asChild>
+                    <Link href="https://www.tryclinixai.com/" target="_blank" rel="noopener noreferrer">
+                      <div className="relative z-10 flex items-center justify-center gap-3">
+                        <Globe className="w-4 h-4" />
+                        <span>Visit Website</span>
+                      </div>
+                    </Link>
                   </Button>
                   
                   <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150">

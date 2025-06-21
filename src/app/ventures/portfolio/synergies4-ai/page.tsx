@@ -35,10 +35,10 @@ export default function Synergies4AIPage() {
   const overview = "Synergies4 AI revolutionizes professional development through AI-powered learning experiences. Our platform offers personalized course recommendations, intelligent learning paths, and comprehensive training programs in Agile & Scrum, Leadership, and Product Management, designed to accelerate career growth."
 
   const keyMetrics = [
-    { label: "Active Learners", value: "10K+", growth: "+180%" },
-    { label: "Annual Revenue", value: "$400K", growth: "+160%" },
-    { label: "Course Completion", value: "85%", growth: "industry-leading" },
-    { label: "Skill Certifications", value: "5K+", growth: "issued" }
+    { label: "Active Learners", value: "25K+", growth: "+300%" },
+    { label: "Annual Revenue", value: "$850K", growth: "+220%" },
+    { label: "Course Completion", value: "92%", growth: "industry-leading" },
+    { label: "Skill Certifications", value: "12K+", growth: "issued" }
   ]
 
   const products = [
@@ -93,8 +93,8 @@ export default function Synergies4AIPage() {
     },
     {
       date: "Q3 2024",
-      title: "10K Learners",
-      description: "Reached 10,000 active learners across professional development programs"
+      title: "25K Learners",
+      description: "Reached 25,000+ active learners across professional development programs"
     },
     {
       date: "Q4 2024",
@@ -158,11 +158,13 @@ export default function Synergies4AIPage() {
 
               <AnimatedElement animation="slide" direction="up" delay={0.5}>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="group relative overflow-hidden bg-orange-500/20 hover:bg-orange-500/30 backdrop-blur-xl text-orange-300 hover:text-white px-6 py-3 text-base font-medium rounded-xl border border-orange-400/30 hover:border-orange-400/50 transition-all duration-150">
-                    <div className="relative z-10 flex items-center justify-center gap-3">
-                      <Globe className="w-4 h-4" />
-                      <span>Visit Platform</span>
-                    </div>
+                  <Button className="group relative overflow-hidden bg-orange-500/20 hover:bg-orange-500/30 backdrop-blur-xl text-orange-300 hover:text-white px-6 py-3 text-base font-medium rounded-xl border border-orange-400/30 hover:border-orange-400/50 transition-all duration-150" asChild>
+                    <Link href="https://www.synergies4ai.com/" target="_blank" rel="noopener noreferrer">
+                      <div className="relative z-10 flex items-center justify-center gap-3">
+                        <Globe className="w-4 h-4" />
+                        <span>Visit Platform</span>
+                      </div>
+                    </Link>
                   </Button>
                   
                   <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150">
