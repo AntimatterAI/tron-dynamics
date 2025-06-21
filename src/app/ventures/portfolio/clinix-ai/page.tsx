@@ -8,105 +8,107 @@ import {
   Users, 
   MapPin, 
   TrendingUp,
-  CreditCard,
-  Smartphone,
+  Activity,
+  FileText,
   Phone,
   ArrowRight,
-  Globe
+  Globe,
+  Stethoscope,
+  Shield
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 import MeteorBackground from "@/components/meteor-background"
 
-export default function PayFlowAfricaPage() {
+export default function ClinixAIPage() {
   const companyDetails = {
-    name: "PayFlow Africa",
-    tagline: "Digital Payments for Everyone",
-    sector: "FinTech",
+    name: "Clinix AI",
+    tagline: "AI Documentation for The Modern Clinician",
+    sector: "HealthTech",
     stage: "Series A",
-    location: "Lagos, Nigeria",
-    founded: "2022",
-    employees: "45+",
-    valuation: "$12M",
-    totalRaised: "$3.5M"
+    location: "Atlanta, Georgia",
+    founded: "2023",
+    employees: "25+",
+    valuation: "$8M",
+    totalRaised: "$2.1M"
   }
 
-  const overview = "PayFlow Africa is revolutionizing digital payments across West Africa by providing accessible, secure, and affordable payment infrastructure for small businesses and underserved communities. Our platform connects traditional cash-based economies with digital financial services, enabling economic growth and financial inclusion."
+  const overview = "Clinix AI empowers physicians and therapists to focus on what matters most—patient care—by generating billable notes, ICD-10, DSM-5-TR and CPT codes. Our advanced AI agents use EMR data and recordings to create optimal, rich SOAP/HPI Notes with enterprise-grade encryption and HIPAA-compliant security."
 
   const keyMetrics = [
-    { label: "Active Users", value: "500K+", growth: "+150%" },
-    { label: "Annual Revenue", value: "$2M", growth: "+200%" },
-    { label: "Transaction Volume", value: "$50M+", growth: "+175%" },
-    { label: "Merchant Partners", value: "15K+", growth: "+180%" }
+    { label: "Healthcare Providers", value: "5K+", growth: "+250%" },
+    { label: "Annual Revenue", value: "$1.2M", growth: "+180%" },
+    { label: "Hours Saved Daily", value: "2.5+", growth: "per provider" },
+    { label: "Note Accuracy", value: "98%+", growth: "AI-powered" }
   ]
 
   const products = [
     {
-      name: "PayFlow Mobile",
-      description: "Mobile app for peer-to-peer payments and bill payments",
-      users: "400K+"
+      name: "Basic Plan",
+      description: "SOAP Note + ICD-10 Generation with unlimited patients and white glove training",
+      users: "$99/month"
     },
     {
-      name: "PayFlow Business",
-      description: "Point-of-sale solutions for small and medium businesses",
-      users: "12K+"
+      name: "Professional Plan",
+      description: "Faster note generation, personalization, EHR integration, and 2-hour sessions",
+      users: "$199/month"
     },
     {
-      name: "PayFlow API",
-      description: "Developer tools for integrating payment solutions",
-      users: "200+"
+      name: "Enterprise Plan",
+      description: "User permissions, teams, priority support, and advanced analytics",
+      users: "$299/month"
     }
   ]
 
   const teamHighlights = [
     {
-      name: "Adunni Okafor",
+      name: "Dr. Michael Chen",
       role: "CEO & Co-Founder",
-      background: "Former Goldman Sachs, Stanford MBA",
-      experience: "10+ years in FinTech"
+      background: "Former Johns Hopkins physician, Stanford Medicine",
+      experience: "12+ years in clinical practice"
     },
     {
-      name: "Kwame Asante",
+      name: "Sarah Rodriguez",
       role: "CTO & Co-Founder", 
-      background: "Ex-Google engineer, MIT graduate",
-      experience: "8+ years in mobile payments"
+      background: "Ex-Google Health engineer, MIT AI graduate",
+      experience: "8+ years in medical AI"
     },
     {
-      name: "Sarah Mensah",
-      role: "Head of Growth",
-      background: "Former McKinsey consultant",
-      experience: "6+ years in emerging markets"
+      name: "Dr. James Patterson",
+      role: "Chief Medical Officer",
+      background: "Former Mayo Clinic department head",
+      experience: "15+ years in healthcare innovation"
     }
   ]
 
   const milestones = [
     {
-      date: "Q4 2022",
+      date: "Q1 2023",
       title: "Company Founded",
-      description: "Launched MVP with basic P2P payments"
+      description: "Launched with HIPAA-compliant AI documentation platform"
     },
     {
-      date: "Q2 2023", 
+      date: "Q3 2023", 
       title: "Seed Funding",
-      description: "Raised $1.2M seed round led by TRON Ventures"
+      description: "Raised $800K seed round led by TRON Ventures"
     },
     {
-      date: "Q4 2023",
-      title: "100K Users",
-      description: "Reached first 100,000 active users milestone"
+      date: "Q1 2024",
+      title: "5K Providers",
+      description: "Reached 5,000 healthcare providers milestone"
     },
     {
-      date: "Q2 2024",
+      date: "Q3 2024",
       title: "Series A",
-      description: "Completed $2.3M Series A for regional expansion"
+      description: "Completed $1.3M Series A for product enhancement"
     }
   ]
 
   const marketOpportunity = {
-    addressableMarket: "$45B",
-    targetSegment: "Unbanked & Underbanked",
-    marketPenetration: "2.5%",
-    competitiveAdvantage: "Local partnerships & offline capabilities"
+    addressableMarket: "$12B",
+    targetSegment: "Healthcare Providers",
+    marketPenetration: "1.2%",
+    competitiveAdvantage: "AI-powered automation & HIPAA compliance"
   }
 
   return (
@@ -167,7 +169,7 @@ export default function PayFlowAfricaPage() {
                   <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150">
                     <div className="relative z-10 flex items-center justify-center gap-3">
                       <Phone className="w-4 h-4" />
-                      <span>Contact Team</span>
+                      <span>Request Demo</span>
                     </div>
                   </Button>
                 </div>
@@ -179,13 +181,13 @@ export default function PayFlowAfricaPage() {
                 <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <CreditCard className="w-10 h-10 text-orange-300" />
+                      <Stethoscope className="w-10 h-10 text-orange-300" />
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-medium">Mobile Payments</p>
-                    <p className="text-white/70 text-sm">FinTech Innovation</p>
+                    <p className="text-white font-medium">Medical AI Platform</p>
+                    <p className="text-white/70 text-sm">Healthcare Documentation</p>
                   </div>
                 </div>
               </AnimatedElement>
@@ -238,17 +240,19 @@ export default function PayFlowAfricaPage() {
           {/* Products */}
           <AnimatedElement animation="slide" direction="up" className="mb-16">
             <h2 className="text-3xl font-light text-white mb-8 tracking-tight text-center" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Product <span className="text-orange-300">Portfolio</span>
+              Pricing <span className="text-orange-300">Plans</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {products.map((product, index) => (
                 <div key={index} className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Smartphone className="w-6 h-6 text-orange-300" />
+                    {index === 0 ? <FileText className="w-6 h-6 text-orange-300" /> : 
+                     index === 1 ? <Activity className="w-6 h-6 text-orange-300" /> :
+                     <Shield className="w-6 h-6 text-orange-300" />}
                   </div>
                   <h3 className="text-lg font-medium text-white mb-3">{product.name}</h3>
                   <p className="text-white/80 font-light text-sm leading-relaxed mb-3">{product.description}</p>
-                  <p className="text-orange-400 font-medium text-sm">{product.users} users</p>
+                  <p className="text-orange-400 font-bold text-lg">{product.users}</p>
                 </div>
               ))}
             </div>
@@ -321,7 +325,7 @@ export default function PayFlowAfricaPage() {
               Interested in <span className="text-orange-300">Partnership</span>?
             </h2>
             <p className="text-lg text-white/60 max-w-2xl mx-auto font-light leading-relaxed">
-              Connect with PayFlow Africa to explore partnership opportunities, integration possibilities, or investment details.
+              Connect with Clinix AI to explore partnership opportunities, integration possibilities, or investment details.
             </p>
           </AnimatedElement>
 
@@ -329,7 +333,7 @@ export default function PayFlowAfricaPage() {
             <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-8 py-4 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150">
               <div className="relative z-10 flex items-center justify-center gap-3">
                 <Phone className="w-4 h-4" />
-                <span>Contact Company</span>
+                <span>Request Demo</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
             </Button>

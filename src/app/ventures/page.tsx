@@ -23,37 +23,37 @@ const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
 export default function VenturesPage() {
   const portfolioCompanies = [
     {
-      name: "PayFlow Africa",
-      sector: "FinTech",
+      name: "Clinix AI",
+      sector: "HealthTech",
       stage: "Series A",
-      location: "Lagos, Nigeria",
-      description: "Digital payment infrastructure for small businesses across West Africa",
-      metrics: { users: "500K+", revenue: "$2M ARR", growth: "+150%" },
-      logo: "/african-landscape-hero.jpg",
-      founded: "2022",
-      slug: "payflow-africa"
-    },
-    {
-      name: "EduConnect",
-      sector: "EdTech", 
-      stage: "Seed",
-      location: "Accra, Ghana",
-      description: "AI-powered learning platform connecting students with quality education",
-      metrics: { users: "100K+", revenue: "$500K ARR", growth: "+200%" },
+      location: "Atlanta, Georgia",
+      description: "AI-powered medical documentation platform empowering physicians with automated note-taking and billing optimization",
+      metrics: { users: "5K+", revenue: "$1.2M ARR", growth: "+250%" },
       logo: "/african-landscape-hero.jpg",
       founded: "2023",
-      slug: "educonnect"
+      slug: "clinix-ai"
     },
     {
-      name: "AgriTech Solutions",
-      sector: "AgTech",
-      stage: "Pre-Seed",
-      location: "Nairobi, Kenya",
-      description: "Smart farming solutions for sustainable agriculture in East Africa",
-      metrics: { users: "50K+", revenue: "$200K ARR", growth: "+300%" },
+      name: "ShadowShield AI", 
+      sector: "CyberSecurity",
+      stage: "Seed",
+      location: "San Francisco, CA",
+      description: "Enterprise-grade AI governance platform providing real-time security monitoring and data protection for AI interactions",
+      metrics: { users: "200+", revenue: "$800K ARR", growth: "+300%" },
       logo: "/african-landscape-hero.jpg",
       founded: "2024",
-      slug: "agritech-solutions"
+      slug: "shadowshield-ai"
+    },
+    {
+      name: "Synergies4 AI",
+      sector: "EdTech",
+      stage: "Pre-Seed", 
+      location: "Remote Global",
+      description: "AI-powered learning platform offering personalized professional development courses and intelligent learning recommendations",
+      metrics: { users: "10K+", revenue: "$400K ARR", growth: "+180%" },
+      logo: "/african-landscape-hero.jpg",
+      founded: "2024",
+      slug: "synergies4-ai"
     }
   ]
 
