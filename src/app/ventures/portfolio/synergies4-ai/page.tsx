@@ -59,26 +59,7 @@ export default function Synergies4AIPage() {
     }
   ]
 
-  const teamHighlights = [
-    {
-      name: "Alex Johnson",
-      role: "CEO & Co-Founder",
-      background: "Former Google L&D Director, Stanford Education",
-      experience: "12+ years in learning technology"
-    },
-    {
-      name: "Maria Garcia",
-      role: "CTO & Co-Founder", 
-      background: "Ex-Microsoft AI researcher, Carnegie Mellon PhD",
-      experience: "8+ years in AI/ML education"
-    },
-    {
-      name: "David Park",
-      role: "Head of Content",
-      background: "Former McKinsey learning consultant",
-      experience: "10+ years in professional development"
-    }
-  ]
+
 
   const milestones = [
     {
@@ -276,25 +257,7 @@ export default function Synergies4AIPage() {
             </div>
           </AnimatedElement>
 
-          {/* Team */}
-          <AnimatedElement animation="slide" direction="up" className="mb-16">
-            <h2 className="text-3xl font-light text-white mb-8 tracking-tight text-center" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Leadership <span className="text-orange-300">Team</span>
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {teamHighlights.map((member, index) => (
-                <div key={index} className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-orange-300" />
-                  </div>
-                  <h3 className="text-lg font-medium text-white mb-2">{member.name}</h3>
-                  <p className="text-orange-400 font-medium mb-3 text-sm">{member.role}</p>
-                  <p className="text-white/80 font-light text-sm leading-relaxed mb-2">{member.background}</p>
-                  <p className="text-white/60 font-light text-xs">{member.experience}</p>
-                </div>
-              ))}
-            </div>
-          </AnimatedElement>
+
 
           {/* Milestones */}
           <AnimatedElement animation="slide" direction="up" className="mb-16">
