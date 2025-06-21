@@ -234,8 +234,8 @@ export default function GetStartedPage() {
           {selectedPath && (
             <AnimatedElement animation="slide" direction="up" className="max-w-2xl mx-auto">
               <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
-                <div className="relative z-10">
-                  <div className="text-center mb-8">
+                <div className="relative z-10 text-center">
+                  <div className="mb-8">
                     <h3 className="text-2xl font-light text-white mb-2 tracking-tight">
                       Great choice! Let&apos;s get started with{" "}
                       <span className="text-violet-300">
@@ -243,156 +243,23 @@ export default function GetStartedPage() {
                       </span>
                     </h3>
                     <p className="text-violet-100/60 font-light">
-                      Fill out the form below and we&apos;ll get back to you within 24 hours.
+                      Ready to begin your journey? Give us a call and we'll get started right away.
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-white/80">Full Name</label>
-                        <div className="relative">
-                          <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/40" />
-                          <input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all backdrop-blur-xl"
-                            style={{backdropFilter: 'blur(20px)'}}
-                            placeholder="Your full name"
-                            required
-                          />
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-white/80">Email Address</label>
-                        <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/40" />
-                          <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all backdrop-blur-xl"
-                            style={{backdropFilter: 'blur(20px)'}}
-                            placeholder="your@email.com"
-                            required
-                          />
-                        </div>
+                  <Button 
+                    className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-8 py-4 text-lg font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150"
+                    style={{backdropFilter: 'blur(20px)'}}
+                    onClick={() => window.location.href = 'tel:+14049394238'}
+                  >
+                    <div className="relative z-10 flex items-center justify-center gap-3">
+                      <Phone className="w-5 h-5" />
+                      <div className="flex flex-col items-center">
+                        <span>Call Us Now</span>
+                        <span className="text-sm opacity-70 font-normal">+1 (404) 939-4238</span>
                       </div>
                     </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-white/80">Company/Organization</label>
-                        <div className="relative">
-                          <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/40" />
-                          <input
-                            type="text"
-                            name="company"
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all backdrop-blur-xl"
-                            style={{backdropFilter: 'blur(20px)'}}
-                            placeholder="Company name"
-                          />
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-white/80">Phone Number</label>
-                        <div className="relative">
-                          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/40" />
-                          <input
-                            type="tel"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all backdrop-blur-xl"
-                            style={{backdropFilter: 'blur(20px)'}}
-                            placeholder="+1 (555) 000-0000"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    {selectedPath === "ventures" && (
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm font-medium text-white/80">Funding Stage</label>
-                          <select
-                            name="budget"
-                            value={formData.budget}
-                            onChange={handleInputChange}
-                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all backdrop-blur-xl"
-                            style={{backdropFilter: 'blur(20px)'}}
-                          >
-                            <option value="">Select stage</option>
-                            <option value="pre-seed">Pre-Seed ($5K-$25K)</option>
-                            <option value="seed">Seed ($25K-$75K)</option>
-                            <option value="series-a">Series A ($75K-$100K)</option>
-                          </select>
-                        </div>
-                        
-                        <div className="space-y-2">
-                          <label className="text-sm font-medium text-white/80">Timeline</label>
-                          <select
-                            name="timeline"
-                            value={formData.timeline}
-                            onChange={handleInputChange}
-                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all backdrop-blur-xl"
-                            style={{backdropFilter: 'blur(20px)'}}
-                          >
-                            <option value="">Select timeline</option>
-                            <option value="immediate">Immediate (1-2 weeks)</option>
-                            <option value="short">Short-term (1-2 months)</option>
-                            <option value="medium">Medium-term (3-6 months)</option>
-                          </select>
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white/80">Project Details</label>
-                      <div className="relative">
-                        <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-white/40" />
-                        <textarea
-                          name="message"
-                          value={formData.message}
-                          onChange={handleInputChange}
-                          rows={5}
-                          className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all resize-none backdrop-blur-xl"
-                          style={{backdropFilter: 'blur(20px)'}}
-                          placeholder="Tell us about your project, goals, and how we can help..."
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button 
-                        type="submit" 
-                        className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150 flex-1"
-                        style={{backdropFilter: 'blur(20px)'}}
-                      >
-                        <div className="relative z-10 flex items-center justify-center gap-3">
-                          <Send className="w-4 h-4" />
-                          <span>Send Application</span>
-                        </div>
-                      </Button>
-                      <Button 
-                        type="button" 
-                        className="group relative overflow-hidden bg-transparent border border-violet-400/30 text-violet-300/90 hover:text-white hover:border-violet-400/50 px-6 py-3 text-base font-medium rounded-xl transition-all duration-150 w-full sm:w-auto"
-                      >
-                        <div className="relative z-10 flex items-center justify-center gap-3">
-                          <Calendar className="w-4 h-4" />
-                          <span>Schedule Call</span>
-                        </div>
-                      </Button>
-                    </div>
-                  </form>
+                  </Button>
                 </div>
               </div>
             </AnimatedElement>

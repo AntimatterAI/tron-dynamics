@@ -47,7 +47,7 @@ export default function VenturesPage() {
     {
       name: "Synergies4 AI",
       sector: "EdTech",
-      stage: "Pre-Seed", 
+      stage: "Pre-Seed",
       location: "Remote Global",
       description: "AI-powered learning platform offering personalized professional development courses and intelligent learning recommendations",
       metrics: { users: "10K+", revenue: "$400K ARR", growth: "+180%" },
@@ -265,12 +265,12 @@ export default function VenturesPage() {
                       
                       <div className="flex justify-end">
                         <Link href={`/ventures/portfolio/${company.slug}`}>
-                          <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150">
-                            <div className="flex items-center gap-2">
-                              <span>View Details</span>
-                              <ArrowRight className="w-4 h-4" />
-                            </div>
-                          </Button>
+                        <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150">
+                          <div className="flex items-center gap-2">
+                            <span>View Details</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </div>
+                        </Button>
                         </Link>
                       </div>
                     </div>

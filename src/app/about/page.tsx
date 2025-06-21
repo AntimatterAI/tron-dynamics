@@ -176,10 +176,10 @@ export default function AboutPage() {
                   <div className="mb-6">
                     <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500/30 transition-colors duration-150 border border-blue-400/30">
                       <Target className="w-8 h-8 text-blue-300" />
-                    </div>
-                    <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-                      Our Mission
-                    </h3>
+                  </div>
+                  <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                    Our Mission
+                  </h3>
                   </div>
                   <p className="text-blue-100/70 leading-relaxed font-light text-lg flex-1">
                     To amplify nomadic voices and drive transformational change by investing in creative storytelling, groundbreaking innovations, and economic empowerment. Through film, technology, and education, we aim to eradicate global challenges and foster sustainable growth.
@@ -194,10 +194,10 @@ export default function AboutPage() {
                   <div className="mb-6">
                     <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/30 transition-colors duration-150 border border-purple-400/30">
                       <Globe className="w-8 h-8 text-purple-300" />
-                    </div>
-                    <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-                      Our Vision
-                    </h3>
+                  </div>
+                  <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                    Our Vision
+                  </h3>
                   </div>
                   <p className="text-purple-100/70 leading-relaxed font-light text-lg flex-1">
                     To drive transformational change by amplifying nomadic voices and fostering groundbreaking solutions that eradicate global challenges. Through storytelling, innovation, technology, and education, we aim to empower and reshape underserved communities and industries.

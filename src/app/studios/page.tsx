@@ -154,35 +154,35 @@ export default function StudiosPage() {
                   <div className="relative z-10 p-6 flex-1 flex flex-col">
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-4">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          project.status === 'In Production' ? 'bg-green-500/20 text-green-400' :
-                          project.status === 'Development' ? 'bg-blue-500/20 text-blue-400' :
-                          'bg-yellow-500/20 text-yellow-400'
-                        }`}>
-                          {project.status}
-                        </span>
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            project.status === 'In Production' ? 'bg-green-500/20 text-green-400' :
+                            project.status === 'Development' ? 'bg-blue-500/20 text-blue-400' :
+                            'bg-yellow-500/20 text-yellow-400'
+                          }`}>
+                            {project.status}
+                          </span>
                         <span className="text-amber-400 text-sm font-medium">{project.year}</span>
                       </div>
                       
                       <h3 className="text-xl font-light text-white tracking-tight mb-2">{project.title}</h3>
                       <p className="text-amber-400 font-medium mb-4 text-sm">{project.type}</p>
                       <p className="text-white/80 leading-relaxed font-light text-sm mb-6">{project.description}</p>
-                      
+                        
                       <div className="flex flex-wrap gap-2 mb-6">
-                        {project.tags.map((tag, tagIndex) => (
+                          {project.tags.map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">
-                            {tag}
-                          </span>
-                        ))}
+                              {tag}
+                            </span>
+                          ))}
                       </div>
-                    </div>
-                    
+                        </div>
+                        
                     <div className="mt-auto">
-                      <div className="flex items-center justify-between">
-                        <div>
+                        <div className="flex items-center justify-between">
+                            <div>
                           <p className="text-xs text-white/60">Budget</p>
                           <p className="text-sm font-bold text-amber-400">{project.budget}</p>
-                        </div>
+                            </div>
                         <div className="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center group-hover:bg-amber-500/30 transition-colors duration-150">
                           <Film className="w-4 h-4 text-amber-300" />
                         </div>
@@ -211,24 +211,24 @@ export default function StudiosPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {capabilities.map((capability, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className="relative min-h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
+                <div className="relative h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-amber-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
                   <div className="relative z-10 p-8 h-full flex flex-col">
-                    <div className="mb-6">
+                    <div className="flex-grow">
                       <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/30 transition-colors duration-150">
                         {capability.icon}
                       </div>
                       <h3 className="text-2xl font-light text-white mb-4 tracking-tight">{capability.title}</h3>
-                      <p className="text-amber-100/60 mb-8 leading-relaxed font-light">{capability.description}</p>
+                      <p className="text-amber-100/60 mb-6 leading-relaxed font-light">{capability.description}</p>
                     </div>
                     
                     <div className="mt-auto">
                       <ul className="space-y-3">
-                        {capability.features.map((feature, featureIndex) => (
+                      {capability.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-amber-400 rounded-full mt-1.5 flex-shrink-0" />
                             <span className="text-white/80 text-sm leading-relaxed flex-1">{feature}</span>
                           </li>
-                        ))}
+                      ))}
                       </ul>
                     </div>
                   </div>

@@ -262,13 +262,13 @@ export default function ImpactPage() {
                   <div className="relative z-10 p-6 flex-1 flex flex-col">
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-4">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          initiative.status === 'Active' ? 'bg-green-500/20 text-green-400' :
-                          initiative.status === 'Expanding' ? 'bg-blue-500/20 text-blue-400' :
-                          'bg-yellow-500/20 text-yellow-400'
-                        }`}>
-                          {initiative.status}
-                        </span>
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            initiative.status === 'Active' ? 'bg-green-500/20 text-green-400' :
+                            initiative.status === 'Expanding' ? 'bg-blue-500/20 text-blue-400' :
+                            'bg-yellow-500/20 text-yellow-400'
+                          }`}>
+                            {initiative.status}
+                          </span>
                         <span className="text-green-400 text-sm font-medium">{initiative.year}</span>
                       </div>
                       
@@ -276,28 +276,28 @@ export default function ImpactPage() {
                       <p className="text-green-400 font-medium mb-2 text-sm">{initiative.category}</p>
                       
                       <div className="flex items-center gap-1 text-white/60 text-xs mb-4">
-                        <MapPin className="w-3 h-3" />
-                        {initiative.location}
-                      </div>
+                              <MapPin className="w-3 h-3" />
+                              {initiative.location}
+                            </div>
                       
                       <p className="text-white/80 leading-relaxed font-light text-sm mb-6">{initiative.description}</p>
-                      
+                        
                       <div className="grid grid-cols-3 gap-3 mb-6">
-                        {Object.entries(initiative.impact).map(([key, value], impactIndex) => (
-                          <div key={impactIndex} className="text-center">
+                          {Object.entries(initiative.impact).map(([key, value], impactIndex) => (
+                            <div key={impactIndex} className="text-center">
                             <p className="text-sm font-bold text-green-400 mb-1">{value}</p>
-                            <p className="text-xs text-white/60 capitalize">{key}</p>
-                          </div>
-                        ))}
+                              <p className="text-xs text-white/60 capitalize">{key}</p>
+                            </div>
+                          ))}
                       </div>
-                    </div>
-                    
+                        </div>
+                        
                     <div className="mt-auto">
-                      <div className="flex items-center justify-between">
-                        <div>
+                        <div className="flex items-center justify-between">
+                          <div>
                           <p className="text-xs text-white/60">Investment</p>
                           <p className="text-sm font-bold text-green-400">{initiative.budget}</p>
-                        </div>
+                          </div>
                         <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center group-hover:bg-green-500/30 transition-colors duration-150">
                           <School className="w-4 h-4 text-green-300" />
                         </div>
