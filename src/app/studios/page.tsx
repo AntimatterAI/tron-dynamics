@@ -15,8 +15,8 @@ import {
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 
-// Lazy load enhanced effects
-const PageHeroEffects = lazy(() => import("@/components/page-hero-effects"))
+// Lazy load simple effects
+const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
 
 export default function StudiosPage() {
   const [activeProject, setActiveProject] = useState(0)
@@ -86,9 +86,9 @@ export default function StudiosPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/20">
-      {/* Enhanced Studio Effects */}
+      {/* Simple Studio Effects */}
       <Suspense fallback={null}>
-        <PageHeroEffects variant="studios" />
+        <SimpleHeroEffects variant="studios" />
       </Suspense>
       
       {/* Hero Section - with proper top spacing for fixed nav */}

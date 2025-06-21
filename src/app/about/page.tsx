@@ -6,8 +6,8 @@ import { ArrowRight, Users, Award, Globe, Target, Heart, Info, CheckCircle } fro
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 
-// Lazy load enhanced effects
-const PageHeroEffects = lazy(() => import("@/components/page-hero-effects"))
+// Lazy load simple effects
+const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
 
 export default function AboutPage() {
   const founders = [
@@ -75,9 +75,9 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950/20">
-      {/* Enhanced About Effects */}
+      {/* Simple About Effects */}
       <Suspense fallback={null}>
-        <PageHeroEffects variant="about" />
+        <SimpleHeroEffects variant="about" />
       </Suspense>
       
       {/* Hero Section - with proper top spacing for fixed nav */}

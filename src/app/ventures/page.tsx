@@ -17,8 +17,8 @@ import {
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 
-// Lazy load enhanced effects
-const PageHeroEffects = lazy(() => import("@/components/page-hero-effects"))
+// Lazy load simple effects
+const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
 
 export default function VenturesPage() {
   const portfolioCompanies = [
@@ -86,9 +86,9 @@ export default function VenturesPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950/20">
-      {/* Enhanced Ventures Effects */}
+      {/* Simple Ventures Effects */}
       <Suspense fallback={null}>
-        <PageHeroEffects variant="ventures" />
+        <SimpleHeroEffects variant="ventures" />
       </Suspense>
       
       {/* Hero Section - with proper top spacing for fixed nav */}

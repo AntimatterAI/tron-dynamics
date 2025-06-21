@@ -18,8 +18,8 @@ import {
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 
-// Lazy load enhanced effects
-const PageHeroEffects = lazy(() => import("@/components/page-hero-effects"))
+// Lazy load simple effects
+const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
 
 export default function ImpactPage() {
   const [activeInitiative, setActiveInitiative] = useState(0)
@@ -132,9 +132,9 @@ export default function ImpactPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-green-950/20">
-      {/* Enhanced Impact Effects */}
+      {/* Simple Impact Effects */}
       <Suspense fallback={null}>
-        <PageHeroEffects variant="impact" />
+        <SimpleHeroEffects variant="impact" />
       </Suspense>
       
       {/* Hero Section - with proper top spacing for fixed nav */}

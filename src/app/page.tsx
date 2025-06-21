@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Globe, Phone, Heart, Film, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
 
-// Lazy load heavy components
-const EnhancedHeroEffects = lazy(() => import('@/components/enhanced-hero-effects'))
+// Lazy load simple effects
+const SimpleHeroEffects = lazy(() => import('@/components/simple-hero-effects'))
 
 // Minimal animations - no blocking JavaScript
 const useSimpleAnimations = () => {
@@ -30,9 +30,9 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/20">
-      {/* Enhanced Hero Effects */}
+      {/* Simple Hero Effects */}
       <Suspense fallback={null}>
-        <EnhancedHeroEffects />
+        <SimpleHeroEffects variant="home" />
       </Suspense>
       
       {/* Hero Section - Performance Optimized */}
