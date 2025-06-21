@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, Suspense, lazy } from "react"
+import { Suspense, lazy } from "react"
 import Link from "next/link"
 import { 
   Heart, 
@@ -22,7 +22,6 @@ import AnimatedElement from "@/components/animated-element"
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
 
 export default function ImpactPage() {
-  const [activeInitiative, setActiveInitiative] = useState(0)
 
   const initiatives = [
     {
@@ -218,9 +217,9 @@ export default function ImpactPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {focusAreas.map((area, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className="relative min-h-[400px] md:h-auto bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group">
-                  <div className="relative z-10 p-8 h-full flex flex-col">
-                    <div className="mb-6">
+                <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group h-full flex flex-col">
+                  <div className="relative z-10 p-8 flex-1 flex flex-col">
+                    <div className="flex-1">
                       <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-500/30 transition-colors duration-150">
                         {area.icon}
                       </div>
@@ -228,11 +227,11 @@ export default function ImpactPage() {
                       <p className="text-green-100/60 mb-8 leading-relaxed font-light">{area.description}</p>
                     </div>
                     
-                    <div className="mt-auto space-y-2">
+                    <div className="mt-auto space-y-3">
                       {area.metrics.map((metric, metricIndex) => (
-                        <div key={metricIndex} className="flex items-center gap-2">
-                          <div className="w-1 h-1 bg-green-400 rounded-full" />
-                          <span className="text-white/80 text-sm">{metric}</span>
+                        <div key={metricIndex} className="flex items-start gap-3">
+                          <div className="w-1.5 h-1.5 bg-green-400 rounded-full mt-2 flex-shrink-0" />
+                          <span className="text-white/80 text-sm leading-relaxed">{metric}</span>
                         </div>
                       ))}
                     </div>
@@ -256,65 +255,51 @@ export default function ImpactPage() {
             </p>
           </AnimatedElement>
 
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {initiatives.map((initiative, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className={`relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] cursor-pointer ${activeInitiative === index ? 'ring-2 ring-green-500 bg-green-500/5' : ''}`} onClick={() => setActiveInitiative(index)}>
-                  <div className="relative z-10 p-8">
-                    <div className="grid lg:grid-cols-3 gap-8 items-center">
-                      <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-green-500/20 to-emerald-600/20 flex items-center justify-center">
-                        <School className="w-12 h-12 text-green-300" />
-                        <div className="absolute top-4 left-4">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            initiative.status === 'Active' ? 'bg-green-500/20 text-green-400' :
-                            initiative.status === 'Expanding' ? 'bg-blue-500/20 text-blue-400' :
-                            'bg-yellow-500/20 text-yellow-400'
-                          }`}>
-                            {initiative.status}
-                          </span>
-                        </div>
+                <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group h-full flex flex-col">
+                  <div className="relative z-10 p-6 flex-1 flex flex-col">
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          initiative.status === 'Active' ? 'bg-green-500/20 text-green-400' :
+                          initiative.status === 'Expanding' ? 'bg-blue-500/20 text-blue-400' :
+                          'bg-yellow-500/20 text-yellow-400'
+                        }`}>
+                          {initiative.status}
+                        </span>
+                        <span className="text-green-400 text-sm font-medium">{initiative.year}</span>
                       </div>
                       
-                      <div className="lg:col-span-2 space-y-6">
+                      <h3 className="text-xl font-light text-white tracking-tight mb-2">{initiative.title}</h3>
+                      <p className="text-green-400 font-medium mb-2 text-sm">{initiative.category}</p>
+                      
+                      <div className="flex items-center gap-1 text-white/60 text-xs mb-4">
+                        <MapPin className="w-3 h-3" />
+                        {initiative.location}
+                      </div>
+                      
+                      <p className="text-white/80 leading-relaxed font-light text-sm mb-6">{initiative.description}</p>
+                      
+                      <div className="grid grid-cols-3 gap-3 mb-6">
+                        {Object.entries(initiative.impact).map(([key, value], impactIndex) => (
+                          <div key={impactIndex} className="text-center">
+                            <p className="text-sm font-bold text-green-400 mb-1">{value}</p>
+                            <p className="text-xs text-white/60 capitalize">{key}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="mt-auto">
+                      <div className="flex items-center justify-between">
                         <div>
-                          <div className="flex items-center gap-4 mb-2">
-                            <h3 className="text-2xl font-light text-white tracking-tight">{initiative.title}</h3>
-                            <span className="text-green-400 text-sm font-medium">{initiative.year}</span>
-                          </div>
-                          <div className="flex items-center gap-4 mb-4">
-                            <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs">
-                              {initiative.category}
-                            </span>
-                            <div className="flex items-center gap-1 text-white/60 text-sm">
-                              <MapPin className="w-3 h-3" />
-                              {initiative.location}
-                            </div>
-                          </div>
-                          <p className="text-white/80 leading-relaxed font-light">{initiative.description}</p>
+                          <p className="text-xs text-white/60">Investment</p>
+                          <p className="text-sm font-bold text-green-400">{initiative.budget}</p>
                         </div>
-                        
-                        <div className="grid grid-cols-3 gap-6">
-                          {Object.entries(initiative.impact).map(([key, value], impactIndex) => (
-                            <div key={impactIndex} className="text-center">
-                              <p className="text-2xl font-bold text-green-400 mb-1">{value}</p>
-                              <p className="text-xs text-white/60 capitalize">{key}</p>
-                            </div>
-                          ))}
-                        </div>
-                        
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <p className="text-sm text-white/60">Investment</p>
-                            <p className="text-lg font-bold text-green-400">{initiative.budget}</p>
-                          </div>
-                          <Link href={`/impact/initiatives/${initiative.slug}`}>
-                            <Button className="group relative overflow-hidden bg-transparent hover:bg-white/5 text-white/70 hover:text-white px-4 py-2 text-sm rounded-lg transition-all duration-150">
-                              <div className="flex items-center gap-2">
-                                <span>Learn More</span>
-                                <ArrowRight className="w-4 h-4" />
-                              </div>
-                            </Button>
-                          </Link>
+                        <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center group-hover:bg-green-500/30 transition-colors duration-150">
+                          <School className="w-4 h-4 text-green-300" />
                         </div>
                       </div>
                     </div>
