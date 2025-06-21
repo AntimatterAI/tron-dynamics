@@ -132,10 +132,10 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-16">
             {founders.map((founder, index) => (
               <AnimatedElement key={index} animation="slide" direction={index === 0 ? "left" : "right"} delay={index * 0.2}>
-                <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] p-8">
-                  <div className="relative z-10">
+                <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group h-full flex flex-col">
+                  <div className="relative z-10 p-8 flex-1 flex flex-col">
                     <div className="flex flex-col items-center text-center mb-8">
-                      <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center">
+                      <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center border border-blue-400/30 group-hover:border-blue-400/50 transition-colors duration-150">
                         <Users className="w-24 h-24 text-blue-300" />
                       </div>
                       <h3 className="text-3xl font-light text-white mb-2 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
@@ -144,14 +144,14 @@ export default function AboutPage() {
                       <p className="text-blue-400 font-medium text-lg">{founder.title}</p>
                     </div>
                     
-                    <div className="space-y-6 text-white/80">
+                    <div className="space-y-6 text-white/80 flex-1">
                       <p className="leading-relaxed font-light">{founder.description}</p>
                       
                       <div className="space-y-3">
                         {founder.credentials.map((credential, credIndex) => (
-                          <div key={credIndex} className="flex items-center gap-3">
-                            <Award className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                            <span className="text-sm">{credential}</span>
+                          <div key={credIndex} className="flex items-start gap-3">
+                            <Award className="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" />
+                            <span className="text-sm leading-relaxed">{credential}</span>
                           </div>
                         ))}
                       </div>
@@ -171,15 +171,17 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <AnimatedElement animation="slide" direction="left">
-              <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] p-8 h-full">
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <Target className="w-6 h-6 text-blue-300" />
+              <div className="relative bg-gradient-to-br from-blue-500/5 to-blue-600/10 backdrop-blur-xl rounded-2xl border border-blue-400/20 hover:border-blue-400/40 overflow-hidden transition-all duration-150 hover:bg-gradient-to-br hover:from-blue-500/10 hover:to-blue-600/15 group h-full">
+                <div className="relative z-10 p-8 h-full flex flex-col">
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500/30 transition-colors duration-150 border border-blue-400/30">
+                      <Target className="w-8 h-8 text-blue-300" />
+                    </div>
+                    <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                      Our Mission
+                    </h3>
                   </div>
-                  <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-                    Our Mission
-                  </h3>
-                  <p className="text-blue-100/60 leading-relaxed font-light">
+                  <p className="text-blue-100/70 leading-relaxed font-light text-lg flex-1">
                     To amplify nomadic voices and drive transformational change by investing in creative storytelling, groundbreaking innovations, and economic empowerment. Through film, technology, and education, we aim to eradicate global challenges and foster sustainable growth.
                   </p>
                 </div>
@@ -187,15 +189,17 @@ export default function AboutPage() {
             </AnimatedElement>
 
             <AnimatedElement animation="slide" direction="right" delay={0.2}>
-              <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-purple-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] p-8 h-full">
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <Globe className="w-6 h-6 text-purple-300" />
+              <div className="relative bg-gradient-to-br from-purple-500/5 to-purple-600/10 backdrop-blur-xl rounded-2xl border border-purple-400/20 hover:border-purple-400/40 overflow-hidden transition-all duration-150 hover:bg-gradient-to-br hover:from-purple-500/10 hover:to-purple-600/15 group h-full">
+                <div className="relative z-10 p-8 h-full flex flex-col">
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/30 transition-colors duration-150 border border-purple-400/30">
+                      <Globe className="w-8 h-8 text-purple-300" />
+                    </div>
+                    <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                      Our Vision
+                    </h3>
                   </div>
-                  <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-                    Our Vision
-                  </h3>
-                  <p className="text-purple-100/60 leading-relaxed font-light">
+                  <p className="text-purple-100/70 leading-relaxed font-light text-lg flex-1">
                     To drive transformational change by amplifying nomadic voices and fostering groundbreaking solutions that eradicate global challenges. Through storytelling, innovation, technology, and education, we aim to empower and reshape underserved communities and industries.
                   </p>
                 </div>
@@ -227,16 +231,16 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div className="lg:w-2/3">
-                    <div className={`relative bg-gradient-to-br ${phase.color} backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8`}>
-                      <div className="relative z-10">
+                    <div className={`relative bg-gradient-to-br ${phase.color} backdrop-blur-xl rounded-2xl border border-white/20 hover:border-white/30 overflow-hidden transition-all duration-150 group`}>
+                      <div className="relative z-10 p-8">
                         <h3 className="text-2xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
                           {phase.title}
                         </h3>
-                        <div className="space-y-3">
+                        <div className="space-y-4">
                           {phase.goals.map((goal, goalIndex) => (
                             <div key={goalIndex} className="flex items-start gap-3">
-                              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                              <span className="text-white/90 font-light">{goal}</span>
+                              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
+                              <span className="text-white/90 font-light leading-relaxed">{goal}</span>
                             </div>
                           ))}
                         </div>

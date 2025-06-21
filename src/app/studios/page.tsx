@@ -221,11 +221,11 @@ export default function StudiosPage() {
                       <p className="text-amber-100/60 mb-8 leading-relaxed font-light">{capability.description}</p>
                     </div>
                     
-                    <div className="mt-auto space-y-2">
+                    <div className="mt-auto space-y-3">
                       {capability.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center gap-2">
-                          <div className="w-1 h-1 bg-amber-400 rounded-full" />
-                          <span className="text-white/80 text-sm">{feature}</span>
+                        <div key={featureIndex} className="flex items-start gap-3">
+                          <div className="w-1.5 h-1.5 bg-amber-400 rounded-full mt-2 flex-shrink-0" />
+                          <span className="text-white/80 text-sm leading-relaxed">{feature}</span>
                         </div>
                       ))}
                     </div>
