@@ -162,16 +162,18 @@ export default function Synergies4AIPage() {
                     <Link href="https://www.synergies4ai.com/" target="_blank" rel="noopener noreferrer">
                       <div className="relative z-10 flex items-center justify-center gap-3">
                         <Globe className="w-4 h-4" />
-                        <span>Visit Platform</span>
+                        <span>Visit Website</span>
                       </div>
                     </Link>
                   </Button>
                   
-                  <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150">
-                    <div className="relative z-10 flex items-center justify-center gap-3">
-                      <Phone className="w-4 h-4" />
-                      <span>Try AI Assistant</span>
-                    </div>
+                  <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150" asChild>
+                    <Link href="https://www.synergies4ai.com/" target="_blank" rel="noopener noreferrer">
+                      <div className="relative z-10 flex items-center justify-center gap-3">
+                        <Phone className="w-4 h-4" />
+                        <span>Request Demo</span>
+                      </div>
+                    </Link>
                   </Button>
                 </div>
               </AnimatedElement>
@@ -331,12 +333,14 @@ export default function Synergies4AIPage() {
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2} className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-8 py-4 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150">
-              <div className="relative z-10 flex items-center justify-center gap-3">
-                <Phone className="w-4 h-4" />
-                <span>Try AI Assistant</span>
-                <ArrowRight className="w-4 h-4" />
-              </div>
+            <Button className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-8 py-4 text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-150" asChild>
+              <Link href="https://www.synergies4ai.com/" target="_blank" rel="noopener noreferrer">
+                <div className="relative z-10 flex items-center justify-center gap-3">
+                  <Phone className="w-4 h-4" />
+                  <span>Request Demo</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </Link>
             </Button>
 
             <Link href="/ventures">
