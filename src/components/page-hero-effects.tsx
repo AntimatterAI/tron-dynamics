@@ -22,6 +22,7 @@ export default function PageHeroEffects({ variant = 'default' }: PageHeroEffects
   const [particles, setParticles] = useState<Particle[]>([])
   const [isMobile, setIsMobile] = useState(false)
   const [screenDimensions, setScreenDimensions] = useState({ width: 1920, height: 1080 })
+  const [isMounted, setIsMounted] = useState(false)
   
   // Mouse tracking for desktop
   const mouseX = useMotionValue(0)
@@ -90,6 +91,11 @@ export default function PageHeroEffects({ variant = 'default' }: PageHeroEffects
   }
 
   const currentScheme = colorSchemes[variant]
+
+  // Mount guard to prevent SSR issues
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Update dimensions and mobile detection
   useEffect(() => {
@@ -172,6 +178,11 @@ export default function PageHeroEffects({ variant = 'default' }: PageHeroEffects
     const interval = setInterval(animateParticles, 80)
     return () => clearInterval(interval)
   }, [screenDimensions])
+
+  // Don't render on server to prevent hydration issues
+  if (!isMounted) {
+    return null
+  }
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">

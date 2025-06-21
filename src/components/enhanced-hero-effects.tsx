@@ -26,6 +26,7 @@ export default function EnhancedHeroEffects() {
   const [particles, setParticles] = useState<Particle[]>([])
   const [touchPoints, setTouchPoints] = useState<TouchPoint[]>([])
   const [isMobile, setIsMobile] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   
   // Mouse tracking for desktop
   const mouseX = useMotionValue(0)
@@ -39,6 +40,11 @@ export default function EnhancedHeroEffects() {
   const yRange = [-100, 100]
   const pathX = useTransform(smoothMouseX, [0, screenDimensions.width], xRange)
   const pathY = useTransform(smoothMouseY, [0, screenDimensions.height], yRange)
+
+  // Mount guard to prevent SSR issues
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Detect mobile and update screen dimensions
   useEffect(() => {
@@ -171,6 +177,11 @@ export default function EnhancedHeroEffects() {
     const interval = setInterval(animateParticles, 50)
     return () => clearInterval(interval)
   }, [])
+
+  // Don't render on server to prevent hydration issues
+  if (!isMounted) {
+    return null
+  }
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
