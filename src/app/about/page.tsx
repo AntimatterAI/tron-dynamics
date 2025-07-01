@@ -15,63 +15,29 @@ export default function AboutPage() {
       name: "Dr. Alvin Glay",
       title: "Co-Founder & CEO",
       image: "/dr-alvin-glay-portrait.jpg",
-      description: "Dr. Glay&apos;s journey from a Liberian refugee to a distinguished marketing executive is chronicled in his memoir, &quot;LIBERIAN BOY: TRIUMPH OVER WAR&apos;S SHADOW.&quot;",
+      description: "A visionary entrepreneur, investor, and strategist, Dr. Alvin Glay brings a wealth of experience in technology, business development, and creative industries. With a background in investment strategy and economic growth initiatives, he is committed to empowering African entrepreneurs and amplifying untold stories through film and innovation.",
       credentials: [
         "Doctorate in Business - Georgia State University",
         "MBA - Mercer University", 
         "BBA in Finance - Georgia State University"
       ],
-      expertise: "His expertise in marketing and business development, combined with his personal experience as a refugee, brings unique insight to TRON DYNAMIC&apos;s mission of amplifying underrepresented voices."
+      expertise: "His journey from a Liberian refugee to a distinguished marketing executive is chronicled in his memoir, \"LIBERIAN BOY: TRIUMPH OVER WAR'S SHADOW.\""
     },
     {
       name: "Jonathan Massaquoi",
       title: "Co-Founder & CTO",
       image: "/jonathan-massaquoi-portrait.jpg",
-      description: "A former NFL athlete turned entrepreneur, Jonathan brings a passion for community development, creative storytelling, and investment in African business ecosystems.",
+      description: "A former NFL athlete turned entrepreneur, Jonathan Massaquoi has a passion for community development, creative storytelling, and investment in African business ecosystems. His leadership and network in sports, entertainment, and business make him a key driver of TRON DYNAMICS' mission to elevate voices from the African diaspora.",
       credentials: [
-        "Former NFL Linebacker (Falcons, Titans, Chiefs)",
-        "Troy University Football - 128 tackles, 19.5 sacks",
-        "Born in Monrovia, Liberia"
+        "Selected by Atlanta Falcons in 5th round of 2012 NFL Draft",
+        "Troy University Football - 128 tackles, 19.5 sacks over two seasons",
+        "Played for Atlanta Falcons, Tennessee Titans, and Kansas City Chiefs"
       ],
-      expertise: "His leadership and network in sports, entertainment, and business make him a key driver of TRON DYNAMIC&apos;s mission to elevate voices from the African diaspora."
+      expertise: "Born in Monrovia, Liberia, Massaquoi moved to the United States as an infant. He played college football at Troy University and spent three seasons as an NFL linebacker, accumulating 70 tackles and 6 sacks."
     }
   ]
 
-  const timeline = [
-    {
-      period: "Years 1-2 (2025-2027)",
-      title: "Establishing TRON Studios",
-      goals: [
-        "Produce three short series starting with \"LIBERIAN BOY\"",
-        "Publish content on YouTube and social media platforms",
-        "Secure production and distribution deals",
-        "Build audience and industry relationships"
-      ],
-      color: "from-amber-500/20 to-yellow-600/20"
-    },
-    {
-      period: "Year 3 (2027-2028)",
-      title: "Launching TRON Ventures",
-      goals: [
-        "Officially launch angel investment arm",
-        "Invest in 3-5 early-stage West African startups",
-        "Form partnerships with accelerators and VCs",
-        "Develop startup incubation programs"
-      ],
-      color: "from-orange-500/20 to-red-600/20"
-    },
-    {
-      period: "Years 4-5 (2028-2030)",
-      title: "Expansion and Impact",
-      goals: [
-        "Scale TRON Studios with feature-length productions",
-        "Secure deals with Netflix, Amazon Prime, Disney+",
-        "Establish TRON Impact initiatives across Africa",
-        "Develop media training academy for young filmmakers"
-      ],
-      color: "from-green-500/20 to-emerald-600/20"
-    }
-  ]
+
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950/20">
@@ -209,50 +175,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Strategic Timeline */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Five-Year <span className="text-blue-300">Strategic Plan</span>
-            </h2>
-            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Our roadmap to transformational impact across film, investment, and philanthropy.
-            </p>
-          </AnimatedElement>
 
-          <div className="space-y-16">
-            {timeline.map((phase, index) => (
-              <AnimatedElement key={index} animation="slide" direction={index % 2 === 0 ? "left" : "right"} delay={index * 0.1}>
-                <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}>
-                  <div className="lg:w-1/3">
-                    <div className="bg-white/10 backdrop-blur-xl text-white px-6 py-3 rounded-full font-medium text-center border border-white/20">
-                      {phase.period}
-                    </div>
-                  </div>
-                  <div className="lg:w-2/3">
-                    <div className={`relative bg-gradient-to-br ${phase.color} backdrop-blur-xl rounded-2xl border border-white/20 hover:border-white/30 overflow-hidden transition-all duration-150 group`}>
-                      <div className="relative z-10 p-8">
-                        <h3 className="text-2xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-                          {phase.title}
-                        </h3>
-                        <div className="space-y-4">
-                          {phase.goals.map((goal, goalIndex) => (
-                            <div key={goalIndex} className="flex items-start gap-3">
-                              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-                              <span className="text-white/90 font-light leading-relaxed">{goal}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">

@@ -113,7 +113,7 @@ export default function HomePage() {
               <div className="flex items-center justify-center mb-2 md:mb-3">
                 <div className="text-2xl md:text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
                      style={{ fontFamily: 'var(--font-orbitron), monospace' }}>
-                  2027
+                  2030
                 </div>
               </div>
               <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Strategic Vision</div>
@@ -123,7 +123,7 @@ export default function HomePage() {
               <div className="flex items-center justify-center mb-2 md:mb-3">
                 <div className="text-2xl md:text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
                      style={{ fontFamily: 'var(--font-orbitron), monospace' }}>
-                  $20M+
+                  $25M
                 </div>
               </div>
               <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Target Revenue</div>
@@ -136,7 +136,7 @@ export default function HomePage() {
                   3
                 </div>
               </div>
-              <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Core Divisions</div>
+              <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Business Units</div>
             </div>
           </div>
         </div>
@@ -157,40 +157,17 @@ export default function HomePage() {
           <div className="text-center mb-12 md:mb-20">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4 md:mb-6 tracking-tight px-4" 
                 style={{ fontFamily: 'var(--font-orbitron), -apple-system, sans-serif' }}>
-              Our <span style={{ color: '#00FF87' }}>Divisions</span>
+              Our <span style={{ color: '#00FF87' }}>Services</span>
             </h2>
             <p className="text-base md:text-lg text-gray-300/60 max-w-2xl mx-auto font-light leading-relaxed px-4">
-              Three interconnected pillars driving transformational change
+              Built in Africa. Ready for the World.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             
-            {/* TRON Studios */}
-            <Link href="/studios" className="group relative md:col-span-2 lg:col-span-1">
-              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-red-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(229, 62, 62, 0.1)' }}>
-                <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(229, 62, 62, 0.2)' }}>
-                      <Film className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#E53E3E' }} />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
-                      TRON Studios
-                    </h3>
-                    <p className="text-green-100/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
-                      Revolutionary film production pushing the boundaries of storytelling and visual innovation.
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(229, 62, 62, 0.7)' }}>
-                    <span className="text-sm font-medium">Explore Studios</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {/* TRON Ventures */}
-            <Link href="/ventures" className="group relative">
+            {/* Portfolio Companies */}
+            <Link href="/portfolio" className="group relative">
               <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(255, 107, 53, 0.1)' }}>
                 <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
@@ -198,22 +175,45 @@ export default function HomePage() {
                       <Briefcase className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#FF6B35' }} />
                     </div>
                     <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
-                      TRON Ventures
+                      Portfolio Companies
                     </h3>
                     <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
-                      Strategic angel investment in groundbreaking startups, funding the future of innovation.
+                      Our strategic investments in cutting-edge AI, HealthTech, and EdTech companies transforming industries.
                     </p>
                   </div>
                   <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(255, 107, 53, 0.7)' }}>
-                    <span className="text-sm font-medium">Explore Ventures</span>
+                    <span className="text-sm font-medium">View Portfolio</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
                 </div>
               </div>
             </Link>
 
-            {/* TRON Impact */}
-            <Link href="/impact" className="group relative">
+            {/* TRON Innovation */}
+            <Link href="/innovation" className="group relative">
+              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(59, 130, 246, 0.1)' }}>
+                <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(59, 130, 246, 0.2)' }}>
+                      <Globe className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#3B82F6' }} />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
+                      TRON Innovation
+                    </h3>
+                    <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
+                      Technology development, app creation, and Afro-futurist design solutions for African entrepreneurs.
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(59, 130, 246, 0.7)' }}>
+                    <span className="text-sm font-medium">Explore Innovation</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* TRON Business & Development */}
+            <Link href="/business-development" className="group relative">
               <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(0, 255, 135, 0.1)' }}>
                 <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
@@ -221,14 +221,14 @@ export default function HomePage() {
                       <Heart className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#00FF87' }} />
                     </div>
                     <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
-                      TRON Impact
+                      Business & Development
                     </h3>
                     <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
-                      Philanthropic initiatives creating lasting positive change in communities worldwide.
+                      Strategic business services, investor connections, and recruitment solutions for scaling companies.
                     </p>
                   </div>
                   <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(0, 255, 135, 0.7)' }}>
-                    <span className="text-sm font-medium">Explore Impact</span>
+                    <span className="text-sm font-medium">Explore Services</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
                 </div>
