@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 interface SimpleHeroEffectsProps {
-  variant?: 'home' | 'studios' | 'ventures' | 'impact' | 'about'
+  variant?: 'home' | 'studios' | 'ventures' | 'impact' | 'about' | 'business' | 'portfolio' | 'innovation'
 }
 
 export default function SimpleHeroEffects({ variant = 'home' }: SimpleHeroEffectsProps) {
@@ -57,6 +57,30 @@ export default function SimpleHeroEffects({ variant = 'home' }: SimpleHeroEffect
       primaryRgba: 'rgba(139, 92, 246, 0.15)',
       secondaryRgba: 'rgba(124, 58, 237, 0.12)',
       accentRgba: 'rgba(167, 139, 250, 0.08)',
+    },
+    business: {
+      primary: '#10B981',
+      secondary: '#059669',
+      accent: '#34D399',
+      primaryRgba: 'rgba(16, 185, 129, 0.15)',
+      secondaryRgba: 'rgba(5, 150, 105, 0.12)',
+      accentRgba: 'rgba(52, 211, 153, 0.08)',
+    },
+    portfolio: {
+      primary: '#FF6B35',
+      secondary: '#EA580C',
+      accent: '#FB923C',
+      primaryRgba: 'rgba(255, 107, 53, 0.15)',
+      secondaryRgba: 'rgba(234, 88, 12, 0.12)',
+      accentRgba: 'rgba(251, 146, 60, 0.08)',
+    },
+    innovation: {
+      primary: '#3B82F6',
+      secondary: '#2563EB',
+      accent: '#60A5FA',
+      primaryRgba: 'rgba(59, 130, 246, 0.15)',
+      secondaryRgba: 'rgba(37, 99, 235, 0.12)',
+      accentRgba: 'rgba(96, 165, 250, 0.08)',
     }
   }
 
