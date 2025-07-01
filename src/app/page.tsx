@@ -3,7 +3,7 @@
 import { useRef, Suspense, lazy } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Globe, Phone, Heart, Film, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
+import { Globe, Phone, Heart, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import('@/components/simple-hero-effects'))

@@ -5,13 +5,10 @@ import Link from "next/link"
 import { 
   Rocket, 
   Smartphone, 
-  Code,
-  Zap,
   ArrowRight,
   Phone,
   Palette,
   Database,
-  Settings,
   Globe,
   CheckCircle
 } from "lucide-react"

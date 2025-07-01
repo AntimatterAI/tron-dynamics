@@ -2,7 +2,7 @@
 
 import { Suspense, lazy } from "react"
 import Link from "next/link"
-import { ArrowRight, Users, Award, Globe, Target, Heart, Info, CheckCircle } from "lucide-react"
+import { ArrowRight, Users, Award, Globe, Target, Heart, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 

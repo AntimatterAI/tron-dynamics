@@ -4,13 +4,9 @@ import { Suspense, lazy } from "react"
 import Link from "next/link"
 import { 
   Briefcase, 
-  Users, 
-  TrendingUp,
-  Handshake,
   ArrowRight,
   Phone,
   Target,
-  Globe,
   CheckCircle,
   DollarSign,
   Network,

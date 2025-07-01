@@ -5,11 +5,7 @@ import Link from "next/link"
 import { 
   Film, 
   Phone, 
-  Download,
-  Camera,
-  Zap,
-  Users,
-  Award
+  Download
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
