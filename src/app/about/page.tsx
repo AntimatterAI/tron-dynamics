@@ -13,7 +13,6 @@ export default function AboutPage() {
   const founders = [
     {
       name: "Dr. Alvin Glay",
-      title: "Co-Founder & CEO",
       image: "/dr-alvin-glay-portrait.jpg",
       description: "A visionary entrepreneur, investor, and strategist, Dr. Alvin Glay brings a wealth of experience in technology, business development, and creative industries. With a background in investment strategy and economic growth initiatives, he is committed to empowering African entrepreneurs and amplifying untold stories through film and innovation.",
       credentials: [
@@ -25,7 +24,6 @@ export default function AboutPage() {
     },
     {
       name: "Jonathan Massaquoi",
-      title: "Co-Founder & CTO",
       image: "/jonathan-massaquoi-portrait.jpg",
       description: "A former NFL athlete turned entrepreneur, Jonathan Massaquoi has a passion for community development, creative storytelling, and investment in African business ecosystems. His leadership and network in sports, entertainment, and business make him a key driver of TRON DYNAMICS' mission to elevate voices from the African diaspora.",
       credentials: [
@@ -37,13 +35,12 @@ export default function AboutPage() {
     },
     {
       name: "Paul Wallace",
-      title: "Co-Founder & COO",
       image: "/paul-wallace-portrait.jpg",
       description: "A strategic operations leader and technology innovator, Paul Wallace brings extensive experience in scaling businesses and driving operational excellence. With a strong background in business development, strategic partnerships, and organizational growth, he plays a pivotal role in executing TRON DYNAMIC's vision and ensuring seamless operations across all divisions.",
       credentials: [
-        "LinkedIn: https://www.linkedin.com/in/paul-wallace-08664b223/",
         "Strategic Operations & Business Development Expert",
-        "Technology Innovation & Digital Transformation Leader"
+        "Technology Innovation & Digital Transformation Leader",
+        "Organizational Growth & Efficiency Specialist"
       ],
       expertise: "Paul's expertise in operations management and strategic execution ensures that TRON DYNAMIC's ambitious goals are translated into tangible results, driving efficiency and growth across the organization."
     }
@@ -116,10 +113,9 @@ export default function AboutPage() {
                       <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center border border-blue-400/30 group-hover:border-blue-400/50 transition-colors duration-150">
                         <Users className="w-24 h-24 text-blue-300" />
                       </div>
-                      <h3 className="text-3xl font-light text-white mb-2 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+                      <h3 className="text-3xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
                         {founder.name}
                       </h3>
-                      <p className="text-blue-400 font-medium text-lg">{founder.title}</p>
                     </div>
                     
                     <div className="space-y-6 text-white/80 flex-1">
