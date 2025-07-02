@@ -34,6 +34,18 @@ export default function AboutPage() {
         "Played for Atlanta Falcons, Tennessee Titans, and Kansas City Chiefs"
       ],
       expertise: "Born in Monrovia, Liberia, Massaquoi moved to the United States as an infant. He played college football at Troy University and spent three seasons as an NFL linebacker, accumulating 70 tackles and 6 sacks."
+    },
+    {
+      name: "Paul Wallace",
+      title: "Co-Founder & COO",
+      image: "/paul-wallace-portrait.jpg",
+      description: "A strategic operations leader and technology innovator, Paul Wallace brings extensive experience in scaling businesses and driving operational excellence. With a strong background in business development, strategic partnerships, and organizational growth, he plays a pivotal role in executing TRON DYNAMIC's vision and ensuring seamless operations across all divisions.",
+      credentials: [
+        "LinkedIn: https://www.linkedin.com/in/paul-wallace-08664b223/",
+        "Strategic Operations & Business Development Expert",
+        "Technology Innovation & Digital Transformation Leader"
+      ],
+      expertise: "Paul's expertise in operations management and strategic execution ensures that TRON DYNAMIC's ambitious goals are translated into tangible results, driving efficiency and growth across the organization."
     }
   ]
 
@@ -91,13 +103,13 @@ export default function AboutPage() {
               Meet Our <span className="text-blue-300">Founders</span>
             </h2>
             <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Two visionaries united by their commitment to empowering the African diaspora and driving transformational change.
+              Three visionaries united by their commitment to empowering the African diaspora and driving transformational change.
             </p>
           </AnimatedElement>
 
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {founders.map((founder, index) => (
-              <AnimatedElement key={index} animation="slide" direction={index === 0 ? "left" : "right"} delay={index * 0.2}>
+              <AnimatedElement key={index} animation="slide" direction={index === 0 ? "left" : index === 1 ? "up" : "right"} delay={index * 0.2}>
                 <div className="relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/20 overflow-hidden transition-all duration-150 hover:bg-white/[0.04] group h-full flex flex-col">
                   <div className="relative z-10 p-8 flex-1 flex flex-col">
                     <div className="flex flex-col items-center text-center mb-8">
