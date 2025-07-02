@@ -107,38 +107,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Simple Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto px-4 opacity-0 animate-fade-in-stats">
-            <div className="group text-center">
-              <div className="flex items-center justify-center mb-2 md:mb-3">
-                <div className="text-2xl md:text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
-                     style={{ fontFamily: 'var(--font-orbitron), monospace' }}>
-                  2030
-                </div>
-              </div>
-              <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Strategic Vision</div>
-            </div>
 
-            <div className="group text-center">
-              <div className="flex items-center justify-center mb-2 md:mb-3">
-                <div className="text-2xl md:text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
-                     style={{ fontFamily: 'var(--font-orbitron), monospace' }}>
-                  $25M
-                </div>
-              </div>
-              <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Target Revenue</div>
-            </div>
-
-            <div className="group text-center">
-              <div className="flex items-center justify-center mb-2 md:mb-3">
-                <div className="text-2xl md:text-3xl lg:text-4xl font-light text-white group-hover:text-green-300 transition-colors duration-150"
-                     style={{ fontFamily: 'var(--font-orbitron), monospace' }}>
-                  3
-                </div>
-              </div>
-              <div className="text-green-100/40 font-normal text-xs md:text-sm tracking-wide uppercase">Business Units</div>
-            </div>
-          </div>
         </div>
 
         {/* Simple Scroll Indicator */}
