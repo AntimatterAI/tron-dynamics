@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Globe, Phone, Heart, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
 import { CallToActionGraphics, ImpactVisualization } from '@/components/africa-graphics'
-// import { HeroGraphics, EnhancedCard, FloatingParticles } from '@/components/enhanced-graphics'
+import { HeroGraphics, EnhancedCard } from '@/components/hero-graphics'
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import('@/components/simple-hero-effects'))
@@ -32,8 +32,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/20">
-      {/* Enhanced Hero Graphics - Temporarily disabled */}
-      {/* <HeroGraphics /> */}
+      {/* Enhanced Hero Graphics with GSAP */}
+      <HeroGraphics />
       
       {/* Simple Hero Effects */}
       <Suspense fallback={null}>
@@ -143,8 +143,8 @@ export default function HomePage() {
             
             {/* Portfolio Companies */}
             <Link href="/portfolio" className="group relative">
-              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(255, 107, 53, 0.1)' }}>
-                <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
+              <EnhancedCard className="h-[320px] md:h-[400px]" glowColor="orange">
+                <div className="p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(255, 107, 53, 0.2)' }}>
                       <Briefcase className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#FF6B35' }} />
@@ -161,13 +161,13 @@ export default function HomePage() {
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
                 </div>
-              </div>
+              </EnhancedCard>
             </Link>
 
             {/* TRON Innovation */}
             <Link href="/innovation" className="group relative">
-              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(59, 130, 246, 0.1)' }}>
-                <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
+              <EnhancedCard className="h-[320px] md:h-[400px]" glowColor="blue">
+                <div className="p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(59, 130, 246, 0.2)' }}>
                       <Globe className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#3B82F6' }} />
@@ -184,13 +184,13 @@ export default function HomePage() {
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
                 </div>
-              </div>
+              </EnhancedCard>
             </Link>
 
             {/* TRON Business & Development */}
             <Link href="/business-development" className="group relative">
-              <div className="relative h-[320px] md:h-[400px] bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/20 overflow-hidden transition-all duration-200 hover:bg-white/[0.04]" style={{ borderColor: 'rgba(0, 255, 135, 0.1)' }}>
-                <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
+              <EnhancedCard className="h-[320px] md:h-[400px]" glowColor="emerald">
+                <div className="p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(0, 255, 135, 0.2)' }}>
                       <Heart className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#00FF87' }} />
@@ -207,7 +207,7 @@ export default function HomePage() {
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
                 </div>
-              </div>
+              </EnhancedCard>
             </Link>
 
           </div>
