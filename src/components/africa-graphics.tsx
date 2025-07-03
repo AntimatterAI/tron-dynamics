@@ -83,22 +83,29 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
         {/* City markers and labels overlay */}
         <div className="absolute inset-0 pointer-events-none">
           {majorCities.slice(0, 5).map((city, index) => {
-            // FIXED: Accurate positioning based on actual Africa continent shape
+            // FIXED: Constrained positioning within Africa continent boundaries
+            // The @react-map/africa SVG has specific boundaries - positioning within actual continent
             const cityPositions = [
-              { top: '45%', left: '25%' },  // Lagos, Nigeria (West Africa coast)
-              { top: '18%', left: '70%' },  // Cairo, Egypt (Northeast Africa) 
-              { top: '55%', left: '50%' },  // Kinshasa, DR Congo (Central Africa)
-              { top: '82%', left: '55%' },  // Johannesburg, South Africa
-              { top: '50%', left: '75%' }   // Nairobi, Kenya (East Africa)
+              { top: '60%', left: '35%' },  // Lagos, Nigeria (West Africa coast)
+              { top: '25%', left: '62%' },  // Cairo, Egypt (Northeast Africa) 
+              { top: '58%', left: '48%' },  // Kinshasa, DR Congo (Central Africa)
+              { top: '85%', left: '52%' },  // Johannesburg, South Africa
+              { top: '55%', left: '68%' }   // Nairobi, Kenya (East Africa)
             ]
             
             const pos = cityPositions[index]
             
+            // Ensure dots stay within safe continent boundaries (20% margin from edges)
+            const safePos = {
+              top: Math.max(20, Math.min(80, parseFloat(pos.top))) + '%',
+              left: Math.max(25, Math.min(75, parseFloat(pos.left))) + '%'
+            }
+            
             return (
               <div 
                 key={city.name}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2"
-                style={pos}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 z-20"
+                style={safePos}
               >
                 <div className={`relative group`}>
                   <div className={`w-4 h-4 bg-orange-400 rounded-full border-2 border-white shadow-lg ${animated ? 'animate-pulse' : ''}`} />
