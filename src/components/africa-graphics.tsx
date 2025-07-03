@@ -83,14 +83,13 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
         {/* City markers and labels overlay */}
         <div className="absolute inset-0 pointer-events-none">
           {majorCities.slice(0, 5).map((city, index) => {
-            // Manually positioned based on visual inspection of the @react-map/africa SVG
-            // These positions are accurate to the actual geographic locations
+            // FIXED: Accurate positioning based on actual Africa continent shape
             const cityPositions = [
-              { top: '52%', left: '18%' },  // Lagos, Nigeria (West Africa coast)
-              { top: '22%', left: '58%' },  // Cairo, Egypt (Northeast Africa) 
-              { top: '58%', left: '38%' },  // Kinshasa, DR Congo (Central Africa)
-              { top: '78%', left: '52%' },  // Johannesburg, South Africa
-              { top: '54%', left: '65%' }   // Nairobi, Kenya (East Africa)
+              { top: '45%', left: '25%' },  // Lagos, Nigeria (West Africa coast)
+              { top: '18%', left: '70%' },  // Cairo, Egypt (Northeast Africa) 
+              { top: '55%', left: '50%' },  // Kinshasa, DR Congo (Central Africa)
+              { top: '82%', left: '55%' },  // Johannesburg, South Africa
+              { top: '50%', left: '75%' }   // Nairobi, Kenya (East Africa)
             ]
             
             const pos = cityPositions[index]

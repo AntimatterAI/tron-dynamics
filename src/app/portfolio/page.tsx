@@ -9,14 +9,12 @@ import {
   ArrowRight,
   Phone,
   Users,
-  Target,
-  Brain,
-  Shield,
-  BookOpen
+  Target
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
-import { ServiceShowcase, AfricaContinent } from "@/components/africa-graphics"
+// import { ServiceShowcase, AfricaContinent } from "@/components/africa-graphics"
+import { PortfolioShowcaseGraphics } from "@/components/page-graphics"
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
@@ -197,47 +195,7 @@ export default function PortfolioPage() {
             </p>
           </AnimatedElement>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Service Showcases */}
-            <div className="space-y-8">
-              <ServiceShowcase 
-                title="Healthcare AI"
-                color="orange"
-                services={[
-                  {
-                    icon: <Brain className="w-5 h-5" />,
-                    title: "Clinix AI",
-                    description: "AI-powered medical documentation reducing physician workload by 60%"
-                  },
-                  {
-                    icon: <Shield className="w-5 h-5" />,
-                    title: "ShadowShield AI", 
-                    description: "Enterprise AI governance protecting healthcare data and compliance"
-                  },
-                  {
-                    icon: <BookOpen className="w-5 h-5" />,
-                    title: "Synergies4 AI",
-                    description: "AI-powered learning for medical professionals and healthcare teams"
-                  }
-                ]}
-              />
-            </div>
-
-            {/* Africa Visualization */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-orange-500/5 to-red-600/10 rounded-2xl p-8 border border-orange-400/20">
-                <AfricaContinent showConnectionLines={true} animated={true} />
-                <div className="mt-6 text-center">
-                  <h3 className="text-xl font-light text-white mb-2" style={{fontFamily: 'var(--font-orbitron)'}}>
-                    Global Impact
-                  </h3>
-                  <p className="text-orange-100/60 text-sm">
-                    Our companies serve clients from Lagos to Atlanta, creating solutions that scale globally
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <PortfolioShowcaseGraphics />
         </div>
       </section>
 
