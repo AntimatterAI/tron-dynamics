@@ -18,7 +18,6 @@ import {
   Database,
   Network,
   Lightbulb,
-  MapPin,
   Heart
 } from 'lucide-react'
 
@@ -53,10 +52,10 @@ export const TechNetworkGraphics = () => {
 
   const innovations = [
     { icon: <Brain className="w-6 h-6" />, title: "AI Solutions", description: "Healthcare & Education AI", color: "emerald" },
-    { icon: <Smartphone className="w-6 h-6" />, title: "Mobile First", description: "African-optimized apps", color: "blue" },
+    { icon: <Smartphone className="w-6 h-6" />, title: "Mobile First", description: "Mobile-optimized applications", color: "blue" },
     { icon: <Database className="w-6 h-6" />, title: "Data Infrastructure", description: "Scalable cloud solutions", color: "purple" },
     { icon: <Network className="w-6 h-6" />, title: "Connectivity", description: "Rural internet access", color: "orange" },
-    { icon: <Palette className="w-6 h-6" />, title: "Design Systems", description: "Afro-futurist aesthetics", color: "pink" },
+    { icon: <Palette className="w-6 h-6" />, title: "Design Systems", description: "Modern design aesthetics", color: "pink" },
     { icon: <Shield className="w-6 h-6" />, title: "Security", description: "Blockchain & cybersecurity", color: "cyan" }
   ]
 
@@ -223,7 +222,7 @@ export const PortfolioShowcaseGraphics = () => {
       name: 'Clinix AI', 
       icon: <Brain className="w-8 h-8" />, 
       sector: 'Healthcare AI',
-      description: 'AI-powered diagnostic tools for African healthcare systems',
+      description: 'AI-powered diagnostic tools for healthcare systems',
       value: '$15M',
       color: 'blue',
       metrics: { users: '50K+', accuracy: '94%' }
@@ -232,7 +231,7 @@ export const PortfolioShowcaseGraphics = () => {
       name: 'ShadowShield AI', 
       icon: <Shield className="w-8 h-8" />, 
       sector: 'Cybersecurity',
-      description: 'Advanced threat detection for African financial institutions',
+      description: 'Advanced threat detection for financial institutions',
       value: '$12M',
       color: 'purple',
       metrics: { clients: '200+', threats: '99.8%' }
@@ -241,7 +240,7 @@ export const PortfolioShowcaseGraphics = () => {
       name: 'Synergies4 AI', 
       icon: <Network className="w-8 h-8" />, 
       sector: 'Business Intelligence',
-      description: 'Data analytics platform for African enterprises',
+      description: 'Data analytics platform for enterprises',
       value: '$9M',
       color: 'emerald',
       metrics: { revenue: '+340%', clients: '150+' }
@@ -345,33 +344,29 @@ export const InnovationLabsGraphics = () => {
 
   const labs = [
     { 
-      title: 'AI Research Lab', 
-      location: 'Lagos, Nigeria',
+      title: 'AI Research', 
       focus: 'Machine Learning & Computer Vision',
       projects: 8,
       icon: <Brain className="w-6 h-6" />,
       color: 'blue'
     },
     { 
-      title: 'Fintech Innovation Hub', 
-      location: 'Cape Town, South Africa',
+      title: 'Fintech Innovation', 
       focus: 'Blockchain & Digital Payments',
       projects: 12,
       icon: <DollarSign className="w-6 h-6" />,
       color: 'emerald'
     },
     { 
-      title: 'Healthcare Tech Lab', 
-      location: 'Nairobi, Kenya',
+      title: 'Healthcare Technology', 
       focus: 'Telemedicine & Diagnostics',
       projects: 6,
       icon: <Heart className="w-6 h-6" />,
       color: 'purple'
     },
     { 
-      title: 'Design Studio', 
-      location: 'Accra, Ghana',
-      focus: 'UX/UI & Creative Technology',
+      title: 'Design & UX', 
+      focus: 'User Experience & Creative Technology',
       projects: 15,
       icon: <Palette className="w-6 h-6" />,
       color: 'orange'
@@ -421,11 +416,7 @@ export const InnovationLabsGraphics = () => {
             </div>
 
             {/* Lab info */}
-            <h4 className="text-white text-xl font-medium mb-2">{lab.title}</h4>
-            <div className="flex items-center gap-2 mb-4">
-              <MapPin className="w-4 h-4 text-white/50" />
-              <span className="text-white/60 text-sm">{lab.location}</span>
-            </div>
+            <h4 className="text-white text-xl font-medium mb-4">{lab.title}</h4>
             <p className="text-white/60 text-sm mb-4">{lab.focus}</p>
 
             {/* Status indicator */}

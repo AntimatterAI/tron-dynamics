@@ -71,51 +71,43 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
             {/* FIXED: Major African cities with PROPER positioning */}
             {showCities && (
               <div className="absolute inset-0 pointer-events-none">
-                {/* Lagos, Nigeria - West Africa */}
-                <div className="absolute" style={{ top: '52%', left: '28%' }}>
+                {/* Lagos, Nigeria */}
+                <div className="absolute" style={{ top: '45%', left: '32%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" />
                   <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Lagos
                   </div>
                 </div>
                 
-                {/* Cairo, Egypt - Northeast Africa */}
-                <div className="absolute" style={{ top: '28%', left: '58%' }}>
+                {/* Cairo, Egypt */}
+                <div className="absolute" style={{ top: '32%', left: '55%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.2s' }} />
                   <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Cairo
                   </div>
                 </div>
                 
-                {/* Kinshasa, DR Congo - Central Africa */}
-                <div className="absolute" style={{ top: '58%', left: '46%' }}>
+                {/* Kinshasa, DR Congo */}
+                <div className="absolute" style={{ top: '55%', left: '48%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.4s' }} />
                   <div className="absolute -top-8 -left-12 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Kinshasa
                   </div>
                 </div>
                 
-                {/* Johannesburg, South Africa - Southern Africa */}
-                <div className="absolute" style={{ top: '78%', left: '52%' }}>
+                {/* Johannesburg, South Africa */}
+                <div className="absolute" style={{ top: '72%', left: '50%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.6s' }} />
                   <div className="absolute -top-8 -left-16 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Johannesburg
                   </div>
                 </div>
                 
-                {/* Nairobi, Kenya - East Africa */}
-                <div className="absolute" style={{ top: '60%', left: '64%' }}>
+                {/* Nairobi, Kenya */}
+                <div className="absolute" style={{ top: '58%', left: '62%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.8s' }} />
                   <div className="absolute -top-8 -left-10 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Nairobi
-                  </div>
-                </div>
-                
-                {/* Accra, Ghana - West Africa */}
-                <div className="absolute" style={{ top: '50%', left: '22%' }}>
-                  <div className="w-2 h-2 bg-orange-400 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '1s' }} />
-                  <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
-                    Accra
                   </div>
                 </div>
               </div>
@@ -294,7 +286,7 @@ const ImpactVisualization = () => {
     { 
       value: animatedValues.countries, 
       suffix: '', 
-      label: 'African Countries', 
+      label: 'Countries', 
       sublabel: 'Market presence',
       color: 'blue',
       icon: <Globe className="w-5 h-5" />
@@ -330,7 +322,7 @@ const ImpactVisualization = () => {
           Building <span className="text-emerald-300">Africa&apos;s</span> Future
         </h2>
         <p className="text-xl text-white/60 max-w-3xl mx-auto font-light leading-relaxed">
-          Connecting innovation, investment, and impact across the African continent through strategic partnerships
+          Connecting innovation, investment, and impact across the continent through strategic partnerships
         </p>
       </div>
 
@@ -421,7 +413,7 @@ const CallToActionGraphics = () => {
     { 
       icon: <Code className="w-7 h-7" />, 
       title: "Technology Solutions", 
-      description: "Custom development and digital transformation for African businesses",
+      description: "Custom development and digital transformation solutions",
       color: "emerald"
     },
     { 
@@ -489,7 +481,7 @@ const CallToActionGraphics = () => {
               Africa is <span className="text-emerald-300">Rising</span>
             </h3>
             <p className="text-xl text-white/80 font-light leading-relaxed mb-8">
-              We&apos;re building more than companies—we&apos;re creating an innovation ecosystem that connects African talent with global opportunities, transforming ideas into impactful solutions.
+              We&apos;re building more than companies—we&apos;re creating an innovation ecosystem that connects talent with global opportunities, transforming ideas into impactful solutions.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
