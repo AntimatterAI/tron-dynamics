@@ -83,22 +83,21 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
         {/* City markers and labels overlay */}
         <div className="absolute inset-0 pointer-events-none">
           {majorCities.slice(0, 5).map((city, index) => {
-            // FIXED: Constrained positioning within Africa continent boundaries
-            // The @react-map/africa SVG has specific boundaries - positioning within actual continent
+            // FIXED: Very conservative positioning well within visible continent
             const cityPositions = [
-              { top: '60%', left: '35%' },  // Lagos, Nigeria (West Africa coast)
-              { top: '25%', left: '62%' },  // Cairo, Egypt (Northeast Africa) 
-              { top: '58%', left: '48%' },  // Kinshasa, DR Congo (Central Africa)
-              { top: '85%', left: '52%' },  // Johannesburg, South Africa
-              { top: '55%', left: '68%' }   // Nairobi, Kenya (East Africa)
+              { top: '45%', left: '40%' },  // Lagos, Nigeria (West Africa)
+              { top: '30%', left: '55%' },  // Cairo, Egypt (Northeast Africa) 
+              { top: '50%', left: '50%' },  // Kinshasa, DR Congo (Central Africa)
+              { top: '70%', left: '50%' },  // Johannesburg, South Africa
+              { top: '45%', left: '60%' }   // Nairobi, Kenya (East Africa)
             ]
             
             const pos = cityPositions[index]
             
-            // Ensure dots stay within safe continent boundaries (20% margin from edges)
+            // Extra conservative bounds - well within continent
             const safePos = {
-              top: Math.max(20, Math.min(80, parseFloat(pos.top))) + '%',
-              left: Math.max(25, Math.min(75, parseFloat(pos.left))) + '%'
+              top: Math.max(30, Math.min(70, parseFloat(pos.top))) + '%',
+              left: Math.max(40, Math.min(60, parseFloat(pos.left))) + '%'
             }
             
             return (
