@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Rocket, Users, Heart, Brain, Building, Code, Palette } from 'lucide-react'
 import Africa from '@react-map/africa'
-import { AnimatedCounter } from './enhanced-graphics'
+// import { AnimatedCounter } from './enhanced-graphics'
 
 // Client-side check to prevent SSR issues
 const isClient = typeof window !== 'undefined'
@@ -192,7 +192,7 @@ const ImpactVisualization = () => {
         <div className="grid grid-cols-2 gap-6">
           <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
             <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
-              $<AnimatedCounter end={36} suffix="M" duration={2.5} />
+              $36M
             </div>
             <div className="text-white font-medium mb-1">Portfolio Value</div>
             <div className="text-white/60 text-sm">Combined valuation</div>
@@ -200,7 +200,7 @@ const ImpactVisualization = () => {
           
           <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
             <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
-              <AnimatedCounter end={50} suffix="+" duration={2} />
+              50+
             </div>
             <div className="text-white font-medium mb-1">Countries Reached</div>
             <div className="text-white/60 text-sm">Global impact</div>
@@ -208,7 +208,7 @@ const ImpactVisualization = () => {
           
           <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
             <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
-              <AnimatedCounter end={1} suffix="M+" duration={3} />
+              1M+
             </div>
             <div className="text-white font-medium mb-1">Lives Touched</div>
             <div className="text-white/60 text-sm">Through our work</div>
@@ -216,7 +216,7 @@ const ImpactVisualization = () => {
           
           <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
             <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
-              <AnimatedCounter end={25} suffix="+" duration={2} />
+              25+
             </div>
             <div className="text-white font-medium mb-1">Partnerships</div>
             <div className="text-white/60 text-sm">Strategic alliances</div>
