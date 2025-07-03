@@ -71,40 +71,40 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
             {/* FIXED: Major African cities with PROPER positioning */}
             {showCities && (
               <div className="absolute inset-0 pointer-events-none">
-                {/* Lagos, Nigeria - CONSERVATIVE positioning within continent */}
-                <div className="absolute" style={{ top: '48%', left: '38%' }}>
+                {/* Lagos, Nigeria - ULTRA CONSERVATIVE center positioning */}
+                <div className="absolute" style={{ top: '50%', left: '47%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" />
                   <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Lagos
                   </div>
                 </div>
                 
-                {/* Cairo, Egypt - CONSERVATIVE positioning within continent */}
-                <div className="absolute" style={{ top: '38%', left: '52%' }}>
+                {/* Cairo, Egypt - ULTRA CONSERVATIVE center positioning */}
+                <div className="absolute" style={{ top: '45%', left: '51%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.2s' }} />
                   <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Cairo
                   </div>
                 </div>
                 
-                {/* Kinshasa, DR Congo - CONSERVATIVE positioning within continent */}
-                <div className="absolute" style={{ top: '52%', left: '46%' }}>
+                {/* Kinshasa, DR Congo - ULTRA CONSERVATIVE center positioning */}
+                <div className="absolute" style={{ top: '52%', left: '49%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.4s' }} />
                   <div className="absolute -top-8 -left-12 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Kinshasa
                   </div>
                 </div>
                 
-                {/* Johannesburg, South Africa - CONSERVATIVE positioning within continent */}
-                <div className="absolute" style={{ top: '68%', left: '48%' }}>
+                {/* Johannesburg, South Africa - ULTRA CONSERVATIVE center positioning */}
+                <div className="absolute" style={{ top: '58%', left: '50%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.6s' }} />
                   <div className="absolute -top-8 -left-16 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Johannesburg
                   </div>
                 </div>
                 
-                {/* Nairobi, Kenya - CONSERVATIVE positioning within continent */}
-                <div className="absolute" style={{ top: '55%', left: '58%' }}>
+                {/* Nairobi, Kenya - ULTRA CONSERVATIVE center positioning */}
+                <div className="absolute" style={{ top: '48%', left: '53%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.8s' }} />
                   <div className="absolute -top-8 -left-10 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Nairobi
