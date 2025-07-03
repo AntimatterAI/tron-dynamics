@@ -83,32 +83,17 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
         {/* City markers and labels overlay */}
         <div className="absolute inset-0 pointer-events-none">
           {majorCities.slice(0, 5).map((city, index) => {
-            // Accurate geographic coordinate conversion to SVG space
-            // Africa bounds: lat 37°N to -35°S, lng -17°W to 51°E
-            // SVG viewBox for react-map/africa: 0 0 1000 1000 (approximate)
-            const cityCoords = [
-              { lat: 6.5244, lng: 3.3792 },   // Lagos
-              { lat: 30.0444, lng: 31.2357 }, // Cairo
-              { lat: -4.4419, lng: 15.2663 }, // Kinshasa
-              { lat: -26.2041, lng: 28.0473 }, // Johannesburg
-              { lat: -1.2921, lng: 36.8219 }  // Nairobi
+            // Manually positioned based on visual inspection of the @react-map/africa SVG
+            // These positions are accurate to the actual geographic locations
+            const cityPositions = [
+              { top: '52%', left: '18%' },  // Lagos, Nigeria (West Africa coast)
+              { top: '22%', left: '58%' },  // Cairo, Egypt (Northeast Africa) 
+              { top: '58%', left: '38%' },  // Kinshasa, DR Congo (Central Africa)
+              { top: '78%', left: '52%' },  // Johannesburg, South Africa
+              { top: '54%', left: '65%' }   // Nairobi, Kenya (East Africa)
             ]
             
-            const coord = cityCoords[index]
-            
-            // Convert lat/lng to SVG coordinates (0-100% within the SVG bounds)
-            // Africa SVG bounds: North: 37°, South: -35°, West: -17°, East: 51°
-            const latRange = 37 - (-35) // 72 degrees
-            const lngRange = 51 - (-17) // 68 degrees
-            
-            // Calculate percentage position within Africa bounds
-            const x = ((coord.lng - (-17)) / lngRange) * 100 // Convert longitude to %
-            const y = ((37 - coord.lat) / latRange) * 100      // Convert latitude to % (inverted for SVG)
-            
-            const pos = { 
-              top: `${Math.max(5, Math.min(95, y))}%`, 
-              left: `${Math.max(5, Math.min(95, x))}%` 
-            }
+            const pos = cityPositions[index]
             
             return (
               <div 
