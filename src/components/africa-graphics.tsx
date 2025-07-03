@@ -5,14 +5,31 @@ import { Rocket, Users, Heart, Brain, Building, Code, Palette } from 'lucide-rea
 import Africa from '@react-map/africa'
 import { AnimatedCounter } from './enhanced-graphics'
 
+// Client-side check to prevent SSR issues
+const isClient = typeof window !== 'undefined'
+
 // African Continent SVG Component using accurate react-map data
 const AfricaContinent = ({ className = "", showConnectionLines = false, animated = true }: { className?: string, showConnectionLines?: boolean, animated?: boolean }) => {
   const [isVisible, setIsVisible] = useState(false)
+  const [mounted, setMounted] = useState(false)
   
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 500)
-    return () => clearTimeout(timer)
+    setMounted(true)
+    if (isClient) {
+      const timer = setTimeout(() => setIsVisible(true), 500)
+      return () => clearTimeout(timer)
+    }
   }, [])
+
+  if (!mounted || !isClient) {
+    return (
+      <div className={`relative ${className}`}>
+        <div className="w-full h-64 bg-emerald-500/10 rounded-lg flex items-center justify-center">
+          <span className="text-emerald-300 text-sm">Loading Africa Map...</span>
+        </div>
+      </div>
+    )
+  }
 
   // Major African cities with approximate coordinates (these will need to be positioned relative to the SVG)
   const majorCities = [

@@ -4,20 +4,31 @@ import React, { useEffect, useState, useRef } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { Zap, Rocket, Globe, Brain, Network, Target, ArrowUpRight, Sparkles } from 'lucide-react'
 
+// Client-side check to prevent SSR issues
+const isClient = typeof window !== 'undefined'
+
 // Floating Particles Background
 export const FloatingParticles = ({ count = 50, speed = 'slow' }: { count?: number, speed?: 'slow' | 'medium' | 'fast' }) => {
   const [particles, setParticles] = useState<Array<{ id: number, x: number, y: number, size: number, delay: number }>>([])
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const newParticles = Array.from({ length: count }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 4 + 1,
-      delay: Math.random() * 5
-    }))
-    setParticles(newParticles)
+    setMounted(true)
+    if (isClient) {
+      const newParticles = Array.from({ length: count }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 4 + 1,
+        delay: Math.random() * 5
+      }))
+      setParticles(newParticles)
+    }
   }, [count])
+
+  if (!mounted || !isClient) {
+    return null
+  }
 
   const speedMap = {
     slow: 8,
@@ -269,6 +280,24 @@ export const FloatingActionElements = () => {
 
 // Hero Section Graphics
 export const HeroGraphics = () => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted || !isClient) {
+    return (
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Static fallback background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="absolute inset-0 overflow-hidden">
       {/* Animated Grid */}
@@ -329,9 +358,14 @@ export const AnimatedCounter = ({
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [count, setCount] = useState(0)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (isInView) {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (mounted && isClient && isInView) {
       let startTime: number
       const startCount = 0
       
@@ -348,7 +382,11 @@ export const AnimatedCounter = ({
       
       requestAnimationFrame(updateCount)
     }
-  }, [isInView, end, duration])
+  }, [mounted, isInView, end, duration])
+
+  if (!mounted) {
+    return <span className="font-bold">{prefix}{end.toLocaleString()}{suffix}</span>
+  }
 
   return (
     <span ref={ref} className="font-bold">
