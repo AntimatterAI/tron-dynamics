@@ -10,10 +10,13 @@ import {
   CheckCircle,
   DollarSign,
   Network,
-  Search
+  Search,
+  Users,
+  Globe
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
+import { ServiceShowcase, AfricaContinent, ImpactVisualization } from "@/components/africa-graphics"
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
@@ -223,6 +226,67 @@ export default function BusinessDevelopmentPage() {
                 </div>
               </AnimatedElement>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Global Business Network Section */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Global Business <span className="text-emerald-300">Network</span>
+            </h2>
+            <p className="text-lg text-emerald-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Connecting African entrepreneurs with global opportunities and capital markets.
+            </p>
+          </AnimatedElement>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Service Showcases */}
+            <div className="space-y-8">
+              <ServiceShowcase 
+                title="Business Growth Services"
+                color="emerald"
+                services={[
+                  {
+                    icon: <Network className="w-5 h-5" />,
+                    title: "Partnership Development",
+                    description: "Strategic alliances and partnerships that accelerate business growth"
+                  },
+                  {
+                    icon: <Users className="w-5 h-5" />,
+                    title: "Investor Connections", 
+                    description: "Access to global capital markets and investment opportunities"
+                  },
+                  {
+                    icon: <Globe className="w-5 h-5" />,
+                    title: "Market Expansion",
+                    description: "International market entry and cross-border business development"
+                  }
+                ]}
+              />
+            </div>
+
+            {/* Africa + Global Visualization */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-emerald-500/5 to-green-600/10 rounded-2xl p-8 border border-emerald-400/20">
+                <AfricaContinent showConnectionLines={true} animated={true} />
+                <div className="mt-6 text-center">
+                  <h3 className="text-xl font-light text-white mb-2" style={{fontFamily: 'var(--font-orbitron)'}}>
+                    $25M+ Capital Raised
+                  </h3>
+                  <p className="text-emerald-100/60 text-sm">
+                    Connecting African entrepreneurs with global investors and partners
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Impact Visualization */}
+          <div className="mt-16">
+            <ImpactVisualization />
           </div>
         </div>
       </section>

@@ -10,10 +10,14 @@ import {
   Palette,
   Database,
   Globe,
-  CheckCircle
+  CheckCircle,
+  Code,
+  Brain,
+  Zap
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
+import { ServiceShowcase, AfricaContinent } from "@/components/africa-graphics"
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
@@ -200,6 +204,62 @@ export default function InnovationPage() {
                 </div>
               </AnimatedElement>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Innovation Across Africa Section */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Innovation Across <span className="text-blue-300">Africa</span>
+            </h2>
+            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Connecting entrepreneurs from Lagos to Cape Town with cutting-edge technology solutions.
+            </p>
+          </AnimatedElement>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Service Showcases */}
+            <div className="space-y-8">
+              <ServiceShowcase 
+                title="Tech Innovation"
+                color="blue"
+                services={[
+                  {
+                    icon: <Code className="w-5 h-5" />,
+                    title: "Full-Stack Development",
+                    description: "Building scalable applications for African markets with offline-first architecture"
+                  },
+                  {
+                    icon: <Brain className="w-5 h-5" />,
+                    title: "AI Integration", 
+                    description: "Implementing intelligent solutions that work in low-resource environments"
+                  },
+                  {
+                    icon: <Zap className="w-5 h-5" />,
+                    title: "Performance Optimization",
+                    description: "Ensuring fast, reliable experiences across all device types and network conditions"
+                  }
+                ]}
+              />
+            </div>
+
+            {/* Africa Visualization */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-500/5 to-purple-600/10 rounded-2xl p-8 border border-blue-400/20">
+                <AfricaContinent showConnectionLines={true} animated={true} />
+                <div className="mt-6 text-center">
+                  <h3 className="text-xl font-light text-white mb-2" style={{fontFamily: 'var(--font-orbitron)'}}>
+                    Continental Reach
+                  </h3>
+                  <p className="text-blue-100/60 text-sm">
+                    Our innovations power businesses across 12 African countries and beyond
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

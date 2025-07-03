@@ -4,6 +4,7 @@ import { useRef, Suspense, lazy } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Globe, Phone, Heart, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
+import { CallToActionGraphics, ImpactVisualization } from '@/components/africa-graphics'
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import('@/components/simple-hero-effects'))
@@ -205,6 +206,16 @@ export default function HomePage() {
             </Link>
 
           </div>
+        </div>
+      </section>
+
+      {/* What We Can Build Together */}
+      <CallToActionGraphics />
+
+      {/* Impact Visualization */}
+      <section className="py-16 md:py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <ImpactVisualization />
         </div>
       </section>
 
