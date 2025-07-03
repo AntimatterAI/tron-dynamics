@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Rocket, Users, Heart, Brain, Building, Code, Palette } from 'lucide-react'
 import Africa from '@react-map/africa'
+import { AnimatedCounter } from './enhanced-graphics'
 
 // African Continent SVG Component using accurate react-map data
 const AfricaContinent = ({ className = "", showConnectionLines = false, animated = true }: { className?: string, showConnectionLines?: boolean, animated?: boolean }) => {
@@ -65,13 +66,14 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
         {/* City markers and labels overlay */}
         <div className="absolute inset-0 pointer-events-none">
           {majorCities.slice(0, 5).map((city, index) => {
-            // Approximate positioning - these would need fine-tuning based on the actual SVG coordinates
+            // Accurate positioning based on geographic coordinates converted to SVG space
+            // Based on the react-map/africa SVG dimensions and coordinate system
             const positions = [
-              { top: '45%', left: '25%' }, // Lagos area
-              { top: '25%', left: '60%' }, // Cairo area  
-              { top: '55%', left: '45%' }, // Central Africa
-              { top: '80%', left: '45%' }, // South Africa
-              { top: '50%', left: '65%' }  // East Africa
+              { top: '68%', left: '42%' }, // Lagos (6.5°N, 3.4°E)
+              { top: '35%', left: '62%' }, // Cairo (30.0°N, 31.2°E)  
+              { top: '52%', left: '45%' }, // Kinshasa (4.3°S, 15.3°E)
+              { top: '83%', left: '57%' }, // Johannesburg (26.2°S, 28.0°E)
+              { top: '50%', left: '70%' }  // Nairobi (1.3°S, 36.8°E)
             ]
             
             const pos = positions[index] || { top: '50%', left: '50%' }
@@ -82,9 +84,12 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
                 className="absolute transform -translate-x-1/2 -translate-y-1/2"
                 style={pos}
               >
-                <div className={`w-3 h-3 bg-orange-400 rounded-full ${animated ? 'animate-ping' : ''}`} />
-                <div className="text-xs text-white font-medium mt-1 text-center whitespace-nowrap">
-                  {city.name}
+                <div className={`relative group`}>
+                  <div className={`w-4 h-4 bg-orange-400 rounded-full border-2 border-white shadow-lg ${animated ? 'animate-pulse' : ''}`} />
+                  <div className={`absolute w-8 h-8 bg-orange-400 rounded-full -top-2 -left-2 opacity-30 ${animated ? 'animate-ping' : ''}`} />
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-black/80 backdrop-blur-sm px-2 py-1 rounded text-xs text-white font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {city.name}
+                  </div>
                 </div>
               </div>
             )
@@ -147,12 +152,6 @@ const ServiceShowcase = ({ title, services, color = "emerald" }: { title: string
 
 // Impact Visualization Component
 const ImpactVisualization = () => {
-  const impactMetrics = [
-    { value: "$36M", label: "Portfolio Value", description: "Combined valuation" },
-    { value: "50+", label: "Countries Reached", description: "Global impact" },
-    { value: "1M+", label: "Lives Touched", description: "Through our work" },
-    { value: "25+", label: "Partnerships", description: "Strategic alliances" }
-  ]
 
   return (
     <div className="relative">
@@ -174,15 +173,37 @@ const ImpactVisualization = () => {
 
         {/* Impact Metrics */}
         <div className="grid grid-cols-2 gap-6">
-          {impactMetrics.map((metric, index) => (
-            <div key={index} className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
-              <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
-                {metric.value}
-              </div>
-              <div className="text-white font-medium mb-1">{metric.label}</div>
-              <div className="text-white/60 text-sm">{metric.description}</div>
+          <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
+            <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
+              $<AnimatedCounter end={36} suffix="M" duration={2.5} />
             </div>
-          ))}
+            <div className="text-white font-medium mb-1">Portfolio Value</div>
+            <div className="text-white/60 text-sm">Combined valuation</div>
+          </div>
+          
+          <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
+            <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
+              <AnimatedCounter end={50} suffix="+" duration={2} />
+            </div>
+            <div className="text-white font-medium mb-1">Countries Reached</div>
+            <div className="text-white/60 text-sm">Global impact</div>
+          </div>
+          
+          <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
+            <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
+              <AnimatedCounter end={1} suffix="M+" duration={3} />
+            </div>
+            <div className="text-white font-medium mb-1">Lives Touched</div>
+            <div className="text-white/60 text-sm">Through our work</div>
+          </div>
+          
+          <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-emerald-400/20 transition-all duration-300">
+            <div className="text-3xl font-light text-emerald-300 mb-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
+              <AnimatedCounter end={25} suffix="+" duration={2} />
+            </div>
+            <div className="text-white font-medium mb-1">Partnerships</div>
+            <div className="text-white/60 text-sm">Strategic alliances</div>
+          </div>
         </div>
       </div>
     </div>
