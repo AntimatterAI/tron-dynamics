@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react'
 import { Rocket, Users, Heart, Brain, Building, Code, Palette } from 'lucide-react'
+import Africa from '@react-map/africa'
 
-// African Continent SVG Component
+// African Continent SVG Component using accurate react-map data
 const AfricaContinent = ({ className = "", showConnectionLines = false, animated = true }: { className?: string, showConnectionLines?: boolean, animated?: boolean }) => {
   const [isVisible, setIsVisible] = useState(false)
   
@@ -12,47 +13,84 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
     return () => clearTimeout(timer)
   }, [])
 
+  // Major African cities with approximate coordinates (these will need to be positioned relative to the SVG)
+  const majorCities = [
+    { name: "Lagos", country: "NG" },
+    { name: "Cairo", country: "EG" },
+    { name: "Kinshasa", country: "CD" },
+    { name: "Johannesburg", country: "ZA" },
+    { name: "Nairobi", country: "KE" },
+    { name: "Casablanca", country: "MA" },
+    { name: "Accra", country: "GH" },
+    { name: "Cape Town", country: "ZA" }
+  ]
+
   return (
-    <div className={`relative ${className}`}>
-      <svg 
-        viewBox="0 0 400 500" 
-        className={`w-full h-full ${animated ? 'transition-all duration-1000' : ''} ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Africa Continent Shape */}
-        <path
-          d="M200 50 C220 45, 240 50, 250 70 C260 90, 270 110, 280 130 C290 150, 300 170, 310 190 C320 210, 325 230, 330 250 C335 270, 340 290, 345 310 C350 330, 355 350, 360 370 C365 390, 370 410, 365 430 C360 450, 350 470, 340 480 C330 490, 320 485, 310 480 C300 475, 290 470, 280 465 C270 460, 260 455, 250 450 C240 445, 230 440, 220 435 C210 430, 200 425, 190 420 C180 415, 170 410, 160 405 C150 400, 140 395, 130 390 C120 385, 110 380, 100 375 C90 370, 80 365, 70 360 C60 355, 50 350, 45 340 C40 330, 35 320, 30 310 C25 300, 20 290, 15 280 C10 270, 5 260, 10 250 C15 240, 20 230, 25 220 C30 210, 35 200, 40 190 C45 180, 50 170, 55 160 C60 150, 65 140, 70 130 C75 120, 80 110, 85 100 C90 90, 95 80, 100 70 C105 60, 110 50, 120 45 C130 40, 140 35, 150 35 C160 35, 170 40, 180 45 C190 50, 200 50"
-          fill="rgba(0, 255, 135, 0.1)"
-          stroke="rgba(0, 255, 135, 0.3)"
-          strokeWidth="2"
-          className={animated ? 'animate-pulse' : ''}
+    <div className={`relative ${className} ${animated ? 'transition-all duration-1000' : ''} ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+      <div className="relative">
+        <Africa
+          type="select-multiple"
+          size={800}
+          mapColor="rgba(0, 255, 135, 0.1)"
+          strokeColor="rgba(0, 255, 135, 0.3)"
+          strokeWidth={1}
+          hoverColor="rgba(0, 255, 135, 0.2)"
+          selectColor="rgba(0, 255, 135, 0.3)"
+          hints={false}
+          onSelect={() => {
+            // Map interactions handled automatically by the component
+          }}
         />
         
-        {/* Connection Lines */}
+        {/* Connection Lines Overlay */}
         {showConnectionLines && (
-          <g className={`${animated ? 'animate-pulse' : ''}`}>
-            <line x1="200" y1="150" x2="350" y2="100" stroke="rgba(0, 255, 135, 0.2)" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="200" y1="200" x2="50" y2="120" stroke="rgba(0, 255, 135, 0.2)" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="200" y1="250" x2="380" y2="200" stroke="rgba(0, 255, 135, 0.2)" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="200" y1="300" x2="20" y2="250" stroke="rgba(0, 255, 135, 0.2)" strokeWidth="1" strokeDasharray="5,5" />
-          </g>
+          <svg 
+            className={`absolute inset-0 w-full h-full pointer-events-none ${animated ? 'animate-pulse' : ''}`}
+            style={{ zIndex: 10 }}
+          >
+            <defs>
+              <pattern id="connectionDots" patternUnits="userSpaceOnUse" width="8" height="8">
+                <circle cx="4" cy="4" r="1" fill="rgba(0, 255, 135, 0.4)" />
+              </pattern>
+            </defs>
+            
+            {/* Global connection lines emanating from Africa */}
+            <line x1="400" y1="200" x2="600" y2="100" stroke="url(#connectionDots)" strokeWidth="2" opacity="0.6" />
+            <line x1="400" y1="300" x2="100" y2="150" stroke="url(#connectionDots)" strokeWidth="2" opacity="0.6" />
+            <line x1="450" y1="400" x2="700" y2="350" stroke="url(#connectionDots)" strokeWidth="2" opacity="0.6" />
+            <line x1="350" y1="500" x2="50" y2="400" stroke="url(#connectionDots)" strokeWidth="2" opacity="0.6" />
+          </svg>
         )}
 
-        {/* City Points */}
-        <circle cx="150" cy="120" r="4" fill="#FF6B35" className={animated ? 'animate-ping' : ''} />
-        <circle cx="200" cy="180" r="4" fill="#FF6B35" className={animated ? 'animate-ping' : ''} />
-        <circle cx="250" cy="250" r="4" fill="#FF6B35" className={animated ? 'animate-ping' : ''} />
-        <circle cx="180" cy="320" r="4" fill="#FF6B35" className={animated ? 'animate-ping' : ''} />
-        <circle cx="220" cy="280" r="4" fill="#FF6B35" className={animated ? 'animate-ping' : ''} />
-
-        {/* Labels */}
-        <text x="150" y="110" textAnchor="middle" className="text-xs fill-white font-medium">Lagos</text>
-        <text x="200" y="170" textAnchor="middle" className="text-xs fill-white font-medium">Accra</text>
-        <text x="250" y="240" textAnchor="middle" className="text-xs fill-white font-medium">Nairobi</text>
-        <text x="180" y="310" textAnchor="middle" className="text-xs fill-white font-medium">Cape Town</text>
-        <text x="220" y="270" textAnchor="middle" className="text-xs fill-white font-medium">Johannesburg</text>
-      </svg>
+        {/* City markers and labels overlay */}
+        <div className="absolute inset-0 pointer-events-none">
+          {majorCities.slice(0, 5).map((city, index) => {
+            // Approximate positioning - these would need fine-tuning based on the actual SVG coordinates
+            const positions = [
+              { top: '45%', left: '25%' }, // Lagos area
+              { top: '25%', left: '60%' }, // Cairo area  
+              { top: '55%', left: '45%' }, // Central Africa
+              { top: '80%', left: '45%' }, // South Africa
+              { top: '50%', left: '65%' }  // East Africa
+            ]
+            
+            const pos = positions[index] || { top: '50%', left: '50%' }
+            
+            return (
+              <div 
+                key={city.name}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2"
+                style={pos}
+              >
+                <div className={`w-3 h-3 bg-orange-400 rounded-full ${animated ? 'animate-ping' : ''}`} />
+                <div className="text-xs text-white font-medium mt-1 text-center whitespace-nowrap">
+                  {city.name}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }
