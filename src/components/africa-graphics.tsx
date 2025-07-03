@@ -71,40 +71,40 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
             {/* FIXED: Major African cities with PROPER positioning */}
             {showCities && (
               <div className="absolute inset-0 pointer-events-none">
-                {/* Lagos, Nigeria */}
-                <div className="absolute" style={{ top: '45%', left: '32%' }}>
+                {/* Lagos, Nigeria - CONSERVATIVE positioning within continent */}
+                <div className="absolute" style={{ top: '48%', left: '38%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" />
                   <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Lagos
                   </div>
                 </div>
                 
-                {/* Cairo, Egypt */}
-                <div className="absolute" style={{ top: '32%', left: '55%' }}>
+                {/* Cairo, Egypt - CONSERVATIVE positioning within continent */}
+                <div className="absolute" style={{ top: '38%', left: '52%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.2s' }} />
                   <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Cairo
                   </div>
                 </div>
                 
-                {/* Kinshasa, DR Congo */}
-                <div className="absolute" style={{ top: '55%', left: '48%' }}>
+                {/* Kinshasa, DR Congo - CONSERVATIVE positioning within continent */}
+                <div className="absolute" style={{ top: '52%', left: '46%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.4s' }} />
                   <div className="absolute -top-8 -left-12 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Kinshasa
                   </div>
                 </div>
                 
-                {/* Johannesburg, South Africa */}
-                <div className="absolute" style={{ top: '72%', left: '50%' }}>
+                {/* Johannesburg, South Africa - CONSERVATIVE positioning within continent */}
+                <div className="absolute" style={{ top: '68%', left: '48%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.6s' }} />
                   <div className="absolute -top-8 -left-16 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Johannesburg
                   </div>
                 </div>
                 
-                {/* Nairobi, Kenya */}
-                <div className="absolute" style={{ top: '58%', left: '62%' }}>
+                {/* Nairobi, Kenya - CONSERVATIVE positioning within continent */}
+                <div className="absolute" style={{ top: '55%', left: '58%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.8s' }} />
                   <div className="absolute -top-8 -left-10 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Nairobi
@@ -163,8 +163,8 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
             <div className="flex items-center gap-3">
               <MapPin className="w-5 h-5 text-emerald-400" />
               <div>
-                <div className="text-emerald-300 font-medium text-sm">54 Countries</div>
-                <div className="text-white/60 text-xs">Across Africa</div>
+                <div className="text-emerald-300 font-medium text-sm">12 Countries</div>
+                <div className="text-white/60 text-xs">Active markets</div>
               </div>
             </div>
           </div>
@@ -265,10 +265,10 @@ const ImpactVisualization = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimatedValues({
-        portfolio: 36,
-        countries: 54,
-        lives: 1000000,
-        partnerships: 25
+        portfolio: 8,
+        countries: 12,
+        lives: 15000,
+        partnerships: 6
       })
     }, 500)
     return () => clearTimeout(timer)
@@ -294,8 +294,8 @@ const ImpactVisualization = () => {
     { 
       value: animatedValues.lives, 
       suffix: '+', 
-      label: 'Lives Impacted', 
-      sublabel: 'Through innovation',
+      label: 'People Reached', 
+      sublabel: 'Through our solutions',
       color: 'orange',
       icon: <Heart className="w-5 h-5" />
     },
@@ -322,7 +322,7 @@ const ImpactVisualization = () => {
           Building <span className="text-emerald-300">Africa&apos;s</span> Future
         </h2>
         <p className="text-xl text-white/60 max-w-3xl mx-auto font-light leading-relaxed">
-          Connecting innovation, investment, and impact across the continent through strategic partnerships
+          Building strategic partnerships to connect innovation and investment across African markets
         </p>
       </div>
 
@@ -389,25 +389,25 @@ const CallToActionGraphics = () => {
     { 
       icon: <Brain className="w-7 h-7" />, 
       title: "AI & Machine Learning", 
-      description: "Intelligent systems transforming healthcare, education, and fintech across Africa",
+      description: "Developing intelligent systems for healthcare, education, and fintech applications",
       color: "emerald"
     },
     { 
       icon: <Rocket className="w-7 h-7" />, 
       title: "Venture Capital", 
-      description: "Strategic investment in Africa&apos;s most promising startups and growth companies",
+      description: "Strategic investment in early-stage companies with strong growth potential",
       color: "blue"
     },
     { 
       icon: <Building className="w-7 h-7" />, 
       title: "Digital Infrastructure", 
-      description: "Building the technological foundation for Africa&apos;s digital economy",
+      description: "Building scalable technology platforms and digital solutions",
       color: "orange"
     },
     { 
       icon: <Users className="w-7 h-7" />, 
       title: "Ecosystem Development", 
-      description: "Connecting entrepreneurs, investors, and innovators across the continent",
+      description: "Connecting entrepreneurs, investors, and innovators through our network",
       color: "purple"
     },
     { 
@@ -419,7 +419,7 @@ const CallToActionGraphics = () => {
     { 
       icon: <Palette className="w-7 h-7" />, 
       title: "Creative Excellence", 
-      description: "Award-winning design and creative services telling Africa&apos;s innovation story",
+      description: "Professional design and creative services for modern businesses",
       color: "blue"
     }
   ]
@@ -437,7 +437,7 @@ const CallToActionGraphics = () => {
           Transforming <span className="text-emerald-300">Africa</span>
         </h2>
         <p className="text-2xl text-white/60 max-w-4xl mx-auto font-light leading-relaxed">
-          From Lagos to Cape Town, we&apos;re building the infrastructure, companies, and solutions that will define Africa&apos;s future
+          We work across key African markets, building infrastructure, companies, and solutions for tomorrow
         </p>
       </div>
 
@@ -478,10 +478,10 @@ const CallToActionGraphics = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative z-10">
             <h3 className="text-4xl font-light text-white mb-8 tracking-tight" style={{ fontFamily: 'var(--font-orbitron)' }}>
-              Africa is <span className="text-emerald-300">Rising</span>
+              <span className="text-emerald-300">Let&apos;s</span> Build Together
             </h3>
             <p className="text-xl text-white/80 font-light leading-relaxed mb-8">
-              We&apos;re building more than companies—we&apos;re creating an innovation ecosystem that connects talent with global opportunities, transforming ideas into impactful solutions.
+              We&apos;re building a network of companies and solutions that create value, connecting talent with opportunities and transforming ideas into practical results.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
@@ -504,8 +504,8 @@ const CallToActionGraphics = () => {
                 <Heart className="w-6 h-6 text-emerald-400" />
               </div>
               <div>
-                <div className="text-white font-medium">Join the Movement</div>
-                <div className="text-white/60 text-sm">Be part of Africa&apos;s transformation</div>
+                <div className="text-white font-medium">Join Our Network</div>
+                <div className="text-white/60 text-sm">Connect with our ecosystem</div>
               </div>
             </div>
           </div>
