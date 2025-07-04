@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ArrowRight, Users, Award, Globe, Target, Heart, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
+import { FoundersJourneyGraphics, CompanyValuesGraphics } from "@/components/page-graphics"
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
@@ -137,6 +138,20 @@ export default function AboutPage() {
               </AnimatedElement>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Founders Journey Graphics */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <FoundersJourneyGraphics />
+        </div>
+      </section>
+
+      {/* Company Values Graphics */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <CompanyValuesGraphics />
         </div>
       </section>
 

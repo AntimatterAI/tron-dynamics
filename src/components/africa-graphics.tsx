@@ -71,40 +71,40 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
             {/* FIXED: Major African cities with PROPER positioning */}
             {showCities && (
               <div className="absolute inset-0 pointer-events-none">
-                {/* Lagos, Nigeria - POSITIONED ON VISIBLE GREEN CONTINENT */}
-                <div className="absolute" style={{ top: '45%', left: '58%' }}>
+                {/* Lagos, Nigeria - FINE-TUNED ON GREEN CONTINENT */}
+                <div className="absolute" style={{ top: '44%', left: '56%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" />
                   <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Lagos
                   </div>
                 </div>
                 
-                {/* Cairo, Egypt - POSITIONED ON VISIBLE GREEN CONTINENT */}
-                <div className="absolute" style={{ top: '25%', left: '68%' }}>
+                {/* Cairo, Egypt - FINE-TUNED ON GREEN CONTINENT */}
+                <div className="absolute" style={{ top: '26%', left: '66%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.2s' }} />
                   <div className="absolute -top-8 -left-8 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Cairo
                   </div>
                 </div>
                 
-                {/* Kinshasa, DR Congo - POSITIONED ON VISIBLE GREEN CONTINENT */}
-                <div className="absolute" style={{ top: '55%', left: '62%' }}>
+                {/* Kinshasa, DR Congo - FINE-TUNED ON GREEN CONTINENT */}
+                <div className="absolute" style={{ top: '54%', left: '60%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.4s' }} />
                   <div className="absolute -top-8 -left-12 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Kinshasa
                   </div>
                 </div>
                 
-                {/* Johannesburg, South Africa - POSITIONED ON VISIBLE GREEN CONTINENT */}
-                <div className="absolute" style={{ top: '78%', left: '64%' }}>
+                {/* Johannesburg, South Africa - FINE-TUNED ON GREEN CONTINENT */}
+                <div className="absolute" style={{ top: '76%', left: '62%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.6s' }} />
                   <div className="absolute -top-8 -left-16 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Johannesburg
                   </div>
                 </div>
                 
-                {/* Nairobi, Kenya - POSITIONED ON VISIBLE GREEN CONTINENT */}
-                <div className="absolute" style={{ top: '50%', left: '72%' }}>
+                {/* Nairobi, Kenya - FINE-TUNED ON GREEN CONTINENT */}
+                <div className="absolute" style={{ top: '48%', left: '70%' }}>
                   <div className="w-3 h-3 bg-orange-500 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.8s' }} />
                   <div className="absolute -top-8 -left-10 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white opacity-0 hover:opacity-100 transition-opacity">
                     Nairobi

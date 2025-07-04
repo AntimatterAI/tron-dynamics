@@ -527,4 +527,178 @@ export const GlobalConnectionsGraphics = () => {
       </div>
     </div>
   )
+}
+
+// About Page: Founders Journey & Values Visualization
+export const FoundersJourneyGraphics = () => {
+  const journeyRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    if (!isClient) return
+
+    setIsVisible(true)
+    
+    if (journeyRef.current) {
+      const elements = journeyRef.current.querySelectorAll('[data-animate]')
+      
+      gsap.fromTo(elements, 
+        { opacity: 0, y: 20 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 1,
+          stagger: 0.2,
+          ease: "power2.out"
+        }
+      )
+      
+      // Subtle floating animation for the journey path
+      gsap.to(journeyRef.current.querySelectorAll('[data-float]'), {
+        y: -5,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+        stagger: 0.3
+      })
+    }
+  }, [])
+
+  if (!isClient || !isVisible) return null
+
+  const journeySteps = [
+    {
+      icon: <Heart className="w-6 h-6" />,
+      title: "Refugee to Visionary",
+      description: "From Liberian refugee to successful entrepreneur",
+      color: "text-orange-300",
+      bgColor: "bg-orange-500/10"
+    },
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: "Athlete to Investor", 
+      description: "NFL experience to business leadership",
+      color: "text-emerald-300",
+      bgColor: "bg-emerald-500/10"
+    },
+    {
+      icon: <Lightbulb className="w-6 h-6" />,
+      title: "Innovation Focus",
+      description: "Technology and strategic operations",
+      color: "text-blue-300", 
+      bgColor: "bg-blue-500/10"
+    }
+  ]
+
+  return (
+    <div ref={journeyRef} className="relative w-full max-w-4xl mx-auto">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-purple-500 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 text-center mb-12" data-animate>
+        <h3 className="text-2xl font-light text-white mb-4">Our Journey</h3>
+        <p className="text-white/60 max-w-2xl mx-auto">From diverse backgrounds to shared vision</p>
+      </div>
+
+      {/* Journey timeline */}
+      <div className="relative">
+        {/* Connection line */}
+        <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-y-1/2" data-animate></div>
+        
+        <div className="grid md:grid-cols-3 gap-8 relative">
+          {journeySteps.map((step, index) => (
+            <div key={index} className="text-center" data-animate data-float>
+              <div className={`w-16 h-16 ${step.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 ${step.color} border border-white/10`}>
+                {step.icon}
+              </div>
+              <h4 className="text-white font-medium mb-2">{step.title}</h4>
+              <p className="text-white/50 text-sm">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// About Page: Company Values Visualization  
+export const CompanyValuesGraphics = () => {
+  const valuesRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    if (!isClient) return
+
+    setIsVisible(true)
+    
+    if (valuesRef.current) {
+      const cards = valuesRef.current.querySelectorAll('[data-value-card]')
+      
+      gsap.fromTo(cards,
+        { scale: 0.9, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.7)"
+        }
+      )
+    }
+  }, [])
+
+  if (!isClient || !isVisible) return null
+
+  const values = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Empowerment",
+      description: "Amplifying voices and creating opportunities",
+      color: "text-emerald-300",
+      bgColor: "from-emerald-500/5 to-emerald-600/10"
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Innovation", 
+      description: "Technology-driven solutions for global challenges",
+      color: "text-blue-300",
+      bgColor: "from-blue-500/5 to-blue-600/10"
+    },
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "Impact",
+      description: "Sustainable growth and meaningful change",
+      color: "text-purple-300", 
+      bgColor: "from-purple-500/5 to-purple-600/10"
+    }
+  ]
+
+  return (
+    <div ref={valuesRef} className="relative w-full max-w-5xl mx-auto">
+      <div className="text-center mb-12">
+        <h3 className="text-2xl font-light text-white mb-4">Our Values</h3>
+        <p className="text-white/60">Principles that drive everything we do</p>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        {values.map((value, index) => (
+          <div 
+            key={index} 
+            data-value-card
+            className={`relative bg-gradient-to-br ${value.bgColor} backdrop-blur-xl rounded-xl border border-white/10 p-6 text-center group hover:border-white/20 transition-all duration-300`}
+          >
+            <div className={`w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mx-auto mb-4 ${value.color} group-hover:bg-white/10 transition-colors duration-300`}>
+              {value.icon}
+            </div>
+            <h4 className="text-white font-medium mb-3">{value.title}</h4>
+            <p className="text-white/60 text-sm leading-relaxed">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 } 
