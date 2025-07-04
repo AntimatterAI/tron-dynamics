@@ -48,7 +48,7 @@ export const TechNetworkGraphics = () => {
     }
   }, [mounted])
 
-  if (!mounted) return null
+  // Always show content, enhance with animations when mounted
 
   const innovations = [
     { icon: <Brain className="w-6 h-6" />, title: "AI Solutions", description: "Healthcare & Education AI", color: "emerald" },
@@ -67,16 +67,16 @@ export const TechNetworkGraphics = () => {
           <Lightbulb className="w-5 h-5 text-blue-400" />
           <span className="text-blue-300 font-medium">Innovation Network</span>
         </div>
-        <h3 className="text-2xl font-light text-white mb-4">Building Africa&apos;s Tech Future</h3>
-        <p className="text-white/60 max-w-2xl mx-auto">From AI-powered healthcare to rural connectivity, we&apos;re developing solutions that matter.</p>
+        <h3 className="text-xl sm:text-2xl font-light text-white mb-4">Building Africa&apos;s Tech Future</h3>
+        <p className="text-white/60 max-w-2xl mx-auto text-sm sm:text-base">From AI-powered healthcare to rural connectivity, we&apos;re developing solutions that matter.</p>
       </div>
 
       {/* Innovation Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {innovations.map((innovation, index) => (
           <div 
             key={index} 
-            className={`innovation-card relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-2xl border border-white/10 p-6 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 group`}
+            className={`innovation-card relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-2xl border border-white/10 p-4 sm:p-6 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 group`}
           >
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
               innovation.color === 'emerald' ? 'bg-emerald-500/20 text-emerald-400' :
@@ -130,7 +130,7 @@ export const BusinessGrowthGraphics = () => {
     }
   }, [mounted])
 
-  if (!mounted) return null
+  // Always show content, enhance with animations when mounted
 
   const businessMetrics = [
     { label: 'Portfolio Value', value: '$36M', icon: <DollarSign className="w-5 h-5" />, color: 'emerald' },
@@ -147,16 +147,16 @@ export const BusinessGrowthGraphics = () => {
           <BarChart3 className="w-5 h-5 text-emerald-400" />
           <span className="text-emerald-300 font-medium">Business Growth</span>
         </div>
-        <h3 className="text-2xl font-light text-white mb-4">Building Value Across Africa</h3>
-        <p className="text-white/60 max-w-2xl mx-auto">Strategic investments and partnerships driving sustainable growth.</p>
+        <h3 className="text-xl sm:text-2xl font-light text-white mb-4">Building Value Across Africa</h3>
+        <p className="text-white/60 max-w-2xl mx-auto text-sm sm:text-base">Strategic investments and partnerships driving sustainable growth.</p>
       </div>
 
       {/* Metrics Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         {businessMetrics.map((metric, index) => (
           <div 
             key={index} 
-            className={`growth-metric relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-2xl border border-white/10 p-6 text-center hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 group`}
+            className={`growth-metric relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-2xl border border-white/10 p-4 sm:p-6 text-center hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 group`}
           >
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 ${
               metric.color === 'emerald' ? 'bg-emerald-500/20 text-emerald-400' :
@@ -215,7 +215,7 @@ export const PortfolioShowcaseGraphics = () => {
     }
   }, [mounted])
 
-  if (!mounted) return null
+  // Always show content, enhance with animations when mounted
 
   const portfolioCompanies = [
     { 
@@ -260,7 +260,7 @@ export const PortfolioShowcaseGraphics = () => {
       </div>
 
       {/* Portfolio Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {portfolioCompanies.map((company, index) => (
           <div 
             key={index} 
@@ -340,7 +340,7 @@ export const InnovationLabsGraphics = () => {
     }
   }, [mounted])
 
-  if (!mounted) return null
+  // Always show content, enhance with animations when mounted
 
   const labs = [
     { 
@@ -386,7 +386,7 @@ export const InnovationLabsGraphics = () => {
       </div>
 
       {/* Labs Grid */}
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {labs.map((lab, index) => (
           <div 
             key={index} 
@@ -466,7 +466,7 @@ export const GlobalConnectionsGraphics = () => {
     }
   }, [mounted])
 
-  if (!mounted) return null
+  // Always show content, enhance with animations when mounted
 
   const globalConnections = [
     { region: 'Silicon Valley', partnerships: 8, focus: 'Technology Transfer', color: 'blue' },
@@ -488,7 +488,7 @@ export const GlobalConnectionsGraphics = () => {
       </div>
 
       {/* Connections Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {globalConnections.map((connection, index) => (
           <div 
             key={index} 
@@ -532,14 +532,10 @@ export const GlobalConnectionsGraphics = () => {
 // About Page: Founders Journey & Values Visualization
 export const FoundersJourneyGraphics = () => {
   const journeyRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    if (!isClient) return
-
-    setIsVisible(true)
     
-    if (journeyRef.current) {
+    if (isClient && journeyRef.current) {
       const elements = journeyRef.current.querySelectorAll('[data-animate]')
       
       gsap.fromTo(elements, 
@@ -565,7 +561,7 @@ export const FoundersJourneyGraphics = () => {
     }
   }, [])
 
-  if (!isClient || !isVisible) return null
+  // Always show content, enhance with animations when mounted
 
   const journeySteps = [
     {
@@ -609,7 +605,7 @@ export const FoundersJourneyGraphics = () => {
         {/* Connection line */}
         <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-y-1/2" data-animate></div>
         
-        <div className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 relative">
           {journeySteps.map((step, index) => (
             <div key={index} className="text-center" data-animate data-float>
               <div className={`w-16 h-16 ${step.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 ${step.color} border border-white/10`}>
@@ -628,14 +624,10 @@ export const FoundersJourneyGraphics = () => {
 // About Page: Company Values Visualization  
 export const CompanyValuesGraphics = () => {
   const valuesRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    if (!isClient) return
-
-    setIsVisible(true)
     
-    if (valuesRef.current) {
+    if (isClient && valuesRef.current) {
       const cards = valuesRef.current.querySelectorAll('[data-value-card]')
       
       gsap.fromTo(cards,
@@ -651,7 +643,7 @@ export const CompanyValuesGraphics = () => {
     }
   }, [])
 
-  if (!isClient || !isVisible) return null
+  // Always show content, enhance with animations when mounted
 
   const values = [
     {
@@ -684,7 +676,7 @@ export const CompanyValuesGraphics = () => {
         <p className="text-white/60">Principles that drive everything we do</p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
         {values.map((value, index) => (
           <div 
             key={index} 
