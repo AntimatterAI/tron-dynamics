@@ -57,7 +57,7 @@ export default function HomePage() {
           <div className="mb-6 md:mb-8">
             <h1 
               ref={heroTitleRef}
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light bg-gradient-to-r from-white via-red-400 to-green-400 bg-clip-text text-transparent mb-6 md:mb-8 tracking-tight leading-[0.9] px-2"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light bg-gradient-to-r from-white via-red-400 to-green-400 bg-clip-text text-transparent mb-6 md:mb-8 tracking-tight leading-[0.95] px-4"
               style={{ 
                 fontFamily: 'var(--font-orbitron), -apple-system, BlinkMacSystemFont, sans-serif',
                 fontWeight: 300,
@@ -73,10 +73,10 @@ export default function HomePage() {
           </div>
 
           {/* Optimized Subtitle - LCP Element */}
-          <div className="mb-12 md:mb-16">
+          <div className="mb-8 md:mb-12">
             <p 
               ref={heroSubtitleRef}
-              className="lcp-text text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300/80 font-light tracking-wide max-w-3xl mx-auto leading-relaxed px-4"
+              className="lcp-text text-sm sm:text-base md:text-lg lg:text-xl text-gray-300/80 font-light tracking-wide max-w-2xl mx-auto leading-relaxed px-6"
               style={{ fontWeight: 300, opacity: 1 }}
             >
               Where Innovation Meets Impact
@@ -84,26 +84,26 @@ export default function HomePage() {
           </div>
 
           {/* Optimized CTA Buttons */}
-          <div className="flex flex-col gap-4 justify-center items-center mb-16 md:mb-24 px-4 opacity-0 animate-fade-in-delayed">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 md:mb-20 px-6 opacity-0 animate-fade-in-delayed">
             <Button
               onClick={() => handleCtaClick('call')}
-              className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 md:px-8 py-4 text-sm md:text-base font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-200 w-full max-w-xs md:max-w-none md:min-w-[220px]"
+              className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 sm:py-4 text-sm font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-200 w-full sm:w-auto min-w-[200px]"
             >
-              <div className="relative z-10 flex items-center justify-center gap-2 md:gap-3">
+              <div className="relative z-10 flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4" />
                 <div className="flex flex-col items-center">
                   <span>Give us a call</span>
-                                      <span className="text-xs opacity-70 font-normal">(404) 939-4238</span>
+                  <span className="text-xs opacity-70 font-normal">(404) 939-4238</span>
                 </div>
               </div>
             </Button>
 
-            <Link href="/about" className="w-full max-w-xs md:max-w-none">
+            <Link href="/about" className="w-full sm:w-auto">
               <Button
-                className="group relative overflow-hidden bg-transparent border border-emerald-400/40 text-emerald-300/90 hover:text-white hover:border-emerald-400/60 px-6 md:px-8 py-4 text-sm md:text-base font-medium rounded-xl transition-all duration-200 w-full md:min-w-[220px]"
+                className="group relative overflow-hidden bg-transparent border border-emerald-400/40 text-emerald-300/90 hover:text-white hover:border-emerald-400/60 px-6 py-3 sm:py-4 text-sm font-medium rounded-xl transition-all duration-200 w-full sm:w-auto min-w-[200px]"
                 style={{ borderColor: 'rgba(0, 255, 135, 0.4)', color: 'rgba(0, 255, 135, 0.9)' }}
               >
-                <div className="relative z-10 flex items-center justify-center gap-2 md:gap-3">
+                <div className="relative z-10 flex items-center justify-center gap-2">
                   <Globe className="w-4 h-4" />
                   <span>Learn More</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-100" />
@@ -125,26 +125,26 @@ export default function HomePage() {
       </section>
 
       {/* Lightweight Divisions Section */}
-      <section className="py-16 md:py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-12 md:py-24 px-4 sm:px-6 lg:px-8 relative z-10">
         {/* <FloatingParticles count={20} speed="medium" /> */}
         <div className="max-w-6xl mx-auto">
           
-          <div className="text-center mb-12 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4 md:mb-6 tracking-tight px-4" 
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white mb-3 md:mb-4 tracking-tight px-6" 
                 style={{ fontFamily: 'var(--font-orbitron), -apple-system, sans-serif' }}>
               Our <span style={{ color: '#00FF87' }}>Services</span>
             </h2>
-            <p className="text-base md:text-lg text-gray-300/60 max-w-2xl mx-auto font-light leading-relaxed px-4">
+            <p className="text-sm md:text-base text-gray-300/60 max-w-2xl mx-auto font-light leading-relaxed px-6">
               Built in Africa. Ready for the World.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             
             {/* Portfolio Companies */}
             <Link href="/portfolio" className="group relative">
-              <EnhancedCard className="h-[320px] md:h-[400px]" glowColor="orange">
-                <div className="p-6 md:p-8 h-full flex flex-col justify-between">
+              <EnhancedCard className="h-[280px] sm:h-[320px] md:h-[380px]" glowColor="orange">
+                <div className="p-4 sm:p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(255, 107, 53, 0.2)' }}>
                       <Briefcase className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#FF6B35' }} />
@@ -166,8 +166,8 @@ export default function HomePage() {
 
             {/* TRON Innovation */}
             <Link href="/innovation" className="group relative">
-              <EnhancedCard className="h-[320px] md:h-[400px]" glowColor="blue">
-                <div className="p-6 md:p-8 h-full flex flex-col justify-between">
+              <EnhancedCard className="h-[280px] sm:h-[320px] md:h-[380px]" glowColor="blue">
+                <div className="p-4 sm:p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(59, 130, 246, 0.2)' }}>
                       <Globe className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#3B82F6' }} />
@@ -189,8 +189,8 @@ export default function HomePage() {
 
             {/* TRON Business & Development */}
             <Link href="/business-development" className="group relative">
-              <EnhancedCard className="h-[320px] md:h-[400px]" glowColor="emerald">
-                <div className="p-6 md:p-8 h-full flex flex-col justify-between">
+              <EnhancedCard className="h-[280px] sm:h-[320px] md:h-[380px]" glowColor="emerald">
+                <div className="p-4 sm:p-6 md:p-8 h-full flex flex-col justify-between">
                   <div>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(0, 255, 135, 0.2)' }}>
                       <Heart className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#00FF87' }} />

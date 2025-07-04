@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { 
   Brain, 
@@ -27,11 +27,8 @@ const isClient = typeof window !== 'undefined'
 // Innovation Ecosystem Visualization - Shows TRON's innovation network
 export const TechNetworkGraphics = () => {
   const networkRef = useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
-    
     if (isClient && networkRef.current) {
       const cards = networkRef.current.querySelectorAll('.innovation-card')
       
@@ -46,9 +43,9 @@ export const TechNetworkGraphics = () => {
         ease: "power2.out"
       })
     }
-  }, [mounted])
+  }, [])
 
-  // Always show content, enhance with animations when mounted
+  // Always show content immediately
 
   const innovations = [
     { icon: <Brain className="w-6 h-6" />, title: "AI Solutions", description: "Healthcare & Education AI", color: "emerald" },
@@ -72,11 +69,11 @@ export const TechNetworkGraphics = () => {
       </div>
 
       {/* Innovation Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
         {innovations.map((innovation, index) => (
           <div 
             key={index} 
-            className={`innovation-card relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-2xl border border-white/10 p-4 sm:p-6 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 group`}
+            className={`innovation-card relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-2xl border border-white/10 p-3 sm:p-4 lg:p-6 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 group`}
           >
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
               innovation.color === 'emerald' ? 'bg-emerald-500/20 text-emerald-400' :
@@ -111,11 +108,8 @@ export const TechNetworkGraphics = () => {
 // Business Growth Metrics - Shows TRON's actual business performance
 export const BusinessGrowthGraphics = () => {
   const chartRef = useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
-    
     if (isClient && chartRef.current) {
       const metrics = chartRef.current.querySelectorAll('.growth-metric')
       
@@ -128,9 +122,9 @@ export const BusinessGrowthGraphics = () => {
         ease: "power2.out"
       })
     }
-  }, [mounted])
+  }, [])
 
-  // Always show content, enhance with animations when mounted
+  // Always show content immediately
 
   const businessMetrics = [
     { label: 'Portfolio Value', value: '$36M', icon: <DollarSign className="w-5 h-5" />, color: 'emerald' },
@@ -195,11 +189,8 @@ export const BusinessGrowthGraphics = () => {
 // Portfolio Companies Showcase - Shows TRON's actual portfolio
 export const PortfolioShowcaseGraphics = () => {
   const portfolioRef = useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
-    
     if (isClient && portfolioRef.current) {
       const cards = portfolioRef.current.querySelectorAll('.portfolio-card')
       
@@ -213,9 +204,9 @@ export const PortfolioShowcaseGraphics = () => {
         ease: "power2.out"
       })
     }
-  }, [mounted])
+  }, [])
 
-  // Always show content, enhance with animations when mounted
+  // Always show content immediately
 
   const portfolioCompanies = [
     { 
@@ -260,11 +251,11 @@ export const PortfolioShowcaseGraphics = () => {
       </div>
 
       {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {portfolioCompanies.map((company, index) => (
           <div 
             key={index} 
-            className={`portfolio-card relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-3xl border border-white/10 p-8 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 group`}
+            className={`portfolio-card relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-3xl border border-white/10 p-4 sm:p-6 lg:p-8 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 group`}
           >
             {/* Company header */}
             <div className="flex items-center justify-between mb-6">
@@ -321,11 +312,8 @@ export const PortfolioShowcaseGraphics = () => {
 // Innovation Labs - Shows TRON's R&D activities
 export const InnovationLabsGraphics = () => {
   const labsRef = useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
-    
     if (isClient && labsRef.current) {
       const labs = labsRef.current.querySelectorAll('.lab-card')
       
@@ -338,9 +326,9 @@ export const InnovationLabsGraphics = () => {
         ease: "back.out(1.7)"
       })
     }
-  }, [mounted])
+  }, [])
 
-  // Always show content, enhance with animations when mounted
+  // Always show content immediately
 
   const labs = [
     { 
@@ -447,11 +435,8 @@ export const InnovationLabsGraphics = () => {
 // Global Connections - Shows TRON's international partnerships
 export const GlobalConnectionsGraphics = () => {
   const connectionsRef = useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
-    
     if (isClient && connectionsRef.current) {
       const connections = connectionsRef.current.querySelectorAll('.connection-card')
       
@@ -464,9 +449,9 @@ export const GlobalConnectionsGraphics = () => {
         ease: "power2.out"
       })
     }
-  }, [mounted])
+  }, [])
 
-  // Always show content, enhance with animations when mounted
+  // Always show content immediately
 
   const globalConnections = [
     { region: 'Silicon Valley', partnerships: 8, focus: 'Technology Transfer', color: 'blue' },
