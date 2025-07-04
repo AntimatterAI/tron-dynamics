@@ -318,17 +318,17 @@ const ImpactVisualization = () => {
           <span className="text-emerald-300 font-medium">Impact Across Africa</span>
         </div>
         
-        <h2 className="text-5xl font-light text-white mb-8 tracking-tight" style={{ fontFamily: 'var(--font-orbitron)' }}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 md:mb-8 tracking-tight px-4" style={{ fontFamily: 'var(--font-orbitron)' }}>
           Building <span className="text-emerald-300">Africa&apos;s</span> Future
         </h2>
-        <p className="text-xl text-white/60 max-w-3xl mx-auto font-light leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/60 max-w-3xl mx-auto font-light leading-relaxed px-6">
           Building strategic partnerships to connect innovation and investment across African markets
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
         {/* Enhanced Africa Map */}
-        <div className="relative">
+        <div className="relative order-2 lg:order-1">
           <AfricaContinent 
             showConnectionLines={true} 
             animated={true} 
@@ -338,11 +338,11 @@ const ImpactVisualization = () => {
         </div>
 
         {/* Professional Impact Metrics */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 order-1 lg:order-2">
           {metrics.map((metric, index) => (
             <div 
               key={index} 
-              className="relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center group hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105"
+              className="relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl rounded-2xl border border-white/10 p-3 sm:p-4 md:p-6 lg:p-8 text-center group hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Subtle background glow */}
@@ -354,16 +354,18 @@ const ImpactVisualization = () => {
               }`} />
               
               <div className="relative z-10">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 ${
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 ${
                   metric.color === 'emerald' ? 'bg-emerald-500/20 text-emerald-400' :
                   metric.color === 'blue' ? 'bg-blue-500/20 text-blue-400' :
                   metric.color === 'orange' ? 'bg-orange-500/20 text-orange-400' :
                   'bg-purple-500/20 text-purple-400'
                 }`}>
-                  {metric.icon}
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5">
+                    {metric.icon}
+                  </div>
                 </div>
                 
-                <div className={`text-4xl font-light mb-2 ${
+                <div className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light mb-1 sm:mb-2 ${
                   metric.color === 'emerald' ? 'text-emerald-300' :
                   metric.color === 'blue' ? 'text-blue-300' :
                   metric.color === 'orange' ? 'text-orange-300' :
@@ -372,8 +374,8 @@ const ImpactVisualization = () => {
                   {metric.value.toLocaleString()}{metric.suffix}
                 </div>
                 
-                <div className="text-white font-medium mb-1">{metric.label}</div>
-                <div className="text-white/50 text-sm">{metric.sublabel}</div>
+                <div className="text-white font-medium mb-1 text-xs sm:text-sm">{metric.label}</div>
+                <div className="text-white/50 text-xs">{metric.sublabel}</div>
               </div>
             </div>
           ))}
@@ -433,20 +435,20 @@ const CallToActionGraphics = () => {
           <span className="text-emerald-300 font-medium">What We Build</span>
         </div>
         
-        <h2 className="text-6xl font-light text-white mb-8 tracking-tight" style={{ fontFamily: 'var(--font-orbitron)' }}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-6 md:mb-8 tracking-tight px-4" style={{ fontFamily: 'var(--font-orbitron)' }}>
           Transforming <span className="text-emerald-300">Africa</span>
         </h2>
-        <p className="text-2xl text-white/60 max-w-4xl mx-auto font-light leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/60 max-w-4xl mx-auto font-light leading-relaxed px-6">
           We work across key African markets, building infrastructure, companies, and solutions for tomorrow
         </p>
       </div>
 
       {/* Professional capabilities grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 md:mb-16 lg:mb-20">
         {capabilities.map((capability, index) => (
           <div 
             key={index} 
-            className="relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-3xl border border-white/10 p-8 text-center group hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 cursor-pointer"
+            className="relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl rounded-3xl border border-white/10 p-4 sm:p-6 lg:p-8 text-center group hover:border-white/20 transition-all duration-500 hover:transform hover:scale-105 cursor-pointer"
           >
             {/* Subtle glow effect */}
             <div className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
@@ -474,38 +476,38 @@ const CallToActionGraphics = () => {
       </div>
 
       {/* Professional showcase section */}
-      <div className="relative bg-gradient-to-br from-emerald-500/10 via-blue-500/5 to-purple-500/10 rounded-3xl p-16 border border-emerald-400/20 backdrop-blur-xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative bg-gradient-to-br from-emerald-500/10 via-blue-500/5 to-purple-500/10 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 border border-emerald-400/20 backdrop-blur-xl">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="relative z-10">
-            <h3 className="text-4xl font-light text-white mb-8 tracking-tight" style={{ fontFamily: 'var(--font-orbitron)' }}>
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 sm:mb-6 md:mb-8 tracking-tight px-2" style={{ fontFamily: 'var(--font-orbitron)' }}>
               <span className="text-emerald-300">Let&apos;s</span> Build Together
             </h3>
-            <p className="text-xl text-white/80 font-light leading-relaxed mb-8">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 font-light leading-relaxed mb-6 md:mb-8 px-2">
               We&apos;re building a network of companies and solutions that create value, connecting talent with opportunities and transforming ideas into practical results.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-8">
-              <div className="flex items-center gap-2 px-6 py-3 bg-emerald-500/20 rounded-full border border-emerald-400/20">
-                <Target className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-300 font-medium">Innovation</span>
+            <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8 px-2">
+              <div className="flex items-center gap-2 px-3 sm:px-4 md:px-6 py-2 md:py-3 bg-emerald-500/20 rounded-full border border-emerald-400/20">
+                <Target className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400" />
+                <span className="text-emerald-300 font-medium text-xs sm:text-sm">Innovation</span>
               </div>
-              <div className="flex items-center gap-2 px-6 py-3 bg-orange-500/20 rounded-full border border-orange-400/20">
-                <TrendingUp className="w-4 h-4 text-orange-400" />
-                <span className="text-orange-300 font-medium">Investment</span>
+              <div className="flex items-center gap-2 px-3 sm:px-4 md:px-6 py-2 md:py-3 bg-orange-500/20 rounded-full border border-orange-400/20">
+                <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400" />
+                <span className="text-orange-300 font-medium text-xs sm:text-sm">Investment</span>
               </div>
-              <div className="flex items-center gap-2 px-6 py-3 bg-blue-500/20 rounded-full border border-blue-400/20">
-                <Globe className="w-4 h-4 text-blue-400" />
-                <span className="text-blue-300 font-medium">Global Impact</span>
+              <div className="flex items-center gap-2 px-3 sm:px-4 md:px-6 py-2 md:py-3 bg-blue-500/20 rounded-full border border-blue-400/20">
+                <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
+                <span className="text-blue-300 font-medium text-xs sm:text-sm">Global Impact</span>
               </div>
             </div>
             
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
-                <Heart className="w-6 h-6 text-emerald-400" />
+            <div className="flex items-center gap-3 md:gap-4 px-2">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+                <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
               </div>
               <div>
-                <div className="text-white font-medium">Join Our Network</div>
-                <div className="text-white/60 text-sm">Connect with our ecosystem</div>
+                <div className="text-white font-medium text-sm sm:text-base">Join Our Network</div>
+                <div className="text-white/60 text-xs sm:text-sm">Connect with our ecosystem</div>
               </div>
             </div>
           </div>
