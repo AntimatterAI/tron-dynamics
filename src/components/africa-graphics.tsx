@@ -41,21 +41,21 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
   }
 
   return (
-    <div ref={containerRef} className={`relative ${className} ${animated ? 'transition-all duration-1000 ease-out' : ''} ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-      <div className="relative bg-gradient-to-br from-slate-900/40 to-slate-800/20 rounded-3xl p-8 border border-slate-700/30 backdrop-blur-xl overflow-hidden">
+    <div ref={containerRef} className={`relative ${className} ${animated ? 'transition-all duration-1000 ease-out' : ''} ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} w-full flex items-center justify-center`}>
+      <div className="relative bg-gradient-to-br from-slate-900/40 to-slate-800/20 rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-700/30 backdrop-blur-xl overflow-hidden w-full flex items-center justify-center">
         {/* Modern background effects */}
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/3 via-transparent to-blue-500/3" />
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent" />
         
         {/* Enhanced Africa Map Container */}
-        <div className="relative">
+        <div className="relative flex items-center justify-center">
           {/* Decorative header */}
           <div className="absolute -top-2 -left-2 w-6 h-6 bg-emerald-500/20 rounded-full flex items-center justify-center z-10">
             <Sparkles className="w-3 h-3 text-emerald-400" />
           </div>
           
           {/* Professional Africa Map */}
-          <div className="relative w-full max-w-[250px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[600px] mx-auto">
+          <div className="relative w-full max-w-[250px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[600px] mx-auto flex items-center justify-center">
             <Africa
               type="select-multiple"
               size={600}
@@ -159,11 +159,11 @@ const AfricaContinent = ({ className = "", showConnectionLines = false, animated
           </div>
           
           {/* Modern stats overlay */}
-          <div className="absolute -top-6 -right-6 bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 backdrop-blur-xl rounded-2xl p-4 border border-emerald-400/20">
-            <div className="flex items-center gap-3">
-              <MapPin className="w-5 h-5 text-emerald-400" />
+          <div className="absolute -top-4 sm:-top-6 -right-2 sm:-right-6 bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 backdrop-blur-xl rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-emerald-400/20">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <MapPin className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-emerald-400" />
               <div>
-                <div className="text-emerald-300 font-medium text-sm">12 Countries</div>
+                <div className="text-emerald-300 font-medium text-xs sm:text-sm">12 Countries</div>
                 <div className="text-white/60 text-xs">Active markets</div>
               </div>
             </div>
@@ -372,12 +372,12 @@ const ImpactVisualization = () => {
         </div>
 
         {/* Enhanced Africa Map */}
-        <div className="relative max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto">
+        <div className="relative max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex items-center justify-center">
           <AfricaContinent 
             showConnectionLines={true} 
             animated={true} 
             showCities={true}
-            className="transform hover:scale-105 transition-transform duration-700"
+            className="transform hover:scale-105 transition-transform duration-700 w-full"
           />
         </div>
       </div>
@@ -458,20 +458,20 @@ const CallToActionGraphics = () => {
               'bg-purple-500/5'
             }`} />
             
-            <div className="relative z-10">
+            <div className="relative z-10 w-full">
               <div className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 transition-all duration-300 ${
                 capability.color === 'emerald' ? 'bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500/30' :
                 capability.color === 'blue' ? 'bg-blue-500/20 text-blue-400 group-hover:bg-blue-500/30' :
                 capability.color === 'orange' ? 'bg-orange-500/20 text-orange-400 group-hover:bg-orange-500/30' :
                 'bg-purple-500/20 text-purple-400 group-hover:bg-purple-500/30'
               }`}>
-                <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7">
+                <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 flex items-center justify-center">
                   {capability.icon}
                 </div>
               </div>
               
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white mb-2 sm:mb-3 md:mb-4">{capability.title}</h3>
-              <p className="text-xs sm:text-sm md:text-base text-white/60 font-light leading-relaxed">{capability.description}</p>
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white mb-2 sm:mb-3 md:mb-4 text-center">{capability.title}</h3>
+              <p className="text-xs sm:text-sm md:text-base text-white/60 font-light leading-relaxed text-center max-w-xs mx-auto">{capability.description}</p>
             </div>
           </div>
         ))}
@@ -488,7 +488,7 @@ const CallToActionGraphics = () => {
               We&apos;re building a network of companies and solutions that create value, connecting talent with opportunities and transforming ideas into practical results.
             </p>
             
-            <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 mb-3 sm:mb-4 md:mb-6 lg:mb-8">
+            <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 mb-3 sm:mb-4 md:mb-6 lg:mb-8 max-w-md mx-auto">
               <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 lg:px-6 py-1 sm:py-2 md:py-3 bg-emerald-500/20 rounded-full border border-emerald-400/20">
                 <Target className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 text-emerald-400" />
                 <span className="text-emerald-300 font-medium text-xs">Innovation</span>
@@ -503,23 +503,23 @@ const CallToActionGraphics = () => {
               </div>
             </div>
             
-            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 max-w-xs mx-auto">
               <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
                 <Heart className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-emerald-400" />
               </div>
-              <div className="text-center sm:text-left">
+              <div className="text-center">
                 <div className="text-white font-medium text-xs sm:text-sm md:text-base">Join Our Network</div>
                 <div className="text-white/60 text-xs">Connect with our ecosystem</div>
               </div>
             </div>
           </div>
           
-          <div className="relative max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+          <div className="relative max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto flex items-center justify-center">
             <AfricaContinent 
-              showConnectionLines={true} 
+              showConnectionLines={false} 
               animated={true} 
-              showCities={true}
-              className="transform hover:scale-105 transition-transform duration-700"
+              showCities={false}
+              className="transform hover:scale-105 transition-transform duration-700 w-full"
             />
           </div>
         </div>

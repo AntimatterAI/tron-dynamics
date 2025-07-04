@@ -214,15 +214,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What We Can Build Together */}
-      <CallToActionGraphics />
-
       {/* Impact Visualization */}
       <section className="py-16 md:py-32 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <ImpactVisualization />
         </div>
       </section>
+
+      {/* What We Can Build Together */}
+      <CallToActionGraphics />
 
       {/* Final CTA */}
       <section className="py-16 md:py-32 px-4 sm:px-6 lg:px-8 relative z-10">
