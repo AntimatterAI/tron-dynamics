@@ -30,44 +30,83 @@ import {
     FileText
   } from 'lucide-react'
 
-// Capabilities Page - Tech Matrix with Pulsing Network Effect
+// Capabilities Page - Advanced Neural Network Matrix
 export function ServiceIntegrationMatrix() {
   const [activeService, setActiveService] = useState(0)
+  const [connectionNodes, setConnectionNodes] = useState<number[]>([])
   
   const services = [
-    { name: 'AI/ML', icon: Brain, color: '#3B82F6', projects: '25+' },
-    { name: 'Blockchain', icon: Link, color: '#8B5CF6', projects: '15+' },
-    { name: 'IoT', icon: Wifi, color: '#10B981', projects: '30+' },
-    { name: 'Cloud', icon: Cloud, color: '#F59E0B', projects: '40+' },
-    { name: 'Mobile', icon: Smartphone, color: '#EF4444', projects: '35+' },
-    { name: 'Web', icon: Globe, color: '#06B6D4', projects: '50+' },
-    { name: 'Data', icon: Database, color: '#84CC16', projects: '28+' },
-    { name: 'Security', icon: Shield, color: '#F97316', projects: '22+' },
+    { name: 'AI/ML', icon: Brain, color: '#00D4FF', projects: '25+', strength: 95 },
+    { name: 'Blockchain', icon: Link, color: '#9D4EDD', projects: '15+', strength: 88 },
+    { name: 'IoT', icon: Wifi, color: '#06FFA5', projects: '30+', strength: 92 },
+    { name: 'Cloud', icon: Cloud, color: '#FFD23F', projects: '40+', strength: 98 },
+    { name: 'Mobile', icon: Smartphone, color: '#FF006E', projects: '35+', strength: 90 },
+    { name: 'Web', icon: Globe, color: '#8338EC', projects: '50+', strength: 96 },
+    { name: 'Data', icon: Database, color: '#3A86FF', projects: '28+', strength: 94 },
+    { name: 'Security', icon: Shield, color: '#FB5607', projects: '22+', strength: 87 },
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveService((prev) => (prev + 1) % services.length)
-    }, 2000) // Faster auto-rotation
+      // Generate random connection nodes for neural network effect
+      setConnectionNodes(Array.from({ length: 6 }, () => Math.floor(Math.random() * services.length)))
+    }, 800) // Much faster - neural network speed
     return () => clearInterval(interval)
   }, [services.length])
 
   return (
-    <div className="relative w-full h-auto bg-gradient-to-br from-blue-950/90 to-purple-900/50 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="w-full h-full grid grid-cols-8 grid-rows-6">
-          {Array.from({ length: 48 }, (_, i) => (
-            <div
-              key={i}
-              className="border border-blue-400/20 animate-pulse"
-              style={{
-                animationDelay: `${i * 0.1}s`,
-                animationDuration: '3s'
-              }}
-            />
+    <div className="relative w-full h-auto bg-gradient-to-br from-black via-blue-950/95 to-purple-950/90 backdrop-blur-xl rounded-3xl border border-cyan-500/20 overflow-hidden">
+      {/* Neural Network Background */}
+      <div className="absolute inset-0 opacity-15">
+        <svg className="w-full h-full" viewBox="0 0 800 600">
+          {/* Dynamic connection lines */}
+          {connectionNodes.map((node, i) => (
+            <g key={i}>
+              <line
+                x1={100 + (activeService % 4) * 150}
+                y1={100 + Math.floor(activeService / 4) * 150}
+                x2={100 + (node % 4) * 150}
+                y2={100 + Math.floor(node / 4) * 150}
+                stroke="url(#neuralGradient)"
+                strokeWidth="2"
+                opacity="0.6"
+                className="animate-pulse"
+                style={{ animationDuration: '0.5s' }}
+              />
+              <circle
+                cx={100 + (node % 4) * 150}
+                cy={100 + Math.floor(node / 4) * 150}
+                r="3"
+                fill={services[activeService]?.color}
+                className="animate-ping"
+                style={{ animationDuration: '0.8s' }}
+              />
+            </g>
           ))}
-        </div>
+          <defs>
+            <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor={services[activeService]?.color} stopOpacity="0.8" />
+              <stop offset="100%" stopColor="cyan" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 opacity-20">
+        {Array.from({ length: 20 }, (_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-bounce"
+            style={{
+              left: `${5 + i * 4.5}%`,
+              top: `${10 + Math.sin(i * 0.8) * 30}%`,
+              animationDelay: `${i * 0.05}s`,
+              animationDuration: '1.2s'
+            }}
+          />
+        ))}
       </div>
 
       {/* Header Section */}
@@ -188,38 +227,64 @@ export function ServiceIntegrationMatrix() {
   )
 }
 
-// Innovation Page - Dynamic Pipeline with Flowing Energy
+// Innovation Page - Quantum Innovation Accelerator
 export function InnovationPipeline() {
   const [activePhase, setActivePhase] = useState(0)
+  const [energyLevel, setEnergyLevel] = useState(0)
   
   const phases = [
-    { name: 'Research', icon: Search, color: '#3B82F6', duration: '2-4 weeks' },
-    { name: 'Prototype', icon: Cpu, color: '#8B5CF6', duration: '4-8 weeks' },
-    { name: 'Development', icon: Code, color: '#10B981', duration: '8-16 weeks' },
-    { name: 'Testing', icon: CheckCircle, color: '#F59E0B', duration: '2-6 weeks' },
-    { name: 'Launch', icon: Rocket, color: '#EF4444', duration: '1-2 weeks' },
+    { name: 'Research', icon: Search, color: '#FF0080', duration: '2-4 weeks', energy: 85 },
+    { name: 'Prototype', icon: Cpu, color: '#00FF88', duration: '4-8 weeks', energy: 92 },
+    { name: 'Development', icon: Code, color: '#8000FF', duration: '8-16 weeks', energy: 96 },
+    { name: 'Testing', icon: CheckCircle, color: '#FF8000', duration: '2-6 weeks', energy: 88 },
+    { name: 'Launch', icon: Rocket, color: '#00FFFF', duration: '1-2 weeks', energy: 100 },
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActivePhase((prev) => (prev + 1) % phases.length)
-    }, 2500) // Faster transitions
+      setEnergyLevel(phases[activePhase]?.energy || 0)
+    }, 900) // Super fast quantum transitions
     return () => clearInterval(interval)
-  }, [phases.length])
+  }, [phases.length, activePhase])
 
   return (
-    <div className="relative w-full h-auto bg-gradient-to-br from-purple-950/90 to-pink-900/50 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
-      {/* Flowing Energy Background */}
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(12)].map((_, i) => (
+    <div className="relative w-full h-auto bg-gradient-to-br from-black via-purple-950/95 to-pink-950/90 backdrop-blur-xl rounded-3xl border border-purple-500/30 overflow-hidden">
+      {/* Quantum Energy Field */}
+      <div className="absolute inset-0 opacity-25">
+        <svg className="w-full h-full" viewBox="0 0 800 600">
+          {/* Energy waves */}
+          {[...Array(8)].map((_, i) => (
+            <path
+              key={i}
+              d={`M 0 ${100 + i * 60} Q 200 ${50 + i * 60} 400 ${100 + i * 60} T 800 ${100 + i * 60}`}
+              stroke={phases[activePhase]?.color}
+              strokeWidth="2"
+              fill="none"
+              opacity="0.6"
+              className="animate-pulse"
+              style={{ 
+                animationDuration: `${0.3 + i * 0.1}s`,
+                filter: `drop-shadow(0 0 10px ${phases[activePhase]?.color})`
+              }}
+            />
+          ))}
+        </svg>
+      </div>
+      
+      {/* Innovation sparks */}
+      <div className="absolute inset-0 opacity-30">
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-purple-400 rounded-full animate-ping"
+            className="absolute w-1.5 h-1.5 rounded-full animate-ping"
             style={{
-              left: `${10 + i * 7}%`,
-              top: `${30 + Math.sin(i * 0.8) * 20}%`,
-              animationDelay: `${i * 0.3}s`,
-              animationDuration: '3s'
+              backgroundColor: phases[(activePhase + i) % phases.length]?.color,
+              left: `${5 + i * 6}%`,
+              top: `${15 + Math.sin(i * 1.2) * 25}%`,
+              animationDelay: `${i * 0.08}s`,
+              animationDuration: '0.6s',
+              boxShadow: `0 0 10px ${phases[(activePhase + i) % phases.length]?.color}`
             }}
           />
         ))}
@@ -364,21 +429,23 @@ export function InnovationPipeline() {
   )
 }
 
-// Business Development Page - Global Network with Pulse Effects
+// Business Development Page - Real-Time Global Market Tracker
 export function MarketExpansionViz() {
   const [activeMarket, setActiveMarket] = useState(0)
+  const [marketPulse, setMarketPulse] = useState(0)
   
   const markets = [
-    { name: 'West Africa', icon: MapPin, color: '#10B981', growth: '+45%', revenue: '$2.1M' },
-    { name: 'East Africa', icon: Building, color: '#3B82F6', growth: '+32%', revenue: '$1.8M' },
-    { name: 'North America', icon: Briefcase, color: '#8B5CF6', growth: '+28%', revenue: '$3.2M' },
-    { name: 'Europe', icon: Users, color: '#F59E0B', growth: '+38%', revenue: '$2.7M' },
+    { name: 'West Africa', icon: MapPin, color: '#00FF7F', growth: '+45%', revenue: '$2.1M', deals: 12, trend: 'up' },
+    { name: 'East Africa', icon: Building, color: '#1E90FF', growth: '+32%', revenue: '$1.8M', deals: 8, trend: 'up' },
+    { name: 'North America', icon: Briefcase, color: '#FF1493', growth: '+28%', revenue: '$3.2M', deals: 15, trend: 'stable' },
+    { name: 'Europe', icon: Users, color: '#FFD700', growth: '+38%', revenue: '$2.7M', deals: 10, trend: 'up' },
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveMarket((prev) => (prev + 1) % markets.length)
-    }, 2200)
+      setMarketPulse(prev => (prev + 1) % 100)
+    }, 1000) // Fast market updates like real trading
     return () => clearInterval(interval)
   }, [markets.length])
 
@@ -531,31 +598,33 @@ export function MarketExpansionViz() {
   )
 }
 
-// About Page - DNA Helix with Orbital Animation
+// About Page - Dynamic DNA Core & Evolution Timeline
 export function CompanyDNAViz() {
   const [activeValue, setActiveValue] = useState(0)
+  const [evolutionPhase, setEvolutionPhase] = useState(0)
   
   const values = [
-    { name: 'Innovation', icon: Lightbulb, color: '#3B82F6', description: 'Cutting-edge solutions', projects: '50+' },
-    { name: 'Excellence', icon: Award, color: '#8B5CF6', description: 'Quality-first approach', projects: '98%' },
-    { name: 'Impact', icon: Heart, color: '#EF4444', description: 'Meaningful change', projects: '1M+' },
-    { name: 'Growth', icon: TrendingUp, color: '#10B981', description: 'Continuous evolution', projects: '300%' },
+    { name: 'Innovation', icon: Lightbulb, color: '#FF4500', description: 'Cutting-edge solutions', intensity: 95 },
+    { name: 'Excellence', icon: Award, color: '#9932CC', description: 'Quality-first approach', intensity: 98 },
+    { name: 'Impact', icon: Heart, color: '#DC143C', description: 'Meaningful change', intensity: 92 },
+    { name: 'Growth', icon: TrendingUp, color: '#32CD32', description: 'Continuous evolution', intensity: 88 },
   ]
 
   const milestones = [
-    { year: '2020', event: 'Founded', icon: Building2, metric: 'Day 1' },
-    { year: '2021', event: '$1M Revenue', icon: DollarSign, metric: '12 months' },
-    { year: '2022', event: '50+ Team', icon: Users, metric: '24 months' },
-    { year: '2023', event: 'Global Expansion', icon: Globe, metric: '36 months' },
-    { year: '2024', event: 'AI Innovation', icon: Brain, metric: '48 months' },
+    { year: '2020', event: 'Founded', icon: Building2, metric: 'Day 1', impact: 85 },
+    { year: '2021', event: '$1M Revenue', icon: DollarSign, metric: '12 months', impact: 90 },
+    { year: '2022', event: '50+ Team', icon: Users, metric: '24 months', impact: 94 },
+    { year: '2023', event: 'Global Expansion', icon: Globe, metric: '36 months', impact: 97 },
+    { year: '2024', event: 'AI Innovation', icon: Brain, metric: '48 months', impact: 100 },
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveValue((prev) => (prev + 1) % values.length)
-    }, 2300)
+      setEvolutionPhase((prev) => (prev + 1) % milestones.length)
+    }, 1100) // Fast DNA replication speed
     return () => clearInterval(interval)
-  }, [values.length])
+  }, [values.length, milestones.length])
 
   return (
     <div className="relative w-full h-auto bg-gradient-to-br from-indigo-950/90 via-purple-950/50 to-pink-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
@@ -694,38 +763,72 @@ export function CompanyDNAViz() {
   )
 }
 
-// TRON America Page - Pipeline with Progress Flow
+// TRON America Page - High-Speed Startup Accelerator
 export function StartupPipeline() {
   const [activeStage, setActiveStage] = useState(0)
+  const [velocity, setVelocity] = useState(0)
   
   const stages = [
-    { name: 'Applications', icon: FileText, color: 'from-red-500 to-orange-500', count: '500', rate: '100%', success: '500/500' },
-    { name: 'Screening', icon: Search, color: 'from-orange-500 to-yellow-500', count: '125', rate: '25%', success: '125/500' },
-    { name: 'Interviews', icon: Users, color: 'from-yellow-500 to-green-500', count: '50', rate: '10%', success: '50/125' },
-    { name: 'Incubation', icon: Building, color: 'from-green-500 to-blue-500', count: '20', rate: '4%', success: '20/50' },
-    { name: 'Success', icon: Star, color: 'from-blue-500 to-purple-500', count: '12', rate: '2.4%', success: '12/20' },
+    { name: 'Applications', icon: FileText, color: 'from-red-500 to-orange-500', count: '500', rate: '100%', velocity: 95 },
+    { name: 'Screening', icon: Search, color: 'from-orange-500 to-yellow-500', count: '125', rate: '25%', velocity: 88 },
+    { name: 'Interviews', icon: Users, color: 'from-yellow-500 to-green-500', count: '50', rate: '10%', velocity: 92 },
+    { name: 'Incubation', icon: Building, color: 'from-green-500 to-blue-500', count: '20', rate: '4%', velocity: 97 },
+    { name: 'Success', icon: Star, color: 'from-blue-500 to-purple-500', count: '12', rate: '2.4%', velocity: 100 },
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStage((prev) => (prev + 1) % stages.length)
-    }, 2800)
+      setVelocity(stages[activeStage]?.velocity || 0)
+    }, 1200) // Accelerator speed
     return () => clearInterval(interval)
-  }, [stages.length])
+  }, [stages.length, activeStage])
 
   return (
-    <div className="relative w-full h-auto bg-gradient-to-br from-slate-900/90 to-red-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
-      {/* Data Flow Background */}
-      <div className="absolute inset-0 opacity-10">
-        {[...Array(15)].map((_, i) => (
+    <div className="relative w-full h-auto bg-gradient-to-br from-black via-red-950/95 to-orange-950/90 backdrop-blur-xl rounded-2xl border border-red-500/30 overflow-hidden">
+      {/* Accelerator Velocity Field */}
+      <div className="absolute inset-0 opacity-20">
+        <svg className="w-full h-full" viewBox="0 0 800 600">
+          {/* Speed lines */}
+          {[...Array(12)].map((_, i) => (
+            <line
+              key={i}
+              x1="0"
+              y1={50 + i * 45}
+              x2="800"
+              y2={50 + i * 45}
+              stroke="url(#speedGradient)"
+              strokeWidth="1"
+              opacity="0.7"
+              className="animate-pulse"
+              style={{ 
+                animationDuration: `${0.2 + i * 0.05}s`,
+                animationDelay: `${i * 0.03}s`
+              }}
+            />
+          ))}
+          <defs>
+            <linearGradient id="speedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="transparent" />
+              <stop offset="50%" stopColor="#FF4500" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="transparent" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
+      {/* Velocity indicators */}
+      <div className="absolute inset-0 opacity-25">
+        {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-px h-8 bg-gradient-to-b from-transparent via-white to-transparent animate-pulse"
+            className="absolute w-1 h-1 bg-orange-400 rounded-full animate-ping"
             style={{
-              left: `${20 + i * 4}%`,
-              top: `${10 + Math.sin(i) * 20}%`,
-              animationDelay: `${i * 0.2}s`,
-              animationDuration: '2s'
+              left: `${velocity + i * 4}%`,
+              top: `${10 + Math.sin(i * 0.8) * 30}%`,
+              animationDelay: `${i * 0.03}s`,
+              animationDuration: '0.4s',
+              transform: `translateX(${velocity * 2}px)`
             }}
           />
         ))}
