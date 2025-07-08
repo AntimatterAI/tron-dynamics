@@ -131,21 +131,21 @@ export default function PortfolioPage() {
                     <div className="grid lg:grid-cols-4 gap-8 items-start">
                       {/* Company Logo */}
                       <div className="lg:col-span-1 flex justify-center lg:justify-start">
-                        <div className="relative w-32 h-32 lg:w-40 lg:h-40 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 flex items-center justify-center p-6 group-hover:border-orange-400/20 transition-colors duration-300">
+                        <div className={`relative ${company.name === "Synergies4 AI" ? "w-32 h-32 lg:w-40 lg:h-40" : "w-40 h-40 lg:w-48 lg:h-48"} bg-white rounded-2xl border border-white/20 flex items-center justify-center p-6 group-hover:border-orange-400/40 transition-colors duration-300 shadow-lg`}>
                           <div className="relative w-full h-full">
                             <Image
                               src={company.logo}
                               alt={company.logoAlt}
                               fill
-                              className="object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
-                              sizes="(max-width: 768px) 128px, 160px"
+                              className="object-contain transition-all duration-300"
+                              sizes="(max-width: 768px) 160px, 192px"
                               onError={(e) => {
                                 // Fallback to company name as text if logo fails to load
                                 e.currentTarget.style.display = 'none';
                                 const parent = e.currentTarget.parentElement;
                                 if (parent && !parent.querySelector('.logo-fallback')) {
                                   const fallback = document.createElement('div');
-                                  fallback.className = 'logo-fallback text-white/60 text-lg font-light text-center w-full h-full flex items-center justify-center';
+                                  fallback.className = 'logo-fallback text-gray-600 text-lg font-light text-center w-full h-full flex items-center justify-center';
                                   fallback.style.fontFamily = 'var(--font-orbitron)';
                                   fallback.textContent = company.name;
                                   parent.appendChild(fallback);
