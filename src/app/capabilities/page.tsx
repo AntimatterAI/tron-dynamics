@@ -4,17 +4,12 @@ import { Suspense, lazy } from "react"
 import Link from "next/link"
 import { 
   Zap, 
-  Smartphone, 
-  Brain,
   ArrowRight,
   Phone,
   Palette,
   Shield,
   Code,
-  Globe,
   CheckCircle,
-  Megaphone,
-  Lock,
   Settings,
   Users,
   TrendingUp,
