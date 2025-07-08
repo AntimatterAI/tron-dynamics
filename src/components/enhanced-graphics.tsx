@@ -2,6 +2,17 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+
+// Hook to prevent hydration mismatches
+const useClientSide = () => {
+  const [hasMounted, setHasMounted] = useState(false)
+  
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  
+  return hasMounted
+}
 import { 
   Code, 
   Palette, 
@@ -19,13 +30,9 @@ import {
 
 // Floating Tech Network for Capabilities Page
 export function TechNetworkFloating() {
-  const [mounted, setMounted] = useState(false)
-  
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const hasMounted = useClientSide()
 
-  if (!mounted) return null
+  if (!hasMounted) return null
 
   const nodes = [
     { icon: Code, color: 'text-blue-400', x: 10, y: 20 },
@@ -100,13 +107,9 @@ export function TechNetworkFloating() {
 
 // Innovation Lab Visualization
 export function InnovationLabViz() {
-  const [mounted, setMounted] = useState(false)
-  
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const hasMounted = useClientSide()
 
-  if (!mounted) return null
+  if (!hasMounted) return null
 
   return (
     <div className="relative w-full h-80 flex items-center justify-center">
@@ -163,13 +166,9 @@ export function InnovationLabViz() {
 
 // Business Growth Chart Visualization
 export function BusinessGrowthChart() {
-  const [mounted, setMounted] = useState(false)
-  
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const hasMounted = useClientSide()
 
-  if (!mounted) return null
+  if (!hasMounted) return null
 
   const dataPoints = [
     { year: '2022', value: 20 },
@@ -244,13 +243,9 @@ export function BusinessGrowthChart() {
 
 // Team Network Visualization for About Page
 export function TeamNetworkViz() {
-  const [mounted, setMounted] = useState(false)
-  
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const hasMounted = useClientSide()
 
-  if (!mounted) return null
+  if (!hasMounted) return null
 
   const founders = [
     { name: 'Dr. Alvin Glay', color: 'text-blue-400', position: { x: 20, y: 30 } },
@@ -312,13 +307,9 @@ export function TeamNetworkViz() {
 
 // Achievement Timeline for About Page
 export function AchievementTimeline() {
-  const [mounted, setMounted] = useState(false)
-  
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const hasMounted = useClientSide()
 
-  if (!mounted) return null
+  if (!hasMounted) return null
 
   const achievements = [
     { year: '2020', title: 'Company Founded', icon: Building },
@@ -375,13 +366,9 @@ export function AchievementTimeline() {
 
 // TRON America Incubator Visualization
 export function IncubatorEcosystem() {
-  const [mounted, setMounted] = useState(false)
-  
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const hasMounted = useClientSide()
 
-  if (!mounted) return null
+  if (!hasMounted) return null
 
   const startups = [
     { name: 'AI Startup', sector: 'AI/ML', stage: 'Seed', x: 20, y: 20 },

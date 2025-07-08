@@ -17,10 +17,10 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
-import { TechNetworkFloating } from "@/components/enhanced-graphics"
 
-// Lazy load simple effects
+// Lazy load simple effects and graphics
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
+const TechNetworkFloating = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TechNetworkFloating })))
 
 export default function CapabilitiesPage() {
   const capabilities = [
@@ -291,7 +291,9 @@ export default function CapabilitiesPage() {
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2}>
-            <TechNetworkFloating />
+            <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>}>
+              <TechNetworkFloating />
+            </Suspense>
           </AnimatedElement>
         </div>
       </section>

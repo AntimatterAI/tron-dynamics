@@ -16,10 +16,10 @@ import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 // import { ServiceShowcase, AfricaContinent } from "@/components/africa-graphics"
 import { TechNetworkGraphics, InnovationLabsGraphics } from "@/components/page-graphics"
-import { InnovationLabViz } from "@/components/enhanced-graphics"
 
-// Lazy load simple effects
+// Lazy load simple effects and graphics
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
+const InnovationLabViz = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.InnovationLabViz })))
 
 export default function InnovationPage() {
   const services = [
@@ -220,7 +220,9 @@ export default function InnovationPage() {
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2}>
-            <InnovationLabViz />
+            <Suspense fallback={<div className="h-80 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>}>
+              <InnovationLabViz />
+            </Suspense>
           </AnimatedElement>
         </div>
       </section>

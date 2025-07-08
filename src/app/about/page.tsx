@@ -6,10 +6,11 @@ import { ArrowRight, Users, Award, Globe, Target, Heart, Info } from "lucide-rea
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 import { FoundersJourneyGraphics, CompanyValuesGraphics } from "@/components/page-graphics"
-import { TeamNetworkViz, AchievementTimeline } from "@/components/enhanced-graphics"
 
-// Lazy load simple effects
+// Lazy load simple effects and graphics
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
+const TeamNetworkViz = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TeamNetworkViz })))
+const AchievementTimeline = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.AchievementTimeline })))
 
 export default function AboutPage() {
   const founders = [
@@ -146,7 +147,9 @@ export default function AboutPage() {
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
         <div className="max-w-6xl mx-auto">
           <AnimatedElement animation="slide" direction="up">
-            <TeamNetworkViz />
+            <Suspense fallback={<div className="h-80 flex items-center justify-center"><div className="text-white/60">Loading network...</div></div>}>
+              <TeamNetworkViz />
+            </Suspense>
           </AnimatedElement>
         </div>
       </section>
@@ -162,7 +165,9 @@ export default function AboutPage() {
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-purple-950/10 to-blue-950/10">
         <div className="max-w-6xl mx-auto">
           <AnimatedElement animation="slide" direction="up">
-            <AchievementTimeline />
+            <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading timeline...</div></div>}>
+              <AchievementTimeline />
+            </Suspense>
           </AnimatedElement>
         </div>
       </section>

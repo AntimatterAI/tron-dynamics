@@ -16,10 +16,10 @@ import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 // import { ServiceShowcase, AfricaContinent, ImpactVisualization } from "@/components/africa-graphics"
 import { BusinessGrowthGraphics, GlobalConnectionsGraphics } from "@/components/page-graphics"
-import { BusinessGrowthChart } from "@/components/enhanced-graphics"
 
-// Lazy load simple effects
+// Lazy load simple effects and graphics
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
+const BusinessGrowthChart = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.BusinessGrowthChart })))
 
 export default function BusinessDevelopmentPage() {
   const services = [
@@ -243,7 +243,9 @@ export default function BusinessDevelopmentPage() {
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2} className="max-w-3xl mx-auto">
-            <BusinessGrowthChart />
+            <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading chart...</div></div>}>
+              <BusinessGrowthChart />
+            </Suspense>
           </AnimatedElement>
         </div>
       </section>

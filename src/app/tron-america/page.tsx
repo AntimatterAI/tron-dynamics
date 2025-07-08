@@ -16,10 +16,10 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
-import { IncubatorEcosystem } from "@/components/enhanced-graphics"
 
-// Lazy load simple effects
+// Lazy load simple effects and graphics
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
+const IncubatorEcosystem = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.IncubatorEcosystem })))
 
 export default function TronAmericaPage() {
   const incubatorFeatures = [
@@ -324,7 +324,9 @@ export default function TronAmericaPage() {
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2}>
-            <IncubatorEcosystem />
+            <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading ecosystem...</div></div>}>
+              <IncubatorEcosystem />
+            </Suspense>
           </AnimatedElement>
         </div>
       </section>
