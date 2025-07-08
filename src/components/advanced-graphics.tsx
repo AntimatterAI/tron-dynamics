@@ -50,7 +50,7 @@ export function ServiceIntegrationMatrix() {
     <div className="relative w-full min-h-[500px] md:min-h-[600px] h-auto bg-gradient-to-br from-slate-950/90 via-blue-950/50 to-purple-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-4 md:p-8">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 15 }, (_, i) => (
+        {Array.from({ length: 12 }, (_, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
@@ -64,78 +64,90 @@ export function ServiceIntegrationMatrix() {
         ))}
       </div>
 
-      {/* Central Hub */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <div className="relative w-16 h-16 md:w-20 md:h-20">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/30 to-purple-600/30 backdrop-blur-xl border-2 border-white/40 animate-spin-slow" />
-          <div className="absolute inset-1 md:inset-2 rounded-full bg-gradient-to-r from-cyan-400/40 to-blue-600/40 backdrop-blur-xl flex items-center justify-center">
-            <Cpu className="w-4 h-4 md:w-6 md:h-6 text-cyan-300" />
-          </div>
-        </div>
+      {/* Title */}
+      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center z-10">
+        <h3 className="text-lg md:text-2xl font-bold text-white">Technology Ecosystem</h3>
+        <p className="text-xs md:text-sm text-white/60 mt-1">Integrated Development Stack</p>
       </div>
 
-      {/* Tech Layer Orbits - Much better spacing */}
-      <div className="relative h-full min-h-[400px] md:min-h-[500px] flex items-center justify-center">
-        <div className="transform scale-60 md:scale-90 transition-transform duration-300">
-        {techLayers.map((layer, index) => {
-          // Much larger radius for better spacing
-          const radiusBase = 120 + index * 50 // Increased spacing significantly
-          const angle = (index * 60) + (activeLayer * 5) // Reduced rotation speed
-          const x = Math.cos((angle * Math.PI) / 180) * radiusBase
-          const y = Math.sin((angle * Math.PI) / 180) * radiusBase
+      {/* Centered Container for All Elements */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
           
-          return (
-            <div
-              key={layer.name}
-              className="absolute transition-all duration-700 ease-in-out hover:scale-110 cursor-pointer group z-20"
-              style={{ 
-                transform: `translate(${x}px, ${y}px)`,
-                zIndex: activeLayer === index ? 30 : 20
-              }}
-              onMouseEnter={() => setActiveLayer(index)}
-            >
-              <div
-                className={`relative w-12 h-12 md:w-16 md:h-16 rounded-xl border-2 backdrop-blur-xl transition-all duration-500 ${
-                  activeLayer === index ? 'scale-125 shadow-2xl border-white/60' : 'border-white/30'
-                }`}
-                style={{ 
-                  backgroundColor: `${layer.color}25`,
-                  borderColor: activeLayer === index ? `${layer.color}80` : `${layer.color}40`
-                }}
-              >
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent" />
-                <div className="relative h-full flex flex-col items-center justify-center p-1">
-                  <layer.icon className="w-4 h-4 md:w-5 md:h-5 text-white mb-1" />
-                  <span className="text-white text-xs font-bold text-center leading-tight">{layer.name}</span>
-                </div>
-                
-                {/* Enhanced Tooltip */}
-                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[120px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
-                  <div className="text-white font-bold text-sm mb-2">{layer.name}</div>
-                  {layer.techs.map((tech, i) => (
-                    <div key={i} className="text-white/80 text-xs mb-1 last:mb-0">{tech}</div>
-                  ))}
-                  <div className="text-green-400 text-xs font-bold mt-2">{layer.clients} Projects</div>
-                </div>
+          {/* Central Hub - Perfectly Centered */}
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="relative w-16 h-16 md:w-20 md:h-20">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/30 to-purple-600/30 backdrop-blur-xl border-2 border-white/40 animate-spin-slow" />
+              <div className="absolute inset-1 md:inset-2 rounded-full bg-gradient-to-r from-cyan-400/40 to-blue-600/40 backdrop-blur-xl flex items-center justify-center">
+                <Cpu className="w-6 h-6 md:w-8 md:h-8 text-cyan-300" />
               </div>
-
-              {/* Connection Line */}
-              <div
-                className="absolute left-1/2 top-1/2 w-0.5 origin-left opacity-40"
-                style={{
-                  height: `${radiusBase}px`,
-                  background: `linear-gradient(to right, ${layer.color}50, transparent)`,
-                  transform: `translate(-50%, -50%) rotate(${180 + angle}deg)`
-                }}
-              />
             </div>
-          )
-        })}
+          </div>
+
+          {/* Tech Layer Orbits - Perfectly Symmetric */}
+          {techLayers.map((layer, index) => {
+            // Perfect symmetrical positioning around center
+            const radius = 160 // Fixed radius for consistency
+            const angle = (index * 60) + (activeLayer * 3) // Slower rotation, perfect 60-degree spacing
+            const x = Math.cos((angle * Math.PI) / 180) * radius
+            const y = Math.sin((angle * Math.PI) / 180) * radius
+            
+            return (
+              <div
+                key={layer.name}
+                className="absolute transition-all duration-700 ease-in-out hover:scale-110 cursor-pointer group z-10"
+                style={{ 
+                  left: '50%',
+                  top: '50%',
+                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+                  zIndex: activeLayer === index ? 30 : 10
+                }}
+                onMouseEnter={() => setActiveLayer(index)}
+              >
+                <div
+                  className={`relative w-14 h-14 md:w-16 md:h-16 rounded-xl border-2 backdrop-blur-xl transition-all duration-500 ${
+                    activeLayer === index ? 'scale-125 shadow-2xl border-white/60' : 'border-white/30'
+                  }`}
+                  style={{ 
+                    backgroundColor: `${layer.color}25`,
+                    borderColor: activeLayer === index ? `${layer.color}80` : `${layer.color}40`
+                  }}
+                >
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent" />
+                  <div className="relative h-full flex flex-col items-center justify-center p-1">
+                    <layer.icon className="w-4 h-4 md:w-5 md:h-5 text-white mb-1" />
+                    <span className="text-white text-xs font-bold text-center leading-tight">{layer.name}</span>
+                  </div>
+                  
+                  {/* Enhanced Tooltip */}
+                  <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[120px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                    <div className="text-white font-bold text-sm mb-2">{layer.name}</div>
+                    {layer.techs.map((tech, i) => (
+                      <div key={i} className="text-white/80 text-xs mb-1 last:mb-0">{tech}</div>
+                    ))}
+                    <div className="text-green-400 text-xs font-bold mt-2">{layer.clients} Projects</div>
+                  </div>
+                </div>
+
+                {/* Connection Line */}
+                <div
+                  className="absolute w-0.5 origin-left opacity-40"
+                  style={{
+                    left: '50%',
+                    top: '50%',
+                    height: `${radius}px`,
+                    background: `linear-gradient(to right, ${layer.color}50, transparent)`,
+                    transform: `translate(-50%, -50%) rotate(${180 + angle}deg)`
+                  }}
+                />
+              </div>
+            )
+          })}
         </div>
       </div>
 
       {/* Technology Stats */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2 z-10">
         {[
           { value: '200+', label: 'Projects', color: '#3B82F6' },
           { value: '6', label: 'Tech Stacks', color: '#10B981' },
@@ -151,12 +163,6 @@ export function ServiceIntegrationMatrix() {
             <div className="text-xs text-white/70">{metric.label}</div>
           </div>
         ))}
-      </div>
-
-      {/* Title */}
-      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center">
-        <h3 className="text-lg md:text-2xl font-bold text-white">Technology Ecosystem</h3>
-        <p className="text-xs md:text-sm text-white/60 mt-1">Integrated Development Stack</p>
       </div>
     </div>
   )
@@ -185,10 +191,10 @@ export function InnovationPipeline() {
     <div className="relative w-full min-h-[500px] md:min-h-[650px] h-auto bg-gradient-to-br from-purple-950/90 via-indigo-950/50 to-cyan-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-4 md:p-8">
       {/* Spiral Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 12 }, (_, i) => {
-          const radius = 30 + i * 25
-          const x = Math.cos((i * 30 * Math.PI) / 180) * radius
-          const y = Math.sin((i * 30 * Math.PI) / 180) * radius
+        {Array.from({ length: 10 }, (_, i) => {
+          const radius = 40 + i * 30
+          const x = Math.cos((i * 36 * Math.PI) / 180) * radius
+          const y = Math.sin((i * 36 * Math.PI) / 180) * radius
           
           return (
             <div
@@ -206,99 +212,114 @@ export function InnovationPipeline() {
         })}
       </div>
 
-      {/* Central Innovation Hub */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <div className="relative w-20 h-20 md:w-24 md:h-24">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/30 to-cyan-500/30 backdrop-blur-xl border-2 border-white/50 animate-spin-slow" />
-          <div className="absolute inset-2 md:inset-3 rounded-full bg-gradient-to-r from-indigo-400/50 to-purple-600/50 backdrop-blur-xl flex items-center justify-center">
-            <Brain className="w-6 h-6 md:w-8 md:h-8 text-white" />
-          </div>
-          
-          {/* Pulsing Waves */}
-          {[1, 2, 3].map((wave) => (
-            <div
-              key={wave}
-              className="absolute inset-0 rounded-full border-2 border-cyan-400/15 animate-ping"
-              style={{ animationDelay: `${wave}s`, animationDuration: '4s' }}
-            />
-          ))}
-        </div>
+      {/* Title */}
+      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center z-10">
+        <h3 className="text-lg md:text-2xl font-bold text-white">Innovation Pipeline</h3>
+        <p className="text-xs md:text-sm text-white/60 mt-1">From Concept to Market</p>
       </div>
 
-      {/* Innovation Phase Satellites - Much better spacing */}
-      <div className="relative h-full min-h-[400px] md:min-h-[550px] flex items-center justify-center">
-        <div className="transform scale-60 md:scale-85 transition-transform duration-300">
-        {innovationPhases.map((phase, index) => {
-          // Much larger radius to prevent overlap
-          const satelliteRadius = 180 + (index % 2) * 20 // Alternating radius for better spacing
-          const satelliteAngle = (index * 72) + (activePhase * 5) // Reduced rotation speed
-          const sx = Math.cos((satelliteAngle * Math.PI) / 180) * satelliteRadius
-          const sy = Math.sin((satelliteAngle * Math.PI) / 180) * satelliteRadius
+      {/* Centered Container for All Elements */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
           
-          return (
-            <div
-              key={phase.name}
-              className="absolute transition-all duration-700 cursor-pointer group z-20"
-              style={{ transform: `translate(${sx}px, ${sy}px)` }}
-              onMouseEnter={() => setActivePhase(index)}
-            >
-              <div
-                className={`relative w-16 h-16 md:w-20 md:h-20 rounded-2xl border-2 backdrop-blur-xl transition-all duration-500 ${
-                  activePhase === index ? 'scale-125 shadow-2xl border-white/70' : 'border-white/30'
-                }`}
-                style={{ 
-                  backgroundColor: `${phase.color}30`,
-                  borderColor: activePhase === index ? `${phase.color}80` : `${phase.color}40`
-                }}
-              >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/25 to-transparent" />
-                <div className="relative h-full flex flex-col items-center justify-center p-2">
-                  <phase.icon className="w-5 h-5 md:w-6 md:h-6 text-white mb-1" />
-                  <span className="text-white text-xs font-bold text-center leading-tight">{phase.name}</span>
-                </div>
-
-                {/* Progress Ring */}
-                {activePhase === index && (
-                  <div
-                    className="absolute -inset-1 rounded-2xl opacity-60"
-                    style={{
-                      background: `conic-gradient(${phase.color} ${phase.progress * 3.6}deg, transparent 0deg)`
-                    }}
-                  />
-                )}
-
-                {/* Enhanced Info Panel */}
-                <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[140px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
-                  <div className="text-white font-bold text-sm mb-1">{phase.name}</div>
-                  <div className="text-white/70 text-xs mb-2">{phase.description}</div>
-                  <div className="flex justify-between text-xs mb-1">
-                    <span className="text-white/60">Success:</span>
-                    <span className="text-green-400 font-bold">{phase.progress}%</span>
-                  </div>
-                  <div className="flex justify-between text-xs">
-                    <span className="text-white/60">Duration:</span>
-                    <span className="text-blue-400 font-bold">{phase.duration}</span>
-                  </div>
-                </div>
+          {/* Central Innovation Hub - Perfectly Centered */}
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="relative w-20 h-20 md:w-24 md:h-24">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/30 to-cyan-500/30 backdrop-blur-xl border-2 border-white/50 animate-spin-slow" />
+              <div className="absolute inset-2 md:inset-3 rounded-full bg-gradient-to-r from-indigo-400/50 to-purple-600/50 backdrop-blur-xl flex items-center justify-center">
+                <Brain className="w-8 h-8 md:w-10 md:h-10 text-white" />
               </div>
-
-              {/* Energy Beam */}
-              <div
-                className="absolute left-1/2 top-1/2 w-0.5 origin-left opacity-30"
-                style={{
-                  height: `${satelliteRadius}px`,
-                  background: `linear-gradient(to right, ${phase.color}50, transparent)`,
-                  transform: `translate(-50%, -50%) rotate(${180 + satelliteAngle}deg)`
-                }}
-              />
+              
+              {/* Pulsing Waves */}
+              {[1, 2, 3].map((wave) => (
+                <div
+                  key={wave}
+                  className="absolute inset-0 rounded-full border-2 border-cyan-400/15 animate-ping"
+                  style={{ animationDelay: `${wave}s`, animationDuration: '4s' }}
+                />
+              ))}
             </div>
-          )
-        })}
+          </div>
+
+          {/* Innovation Phase Satellites - Perfectly Symmetric */}
+          {innovationPhases.map((phase, index) => {
+            // Perfect symmetrical positioning - 72 degrees apart for 5 elements
+            const radius = 170 // Fixed radius for consistency
+            const baseAngle = 72 // 360/5 = 72 degrees apart
+            const angle = (index * baseAngle) + (activePhase * 2) // Slower rotation
+            const x = Math.cos(((angle - 90) * Math.PI) / 180) * radius // -90 to start at top
+            const y = Math.sin(((angle - 90) * Math.PI) / 180) * radius
+            
+            return (
+              <div
+                key={phase.name}
+                className="absolute transition-all duration-700 cursor-pointer group z-10"
+                style={{ 
+                  left: '50%',
+                  top: '50%',
+                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+                }}
+                onMouseEnter={() => setActivePhase(index)}
+              >
+                <div
+                  className={`relative w-16 h-16 md:w-20 md:h-20 rounded-2xl border-2 backdrop-blur-xl transition-all duration-500 ${
+                    activePhase === index ? 'scale-125 shadow-2xl border-white/70' : 'border-white/30'
+                  }`}
+                  style={{ 
+                    backgroundColor: `${phase.color}30`,
+                    borderColor: activePhase === index ? `${phase.color}80` : `${phase.color}40`
+                  }}
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/25 to-transparent" />
+                  <div className="relative h-full flex flex-col items-center justify-center p-2">
+                    <phase.icon className="w-5 h-5 md:w-6 md:h-6 text-white mb-1" />
+                    <span className="text-white text-xs font-bold text-center leading-tight">{phase.name}</span>
+                  </div>
+
+                  {/* Progress Ring */}
+                  {activePhase === index && (
+                    <div
+                      className="absolute -inset-1 rounded-2xl opacity-60"
+                      style={{
+                        background: `conic-gradient(${phase.color} ${phase.progress * 3.6}deg, transparent 0deg)`
+                      }}
+                    />
+                  )}
+
+                  {/* Enhanced Info Panel */}
+                  <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[140px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                    <div className="text-white font-bold text-sm mb-1">{phase.name}</div>
+                    <div className="text-white/70 text-xs mb-2">{phase.description}</div>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span className="text-white/60">Success:</span>
+                      <span className="text-green-400 font-bold">{phase.progress}%</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-white/60">Duration:</span>
+                      <span className="text-blue-400 font-bold">{phase.duration}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Energy Beam */}
+                <div
+                  className="absolute w-0.5 origin-left opacity-30"
+                  style={{
+                    left: '50%',
+                    top: '50%',
+                    height: `${radius}px`,
+                    background: `linear-gradient(to right, ${phase.color}50, transparent)`,
+                    transform: `translate(-50%, -50%) rotate(${180 + angle - 90}deg)`
+                  }}
+                />
+              </div>
+            )
+          })}
         </div>
       </div>
 
       {/* Innovation Metrics */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2 z-10">
         {[
           { value: '150+', label: 'Projects', color: '#8B5CF6' },
           { value: '94%', label: 'Success Rate', color: '#06B6D4' },
@@ -314,12 +335,6 @@ export function InnovationPipeline() {
             <div className="text-xs text-white/70">{metric.label}</div>
           </div>
         ))}
-      </div>
-
-      {/* Title */}
-      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center">
-        <h3 className="text-lg md:text-2xl font-bold text-white">Innovation Pipeline</h3>
-        <p className="text-xs md:text-sm text-white/60 mt-1">From Concept to Market</p>
       </div>
     </div>
   )
@@ -439,7 +454,7 @@ export function MarketExpansionViz() {
       </div>
 
       {/* Global Business Metrics */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2 z-10">
         {[
           { value: '134', label: 'Active Deals', color: '#10B981' },
           { value: '$7.8M', label: 'Total Revenue', color: '#3B82F6' },
@@ -458,7 +473,7 @@ export function MarketExpansionViz() {
       </div>
 
       {/* Title */}
-      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center">
+      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center z-10">
         <h3 className="text-lg md:text-2xl font-bold text-white">Global Market Presence</h3>
         <p className="text-xs md:text-sm text-white/60 mt-1">Worldwide Business Development</p>
       </div>
@@ -511,20 +526,28 @@ export function CompanyDNAViz() {
         </div>
       </div>
 
-      {/* Central Hub */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <div className="relative w-20 h-20 md:w-28 md:h-28">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/40 to-purple-600/40 backdrop-blur-xl border-2 border-white/50 animate-spin-slow" />
-          <div className="absolute inset-2 md:inset-3 rounded-full bg-gradient-to-r from-purple-400/50 to-pink-600/50 backdrop-blur-xl flex items-center justify-center">
-            <Heart className="w-8 h-8 md:w-12 md:h-12 text-white animate-pulse" />
-          </div>
-        </div>
+      {/* Title */}
+      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center z-10">
+        <h3 className="text-lg md:text-2xl font-bold text-white">Company DNA</h3>
+        <p className="text-xs md:text-sm text-white/60 mt-1">Our Values & Journey</p>
       </div>
 
-      {/* Company Values - Better positioning */}
-      <div className="relative h-full min-h-[400px] md:min-h-[500px] flex items-center justify-center">
-        <div className="transform scale-75 md:scale-100 transition-transform duration-300">
-                 {values.map((value, i) => {
+      {/* Centered Container for All Elements */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
+          
+          {/* Central Hub - Perfectly Centered */}
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="relative w-20 h-20 md:w-28 md:h-28">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/40 to-purple-600/40 backdrop-blur-xl border-2 border-white/50 animate-spin-slow" />
+              <div className="absolute inset-2 md:inset-3 rounded-full bg-gradient-to-r from-purple-400/50 to-pink-600/50 backdrop-blur-xl flex items-center justify-center">
+                <Heart className="w-8 h-8 md:w-12 md:h-12 text-white animate-pulse" />
+              </div>
+            </div>
+          </div>
+
+          {/* Company Values - Better positioning */}
+          {values.map((value, i) => {
            const angle = (i * 90) + 45 // 90 degrees apart, offset by 45
            const radius = 120 // Use fixed radius for consistency
            const x = Math.cos((angle * Math.PI) / 180) * radius
@@ -533,7 +556,7 @@ export function CompanyDNAViz() {
           return (
             <div 
               key={i} 
-              className="absolute cursor-pointer group transition-all duration-700 hover:scale-110 z-20" 
+              className="absolute cursor-pointer group transition-all duration-700 hover:scale-110 z-10" 
               style={{
                 transform: `translate(${x}px, ${y}px)`
               }}
@@ -559,7 +582,7 @@ export function CompanyDNAViz() {
       </div>
 
       {/* Enhanced Timeline */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-1 md:gap-2 max-w-full px-2">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-1 md:gap-2 max-w-full px-2 z-10">
         {milestones.map((milestone, i) => (
           <div
             key={i}
@@ -571,12 +594,6 @@ export function CompanyDNAViz() {
             <div className="text-xs text-indigo-400 font-bold mt-1">{milestone.metric}</div>
           </div>
         ))}
-      </div>
-
-      {/* Title */}
-      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center">
-        <h3 className="text-lg md:text-2xl font-bold text-white">Company DNA</h3>
-        <p className="text-xs md:text-sm text-white/60 mt-1">Our Values & Journey</p>
       </div>
     </div>
   )
@@ -659,7 +676,7 @@ export function StartupPipeline() {
       </div>
 
       {/* Success Metrics */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-6 max-w-full px-4">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-6 max-w-full px-4 z-10">
         {[
           { value: '$4.2M', label: 'Deployed Capital', color: '#10B981' },
           { value: '92%', label: 'Success Rate', color: '#3B82F6' },
