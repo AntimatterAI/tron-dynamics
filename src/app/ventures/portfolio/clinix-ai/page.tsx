@@ -203,8 +203,8 @@ export default function ClinixAIPage() {
                   <Image
                     src="/app-screenshots/clinix-ai/Frame 8.png"
                     alt="Clinix AI Dashboard - AI-Powered Medical Documentation"
-                    width={800}
-                    height={600}
+                    width={600}
+                    height={400}
                     className="w-full h-auto"
                     priority
                   />
@@ -268,8 +268,8 @@ export default function ClinixAIPage() {
                 <Image
                   src="/app-screenshots/clinix-ai/Frame 9.png"
                   alt="Clinix AI SOAP Notes Generation Interface"
-                  width={1200}
-                  height={800}
+                  width={800}
+                  height={500}
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -326,8 +326,8 @@ export default function ClinixAIPage() {
                 <Image
                   src="/app-screenshots/clinix-ai/Frame 11.png"
                   alt="Clinix AI Patient Management System"
-                  width={1200}
-                  height={800}
+                  width={800}
+                  height={500}
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -372,8 +372,8 @@ export default function ClinixAIPage() {
                 <Image
                   src="/app-screenshots/clinix-ai/1255@3x.png"
                   alt="Clinix AI Analytics Dashboard"
-                  width={1200}
-                  height={800}
+                  width={800}
+                  height={500}
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

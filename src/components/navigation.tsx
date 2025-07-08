@@ -12,7 +12,7 @@ export default function Navigation() {
   const pathname = usePathname()
 
   const navItems = [
-    { name: 'Portfolio Companies', href: '/portfolio' },
+    { name: 'Investments', href: '/portfolio' },
     { name: 'Capabilities', href: '/capabilities' },
     { name: 'TRON Innovation', href: '/innovation' },
     { name: 'TRON Business & Development', href: '/business-development' },

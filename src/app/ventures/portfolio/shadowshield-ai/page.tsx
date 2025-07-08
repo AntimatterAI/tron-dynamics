@@ -167,8 +167,8 @@ export default function ShadowShieldAIPage() {
                   <Image
                     src="/app-screenshots/shadowshield-ai/Admin.png"
                     alt="ShadowShield AI Admin Dashboard - AI Security Platform"
-                    width={800}
-                    height={600}
+                    width={600}
+                    height={400}
                     className="w-full h-auto"
                     priority
                   />
@@ -232,8 +232,8 @@ export default function ShadowShieldAIPage() {
                 <Image
                   src="/app-screenshots/shadowshield-ai/DLP Rules.png"
                   alt="ShadowShield AI DLP Rules Management Interface"
-                  width={1200}
-                  height={800}
+                  width={800}
+                  height={500}
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -290,8 +290,8 @@ export default function ShadowShieldAIPage() {
                 <Image
                   src="/app-screenshots/shadowshield-ai/Alerts.png"
                   alt="ShadowShield AI Security Alerts Dashboard"
-                  width={1200}
-                  height={800}
+                  width={800}
+                  height={500}
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -310,8 +310,8 @@ export default function ShadowShieldAIPage() {
                 <Image
                   src="/app-screenshots/shadowshield-ai/Users.png"
                   alt="ShadowShield AI User Management Interface"
-                  width={1200}
-                  height={800}
+                  width={800}
+                  height={500}
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -354,8 +354,8 @@ export default function ShadowShieldAIPage() {
                 <Image
                   src="/app-screenshots/shadowshield-ai/Config and Settings.png"
                   alt="ShadowShield AI Configuration and Settings"
-                  width={1200}
-                  height={800}
+                  width={800}
+                  height={500}
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
