@@ -324,9 +324,7 @@ export default function TronAmericaPage() {
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2}>
-            <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading ecosystem...</div></div>}>
-              <IncubatorEcosystem />
-            </Suspense>
+            <IncubatorEcosystem />
           </AnimatedElement>
         </div>
       </section>

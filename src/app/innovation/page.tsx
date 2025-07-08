@@ -220,9 +220,7 @@ export default function InnovationPage() {
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2}>
-            <Suspense fallback={<div className="h-80 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>}>
-              <InnovationLabViz />
-            </Suspense>
+            <InnovationLabViz />
           </AnimatedElement>
         </div>
       </section>

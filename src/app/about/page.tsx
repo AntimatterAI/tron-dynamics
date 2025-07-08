@@ -147,9 +147,7 @@ export default function AboutPage() {
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
         <div className="max-w-6xl mx-auto">
           <AnimatedElement animation="slide" direction="up">
-            <Suspense fallback={<div className="h-80 flex items-center justify-center"><div className="text-white/60">Loading network...</div></div>}>
-              <TeamNetworkViz />
-            </Suspense>
+            <TeamNetworkViz />
           </AnimatedElement>
         </div>
       </section>
@@ -165,9 +163,7 @@ export default function AboutPage() {
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-purple-950/10 to-blue-950/10">
         <div className="max-w-6xl mx-auto">
           <AnimatedElement animation="slide" direction="up">
-            <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading timeline...</div></div>}>
-              <AchievementTimeline />
-            </Suspense>
+            <AchievementTimeline />
           </AnimatedElement>
         </div>
       </section>

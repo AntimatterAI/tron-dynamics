@@ -243,9 +243,7 @@ export default function BusinessDevelopmentPage() {
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2} className="max-w-3xl mx-auto">
-            <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading chart...</div></div>}>
-              <BusinessGrowthChart />
-            </Suspense>
+            <BusinessGrowthChart />
           </AnimatedElement>
         </div>
       </section>
