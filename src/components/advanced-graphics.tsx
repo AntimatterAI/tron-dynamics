@@ -912,7 +912,7 @@ export function StartupPipeline() {
                       <div>
                         <div className="text-white font-bold text-xl">{stage.name}</div>
                         <div className="text-white/80 text-sm">{stage.rate} Selection Rate</div>
-                        <div className="text-white/60 text-sm">{stage.success}</div>
+                        <div className="text-white/60 text-sm">Velocity: {stage.velocity}%</div>
                       </div>
                     </div>
                     
