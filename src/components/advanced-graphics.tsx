@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { 
     Heart,
     TrendingUp,
@@ -35,7 +35,7 @@ export function ServiceIntegrationMatrix() {
   const [activeService, setActiveService] = useState(0)
   const [connectionNodes, setConnectionNodes] = useState<number[]>([])
   
-  const services = [
+  const services = useMemo(() => [
     { name: 'AI/ML', icon: Brain, color: '#00D4FF', projects: '25+', strength: 95 },
     { name: 'Blockchain', icon: Link, color: '#9D4EDD', projects: '15+', strength: 88 },
     { name: 'IoT', icon: Wifi, color: '#06FFA5', projects: '30+', strength: 92 },
@@ -44,7 +44,7 @@ export function ServiceIntegrationMatrix() {
     { name: 'Web', icon: Globe, color: '#8338EC', projects: '50+', strength: 96 },
     { name: 'Data', icon: Database, color: '#3A86FF', projects: '28+', strength: 94 },
     { name: 'Security', icon: Shield, color: '#FB5607', projects: '22+', strength: 87 },
-  ]
+  ], [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -232,13 +232,13 @@ export function InnovationPipeline() {
   const [activePhase, setActivePhase] = useState(0)
   const [energyLevel, setEnergyLevel] = useState(0)
   
-  const phases = [
+  const phases = useMemo(() => [
     { name: 'Research', icon: Search, color: '#FF0080', duration: '2-4 weeks', energy: 85 },
     { name: 'Prototype', icon: Cpu, color: '#00FF88', duration: '4-8 weeks', energy: 92 },
     { name: 'Development', icon: Code, color: '#8000FF', duration: '8-16 weeks', energy: 96 },
     { name: 'Testing', icon: CheckCircle, color: '#FF8000', duration: '2-6 weeks', energy: 88 },
     { name: 'Launch', icon: Rocket, color: '#00FFFF', duration: '1-2 weeks', energy: 100 },
-  ]
+  ], [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -440,12 +440,12 @@ export function MarketExpansionViz() {
   const [activeMarket, setActiveMarket] = useState(0)
   const [marketPulse, setMarketPulse] = useState(0)
   
-  const markets = [
+  const markets = useMemo(() => [
     { name: 'West Africa', icon: MapPin, color: '#00FF7F', growth: '+45%', revenue: '$2.1M', deals: 12, trend: 'up' },
     { name: 'East Africa', icon: Building, color: '#1E90FF', growth: '+32%', revenue: '$1.8M', deals: 8, trend: 'up' },
     { name: 'North America', icon: Briefcase, color: '#FF1493', growth: '+28%', revenue: '$3.2M', deals: 15, trend: 'stable' },
     { name: 'Europe', icon: Users, color: '#FFD700', growth: '+38%', revenue: '$2.7M', deals: 10, trend: 'up' },
-  ]
+  ], [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -612,20 +612,20 @@ export function CompanyDNAViz() {
   const [activeValue, setActiveValue] = useState(0)
   const [evolutionPhase, setEvolutionPhase] = useState(0)
   
-  const values = [
+  const values = useMemo(() => [
     { name: 'Innovation', icon: Lightbulb, color: '#FF4500', description: 'Cutting-edge solutions', intensity: 95 },
     { name: 'Excellence', icon: Award, color: '#9932CC', description: 'Quality-first approach', intensity: 98 },
     { name: 'Impact', icon: Heart, color: '#DC143C', description: 'Meaningful change', intensity: 92 },
     { name: 'Growth', icon: TrendingUp, color: '#32CD32', description: 'Continuous evolution', intensity: 88 },
-  ]
+  ], [])
 
-  const milestones = [
+  const milestones = useMemo(() => [
     { year: '2020', event: 'Founded', icon: Building2, metric: 'Day 1', impact: 85 },
     { year: '2021', event: '$1M Revenue', icon: DollarSign, metric: '12 months', impact: 90 },
     { year: '2022', event: '50+ Team', icon: Users, metric: '24 months', impact: 94 },
     { year: '2023', event: 'Global Expansion', icon: Globe, metric: '36 months', impact: 97 },
     { year: '2024', event: 'AI Innovation', icon: Brain, metric: '48 months', impact: 100 },
-  ]
+  ], [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -721,7 +721,7 @@ export function CompanyDNAViz() {
                   />
                   <span className="text-white font-semibold text-lg mb-2">{value.name}</span>
                   <span className="text-white/60 text-sm mb-2">{value.description}</span>
-                  <span className="text-green-400 font-bold text-sm">{value.projects}</span>
+                  <span className="text-green-400 font-bold text-sm">{value.intensity}% Intensity</span>
                 </div>
               </div>
             </div>
@@ -780,13 +780,13 @@ export function StartupPipeline() {
   const [activeStage, setActiveStage] = useState(0)
   const [velocity, setVelocity] = useState(0)
   
-  const stages = [
+  const stages = useMemo(() => [
     { name: 'Applications', icon: FileText, color: 'from-red-500 to-orange-500', count: '500', rate: '100%', velocity: 95 },
     { name: 'Screening', icon: Search, color: 'from-orange-500 to-yellow-500', count: '125', rate: '25%', velocity: 88 },
     { name: 'Interviews', icon: Users, color: 'from-yellow-500 to-green-500', count: '50', rate: '10%', velocity: 92 },
     { name: 'Incubation', icon: Building, color: 'from-green-500 to-blue-500', count: '20', rate: '4%', velocity: 97 },
     { name: 'Success', icon: Star, color: 'from-blue-500 to-purple-500', count: '12', rate: '2.4%', velocity: 100 },
-  ]
+  ], [])
 
   useEffect(() => {
     const interval = setInterval(() => {
