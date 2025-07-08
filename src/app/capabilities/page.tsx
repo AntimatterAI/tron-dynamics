@@ -28,7 +28,7 @@ const ServiceIntegrationMatrix = dynamic(() => import("@/components/advanced-gra
   ssr: false,
   loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading service integration...</div></div>
 })
-const TechNetworkFloating = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TechNetworkFloating })), { 
+const TechNetworkFloating = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.TechNetworkFloating })), { 
   ssr: false,
   loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>
 })

@@ -27,7 +27,7 @@ const MarketExpansionViz = dynamic(() => import("@/components/advanced-graphics"
   ssr: false,
   loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading market expansion...</div></div>
 })
-const BusinessGrowthChart = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.BusinessGrowthChart })), { 
+const BusinessGrowthChart = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.BusinessGrowthChart })), { 
   ssr: false,
   loading: () => <div className="h-64 flex items-center justify-center"><div className="text-white/60">Loading chart...</div></div>
 })

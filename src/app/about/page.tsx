@@ -17,11 +17,11 @@ const CompanyDNAViz = dynamic(() => import("@/components/advanced-graphics").the
   ssr: false,
   loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading company DNA...</div></div>
 })
-const TeamNetworkViz = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TeamNetworkViz })), { 
+const TeamNetworkViz = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.TeamNetworkViz })), { 
   ssr: false,
   loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading network...</div></div>
 })
-const AchievementTimeline = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.AchievementTimeline })), { 
+const AchievementTimeline = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.AchievementTimeline })), { 
   ssr: false,
   loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading timeline...</div></div>
 })

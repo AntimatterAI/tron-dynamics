@@ -27,7 +27,7 @@ const StartupPipeline = dynamic(() => import("@/components/advanced-graphics").t
   ssr: false,
   loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading startup pipeline...</div></div>
 })
-const IncubatorEcosystem = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.IncubatorEcosystem })), { 
+const IncubatorEcosystem = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.IncubatorEcosystem })), { 
   ssr: false,
   loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading ecosystem...</div></div>
 })

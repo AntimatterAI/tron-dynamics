@@ -27,7 +27,7 @@ const InnovationPipeline = dynamic(() => import("@/components/advanced-graphics"
   ssr: false,
   loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading innovation pipeline...</div></div>
 })
-const InnovationLabViz = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.InnovationLabViz })), { 
+const InnovationLabViz = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.InnovationLabViz })), { 
   ssr: false,
   loading: () => <div className="h-80 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>
 })
