@@ -242,11 +242,14 @@ export function InnovationPipeline() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActivePhase((prev) => (prev + 1) % phases.length)
-      setEnergyLevel(phases[activePhase]?.energy || 0)
+      setActivePhase((prev) => {
+        const next = (prev + 1) % phases.length
+        setEnergyLevel(phases[next]?.energy || 0)
+        return next
+      })
     }, 900) // Super fast quantum transitions
     return () => clearInterval(interval)
-  }, [phases.length, activePhase])
+  }, [phases])
 
   return (
     <div className="relative w-full h-auto bg-gradient-to-br from-black via-purple-950/95 to-pink-950/90 backdrop-blur-xl rounded-3xl border border-purple-500/30 overflow-hidden">
@@ -349,8 +352,11 @@ export function InnovationPipeline() {
                         activePhase === i ? 'scale-125 drop-shadow-lg' : ''
                       }`} 
                     />
-                    <span className="text-white font-semibold text-sm md:text-base">{phase.name}</span>
-                    <span className="text-white/60 text-xs mt-1">{phase.duration}</span>
+                                      <span className="text-white font-semibold text-sm md:text-base">{phase.name}</span>
+                  <span className="text-white/60 text-xs mt-1">{phase.duration}</span>
+                  {activePhase === i && (
+                    <span className="text-green-400 text-xs font-bold mt-1">{energyLevel}% Energy</span>
+                  )}
                   </div>
                 </div>
               </div>
@@ -447,7 +453,7 @@ export function MarketExpansionViz() {
       setMarketPulse(prev => (prev + 1) % 100)
     }, 1000) // Fast market updates like real trading
     return () => clearInterval(interval)
-  }, [markets.length])
+  }, [markets])
 
   return (
     <div className="relative w-full h-auto bg-gradient-to-br from-green-950/90 to-blue-900/50 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
@@ -542,6 +548,9 @@ export function MarketExpansionViz() {
                   <span className="text-white font-semibold text-lg mb-2">{market.name}</span>
                   <span className="text-green-400 font-bold text-sm">{market.growth}</span>
                   <span className="text-blue-400 font-bold text-sm">{market.revenue}</span>
+                  {activeMarket === i && (
+                    <span className="text-yellow-400 text-xs font-bold">Pulse: {marketPulse}%</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -624,7 +633,7 @@ export function CompanyDNAViz() {
       setEvolutionPhase((prev) => (prev + 1) % milestones.length)
     }, 1100) // Fast DNA replication speed
     return () => clearInterval(interval)
-  }, [values.length, milestones.length])
+  }, [values, milestones])
 
   return (
     <div className="relative w-full h-auto bg-gradient-to-br from-indigo-950/90 via-purple-950/50 to-pink-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
@@ -735,6 +744,9 @@ export function CompanyDNAViz() {
               <div className="text-sm text-white font-bold mb-1">{milestone.year}</div>
               <div className="text-xs text-white/70 mb-2">{milestone.event}</div>
               <div className="text-xs text-indigo-400 font-bold">{milestone.metric}</div>
+              {evolutionPhase === i && (
+                <div className="text-xs text-green-400 font-bold mt-1">{milestone.impact}% Impact</div>
+              )}
             </div>
           ))}
         </div>
@@ -778,11 +790,14 @@ export function StartupPipeline() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveStage((prev) => (prev + 1) % stages.length)
-      setVelocity(stages[activeStage]?.velocity || 0)
+      setActiveStage((prev) => {
+        const next = (prev + 1) % stages.length
+        setVelocity(stages[next]?.velocity || 0)
+        return next
+      })
     }, 1200) // Accelerator speed
     return () => clearInterval(interval)
-  }, [stages.length, activeStage])
+  }, [stages])
 
   return (
     <div className="relative w-full h-auto bg-gradient-to-br from-black via-red-950/95 to-orange-950/90 backdrop-blur-xl rounded-2xl border border-red-500/30 overflow-hidden">
