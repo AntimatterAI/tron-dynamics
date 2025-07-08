@@ -124,9 +124,9 @@ export default function CapabilitiesPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950/20">
-      {/* Simple Capabilities Effects */}
+      {/* Simple Innovation Effects */}
       <Suspense fallback={null}>
-        <SimpleHeroEffects variant="capabilities" />
+        <SimpleHeroEffects variant="innovation" />
       </Suspense>
       
       {/* Hero Section */}
