@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { 
-  Palette, 
-  Shield, 
   Lightbulb, 
   Search, 
   Code, 
@@ -12,110 +10,146 @@ import {
   TrendingUp, 
   Target, 
   Heart, 
-  Zap,
   Building2,
-  BarChart3
+  Cpu,
+  Database,
+  Globe,
+  Monitor,
+  Smartphone,
+  Cloud,
+  Lock,
+  CheckCircle,
+  ArrowRight,
+  Star,
+  Award,
+  MapPin,
+  Briefcase
 } from 'lucide-react'
 
-// Capabilities Page - Service Integration Matrix
+// Capabilities Page - Technology Stack Visualization
 export function ServiceIntegrationMatrix() {
-  const [activeService, setActiveService] = useState(0)
+  const [activeStack, setActiveStack] = useState(0)
   
-  const services = [
+  const techStacks = [
     { 
-      name: 'Development', 
-      icon: Code, 
+      name: 'Frontend', 
+      icon: Monitor, 
       color: 'from-blue-500 to-cyan-400',
-      position: { x: 20, y: 20 }
+      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
+      position: { x: 15, y: 25 }
     },
     { 
-      name: 'Design', 
-      icon: Palette, 
+      name: 'Backend', 
+      icon: Database, 
+      color: 'from-green-500 to-emerald-400',
+      technologies: ['Node.js', 'Python', 'PostgreSQL', 'Redis'],
+      position: { x: 85, y: 25 }
+    },
+    { 
+      name: 'Mobile', 
+      icon: Smartphone, 
       color: 'from-purple-500 to-pink-400',
-      position: { x: 80, y: 20 }
+      technologies: ['React Native', 'Flutter', 'iOS', 'Android'],
+      position: { x: 15, y: 75 }
+    },
+    { 
+      name: 'Cloud', 
+      icon: Cloud, 
+      color: 'from-orange-500 to-red-400',
+      technologies: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'],
+      position: { x: 85, y: 75 }
     },
     { 
       name: 'Security', 
-      icon: Shield, 
-      color: 'from-green-500 to-emerald-400',
-      position: { x: 50, y: 70 }
+      icon: Lock, 
+      color: 'from-yellow-500 to-orange-400',
+      technologies: ['OAuth', 'JWT', 'Encryption', 'HTTPS'],
+      position: { x: 50, y: 50 }
     }
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveService((prev) => (prev + 1) % services.length)
+      setActiveStack((prev) => (prev + 1) % techStacks.length)
     }, 3000)
     return () => clearInterval(interval)
-  }, [services.length])
+  }, [techStacks.length])
 
   return (
-    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-blue-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
-      <h3 className="text-white font-medium text-center mb-8">Service Integration Matrix</h3>
+    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-900/90 to-blue-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
+      <h3 className="text-white font-bold text-xl text-center mb-8">Our Technology Stack</h3>
       
-      {/* Background Grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="w-full h-full bg-[linear-gradient(90deg,_rgba(255,255,255,0.1)_1px,_transparent_1px),_linear-gradient(rgba(255,255,255,0.1)_1px,_transparent_1px)] bg-[size:50px_50px]" />
+      {/* Connection Lines */}
+      <div className="absolute inset-0">
+        <svg className="w-full h-full opacity-20">
+          <defs>
+            <linearGradient id="connectionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#10B981" />
+            </linearGradient>
+          </defs>
+          <line x1="20%" y1="30%" x2="80%" y2="30%" stroke="url(#connectionGrad)" strokeWidth="2" />
+          <line x1="20%" y1="30%" x2="20%" y2="70%" stroke="url(#connectionGrad)" strokeWidth="2" />
+          <line x1="80%" y1="30%" x2="80%" y2="70%" stroke="url(#connectionGrad)" strokeWidth="2" />
+          <line x1="20%" y1="70%" x2="80%" y2="70%" stroke="url(#connectionGrad)" strokeWidth="2" />
+          <line x1="50%" y1="50%" x2="20%" y2="30%" stroke="url(#connectionGrad)" strokeWidth="2" />
+          <line x1="50%" y1="50%" x2="80%" y2="30%" stroke="url(#connectionGrad)" strokeWidth="2" />
+          <line x1="50%" y1="50%" x2="20%" y2="70%" stroke="url(#connectionGrad)" strokeWidth="2" />
+          <line x1="50%" y1="50%" x2="80%" y2="70%" stroke="url(#connectionGrad)" strokeWidth="2" />
+        </svg>
       </div>
 
-      {/* Service Nodes */}
-      {services.map((service, i) => (
-        <div key={i} className="absolute">
+      {/* Technology Nodes */}
+      {techStacks.map((stack, i) => (
+        <div key={i} className="absolute group" style={{
+          left: `${stack.position.x}%`,
+          top: `${stack.position.y}%`,
+          transform: 'translate(-50%, -50%)'
+        }}>
           <div
-            className={`w-24 h-24 bg-gradient-to-br ${service.color} rounded-full border border-white/30 flex items-center justify-center backdrop-blur-xl cursor-pointer transition-all duration-300 ${
-              activeService === i ? 'scale-110 shadow-lg' : 'scale-100'
+            className={`w-28 h-28 bg-gradient-to-br ${stack.color} rounded-xl border-2 border-white/30 flex flex-col items-center justify-center backdrop-blur-xl cursor-pointer transition-all duration-500 ${
+              activeStack === i ? 'scale-110 shadow-2xl border-white/60' : 'scale-100 hover:scale-105'
             }`}
-            style={{
-              left: `${service.position.x}%`,
-              top: `${service.position.y}%`,
-              transform: 'translate(-50%, -50%)'
-            }}
-            onMouseEnter={() => setActiveService(i)}
+            onMouseEnter={() => setActiveStack(i)}
           >
-            <service.icon className="w-12 h-12 text-white" />
+            <stack.icon className="w-8 h-8 text-white mb-2" />
+            <span className="text-white font-bold text-sm">{stack.name}</span>
           </div>
-
-          {/* Service Label */}
-          <div
-            className="absolute top-full mt-4 left-1/2 transform -translate-x-1/2 text-white font-medium text-sm text-center"
-            style={{
-              left: `${service.position.x}%`,
-              top: `${service.position.y + 12}%`,
-              transform: 'translate(-50%, -50%)'
-            }}
-          >
-            {service.name}
+          
+          {/* Technology Details */}
+          <div className={`absolute top-full mt-4 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
+            activeStack === i ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+          }`}>
+            <div className="bg-slate-800/90 backdrop-blur-xl rounded-lg border border-white/20 p-3 min-w-[120px]">
+              {stack.technologies.map((tech, techIndex) => (
+                <div key={techIndex} className="flex items-center text-white text-xs mb-1 last:mb-0">
+                  <CheckCircle className="w-3 h-3 text-green-400 mr-2" />
+                  {tech}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ))}
 
-      {/* Static Integration Indicators */}
-      {Array.from({ length: 8 }).map((_, i) => (
-        <div
-          key={`particle-${i}`}
-          className={`absolute w-1 h-1 bg-blue-400 rounded-full transition-opacity duration-1000 ${
-            activeService === i % 3 ? 'opacity-100' : 'opacity-30'
-          }`}
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-        />
-      ))}
+      {/* Center Hub */}
+      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-br from-indigo-500/20 to-purple-600/20 rounded-full border-2 border-indigo-400/40 flex items-center justify-center backdrop-blur-xl">
+        <Cpu className="w-10 h-10 text-indigo-300" />
+      </div>
     </div>
   )
 }
 
-// Innovation Page - Innovation Pipeline
+// Innovation Page - Innovation Process Flow
 export function InnovationPipeline() {
   const [currentPhase, setCurrentPhase] = useState(0)
   
   const phases = [
-    { name: 'Research', icon: Search, color: 'from-purple-600 to-blue-500' },
-    { name: 'Ideation', icon: Lightbulb, color: 'from-blue-600 to-green-500' },
-    { name: 'Development', icon: Code, color: 'from-green-600 to-yellow-500' },
-    { name: 'Testing', icon: Target, color: 'from-yellow-600 to-orange-500' },
-    { name: 'Launch', icon: Rocket, color: 'from-orange-600 to-red-500' },
+    { name: 'Research', icon: Search, color: 'from-purple-600 to-blue-500', description: 'Market Analysis' },
+    { name: 'Ideate', icon: Lightbulb, color: 'from-blue-600 to-green-500', description: 'Creative Solutions' },
+    { name: 'Prototype', icon: Code, color: 'from-green-600 to-yellow-500', description: 'Build & Test' },
+    { name: 'Validate', icon: Target, color: 'from-yellow-600 to-orange-500', description: 'User Feedback' },
+    { name: 'Launch', icon: Rocket, color: 'from-orange-600 to-red-500', description: 'Go to Market' },
   ]
 
   useEffect(() => {
@@ -126,200 +160,273 @@ export function InnovationPipeline() {
   }, [phases.length])
 
   return (
-    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-purple-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
-      <h3 className="text-white font-medium text-center mb-8">Innovation Pipeline</h3>
+    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-900/90 to-purple-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
+      <h3 className="text-white font-bold text-xl text-center mb-8">Innovation Process</h3>
       
+      {/* Process Flow Line */}
+      <div className="absolute top-1/2 left-12 right-12 h-1 bg-gradient-to-r from-purple-500 via-blue-500 via-green-500 via-yellow-500 to-orange-500 transform -translate-y-1/2 rounded-full"></div>
+      
+      {/* Phase Nodes */}
       <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2">
         <div className="flex justify-between items-center px-12">
           {phases.map((phase, i) => (
-            <div
-              key={i}
-              className={`relative flex flex-col items-center transition-all duration-500 ${
-                currentPhase === i ? 'scale-120 -translate-y-5' : 'scale-100'
-              }`}
-            >
-              {/* Phase Icon */}
-              <div
-                className={`w-20 h-20 bg-gradient-to-br ${phase.color} rounded-full border-4 border-white/20 flex items-center justify-center backdrop-blur-xl relative z-10 transition-all duration-300 ${
-                  currentPhase === i ? 'shadow-xl' : ''
-                }`}
-              >
+            <div key={i} className="relative flex flex-col items-center">
+              {/* Phase Circle */}
+              <div className={`relative w-24 h-24 bg-gradient-to-br ${phase.color} rounded-full border-4 border-white/30 flex items-center justify-center backdrop-blur-xl transition-all duration-500 ${
+                currentPhase === i ? 'scale-125 border-white/60 shadow-2xl' : 'scale-100 hover:scale-110'
+              }`}>
                 <phase.icon className="w-10 h-10 text-white" />
+                
+                {/* Progress Ring */}
+                {currentPhase === i && (
+                  <div className="absolute inset-0 rounded-full border-4 border-transparent">
+                    <div className="absolute inset-0 rounded-full border-4 border-white/60 border-t-transparent animate-spin"></div>
+                  </div>
+                )}
               </div>
 
-              {/* Phase Label */}
-              <div
-                className={`mt-4 text-white font-medium text-sm text-center transition-all duration-300 ${
-                  currentPhase === i ? 'opacity-100 scale-110' : 'opacity-60 scale-100'
-                }`}
-              >
-                {phase.name}
+              {/* Phase Info */}
+              <div className="mt-4 text-center">
+                <div className={`text-white font-bold text-sm transition-all duration-300 ${
+                  currentPhase === i ? 'scale-110 text-yellow-300' : 'scale-100'
+                }`}>
+                  {phase.name}
+                </div>
+                <div className={`text-white/70 text-xs mt-1 transition-all duration-300 ${
+                  currentPhase === i ? 'opacity-100' : 'opacity-60'
+                }`}>
+                  {phase.description}
+                </div>
               </div>
+
+              {/* Arrow to Next Phase */}
+              {i < phases.length - 1 && (
+                <ArrowRight className={`absolute top-10 -right-8 w-6 h-6 text-white/50 transition-all duration-300 ${
+                  currentPhase === i ? 'text-yellow-300 scale-125' : ''
+                }`} />
+              )}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Progress Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {phases.map((_, i) => (
-          <div
-            key={i}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i <= currentPhase ? 'bg-purple-400' : 'bg-white/20'
-            }`}
-          />
-        ))}
+      {/* Innovation Metrics */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-8">
+        <div className="text-center">
+          <div className="text-2xl font-bold text-white">50+</div>
+          <div className="text-xs text-white/70">Projects</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-white">95%</div>
+          <div className="text-xs text-white/70">Success Rate</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-white">3M+</div>
+          <div className="text-xs text-white/70">Users Impacted</div>
+        </div>
       </div>
     </div>
   )
 }
 
-// Business Development Page - Market Expansion Visualization  
+// Business Development Page - Global Market Presence
 export function MarketExpansionViz() {
-  const [expandingMarket, setExpandingMarket] = useState(0)
+  const [activeRegion, setActiveRegion] = useState(0)
   
-  const markets = [
-    { name: 'West Africa', position: { x: 30, y: 60 }, color: 'text-green-400' },
-    { name: 'East Africa', position: { x: 70, y: 50 }, color: 'text-blue-400' },
-    { name: 'North America', position: { x: 20, y: 30 }, color: 'text-purple-400' },
-    { name: 'Europe', position: { x: 50, y: 25 }, color: 'text-yellow-400' },
-    { name: 'Asia Pacific', position: { x: 80, y: 40 }, color: 'text-red-400' },
+  const regions = [
+    { name: 'West Africa', clients: 25, growth: '+45%', position: { x: 45, y: 55 }, color: 'text-green-400' },
+    { name: 'East Africa', clients: 18, growth: '+32%', position: { x: 55, y: 50 }, color: 'text-blue-400' },
+    { name: 'North America', clients: 12, growth: '+28%', position: { x: 25, y: 35 }, color: 'text-purple-400' },
+    { name: 'Europe', clients: 8, growth: '+15%', position: { x: 50, y: 30 }, color: 'text-yellow-400' },
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setExpandingMarket((prev) => (prev + 1) % markets.length)
-    }, 2000)
+      setActiveRegion((prev) => (prev + 1) % regions.length)
+    }, 3000)
     return () => clearInterval(interval)
-  }, [markets.length])
+  }, [regions.length])
 
   return (
-    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-emerald-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
-      <h3 className="text-white font-medium text-center mb-8">Global Market Expansion</h3>
+    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-900/90 to-emerald-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
+      <h3 className="text-white font-bold text-xl text-center mb-8">Global Market Presence</h3>
       
-      {/* World Map Grid */}
-      <div className="absolute inset-8 opacity-20">
-        <div className="w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(0,255,135,0.3)_1px,_transparent_1px)] bg-[size:30px_30px]" />
+      {/* World Map Representation */}
+      <div className="absolute inset-8 rounded-xl overflow-hidden">
+        <div className="w-full h-full bg-gradient-to-br from-emerald-500/5 to-blue-500/5 rounded-xl border border-emerald-500/20">
+          {/* Continent Shapes (simplified) */}
+          <div className="absolute top-1/4 left-1/4 w-16 h-12 bg-emerald-500/10 rounded-lg"></div> {/* North America */}
+          <div className="absolute top-1/3 left-1/2 w-12 h-16 bg-emerald-500/10 rounded-lg"></div> {/* Europe */}
+          <div className="absolute top-1/2 left-[45%] w-20 h-20 bg-emerald-500/10 rounded-lg"></div> {/* Africa */}
+        </div>
       </div>
 
-      {/* Market Nodes */}
-      {markets.map((market, i) => (
-        <div
-          key={i}
-          className="absolute"
-          style={{
-            left: `${market.position.x}%`,
-            top: `${market.position.y}%`,
-            transform: 'translate(-50%, -50%)'
-          }}
-        >
-          <div className={`relative group`}>
-            <div
-              className={`w-16 h-16 bg-white/5 backdrop-blur-xl rounded-full border border-white/20 flex items-center justify-center ${market.color} transition-all duration-500 ${
-                expandingMarket === i ? 'scale-125 border-white/50' : 'scale-100'
-              }`}
-            >
-              <Building2 className="w-8 h-8" />
+      {/* Regional Nodes */}
+      {regions.map((region, i) => (
+        <div key={i} className="absolute group" style={{
+          left: `${region.position.x}%`,
+          top: `${region.position.y}%`,
+          transform: 'translate(-50%, -50%)'
+        }}>
+          <div className={`relative w-20 h-20 bg-white/5 backdrop-blur-xl rounded-full border-2 border-white/20 flex items-center justify-center cursor-pointer transition-all duration-500 ${
+            activeRegion === i ? 'scale-125 border-emerald-400/60 shadow-2xl' : 'scale-100 hover:scale-110'
+          }`}>
+            <div className="text-center">
+              <Building2 className={`w-6 h-6 mx-auto mb-1 ${region.color}`} />
+              <div className="text-white font-bold text-xs">{region.clients}</div>
             </div>
             
-            {/* Market Label */}
-            <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 text-white text-xs text-center whitespace-nowrap">
-              {market.name}
+            {/* Pulse Effect */}
+            {activeRegion === i && (
+              <div className="absolute inset-0 rounded-full border-2 border-emerald-400/60 animate-ping"></div>
+            )}
+          </div>
+          
+          {/* Region Details */}
+          <div className={`absolute top-full mt-3 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
+            activeRegion === i ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+          }`}>
+            <div className="bg-slate-800/90 backdrop-blur-xl rounded-lg border border-white/20 p-3 text-center min-w-[100px]">
+              <div className="text-white font-bold text-sm">{region.name}</div>
+              <div className="text-emerald-400 text-xs">{region.clients} Clients</div>
+              <div className="text-green-300 text-xs">{region.growth}</div>
             </div>
           </div>
         </div>
       ))}
+
+      {/* Business Metrics */}
+      <div className="absolute bottom-6 left-6 right-6 flex justify-between">
+        <div className="text-center">
+          <div className="text-xl font-bold text-white">63+</div>
+          <div className="text-xs text-white/70">Active Clients</div>
+        </div>
+        <div className="text-center">
+          <div className="text-xl font-bold text-emerald-400">4</div>
+          <div className="text-xs text-white/70">Continents</div>
+        </div>
+        <div className="text-center">
+          <div className="text-xl font-bold text-green-400">150%</div>
+          <div className="text-xs text-white/70">YoY Growth</div>
+        </div>
+      </div>
     </div>
   )
 }
 
-// About Page - Company DNA Visualization
+// About Page - Company Values & Milestones
 export function CompanyDNAViz() {
-  const dnaElements = [
-    { name: 'Innovation', color: 'text-blue-400', icon: Lightbulb },
-    { name: 'Excellence', color: 'text-purple-400', icon: Heart },
-    { name: 'Community', color: 'text-green-400', icon: Users },
-    { name: 'Growth', color: 'text-yellow-400', icon: TrendingUp },
+  const [activeValue, setActiveValue] = useState(0)
+  
+  const values = [
+    { name: 'Innovation', icon: Lightbulb, color: 'text-blue-400', description: 'Pushing boundaries' },
+    { name: 'Excellence', icon: Award, color: 'text-purple-400', description: 'Uncompromising quality' },
+    { name: 'Impact', icon: Heart, color: 'text-red-400', description: 'Meaningful change' },
+    { name: 'Growth', icon: TrendingUp, color: 'text-green-400', description: 'Continuous evolution' },
   ]
 
-  return (
-    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-indigo-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
-      <h3 className="text-white font-medium text-center mb-8">Company DNA</h3>
-      
-      {/* DNA Helix Structure - Simplified */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-80 h-80">
-          {/* DNA Strands - Static for now */}
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute"
-              style={{
-                left: '50%',
-                top: '50%',
-                transform: `translate(-50%, -50%) rotateZ(${i * 18}deg) translateY(-${100 + i * 5}px)`,
-              }}
-            >
-              <div className="w-3 h-3 bg-blue-400 rounded-full opacity-60" />
-            </div>
-          ))}
+  const milestones = [
+    { year: '2020', event: 'Company Founded', icon: Building2 },
+    { year: '2021', event: 'First $1M Revenue', icon: TrendingUp },
+    { year: '2022', event: '50+ Team Members', icon: Users },
+    { year: '2023', event: 'Global Expansion', icon: Globe },
+    { year: '2024', event: 'AI Innovation Hub', icon: Cpu },
+  ]
 
-          {/* Counter-rotating DNA strand */}
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={`counter-${i}`}
-              className="absolute"
-              style={{
-                left: '50%',
-                top: '50%',
-                transform: `translate(-50%, -50%) rotateZ(${-i * 18 + 90}deg) translateY(-${100 + i * 5}px)`,
-              }}
-            >
-              <div className="w-3 h-3 bg-purple-400 rounded-full opacity-60" />
-            </div>
-          ))}
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveValue((prev) => (prev + 1) % values.length)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [values.length])
+
+  return (
+    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-900/90 to-indigo-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
+      <h3 className="text-white font-bold text-xl text-center mb-8">Our DNA & Journey</h3>
+      
+      {/* Company Values Circle */}
+      <div className="absolute left-8 top-20 bottom-8 w-64">
+        <div className="relative w-full h-full">
+          {/* Center Logo */}
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-indigo-500/20 to-purple-600/20 rounded-full border-2 border-indigo-400/40 flex items-center justify-center backdrop-blur-xl">
+            <Building2 className="w-8 h-8 text-indigo-300" />
+          </div>
+          
+          {/* Values around the circle */}
+          {values.map((value, i) => {
+            const angle = (i * 360) / values.length
+            const radius = 80
+            const x = Math.cos((angle - 90) * Math.PI / 180) * radius
+            const y = Math.sin((angle - 90) * Math.PI / 180) * radius
+            
+            return (
+              <div key={i} className="absolute left-1/2 top-1/2" style={{
+                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+              }}>
+                <div className={`w-16 h-16 bg-white/5 backdrop-blur-xl rounded-full border-2 border-white/20 flex flex-col items-center justify-center transition-all duration-500 ${
+                  activeValue === i ? 'scale-125 border-indigo-400/60 shadow-xl' : 'scale-100 hover:scale-110'
+                }`}>
+                  <value.icon className={`w-6 h-6 ${value.color}`} />
+                  <span className="text-white text-xs font-bold mt-1">{value.name}</span>
+                </div>
+                
+                {/* Value Description */}
+                {activeValue === i && (
+                  <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 bg-slate-800/90 backdrop-blur-xl rounded-lg border border-white/20 p-2 min-w-[120px] text-center">
+                    <div className="text-white text-xs">{value.description}</div>
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
 
-      {/* Company Values - Static positions */}
-      {dnaElements.map((element, i) => (
-        <div
-          key={i}
-          className="absolute"
-          style={{
-            left: '50%',
-            top: '50%',
-            transform: `translate(-50%, -50%) translate(${100 * Math.cos(i * Math.PI / 2)}px, ${100 * Math.sin(i * Math.PI / 2)}px)`
-          }}
-        >
-          <div
-            className={`w-16 h-16 bg-white/5 backdrop-blur-xl rounded-full border border-white/20 flex flex-col items-center justify-center ${element.color} transition-all duration-300 hover:scale-110`}
-          >
-            <element.icon className="w-6 h-6" />
-            <span className="text-xs text-white mt-1">{element.name}</span>
-          </div>
+      {/* Timeline */}
+      <div className="absolute right-8 top-20 bottom-8 w-64">
+        <h4 className="text-white font-bold text-lg mb-4">Our Journey</h4>
+        <div className="relative h-full">
+          {/* Timeline Line */}
+          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 to-purple-600"></div>
+          
+          {/* Milestones */}
+          {milestones.map((milestone, i) => (
+            <div key={i} className="relative flex items-center mb-8" style={{ marginLeft: '1rem' }}>
+              {/* Timeline Node */}
+              <div className="absolute -left-4 w-3 h-3 bg-indigo-500 rounded-full border-2 border-white"></div>
+              
+              {/* Milestone Content */}
+              <div className="ml-4 bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 p-3 hover:border-indigo-400/30 transition-colors">
+                <div className="flex items-center mb-1">
+                  <milestone.icon className="w-4 h-4 text-indigo-400 mr-2" />
+                  <span className="text-indigo-300 font-bold text-sm">{milestone.year}</span>
+                </div>
+                <div className="text-white text-sm">{milestone.event}</div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-
-      {/* Center Core */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-br from-white/10 to-white/5 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-xl">
-        <Building2 className="w-10 h-10 text-white" />
       </div>
     </div>
   )
 }
 
-// TRON America Page - Startup Pipeline
+// TRON America Page - Startup Ecosystem
 export function StartupPipeline() {
   const [activeStage, setActiveStage] = useState(0)
   
   const stages = [
-    { name: 'Applications', count: 500, color: 'from-red-600 to-orange-500', icon: Users },
-    { name: 'Screening', count: 100, color: 'from-orange-600 to-yellow-500', icon: Search },
-    { name: 'Interviews', count: 25, color: 'from-yellow-600 to-green-500', icon: Target },
-    { name: 'Selection', count: 10, color: 'from-green-600 to-blue-500', icon: BarChart3 },
-    { name: 'Incubation', count: 5, color: 'from-blue-600 to-purple-500', icon: Rocket },
+    { name: 'Applications', count: 500, rate: '100%', color: 'from-red-600 to-orange-500', icon: Users },
+    { name: 'Screening', count: 100, rate: '20%', color: 'from-orange-600 to-yellow-500', icon: Search },
+    { name: 'Interviews', count: 25, rate: '5%', color: 'from-yellow-600 to-green-500', icon: Users },
+    { name: 'Incubation', count: 10, rate: '2%', color: 'from-green-600 to-blue-500', icon: Briefcase },
+    { name: 'Success', count: 5, rate: '1%', color: 'from-blue-600 to-purple-500', icon: Star },
+  ]
+
+  const successStories = [
+    { name: 'FinTech Pro', sector: 'Finance', funding: '$2.5M', stage: 'Series A' },
+    { name: 'HealthAI', sector: 'Healthcare', funding: '$1.8M', stage: 'Seed' },
+    { name: 'EduTech', sector: 'Education', funding: '$3.2M', stage: 'Series A' },
   ]
 
   useEffect(() => {
@@ -330,266 +437,96 @@ export function StartupPipeline() {
   }, [stages.length])
 
   return (
-    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-red-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
-      <h3 className="text-white font-medium text-center mb-8">Startup Acceleration Pipeline</h3>
+    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-900/90 to-red-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-8">
+      <h3 className="text-white font-bold text-xl text-center mb-8">Startup Acceleration Pipeline</h3>
       
       {/* Funnel Visualization */}
-      <div className="absolute inset-8 flex items-center justify-center">
-        <div className="relative w-full max-w-4xl">
-          {stages.map((stage, i) => (
+      <div className="absolute left-8 top-20 right-8 bottom-20">
+        {stages.map((stage, i) => (
+          <div key={i} className="relative mb-4">
+            {/* Funnel Stage */}
             <div
-              key={i}
-              className={`relative mb-8 transition-all duration-500 ${
-                activeStage === i ? 'scale-105' : 'scale-100'
+              className={`mx-auto bg-gradient-to-r ${stage.color} rounded-lg border-2 border-white/20 flex items-center justify-between p-4 transition-all duration-500 ${
+                activeStage === i ? 'border-white/60 shadow-2xl scale-105' : 'hover:scale-102'
               }`}
+              style={{ width: `${100 - i * 15}%` }}
             >
-              {/* Funnel Section */}
-              <div
-                className={`mx-auto bg-gradient-to-r ${stage.color} rounded-lg border border-white/20 flex items-center justify-between p-4 transition-all duration-300 ${
-                  activeStage === i ? 'border-white/50 shadow-lg' : ''
-                }`}
-                style={{
-                  width: `${100 - i * 15}%`,
-                }}
-              >
-                <div className="flex items-center gap-3">
-                  <stage.icon className="w-6 h-6 text-white" />
-                  <span className="text-white font-medium">{stage.name}</span>
-                </div>
-                <div className="text-white font-bold text-xl">
-                  {stage.count}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Success Rate Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-        <div className="text-white/60 text-sm">Success Rate</div>
-        <div className="text-green-400 font-bold text-lg">1% Selection Rate</div>
-      </div>
-    </div>
-  )
-}
-
-// Safe replacement for TechNetworkFloating (from enhanced-graphics)
-export function TechNetworkFloating() {
-  const nodes = [
-    { icon: Code, color: 'text-blue-400', x: 10, y: 20 },
-    { icon: Palette, color: 'text-purple-400', x: 80, y: 15 },
-    { icon: Shield, color: 'text-green-400', x: 90, y: 60 },
-    { icon: Zap, color: 'text-yellow-400', x: 15, y: 70 },
-    { icon: Rocket, color: 'text-red-400', x: 60, y: 80 },
-  ]
-
-  return (
-    <div className="relative w-full h-96 overflow-hidden bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6">
-      {/* Floating Nodes */}
-      {nodes.map((node, i) => (
-        <div
-          key={i}
-          className={`absolute w-12 h-12 bg-white/5 backdrop-blur-xl rounded-full border border-white/20 flex items-center justify-center ${node.color} transition-all duration-300 hover:scale-110`}
-          style={{
-            left: `${node.x}%`,
-            top: `${node.y}%`,
-          }}
-        >
-          <node.icon className="w-6 h-6" />
-        </div>
-      ))}
-    </div>
-  )
-}
-
-// Safe replacement for InnovationLabViz (from enhanced-graphics)
-export function InnovationLabViz() {
-  return (
-    <div className="relative w-full h-80 flex items-center justify-center bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-8">
-      <div className="relative">
-        {/* Central Hub */}
-        <div className="w-24 h-24 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full border border-blue-400/30 flex items-center justify-center backdrop-blur-xl">
-          <Rocket className="w-12 h-12 text-blue-300" />
-        </div>
-
-        {/* Orbiting Elements - Static positions */}
-        {[
-          { icon: Code, radius: 100, color: 'text-blue-400' },
-          { icon: Target, radius: 120, color: 'text-green-400' },
-          { icon: TrendingUp, radius: 110, color: 'text-purple-400' },
-          { icon: Users, radius: 130, color: 'text-red-400' },
-        ].map((item, i) => (
-          <div
-            key={i}
-            className={`absolute w-16 h-16 bg-white/5 backdrop-blur-xl rounded-full border border-white/20 flex items-center justify-center ${item.color} transition-all duration-300 hover:scale-110`}
-            style={{
-              left: '50%',
-              top: '50%',
-              transform: `translate(-50%, -50%) translate(${item.radius * Math.cos((i * Math.PI * 2) / 4)}px, ${item.radius * Math.sin((i * Math.PI * 2) / 4)}px)`
-            }}
-          >
-            <item.icon className="w-8 h-8" />
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-// Safe replacement for BusinessGrowthChart (from enhanced-graphics)
-export function BusinessGrowthChart() {
-  const dataPoints = [
-    { year: '2022', value: 20 },
-    { year: '2023', value: 45 },
-    { year: '2024', value: 75 },
-    { year: '2025', value: 95 },
-  ]
-
-  return (
-    <div className="relative w-full h-64 bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6">
-      <h3 className="text-white font-medium mb-4">Growth Trajectory</h3>
-      <div className="relative h-40 flex items-end justify-between px-4">
-        {dataPoints.map((point, i) => (
-          <div key={i} className="flex flex-col items-center space-y-2">
-            <div
-              className="w-8 bg-gradient-to-t from-green-600 to-green-400 rounded-t transition-all duration-1000"
-              style={{ height: `${point.value * 1.2}px` }}
-            />
-            <span className="text-xs text-white/60">{point.year}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-// Safe replacement for TeamNetworkViz (from enhanced-graphics)
-export function TeamNetworkViz() {
-  const founders = [
-    { name: 'Dr. Alvin Glay', color: 'text-blue-400', position: { x: 20, y: 30 } },
-    { name: 'Jonathan Massaquoi', color: 'text-green-400', position: { x: 80, y: 30 } },
-    { name: 'Paul Wallace', color: 'text-purple-400', position: { x: 50, y: 70 } },
-  ]
-
-  return (
-    <div className="relative w-full h-96 bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-8">
-      <h3 className="text-white font-medium text-center mb-8">Founding Team Network</h3>
-      
-      <div className="relative h-64">
-        {founders.map((founder, i) => (
-          <div
-            key={i}
-            className="absolute transition-all duration-300 hover:scale-110"
-            style={{
-              left: `${founder.position.x}%`,
-              top: `${founder.position.y}%`,
-              transform: 'translate(-50%, -50%)'
-            }}
-          >
-            <div className={`w-20 h-20 bg-white/5 backdrop-blur-xl rounded-full border border-white/20 flex items-center justify-center ${founder.color}`}>
-              <Users className="w-10 h-10" />
-            </div>
-            <div className="text-center mt-2">
-              <span className="text-white text-sm font-medium block">{founder.name}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-// Safe replacement for AchievementTimeline (from enhanced-graphics)
-export function AchievementTimeline() {
-  const achievements = [
-    { year: '2020', title: 'Company Founded', icon: Building2 },
-    { year: '2021', title: 'First Major Client', icon: Target },
-    { year: '2022', title: 'Team Expansion', icon: Users },
-    { year: '2023', title: 'Industry Recognition', icon: TrendingUp },
-    { year: '2024', title: 'Global Reach', icon: BarChart3 },
-  ]
-
-  return (
-    <div className="relative w-full bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-8">
-      <h3 className="text-white font-medium text-center mb-8">Our Journey</h3>
-      
-      <div className="relative max-w-2xl mx-auto">
-        {/* Timeline Line */}
-        <div className="absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-gradient-to-b from-blue-500 to-purple-600" />
-        
-        {/* Achievement Points */}
-        <div className="space-y-16">
-          {achievements.map((achievement, i) => (
-            <div
-              key={i}
-              className={`relative flex items-center ${i % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-            >
-              <div className={`w-1/2 ${i % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                <div className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-4 hover:border-blue-400/30 transition-colors">
-                  <div className="flex items-center gap-3">
-                    <achievement.icon className="w-6 h-6 text-blue-400" />
-                    <div>
-                      <div className="text-blue-300 font-medium text-sm">{achievement.year}</div>
-                      <div className="text-white font-medium">{achievement.title}</div>
-                    </div>
-                  </div>
+              {/* Stage Info */}
+              <div className="flex items-center space-x-3">
+                <stage.icon className="w-6 h-6 text-white" />
+                <div>
+                  <div className="text-white font-bold">{stage.name}</div>
+                  <div className="text-white/80 text-sm">{stage.rate} Selection Rate</div>
                 </div>
               </div>
               
-              {/* Center Node */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900" />
+              {/* Count */}
+              <div className="text-right">
+                <div className="text-white font-bold text-2xl">{stage.count}</div>
+                <div className="text-white/80 text-sm">Startups</div>
+              </div>
             </div>
-          ))}
-        </div>
+            
+            {/* Flow Arrow */}
+            {i < stages.length - 1 && (
+              <div className="flex justify-center mt-2">
+                <ArrowRight className={`w-6 h-6 text-white/50 transition-all duration-300 ${
+                  activeStage === i ? 'text-yellow-300 scale-125' : ''
+                }`} />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Success Stories */}
+      <div className="absolute right-8 top-20 w-64 h-64 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-4">
+        <h4 className="text-white font-bold text-lg mb-3">Success Stories</h4>
+        {successStories.map((story, i) => (
+          <div key={i} className="mb-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-green-400/30 transition-colors">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-white font-bold text-sm">{story.name}</span>
+              <Star className="w-4 h-4 text-yellow-400" />
+            </div>
+            <div className="text-white/70 text-xs">{story.sector}</div>
+            <div className="flex justify-between items-center mt-1">
+              <span className="text-green-400 text-xs font-bold">{story.funding}</span>
+              <span className="text-blue-400 text-xs">{story.stage}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Location Badge */}
+      <div className="absolute top-4 right-4 flex items-center space-x-2 bg-red-500/20 backdrop-blur-xl rounded-full px-3 py-1 border border-red-400/30">
+        <MapPin className="w-4 h-4 text-red-400" />
+        <span className="text-white text-sm font-medium">Atlanta, GA</span>
       </div>
     </div>
   )
 }
 
-// Safe replacement for IncubatorEcosystem (from enhanced-graphics)
-export function IncubatorEcosystem() {
-  const startups = [
-    { name: 'AI Startup', sector: 'AI/ML', stage: 'Seed', x: 20, y: 20 },
-    { name: 'FinTech Co', sector: 'Finance', stage: 'Series A', x: 80, y: 25 },
-    { name: 'HealthTech', sector: 'Healthcare', stage: 'Pre-Seed', x: 15, y: 70 },
-    { name: 'EdTech Pro', sector: 'Education', stage: 'Seed', x: 75, y: 65 },
-    { name: 'CyberSec', sector: 'Security', stage: 'Series A', x: 50, y: 80 },
-  ]
+// Safe replacement components for legacy imports
+export function TechNetworkFloating() {
+  return <ServiceIntegrationMatrix />
+}
 
-  return (
-    <div className="relative w-full h-96 bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-6">
-      <h3 className="text-white font-medium text-center mb-6">Incubator Ecosystem</h3>
-      
-      {/* Central Hub */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-red-500/20 to-orange-600/20 rounded-full border border-red-400/30 flex items-center justify-center">
-        <Building2 className="w-8 h-8 text-red-300" />
-      </div>
-      
-      {/* Startup Nodes */}
-      {startups.map((startup, i) => (
-        <div
-          key={i}
-          className="absolute group"
-          style={{
-            left: `${startup.x}%`,
-            top: `${startup.y}%`,
-            transform: 'translate(-50%, -50%)'
-          }}
-        >
-          <div className="w-12 h-12 bg-white/5 backdrop-blur-xl rounded-full border border-white/20 flex items-center justify-center text-red-400 hover:scale-110 transition-transform cursor-pointer">
-            <Rocket className="w-6 h-6" />
-          </div>
-          
-          {/* Tooltip */}
-          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="bg-slate-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap">
-              <div className="font-medium">{startup.name}</div>
-              <div className="text-red-300">{startup.sector} • {startup.stage}</div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  )
+export function InnovationLabViz() {
+  return <InnovationPipeline />
+}
+
+export function BusinessGrowthChart() {
+  return <MarketExpansionViz />
+}
+
+export function TeamNetworkViz() {
+  return <CompanyDNAViz />
+}
+
+export function AchievementTimeline() {
+  return <CompanyDNAViz />
+}
+
+export function IncubatorEcosystem() {
+  return <StartupPipeline />
 } 
