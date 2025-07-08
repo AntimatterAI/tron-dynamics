@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 // import { ServiceShowcase, AfricaContinent } from "@/components/africa-graphics"
 import { TechNetworkGraphics, InnovationLabsGraphics } from "@/components/page-graphics"
+import { InnovationLabViz } from "@/components/enhanced-graphics"
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
@@ -203,6 +204,24 @@ export default function InnovationPage() {
               </AnimatedElement>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Innovation Lab Visualization */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Innovation <span className="text-blue-300">Ecosystem</span>
+            </h2>
+            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Our innovation lab connects diverse technologies and teams to create breakthrough solutions.
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.2}>
+            <InnovationLabViz />
+          </AnimatedElement>
         </div>
       </section>
 

@@ -17,6 +17,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
+import { TechNetworkFloating } from "@/components/enhanced-graphics"
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
@@ -274,6 +275,24 @@ export default function CapabilitiesPage() {
               </AnimatedElement>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Technology Network Visualization */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Technology <span className="text-blue-300">Network</span>
+            </h2>
+            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Our interconnected technology ecosystem drives innovation across all capability areas.
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.2}>
+            <TechNetworkFloating />
+          </AnimatedElement>
         </div>
       </section>
 

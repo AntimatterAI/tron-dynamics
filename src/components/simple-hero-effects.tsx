@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 interface SimpleHeroEffectsProps {
-  variant?: 'home' | 'studios' | 'ventures' | 'impact' | 'about' | 'business' | 'portfolio' | 'innovation'
+  variant?: 'home' | 'studios' | 'ventures' | 'impact' | 'about' | 'business' | 'portfolio' | 'innovation' | 'america'
 }
 
 export default function SimpleHeroEffects({ variant = 'home' }: SimpleHeroEffectsProps) {
@@ -81,6 +81,14 @@ export default function SimpleHeroEffects({ variant = 'home' }: SimpleHeroEffect
       primaryRgba: 'rgba(59, 130, 246, 0.15)',
       secondaryRgba: 'rgba(37, 99, 235, 0.12)',
       accentRgba: 'rgba(96, 165, 250, 0.08)',
+    },
+    america: {
+      primary: '#DC2626',
+      secondary: '#EA580C',
+      accent: '#F87171',
+      primaryRgba: 'rgba(220, 38, 38, 0.15)',
+      secondaryRgba: 'rgba(234, 88, 12, 0.12)',
+      accentRgba: 'rgba(248, 113, 113, 0.08)',
     }
   }
 

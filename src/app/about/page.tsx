@@ -6,6 +6,7 @@ import { ArrowRight, Users, Award, Globe, Target, Heart, Info } from "lucide-rea
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 import { FoundersJourneyGraphics, CompanyValuesGraphics } from "@/components/page-graphics"
+import { TeamNetworkViz, AchievementTimeline } from "@/components/enhanced-graphics"
 
 // Lazy load simple effects
 const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
@@ -141,10 +142,28 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team Network Visualization */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up">
+            <TeamNetworkViz />
+          </AnimatedElement>
+        </div>
+      </section>
+
       {/* Founders Journey Graphics */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <FoundersJourneyGraphics />
+        </div>
+      </section>
+
+      {/* Achievement Timeline */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-purple-950/10 to-blue-950/10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up">
+            <AchievementTimeline />
+          </AnimatedElement>
         </div>
       </section>
 
