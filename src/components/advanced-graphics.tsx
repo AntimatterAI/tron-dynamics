@@ -1,33 +1,25 @@
 "use client"
 
-import { motion, useAnimationControls } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import { 
-  Code, 
   Palette, 
   Shield, 
-  Zap, 
-  Globe, 
+  Lightbulb, 
+  Search, 
+  Code, 
   Rocket, 
-  Target,
-  TrendingUp,
-  Users,
-  Award,
-  Star,
-  Building,
-  Layers,
-  Network,
-  Brain,
-  Lightbulb,
+  Users, 
+  TrendingUp, 
+  Target, 
+  Brain, 
+  Heart, 
+  Zap,
+  Building2,
   BarChart3,
-  ArrowUpRight,
+  Network,
   MapPin,
-  Sparkles,
-  Workflow,
-  Database,
-  Cloud,
-  FileText,
-  Search
+  Sparkles
 } from 'lucide-react'
 
 // Capabilities Page - Service Integration Matrix
@@ -60,7 +52,7 @@ export function ServiceIntegrationMatrix() {
       setActiveService((prev) => (prev + 1) % services.length)
     }, 3000)
     return () => clearInterval(interval)
-  }, [])
+  }, [services.length])
 
   return (
     <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-blue-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
@@ -96,7 +88,7 @@ export function ServiceIntegrationMatrix() {
           scale: { duration: 3, repeat: Infinity },
         }}
       >
-        <Layers className="w-16 h-16 text-white" />
+        <Network className="w-16 h-16 text-white" />
       </motion.div>
 
       {/* Service Nodes with Dynamic Connections */}
@@ -206,7 +198,7 @@ export function InnovationPipeline() {
       setCurrentPhase((prev) => (prev + 1) % phases.length)
     }, 2500)
     return () => clearInterval(interval)
-  }, [])
+  }, [phases.length])
 
   return (
     <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-purple-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
@@ -334,7 +326,7 @@ export function MarketExpansionViz() {
       setExpandingMarket((prev) => (prev + 1) % markets.length)
     }, 2000)
     return () => clearInterval(interval)
-  }, [])
+  }, [markets.length])
 
   return (
     <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-green-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
@@ -480,7 +472,7 @@ export function CompanyDNAViz() {
   
   const dnaElements = [
     { name: 'Innovation', color: 'text-blue-400', icon: Lightbulb },
-    { name: 'Excellence', color: 'text-purple-400', icon: Award },
+    { name: 'Excellence', color: 'text-purple-400', icon: Heart },
     { name: 'Community', color: 'text-green-400', icon: Users },
     { name: 'Growth', color: 'text-yellow-400', icon: TrendingUp },
   ]
@@ -604,7 +596,7 @@ export function CompanyDNAViz() {
           rotate: { duration: 10, repeat: Infinity, ease: "linear" },
         }}
       >
-        <Building className="w-10 h-10 text-white" />
+        <Building2 className="w-10 h-10 text-white" />
       </motion.div>
     </div>
   )
@@ -615,11 +607,11 @@ export function StartupPipeline() {
   const [activeStage, setActiveStage] = useState(0)
   
   const stages = [
-    { name: 'Application', icon: FileText, companies: 500, color: 'from-gray-500 to-slate-400' },
+    { name: 'Application', icon: Code, companies: 500, color: 'from-gray-500 to-slate-400' },
     { name: 'Screening', icon: Search, companies: 100, color: 'from-blue-500 to-cyan-400' },
     { name: 'Incubation', icon: Rocket, companies: 25, color: 'from-purple-500 to-violet-400' },
     { name: 'Acceleration', icon: Zap, companies: 10, color: 'from-yellow-500 to-orange-400' },
-    { name: 'Launch', icon: Star, companies: 5, color: 'from-green-500 to-emerald-400' },
+    { name: 'Launch', icon: Sparkles, companies: 5, color: 'from-green-500 to-emerald-400' },
   ]
 
   useEffect(() => {
@@ -627,7 +619,7 @@ export function StartupPipeline() {
       setActiveStage((prev) => (prev + 1) % stages.length)
     }, 2500)
     return () => clearInterval(interval)
-  }, [])
+  }, [stages.length])
 
   return (
     <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-950/50 to-orange-950/20 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
