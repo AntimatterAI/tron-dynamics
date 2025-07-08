@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 // import { ServiceShowcase, AfricaContinent } from "@/components/africa-graphics"
-import { TechNetworkGraphics, InnovationLabsGraphics } from "@/components/page-graphics"
+
 
 // Dynamic imports with SSR disabled to prevent hydration errors
 const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects"), { 
@@ -25,11 +25,7 @@ const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects
 })
 const InnovationPipeline = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.InnovationPipeline })), { 
   ssr: false,
-  loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading innovation pipeline...</div></div>
-})
-const InnovationLabViz = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.InnovationLabViz })), { 
-  ssr: false,
-  loading: () => <div className="h-80 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>
+  loading: () => <div className="h-[700px] flex items-center justify-center"><div className="text-white/60">Loading innovation spiral...</div></div>
 })
 
 export default function InnovationPage() {
@@ -236,42 +232,7 @@ export default function InnovationPage() {
         </div>
       </section>
 
-      {/* Innovation Lab Visualization */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Innovation <span className="text-blue-300">Ecosystem</span>
-            </h2>
-            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Our innovation lab connects diverse technologies and teams to create breakthrough solutions.
-            </p>
-          </AnimatedElement>
 
-          <AnimatedElement animation="slide" direction="up" delay={0.2}>
-            <InnovationLabViz />
-          </AnimatedElement>
-        </div>
-      </section>
-
-      {/* Innovation Across Africa Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Innovation Across <span className="text-blue-300">Africa</span>
-            </h2>
-            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Connecting entrepreneurs from Lagos to Cape Town with cutting-edge technology solutions.
-            </p>
-          </AnimatedElement>
-
-          <div className="space-y-16">
-            <TechNetworkGraphics />
-            <InnovationLabsGraphics />
-          </div>
-        </div>
-      </section>
 
       {/* Case Studies Section */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">

@@ -26,11 +26,7 @@ const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects
 })
 const ServiceIntegrationMatrix = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.ServiceIntegrationMatrix })), { 
   ssr: false,
-  loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading service integration...</div></div>
-})
-const TechNetworkFloating = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.TechNetworkFloating })), { 
-  ssr: false,
-  loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>
+  loading: () => <div className="h-[600px] flex items-center justify-center"><div className="text-white/60">Loading technology ecosystem...</div></div>
 })
 
 export default function CapabilitiesPage() {
@@ -307,23 +303,7 @@ export default function CapabilitiesPage() {
         </div>
       </section>
 
-      {/* Technology Network Visualization */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Technology <span className="text-blue-300">Network</span>
-            </h2>
-            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Our interconnected technology ecosystem drives innovation across all capability areas.
-            </p>
-          </AnimatedElement>
 
-          <AnimatedElement animation="slide" direction="up" delay={0.2}>
-            <TechNetworkFloating />
-          </AnimatedElement>
-        </div>
-      </section>
 
       {/* Certifications & Expertise Section */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">

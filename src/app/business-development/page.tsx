@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 // import { ServiceShowcase, AfricaContinent, ImpactVisualization } from "@/components/africa-graphics"
-import { BusinessGrowthGraphics, GlobalConnectionsGraphics } from "@/components/page-graphics"
+
 
 // Dynamic imports with SSR disabled to prevent hydration errors
 const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects"), { 
@@ -27,10 +27,7 @@ const MarketExpansionViz = dynamic(() => import("@/components/advanced-graphics"
   ssr: false,
   loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading market expansion...</div></div>
 })
-const BusinessGrowthChart = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.BusinessGrowthChart })), { 
-  ssr: false,
-  loading: () => <div className="h-64 flex items-center justify-center"><div className="text-white/60">Loading chart...</div></div>
-})
+
 
 export default function BusinessDevelopmentPage() {
   const services = [
@@ -259,42 +256,7 @@ export default function BusinessDevelopmentPage() {
         </div>
       </section>
 
-      {/* Business Growth Visualization */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-emerald-950/10 to-green-950/10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Growth <span className="text-emerald-300">Analytics</span>
-            </h2>
-            <p className="text-lg text-emerald-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Data-driven insights that showcase the trajectory of our business development success.
-            </p>
-          </AnimatedElement>
 
-          <AnimatedElement animation="slide" direction="up" delay={0.2} className="max-w-3xl mx-auto">
-            <BusinessGrowthChart />
-          </AnimatedElement>
-        </div>
-      </section>
-
-      {/* Global Business Network Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Global Business <span className="text-emerald-300">Network</span>
-            </h2>
-            <p className="text-lg text-emerald-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Connecting African entrepreneurs with global opportunities and capital markets.
-            </p>
-          </AnimatedElement>
-
-          <div className="space-y-16">
-            <BusinessGrowthGraphics />
-            <GlobalConnectionsGraphics />
-          </div>
-        </div>
-      </section>
 
       {/* Approach Section */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-emerald-950/10 to-green-950/10">

@@ -27,10 +27,6 @@ const StartupPipeline = dynamic(() => import("@/components/advanced-graphics").t
   ssr: false,
   loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading startup pipeline...</div></div>
 })
-const IncubatorEcosystem = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.IncubatorEcosystem })), { 
-  ssr: false,
-  loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading ecosystem...</div></div>
-})
 
 export default function TronAmericaPage() {
   const incubatorFeatures = [
@@ -340,23 +336,7 @@ export default function TronAmericaPage() {
         </div>
       </section>
 
-      {/* Incubator Ecosystem Visualization */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-red-950/10 to-orange-950/10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Startup <span className="text-red-300">Ecosystem</span>
-            </h2>
-            <p className="text-lg text-red-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Our dynamic ecosystem connects startups with resources, mentorship, and funding opportunities.
-            </p>
-          </AnimatedElement>
 
-          <AnimatedElement animation="slide" direction="up" delay={0.2}>
-            <IncubatorEcosystem />
-          </AnimatedElement>
-        </div>
-      </section>
 
       {/* Portfolio Highlights Section */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">

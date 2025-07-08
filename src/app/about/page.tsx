@@ -6,7 +6,7 @@ import dynamic from "next/dynamic"
 import { ArrowRight, Users, Award, Globe, Target, Heart, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
-import { FoundersJourneyGraphics, CompanyValuesGraphics } from "@/components/page-graphics"
+
 
 // Dynamic imports with SSR disabled to prevent hydration errors
 const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects"), { 
@@ -16,14 +16,6 @@ const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects
 const CompanyDNAViz = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.CompanyDNAViz })), { 
   ssr: false,
   loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading company DNA...</div></div>
-})
-const TeamNetworkViz = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.TeamNetworkViz })), { 
-  ssr: false,
-  loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading network...</div></div>
-})
-const AchievementTimeline = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.AchievementTimeline })), { 
-  ssr: false,
-  loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading timeline...</div></div>
 })
 
 export default function AboutPage() {
@@ -175,37 +167,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Network Visualization */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up">
-            <TeamNetworkViz />
-          </AnimatedElement>
-        </div>
-      </section>
 
-      {/* Founders Journey Graphics */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <FoundersJourneyGraphics />
-        </div>
-      </section>
-
-      {/* Achievement Timeline */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-purple-950/10 to-blue-950/10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement animation="slide" direction="up">
-            <AchievementTimeline />
-          </AnimatedElement>
-        </div>
-      </section>
-
-      {/* Company Values Graphics */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <CompanyValuesGraphics />
-        </div>
-      </section>
 
       {/* Mission & Vision */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
