@@ -199,12 +199,12 @@ export default function ClinixAIPage() {
 
             <div>
               <AnimatedElement animation="slide" direction="left" delay={0.3}>
-                <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
                   <Image
                     src="/app-screenshots/clinix-ai/Frame 8.png"
                     alt="Clinix AI Dashboard - AI-Powered Medical Documentation"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -260,6 +260,25 @@ export default function ClinixAIPage() {
             </div>
           </AnimatedElement>
 
+          {/* SOAP Notes Generation Screenshot */}
+          <AnimatedElement animation="slide" direction="up" className="mb-20">
+            <div className="relative max-w-5xl mx-auto">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <Image
+                  src="/app-screenshots/clinix-ai/Frame 9.png"
+                  alt="Clinix AI SOAP Notes Generation Interface"
+                  fill
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">AI-Powered SOAP Notes Generation</h3>
+                  <p className="text-white/80 text-lg">Advanced medical documentation with real-time ICD-10 and CPT coding</p>
+                </div>
+              </div>
+            </div>
+          </AnimatedElement>
+
           {/* Products */}
           <AnimatedElement animation="slide" direction="up" className="mb-16">
             <h2 className="text-3xl font-light text-white mb-8 tracking-tight text-center" style={{fontFamily: 'var(--font-orbitron)'}}>
@@ -281,49 +300,7 @@ export default function ClinixAIPage() {
             </div>
           </AnimatedElement>
 
-          {/* App Screenshots */}
-          <AnimatedElement animation="slide" direction="up" className="mb-16">
-            <h2 className="text-3xl font-light text-white mb-8 tracking-tight text-center" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Platform <span className="text-orange-300">Overview</span>
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  src: "/app-screenshots/clinix-ai/Frame 9.png",
-                  title: "SOAP Notes Generation",
-                  description: "AI-powered medical documentation with real-time coding"
-                },
-                {
-                  src: "/app-screenshots/clinix-ai/Frame 11.png", 
-                  title: "Patient Management",
-                  description: "Comprehensive patient records and session tracking"
-                },
-                {
-                  src: "/app-screenshots/clinix-ai/1255@3x.png",
-                  title: "Analytics Dashboard",
-                  description: "Performance insights and billing optimization"
-                },
-                {
-                  src: "/app-screenshots/clinix-ai/1256@3x.png",
-                  title: "Clinical Interface",
-                  description: "Streamlined workflow for healthcare providers"
-                }
-              ].map((screenshot, index) => (
-                <div key={index} className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-4 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-                  <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
-                    <Image
-                      src={screenshot.src}
-                      alt={screenshot.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <h3 className="text-lg font-medium text-white mb-2">{screenshot.title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{screenshot.description}</p>
-                </div>
-              ))}
-            </div>
-          </AnimatedElement>
+
 
           {/* Market Opportunity */}
           <AnimatedElement animation="slide" direction="up" className="mb-16">
@@ -337,6 +314,25 @@ export default function ClinixAIPage() {
                   <p className="text-white/80 font-light text-sm capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                 </div>
               ))}
+            </div>
+          </AnimatedElement>
+
+          {/* Patient Management Screenshot */}
+          <AnimatedElement animation="slide" direction="up" className="mb-20">
+            <div className="relative max-w-5xl mx-auto">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <Image
+                  src="/app-screenshots/clinix-ai/Frame 11.png"
+                  alt="Clinix AI Patient Management System"
+                  fill
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Comprehensive Patient Management</h3>
+                  <p className="text-white/80 text-lg">Integrated patient records and session tracking with EMR compatibility</p>
+                </div>
+              </div>
             </div>
           </AnimatedElement>
 
@@ -363,6 +359,25 @@ export default function ClinixAIPage() {
                   </div>
                 </Link>
               ))}
+            </div>
+          </AnimatedElement>
+
+          {/* Analytics Dashboard Screenshot */}
+          <AnimatedElement animation="slide" direction="up" className="mb-20">
+            <div className="relative max-w-5xl mx-auto">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <Image
+                  src="/app-screenshots/clinix-ai/1255@3x.png"
+                  alt="Clinix AI Analytics Dashboard"
+                  fill
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Advanced Analytics Dashboard</h3>
+                  <p className="text-white/80 text-lg">Performance insights and billing optimization with real-time reporting</p>
+                </div>
+              </div>
             </div>
           </AnimatedElement>
 

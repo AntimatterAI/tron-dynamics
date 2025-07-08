@@ -163,12 +163,12 @@ export default function ShadowShieldAIPage() {
 
             <div>
               <AnimatedElement animation="slide" direction="left" delay={0.3}>
-                <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
                   <Image
                     src="/app-screenshots/shadowshield-ai/Admin.png"
                     alt="ShadowShield AI Admin Dashboard - AI Security Platform"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -224,6 +224,25 @@ export default function ShadowShieldAIPage() {
             </div>
           </AnimatedElement>
 
+          {/* DLP Rules Management Screenshot */}
+          <AnimatedElement animation="slide" direction="up" className="mb-20">
+            <div className="relative max-w-5xl mx-auto">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <Image
+                  src="/app-screenshots/shadowshield-ai/DLP Rules.png"
+                  alt="ShadowShield AI DLP Rules Management Interface"
+                  fill
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Data Loss Prevention Rules</h3>
+                  <p className="text-white/80 text-lg">Configure and manage comprehensive DLP policies across your organization</p>
+                </div>
+              </div>
+            </div>
+          </AnimatedElement>
+
           {/* Products */}
           <AnimatedElement animation="slide" direction="up" className="mb-16">
             <h2 className="text-3xl font-light text-white mb-8 tracking-tight text-center" style={{fontFamily: 'var(--font-orbitron)'}}>
@@ -245,54 +264,7 @@ export default function ShadowShieldAIPage() {
             </div>
           </AnimatedElement>
 
-          {/* App Screenshots */}
-          <AnimatedElement animation="slide" direction="up" className="mb-16">
-            <h2 className="text-3xl font-light text-white mb-8 tracking-tight text-center" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Platform <span className="text-orange-300">Interface</span>
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  src: "/app-screenshots/shadowshield-ai/DLP Rules.png",
-                  title: "DLP Rules Management",
-                  description: "Configure and manage data loss prevention rules"
-                },
-                {
-                  src: "/app-screenshots/shadowshield-ai/Alerts.png", 
-                  title: "Security Alerts",
-                  description: "Real-time threat detection and alert system"
-                },
-                {
-                  src: "/app-screenshots/shadowshield-ai/Users.png",
-                  title: "User Management",
-                  description: "Comprehensive user permissions and access control"
-                },
-                {
-                  src: "/app-screenshots/shadowshield-ai/Config and Settings.png",
-                  title: "Configuration Panel",
-                  description: "Advanced system settings and customization"
-                },
-                {
-                  src: "/app-screenshots/shadowshield-ai/DLP Modal.png",
-                  title: "DLP Policy Editor",
-                  description: "Create and edit data loss prevention policies"
-                }
-              ].map((screenshot, index) => (
-                <div key={index} className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-4 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
-                  <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
-                    <Image
-                      src={screenshot.src}
-                      alt={screenshot.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <h3 className="text-lg font-medium text-white mb-2">{screenshot.title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{screenshot.description}</p>
-                </div>
-              ))}
-            </div>
-          </AnimatedElement>
+
 
           {/* Market Opportunity */}
           <AnimatedElement animation="slide" direction="up" className="mb-16">
@@ -306,6 +278,44 @@ export default function ShadowShieldAIPage() {
                   <p className="text-white/80 font-light text-sm capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                 </div>
               ))}
+            </div>
+          </AnimatedElement>
+
+          {/* Security Alerts Screenshot */}
+          <AnimatedElement animation="slide" direction="up" className="mb-20">
+            <div className="relative max-w-5xl mx-auto">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <Image
+                  src="/app-screenshots/shadowshield-ai/Alerts.png"
+                  alt="ShadowShield AI Security Alerts Dashboard"
+                  fill
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Real-Time Security Alerts</h3>
+                  <p className="text-white/80 text-lg">Advanced threat detection with instant notifications and response capabilities</p>
+                </div>
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* User Management Screenshot */}
+          <AnimatedElement animation="slide" direction="up" className="mb-20">
+            <div className="relative max-w-5xl mx-auto">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <Image
+                  src="/app-screenshots/shadowshield-ai/Users.png"
+                  alt="ShadowShield AI User Management Interface"
+                  fill
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Enterprise User Management</h3>
+                  <p className="text-white/80 text-lg">Comprehensive access control and user permissions management</p>
+                </div>
+              </div>
             </div>
           </AnimatedElement>
 
@@ -330,6 +340,25 @@ export default function ShadowShieldAIPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </AnimatedElement>
+
+          {/* Configuration Panel Screenshot */}
+          <AnimatedElement animation="slide" direction="up" className="mb-20">
+            <div className="relative max-w-5xl mx-auto">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <Image
+                  src="/app-screenshots/shadowshield-ai/Config and Settings.png"
+                  alt="ShadowShield AI Configuration and Settings"
+                  fill
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Advanced Configuration Panel</h3>
+                  <p className="text-white/80 text-lg">Comprehensive system settings and security policy customization</p>
+                </div>
+              </div>
             </div>
           </AnimatedElement>
         </div>
