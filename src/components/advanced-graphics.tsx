@@ -534,25 +534,25 @@ export function CompanyDNAViz() {
         <p className="text-xs md:text-sm text-white/60 mt-1">Our Values & Journey</p>
       </div>
 
-      {/* Properly Centered Container for All Graphics Elements */}
-      <div className="absolute inset-6 md:inset-8 flex items-center justify-center">
-        <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
+      {/* Properly Centered Container with Much Smaller Radius */}
+      <div className="absolute inset-8 md:inset-12 flex items-center justify-center">
+        <div className="relative w-[280px] h-[280px] md:w-[350px] md:h-[350px]">
           
-          {/* Central Hub - Perfectly Centered */}
+          {/* Much Smaller Central Hub */}
           <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="relative w-20 h-20 md:w-28 md:h-28">
+            <div className="relative w-14 h-14 md:w-16 md:h-16">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/40 to-purple-600/40 backdrop-blur-xl border-2 border-white/50 animate-spin-slow" />
-              <div className="absolute inset-2 md:inset-3 rounded-full bg-gradient-to-r from-purple-400/50 to-pink-600/50 backdrop-blur-xl flex items-center justify-center">
-                <Heart className="w-8 h-8 md:w-12 md:h-12 text-white animate-pulse" />
+              <div className="absolute inset-1 rounded-full bg-gradient-to-r from-purple-400/50 to-pink-600/50 backdrop-blur-xl flex items-center justify-center">
+                <Heart className="w-6 h-6 md:w-7 md:h-7 text-white animate-pulse" />
               </div>
             </div>
           </div>
 
-          {/* Company Values - Perfectly Centered */}
+          {/* Company Values - Much Smaller Radius to Prevent Overlap */}
           {values.map((value, i) => {
-           // Perfect 90-degree spacing for 4 values
+           // Much smaller radius to fit in container without overlap
            const angle = (i * 90) + 45 // 90 degrees apart, offset by 45
-           const radius = 100 // Reduced from 120 to fit better in container
+           const radius = 70 // Significantly reduced from 100 to prevent overlap
            const x = Math.cos((angle * Math.PI) / 180) * radius
            const y = Math.sin((angle * Math.PI) / 180) * radius
           
@@ -568,7 +568,7 @@ export function CompanyDNAViz() {
               onMouseEnter={() => setActiveValue(i)}
             >
               <div 
-                className={`relative w-16 h-16 md:w-20 md:h-20 rounded-2xl border-2 backdrop-blur-xl transition-all duration-500 ${
+                className={`relative w-12 h-12 md:w-14 md:h-14 rounded-xl border-2 backdrop-blur-xl transition-all duration-500 ${
                   activeValue === i ? 'scale-125 shadow-2xl border-white/70' : 'border-white/30'
                 }`}
                 style={{ 
@@ -576,21 +576,21 @@ export function CompanyDNAViz() {
                   borderColor: activeValue === i ? `${value.color}80` : `${value.color}40`
                 }}
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 to-transparent" />
-                <div className="relative h-full flex flex-col items-center justify-center p-2">
-                  <value.icon className="w-5 h-5 md:w-6 md:h-6 text-white mb-1" />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/30 to-transparent" />
+                <div className="relative h-full flex flex-col items-center justify-center p-1">
+                  <value.icon className="w-4 h-4 md:w-5 md:h-5 text-white mb-0.5" />
                   <span className="text-white text-xs font-bold text-center leading-tight">{value.name}</span>
                 </div>
                 
                 {/* Enhanced Value Description */}
-                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[120px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                <div className="absolute -top-18 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[120px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
                   <div className="text-white font-bold text-sm mb-1">{value.name}</div>
                   <div className="text-white/80 text-xs mb-2">{value.description}</div>
                   <div className="text-green-400 text-xs font-bold">{value.projects}</div>
                 </div>
               </div>
 
-              {/* Connection Beam */}
+              {/* Connection Beam - Adjusted for smaller radius */}
               <div
                 className="absolute w-0.5 origin-left opacity-30"
                 style={{
@@ -607,12 +607,12 @@ export function CompanyDNAViz() {
         </div>
       </div>
 
-      {/* Enhanced Timeline - Proper Spacing from Graphics */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-3 max-w-full px-4 z-10">
+      {/* Enhanced Timeline - Much More Space from Graphics */}
+      <div className="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-3 max-w-full px-4 z-10">
         {milestones.map((milestone, i) => (
           <div
             key={i}
-            className="text-center bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 p-3 hover:scale-105 transition-transform min-w-[70px] md:min-w-[80px]"
+            className="text-center bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 p-2 md:p-3 hover:scale-105 transition-transform min-w-[65px] md:min-w-[75px]"
           >
             <milestone.icon className="w-3 h-3 md:w-4 md:h-4 text-white mx-auto mb-1" />
             <div className="text-xs text-white font-bold">{milestone.year}</div>
@@ -645,56 +645,56 @@ export function StartupPipeline() {
   }, [stages.length])
 
   return (
-    <div className="relative w-full min-h-[650px] md:min-h-[750px] h-auto bg-gradient-to-br from-slate-900/90 to-red-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-6 md:p-8">
+    <div className="relative w-full min-h-[700px] md:min-h-[800px] h-auto bg-gradient-to-br from-slate-900/90 to-red-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-6 md:p-8">
       {/* Title */}
       <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-center z-10">
         <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Startup Acceleration Pipeline</h3>
         <p className="text-xs md:text-sm text-white/60">From Application to Success</p>
       </div>
       
-      {/* Properly Centered Funnel Visualization */}
-      <div className="absolute inset-6 md:inset-8 pt-16 pb-20 flex items-center justify-center">
-        <div className="flex flex-col items-center space-y-6 md:space-y-8 w-full max-w-2xl">
+      {/* Properly Sized Funnel with No Overlaps */}
+      <div className="absolute inset-8 md:inset-10 pt-12 pb-24 flex items-center justify-center">
+        <div className="flex flex-col items-center space-y-4 md:space-y-5 w-full max-w-xl">
           {stages.map((stage, i) => (
             <div 
               key={i} 
               className="relative w-full flex flex-col items-center"
               onMouseEnter={() => setActiveStage(i)}
             >
-              {/* Funnel Stage - Perfectly Centered with Better Proportions */}
+              {/* Smaller Funnel Stages to Prevent Overlap */}
               <div
-                className={`bg-gradient-to-r ${stage.color} rounded-xl border-2 border-white/20 flex items-center justify-between p-4 md:p-5 transition-all duration-500 cursor-pointer ${
+                className={`bg-gradient-to-r ${stage.color} rounded-lg border-2 border-white/20 flex items-center justify-between p-3 md:p-4 transition-all duration-500 cursor-pointer ${
                   activeStage === i ? 'border-white/70 shadow-2xl scale-105' : 'hover:scale-[1.02]'
                 }`}
                 style={{ 
-                  width: `${Math.max(90 - i * 15, 50)}%`,
-                  minWidth: '300px',
-                  maxWidth: '600px'
+                  width: `${Math.max(85 - i * 12, 55)}%`,
+                  minWidth: '280px',
+                  maxWidth: '480px'
                 }}
               >
                 {/* Stage Info */}
-                <div className="flex items-center space-x-3 md:space-x-4">
-                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                    <stage.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                <div className="flex items-center space-x-2 md:space-x-3">
+                  <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                    <stage.icon className="w-4 h-4 md:w-5 md:h-5 text-white" />
                   </div>
                   <div>
-                    <div className="text-white font-bold text-sm md:text-lg">{stage.name}</div>
-                    <div className="text-white/80 text-xs md:text-sm">{stage.rate} Selection Rate</div>
+                    <div className="text-white font-bold text-sm md:text-base">{stage.name}</div>
+                    <div className="text-white/80 text-xs">{stage.rate} Selection Rate</div>
                     <div className="text-white/60 text-xs">{stage.success}</div>
                   </div>
                 </div>
                 
                 {/* Count */}
                 <div className="text-right">
-                  <div className="text-white font-bold text-xl md:text-3xl">{stage.count}</div>
-                  <div className="text-white/80 text-xs md:text-sm">Startups</div>
+                  <div className="text-white font-bold text-lg md:text-2xl">{stage.count}</div>
+                  <div className="text-white/80 text-xs">Startups</div>
                 </div>
               </div>
               
-              {/* Flow Arrow - Better spacing and positioning */}
+              {/* Smaller Flow Arrow */}
               {i < stages.length - 1 && (
-                <div className="flex justify-center mt-4 mb-2">
-                  <ArrowRight className={`w-6 h-6 md:w-8 md:h-8 text-white/60 transition-all duration-300 transform rotate-90 ${
+                <div className="flex justify-center mt-2 mb-1">
+                  <ArrowRight className={`w-5 h-5 md:w-6 md:h-6 text-white/60 transition-all duration-300 transform rotate-90 ${
                     activeStage === i ? 'text-yellow-300 scale-125' : ''
                   }`} />
                 </div>
@@ -704,8 +704,8 @@ export function StartupPipeline() {
         </div>
       </div>
 
-      {/* Success Metrics - Proper Spacing from Graphics */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-6 max-w-full px-4 z-10">
+      {/* Success Metrics - Much More Space from Graphics */}
+      <div className="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-4 z-10">
         {[
           { value: '$4.2M', label: 'Deployed Capital', color: '#10B981' },
           { value: '92%', label: 'Success Rate', color: '#3B82F6' },
@@ -713,12 +713,12 @@ export function StartupPipeline() {
         ].map((metric, i) => (
           <div
             key={i}
-            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-3 md:p-4 hover:scale-105 transition-transform min-w-[100px]"
+            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-2 md:p-3 hover:scale-105 transition-transform min-w-[85px]"
           >
-            <div className="text-sm md:text-xl font-bold mb-1" style={{ color: metric.color }}>
+            <div className="text-sm md:text-lg font-bold mb-1" style={{ color: metric.color }}>
               {metric.value}
             </div>
-            <div className="text-xs md:text-sm text-white/70">{metric.label}</div>
+            <div className="text-xs text-white/70">{metric.label}</div>
           </div>
         ))}
       </div>
