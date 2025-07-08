@@ -1,37 +1,34 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { 
-  Lightbulb, 
-  Search, 
-  Rocket, 
-  Users, 
-  TrendingUp, 
-  Heart, 
-  Building2,
-  Cpu,
-  Globe,
-  Monitor,
-  Smartphone,
-  Cloud,
-  ArrowRight,
-  Star,
-  Award,
-  Briefcase,
-  Shield,
-  Brain,
-  Settings,
-  Server,
-  CheckCircle,
-  DollarSign,
-  Link,
-  Wifi,
-  Database,
-  Code,
-  MapPin,
-  Building,
-  FileText
-} from 'lucide-react'
+    Heart,
+    TrendingUp,
+    Lightbulb,
+    Award,
+    Cpu,
+    Brain,
+    Globe,
+    Smartphone,
+    Cloud,
+    Shield,
+    Search,
+    Rocket,
+    CheckCircle,
+    Users,
+    Building2,
+    DollarSign,
+    Briefcase,
+    Star,
+    ArrowRight,
+    MapPin,
+    Building,
+    Link,
+    Wifi,
+    Database,
+    Code,
+    FileText
+  } from 'lucide-react'
 
 // Capabilities Page - Service Integration Matrix
 export function ServiceIntegrationMatrix() {
