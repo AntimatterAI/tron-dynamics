@@ -247,6 +247,16 @@
     }
   }
 
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
   /* Magnetic hover effect */
   .magnetic {
     transition: transform 0.1s ease-out;
