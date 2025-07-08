@@ -163,19 +163,19 @@ export default function ShadowShieldAIPage() {
 
             <div>
               <AnimatedElement animation="slide" direction="left" delay={0.3}>
-                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
+                <div className="relative max-w-md mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
                   <Image
                     src="/app-screenshots/shadowshield-ai/Admin.png"
                     alt="ShadowShield AI Admin Dashboard - AI Security Platform"
-                    width={600}
-                    height={400}
+                    width={300}
+                    height={200}
                     className="w-full h-auto"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-medium">AI Security & Governance Platform</p>
-                    <p className="text-white/70 text-sm">Enterprise Data Protection</p>
+                  <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+                    <p className="text-white font-medium text-sm sm:text-base">AI Security & Governance Platform</p>
+                    <p className="text-white/70 text-xs sm:text-sm">Enterprise Data Protection</p>
                   </div>
                 </div>
               </AnimatedElement>
@@ -227,19 +227,19 @@ export default function ShadowShieldAIPage() {
 
           {/* DLP Rules Management Screenshot */}
           <AnimatedElement animation="slide" direction="up" className="mb-20">
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
                 <Image
                   src="/app-screenshots/shadowshield-ai/DLP Rules.png"
                   alt="ShadowShield AI DLP Rules Management Interface"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
+                  width={400}
+                  height={250}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg mx-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Data Loss Prevention Rules</h3>
-                  <p className="text-white/80 text-sm sm:text-lg">Configure and manage comprehensive DLP policies across your organization</p>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Data Loss Prevention Rules</h3>
+                  <p className="text-white/80 text-sm sm:text-base">Configure and manage comprehensive DLP policies across your organization</p>
                 </div>
               </div>
             </div>
@@ -285,19 +285,19 @@ export default function ShadowShieldAIPage() {
 
           {/* Security Alerts Screenshot */}
           <AnimatedElement animation="slide" direction="up" className="mb-20">
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
                 <Image
                   src="/app-screenshots/shadowshield-ai/Alerts.png"
                   alt="ShadowShield AI Security Alerts Dashboard"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
+                  width={400}
+                  height={250}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg mx-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Real-Time Security Alerts</h3>
-                  <p className="text-white/80 text-sm sm:text-lg">Advanced threat detection with instant notifications and response capabilities</p>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Real-Time Security Alerts</h3>
+                  <p className="text-white/80 text-sm sm:text-base">Advanced threat detection with instant notifications and response capabilities</p>
                 </div>
               </div>
             </div>
@@ -305,19 +305,19 @@ export default function ShadowShieldAIPage() {
 
           {/* User Management Screenshot */}
           <AnimatedElement animation="slide" direction="up" className="mb-20">
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
                 <Image
                   src="/app-screenshots/shadowshield-ai/Users.png"
                   alt="ShadowShield AI User Management Interface"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
+                  width={400}
+                  height={250}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg mx-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Enterprise User Management</h3>
-                  <p className="text-white/80 text-sm sm:text-lg">Comprehensive access control and user permissions management</p>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Enterprise User Management</h3>
+                  <p className="text-white/80 text-sm sm:text-base">Comprehensive access control and user permissions management</p>
                 </div>
               </div>
             </div>
@@ -349,19 +349,19 @@ export default function ShadowShieldAIPage() {
 
           {/* Configuration Panel Screenshot */}
           <AnimatedElement animation="slide" direction="up" className="mb-20">
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
                 <Image
                   src="/app-screenshots/shadowshield-ai/Config and Settings.png"
                   alt="ShadowShield AI Configuration and Settings"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
+                  width={400}
+                  height={250}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg mx-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Advanced Configuration Panel</h3>
-                  <p className="text-white/80 text-sm sm:text-lg">Comprehensive system settings and security policy customization</p>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Advanced Configuration Panel</h3>
+                  <p className="text-white/80 text-sm sm:text-base">Comprehensive system settings and security policy customization</p>
                 </div>
               </div>
             </div>

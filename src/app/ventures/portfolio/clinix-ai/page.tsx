@@ -199,19 +199,19 @@ export default function ClinixAIPage() {
 
             <div>
               <AnimatedElement animation="slide" direction="left" delay={0.3}>
-                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
+                <div className="relative max-w-md mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
                   <Image
                     src="/app-screenshots/clinix-ai/Frame 8.png"
                     alt="Clinix AI Dashboard - AI-Powered Medical Documentation"
-                    width={600}
-                    height={400}
+                    width={300}
+                    height={200}
                     className="w-full h-auto"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-medium">AI-Powered Medical Documentation</p>
-                    <p className="text-white/70 text-sm">SOAP Notes & Billing Automation</p>
+                  <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+                    <p className="text-white font-medium text-sm sm:text-base">AI-Powered Medical Documentation</p>
+                    <p className="text-white/70 text-xs sm:text-sm">SOAP Notes & Billing Automation</p>
                   </div>
                 </div>
               </AnimatedElement>
@@ -263,19 +263,19 @@ export default function ClinixAIPage() {
 
           {/* SOAP Notes Generation Screenshot */}
           <AnimatedElement animation="slide" direction="up" className="mb-20">
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
                 <Image
                   src="/app-screenshots/clinix-ai/Frame 9.png"
                   alt="Clinix AI SOAP Notes Generation Interface"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
+                  width={400}
+                  height={250}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg mx-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">AI-Powered SOAP Notes Generation</h3>
-                  <p className="text-white/80 text-sm sm:text-lg">Advanced medical documentation with real-time ICD-10 and CPT coding</p>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">AI-Powered SOAP Notes Generation</h3>
+                  <p className="text-white/80 text-sm sm:text-base">Advanced medical documentation with real-time ICD-10 and CPT coding</p>
                 </div>
               </div>
             </div>
@@ -321,19 +321,19 @@ export default function ClinixAIPage() {
 
           {/* Patient Management Screenshot */}
           <AnimatedElement animation="slide" direction="up" className="mb-20">
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
                 <Image
                   src="/app-screenshots/clinix-ai/Frame 11.png"
                   alt="Clinix AI Patient Management System"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
+                  width={400}
+                  height={250}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg mx-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Comprehensive Patient Management</h3>
-                  <p className="text-white/80 text-sm sm:text-lg">Integrated patient records and session tracking with EMR compatibility</p>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Comprehensive Patient Management</h3>
+                  <p className="text-white/80 text-sm sm:text-base">Integrated patient records and session tracking with EMR compatibility</p>
                 </div>
               </div>
             </div>
@@ -367,19 +367,19 @@ export default function ClinixAIPage() {
 
           {/* Analytics Dashboard Screenshot */}
           <AnimatedElement animation="slide" direction="up" className="mb-20">
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative rounded-2xl overflow-hidden border border-orange-400/20 shadow-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50">
                 <Image
                   src="/app-screenshots/clinix-ai/1255@3x.png"
                   alt="Clinix AI Analytics Dashboard"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
+                  width={400}
+                  height={250}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg mx-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Advanced Analytics Dashboard</h3>
-                  <p className="text-white/80 text-sm sm:text-lg">Performance insights and billing optimization with real-time reporting</p>
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Advanced Analytics Dashboard</h3>
+                  <p className="text-white/80 text-sm sm:text-base">Performance insights and billing optimization with real-time reporting</p>
                 </div>
               </div>
             </div>
