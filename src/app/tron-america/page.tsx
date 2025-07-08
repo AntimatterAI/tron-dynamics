@@ -1,7 +1,8 @@
 "use client"
 
-import { Suspense, lazy } from "react"
+import { Suspense } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { 
   MapPin, 
   Building, 
@@ -17,9 +18,15 @@ import {
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 
-// Lazy load simple effects and graphics
-const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
-const IncubatorEcosystem = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.IncubatorEcosystem })))
+// Dynamic imports with SSR disabled to prevent hydration errors
+const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects"), { 
+  ssr: false,
+  loading: () => null
+})
+const IncubatorEcosystem = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.IncubatorEcosystem })), { 
+  ssr: false,
+  loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading ecosystem...</div></div>
+})
 
 export default function TronAmericaPage() {
   const incubatorFeatures = [

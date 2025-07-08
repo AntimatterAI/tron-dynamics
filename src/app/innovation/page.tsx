@@ -1,7 +1,8 @@
 "use client"
 
-import { Suspense, lazy } from "react"
+import { Suspense } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { 
   Rocket, 
   Smartphone, 
@@ -17,9 +18,15 @@ import AnimatedElement from "@/components/animated-element"
 // import { ServiceShowcase, AfricaContinent } from "@/components/africa-graphics"
 import { TechNetworkGraphics, InnovationLabsGraphics } from "@/components/page-graphics"
 
-// Lazy load simple effects and graphics
-const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
-const InnovationLabViz = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.InnovationLabViz })))
+// Dynamic imports with SSR disabled to prevent hydration errors
+const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects"), { 
+  ssr: false,
+  loading: () => null
+})
+const InnovationLabViz = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.InnovationLabViz })), { 
+  ssr: false,
+  loading: () => <div className="h-80 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>
+})
 
 export default function InnovationPage() {
   const services = [

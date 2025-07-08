@@ -1,7 +1,8 @@
 "use client"
 
-import { Suspense, lazy } from "react"
+import { Suspense } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { 
   Zap, 
   ArrowRight,
@@ -18,9 +19,15 @@ import {
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 
-// Lazy load simple effects and graphics
-const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
-const TechNetworkFloating = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TechNetworkFloating })))
+// Dynamic imports with SSR disabled to prevent hydration errors
+const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects"), { 
+  ssr: false,
+  loading: () => null
+})
+const TechNetworkFloating = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TechNetworkFloating })), { 
+  ssr: false,
+  loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>
+})
 
 export default function CapabilitiesPage() {
   const capabilities = [

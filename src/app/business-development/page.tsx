@@ -1,7 +1,8 @@
 "use client"
 
-import { Suspense, lazy } from "react"
+import { Suspense } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { 
   Briefcase, 
   ArrowRight,
@@ -17,9 +18,15 @@ import AnimatedElement from "@/components/animated-element"
 // import { ServiceShowcase, AfricaContinent, ImpactVisualization } from "@/components/africa-graphics"
 import { BusinessGrowthGraphics, GlobalConnectionsGraphics } from "@/components/page-graphics"
 
-// Lazy load simple effects and graphics
-const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
-const BusinessGrowthChart = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.BusinessGrowthChart })))
+// Dynamic imports with SSR disabled to prevent hydration errors
+const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects"), { 
+  ssr: false,
+  loading: () => null
+})
+const BusinessGrowthChart = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.BusinessGrowthChart })), { 
+  ssr: false,
+  loading: () => <div className="h-64 flex items-center justify-center"><div className="text-white/60">Loading chart...</div></div>
+})
 
 export default function BusinessDevelopmentPage() {
   const services = [

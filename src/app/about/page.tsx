@@ -1,16 +1,26 @@
 "use client"
 
-import { Suspense, lazy } from "react"
+import { Suspense } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { ArrowRight, Users, Award, Globe, Target, Heart, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AnimatedElement from "@/components/animated-element"
 import { FoundersJourneyGraphics, CompanyValuesGraphics } from "@/components/page-graphics"
 
-// Lazy load simple effects and graphics
-const SimpleHeroEffects = lazy(() => import("@/components/simple-hero-effects"))
-const TeamNetworkViz = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TeamNetworkViz })))
-const AchievementTimeline = lazy(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.AchievementTimeline })))
+// Dynamic imports with SSR disabled to prevent hydration errors
+const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects"), { 
+  ssr: false,
+  loading: () => null
+})
+const TeamNetworkViz = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TeamNetworkViz })), { 
+  ssr: false,
+  loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading network...</div></div>
+})
+const AchievementTimeline = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.AchievementTimeline })), { 
+  ssr: false,
+  loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading timeline...</div></div>
+})
 
 export default function AboutPage() {
   const founders = [
