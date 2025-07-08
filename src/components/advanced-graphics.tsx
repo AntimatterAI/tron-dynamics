@@ -47,7 +47,7 @@ export function ServiceIntegrationMatrix() {
   }, [techLayers.length])
 
   return (
-    <div className="relative w-full min-h-[500px] md:min-h-[600px] h-auto bg-gradient-to-br from-slate-950/90 via-blue-950/50 to-purple-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-4 md:p-8">
+    <div className="relative w-full min-h-[600px] md:min-h-[700px] h-auto bg-gradient-to-br from-slate-950/90 via-blue-950/50 to-purple-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-6 md:p-8">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {Array.from({ length: 12 }, (_, i) => (
@@ -65,14 +65,14 @@ export function ServiceIntegrationMatrix() {
       </div>
 
       {/* Title */}
-      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center z-10">
+      <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-center z-10">
         <h3 className="text-lg md:text-2xl font-bold text-white">Technology Ecosystem</h3>
         <p className="text-xs md:text-sm text-white/60 mt-1">Integrated Development Stack</p>
       </div>
 
-      {/* Centered Container for All Elements */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
+      {/* Properly Centered Container for All Graphics Elements */}
+      <div className="absolute inset-6 md:inset-8 flex items-center justify-center">
+        <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
           
           {/* Central Hub - Perfectly Centered */}
           <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
@@ -84,11 +84,11 @@ export function ServiceIntegrationMatrix() {
             </div>
           </div>
 
-          {/* Tech Layer Orbits - Perfectly Symmetric */}
+          {/* Tech Layer Orbits - Perfectly Centered with Proper Radius */}
           {techLayers.map((layer, index) => {
-            // Perfect symmetrical positioning around center
-            const radius = 160 // Fixed radius for consistency
-            const angle = (index * 60) + (activeLayer * 3) // Slower rotation, perfect 60-degree spacing
+            // Adjusted radius to fit within container properly
+            const radius = 120 // Reduced from 160 to fit better in the container
+            const angle = (index * 60) + (activeLayer * 3) // Perfect 60-degree spacing
             const x = Math.cos((angle * Math.PI) / 180) * radius
             const y = Math.sin((angle * Math.PI) / 180) * radius
             
@@ -146,8 +146,8 @@ export function ServiceIntegrationMatrix() {
         </div>
       </div>
 
-      {/* Technology Stats */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2 z-10">
+      {/* Technology Stats - Proper Spacing from Graphics */}
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-4 max-w-full px-4 z-10">
         {[
           { value: '200+', label: 'Projects', color: '#3B82F6' },
           { value: '6', label: 'Tech Stacks', color: '#10B981' },
@@ -155,7 +155,7 @@ export function ServiceIntegrationMatrix() {
         ].map((metric, i) => (
           <div
             key={i}
-            className="text-center bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 p-2 md:p-3 hover:scale-105 transition-transform min-w-[70px]"
+            className="text-center bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 p-3 md:p-4 hover:scale-105 transition-transform min-w-[80px]"
           >
             <div className="text-sm md:text-lg font-bold text-white mb-1" style={{ color: metric.color }}>
               {metric.value}
@@ -188,7 +188,7 @@ export function InnovationPipeline() {
   }, [innovationPhases.length])
 
   return (
-    <div className="relative w-full min-h-[500px] md:min-h-[650px] h-auto bg-gradient-to-br from-purple-950/90 via-indigo-950/50 to-cyan-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-4 md:p-8">
+    <div className="relative w-full min-h-[600px] md:min-h-[750px] h-auto bg-gradient-to-br from-purple-950/90 via-indigo-950/50 to-cyan-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-6 md:p-8">
       {/* Spiral Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {Array.from({ length: 10 }, (_, i) => {
@@ -213,14 +213,14 @@ export function InnovationPipeline() {
       </div>
 
       {/* Title */}
-      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center z-10">
+      <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-center z-10">
         <h3 className="text-lg md:text-2xl font-bold text-white">Innovation Pipeline</h3>
         <p className="text-xs md:text-sm text-white/60 mt-1">From Concept to Market</p>
       </div>
 
-      {/* Centered Container for All Elements */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
+      {/* Properly Centered Container for All Graphics Elements */}
+      <div className="absolute inset-6 md:inset-8 flex items-center justify-center">
+        <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
           
           {/* Central Innovation Hub - Perfectly Centered */}
           <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
@@ -241,12 +241,12 @@ export function InnovationPipeline() {
             </div>
           </div>
 
-          {/* Innovation Phase Satellites - Perfectly Symmetric */}
+          {/* Innovation Phase Satellites - Perfectly Centered */}
           {innovationPhases.map((phase, index) => {
-            // Perfect symmetrical positioning - 72 degrees apart for 5 elements
-            const radius = 170 // Fixed radius for consistency
+            // Adjusted radius to fit properly within container
+            const radius = 130 // Reduced from 170 to fit better
             const baseAngle = 72 // 360/5 = 72 degrees apart
-            const angle = (index * baseAngle) + (activePhase * 2) // Slower rotation
+            const angle = (index * baseAngle) + (activePhase * 2)
             const x = Math.cos(((angle - 90) * Math.PI) / 180) * radius // -90 to start at top
             const y = Math.sin(((angle - 90) * Math.PI) / 180) * radius
             
@@ -318,8 +318,8 @@ export function InnovationPipeline() {
         </div>
       </div>
 
-      {/* Innovation Metrics */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2 z-10">
+      {/* Innovation Metrics - Proper Spacing from Graphics */}
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-4 max-w-full px-4 z-10">
         {[
           { value: '150+', label: 'Projects', color: '#8B5CF6' },
           { value: '94%', label: 'Success Rate', color: '#06B6D4' },
@@ -327,7 +327,7 @@ export function InnovationPipeline() {
         ].map((metric, i) => (
           <div
             key={i}
-            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-2 md:p-3 hover:scale-105 transition-transform min-w-[80px]"
+            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-3 md:p-4 hover:scale-105 transition-transform min-w-[90px]"
           >
             <div className="text-sm md:text-lg font-bold text-white mb-1" style={{ color: metric.color }}>
               {metric.value}
@@ -360,7 +360,7 @@ export function MarketExpansionViz() {
   }, [globalRegions.length])
 
   return (
-    <div className="relative w-full min-h-[500px] md:min-h-[600px] h-auto bg-gradient-to-br from-emerald-950/90 via-teal-950/50 to-green-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-4 md:p-8">
+    <div className="relative w-full min-h-[600px] md:min-h-[700px] h-auto bg-gradient-to-br from-emerald-950/90 via-teal-950/50 to-green-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-6 md:p-8">
       {/* World Map Background */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 100 60">
@@ -394,67 +394,75 @@ export function MarketExpansionViz() {
         ))}
       </div>
 
-      {/* Regional Hubs - Better spacing */}
-      <div className="relative h-full min-h-[400px] md:min-h-[500px]">
-        {globalRegions.map((region, index) => (
-          <div
-            key={region.name}
-            className="absolute cursor-pointer group transition-all duration-500 hover:scale-110 z-20"
-            style={{
-              left: `${region.position.x}%`,
-              top: `${region.position.y}%`,
-              transform: 'translate(-50%, -50%)'
-            }}
-            onMouseEnter={() => setActiveRegion(index)}
-          >
+      {/* Title */}
+      <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-center z-10">
+        <h3 className="text-lg md:text-2xl font-bold text-white">Global Market Presence</h3>
+        <p className="text-xs md:text-sm text-white/60 mt-1">Worldwide Business Development</p>
+      </div>
+
+      {/* Properly Centered Regional Hubs */}
+      <div className="absolute inset-6 md:inset-8 flex items-center justify-center">
+        <div className="relative w-full h-full min-h-[400px] md:min-h-[500px]">
+          {globalRegions.map((region, index) => (
             <div
-              className={`relative w-16 h-16 md:w-20 md:h-20 rounded-full border-2 backdrop-blur-xl transition-all duration-500 ${
-                activeRegion === index ? 'scale-125 shadow-2xl border-white/70' : 'border-white/30'
-              }`}
-              style={{ 
-                backgroundColor: `${region.color}35`,
-                borderColor: activeRegion === index ? `${region.color}90` : `${region.color}50`
+              key={region.name}
+              className="absolute cursor-pointer group transition-all duration-500 hover:scale-110 z-20"
+              style={{
+                left: `${region.position.x}%`,
+                top: `${region.position.y}%`,
+                transform: 'translate(-50%, -50%)'
               }}
+              onMouseEnter={() => setActiveRegion(index)}
             >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/25 to-transparent" />
-              <div className="relative h-full flex flex-col items-center justify-center p-2">
-                <Globe className="w-6 h-6 md:w-8 md:h-8 text-white mb-1" />
-                <span className="text-white text-xs font-bold text-center leading-tight">{region.name.split(' ')[0]}</span>
-              </div>
+              <div
+                className={`relative w-16 h-16 md:w-20 md:h-20 rounded-full border-2 backdrop-blur-xl transition-all duration-500 ${
+                  activeRegion === index ? 'scale-125 shadow-2xl border-white/70' : 'border-white/30'
+                }`}
+                style={{ 
+                  backgroundColor: `${region.color}35`,
+                  borderColor: activeRegion === index ? `${region.color}90` : `${region.color}50`
+                }}
+              >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/25 to-transparent" />
+                <div className="relative h-full flex flex-col items-center justify-center p-2">
+                  <Globe className="w-6 h-6 md:w-8 md:h-8 text-white mb-1" />
+                  <span className="text-white text-xs font-bold text-center leading-tight">{region.name.split(' ')[0]}</span>
+                </div>
 
-              {/* Pulsing Ring */}
-              {activeRegion === index && (
-                <div
-                  className="absolute -inset-2 rounded-full border-2 animate-ping"
-                  style={{ borderColor: region.color }}
-                />
-              )}
+                {/* Pulsing Ring */}
+                {activeRegion === index && (
+                  <div
+                    className="absolute -inset-2 rounded-full border-2 animate-ping"
+                    style={{ borderColor: region.color }}
+                  />
+                )}
 
-              {/* Enhanced Region Stats */}
-              <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[140px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
-                <div className="text-white font-bold text-sm mb-2">{region.name}</div>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div>
-                    <span className="text-white/60">Growth:</span>
-                    <div className="text-green-400 font-bold">{region.growth}</div>
-                  </div>
-                  <div>
-                    <span className="text-white/60">Deals:</span>
-                    <div className="text-blue-400 font-bold">{region.deals}</div>
-                  </div>
-                  <div className="col-span-2">
-                    <span className="text-white/60">Revenue:</span>
-                    <div className="text-yellow-400 font-bold">{region.revenue}</div>
+                {/* Enhanced Region Stats */}
+                <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[140px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                  <div className="text-white font-bold text-sm mb-2">{region.name}</div>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                      <span className="text-white/60">Growth:</span>
+                      <div className="text-green-400 font-bold">{region.growth}</div>
+                    </div>
+                    <div>
+                      <span className="text-white/60">Deals:</span>
+                      <div className="text-blue-400 font-bold">{region.deals}</div>
+                    </div>
+                    <div className="col-span-2">
+                      <span className="text-white/60">Revenue:</span>
+                      <div className="text-yellow-400 font-bold">{region.revenue}</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Global Business Metrics */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2 z-10">
+      {/* Global Business Metrics - Proper Spacing from Graphics */}
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-4 max-w-full px-4 z-10">
         {[
           { value: '134', label: 'Active Deals', color: '#10B981' },
           { value: '$7.8M', label: 'Total Revenue', color: '#3B82F6' },
@@ -462,7 +470,7 @@ export function MarketExpansionViz() {
         ].map((metric, i) => (
           <div
             key={i}
-            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-2 md:p-3 hover:scale-105 transition-transform min-w-[80px]"
+            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-3 md:p-4 hover:scale-105 transition-transform min-w-[90px]"
           >
             <div className="text-sm md:text-lg font-bold mb-1" style={{ color: metric.color }}>
               {metric.value}
@@ -470,12 +478,6 @@ export function MarketExpansionViz() {
             <div className="text-xs text-white/70">{metric.label}</div>
           </div>
         ))}
-      </div>
-
-      {/* Title */}
-      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center z-10">
-        <h3 className="text-lg md:text-2xl font-bold text-white">Global Market Presence</h3>
-        <p className="text-xs md:text-sm text-white/60 mt-1">Worldwide Business Development</p>
       </div>
     </div>
   )
@@ -486,10 +488,10 @@ export function CompanyDNAViz() {
   const [activeValue, setActiveValue] = useState(0)
   
   const values = [
-    { name: 'Innovation', icon: Lightbulb, color: 'text-blue-400', description: 'Cutting-edge solutions', projects: '50+' },
-    { name: 'Excellence', icon: Award, color: 'text-purple-400', description: 'Quality-first approach', projects: '98%' },
-    { name: 'Impact', icon: Heart, color: 'text-red-400', description: 'Meaningful change', projects: '1M+' },
-    { name: 'Growth', icon: TrendingUp, color: 'text-green-400', description: 'Continuous evolution', projects: '300%' },
+    { name: 'Innovation', icon: Lightbulb, color: '#3B82F6', description: 'Cutting-edge solutions', projects: '50+' },
+    { name: 'Excellence', icon: Award, color: '#8B5CF6', description: 'Quality-first approach', projects: '98%' },
+    { name: 'Impact', icon: Heart, color: '#EF4444', description: 'Meaningful change', projects: '1M+' },
+    { name: 'Growth', icon: TrendingUp, color: '#10B981', description: 'Continuous evolution', projects: '300%' },
   ]
 
   const milestones = [
@@ -508,7 +510,7 @@ export function CompanyDNAViz() {
   }, [values.length])
 
   return (
-    <div className="relative w-full min-h-[500px] md:min-h-[600px] h-auto bg-gradient-to-br from-indigo-950/90 via-purple-950/50 to-pink-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-4 md:p-8">
+    <div className="relative w-full min-h-[600px] md:min-h-[700px] h-auto bg-gradient-to-br from-indigo-950/90 via-purple-950/50 to-pink-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-6 md:p-8">
       {/* DNA Helix Background */}
       <div className="absolute inset-0 opacity-15">
         <div className="w-full h-full">
@@ -527,14 +529,14 @@ export function CompanyDNAViz() {
       </div>
 
       {/* Title */}
-      <div className="absolute top-4 md:top-6 left-1/2 transform -translate-x-1/2 text-center z-10">
+      <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-center z-10">
         <h3 className="text-lg md:text-2xl font-bold text-white">Company DNA</h3>
         <p className="text-xs md:text-sm text-white/60 mt-1">Our Values & Journey</p>
       </div>
 
-      {/* Centered Container for All Elements */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
+      {/* Properly Centered Container for All Graphics Elements */}
+      <div className="absolute inset-6 md:inset-8 flex items-center justify-center">
+        <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
           
           {/* Central Hub - Perfectly Centered */}
           <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
@@ -546,10 +548,11 @@ export function CompanyDNAViz() {
             </div>
           </div>
 
-          {/* Company Values - Better positioning */}
+          {/* Company Values - Perfectly Centered */}
           {values.map((value, i) => {
+           // Perfect 90-degree spacing for 4 values
            const angle = (i * 90) + 45 // 90 degrees apart, offset by 45
-           const radius = 120 // Use fixed radius for consistency
+           const radius = 100 // Reduced from 120 to fit better in container
            const x = Math.cos((angle * Math.PI) / 180) * radius
            const y = Math.sin((angle * Math.PI) / 180) * radius
           
@@ -558,35 +561,58 @@ export function CompanyDNAViz() {
               key={i} 
               className="absolute cursor-pointer group transition-all duration-700 hover:scale-110 z-10" 
               style={{
-                transform: `translate(${x}px, ${y}px)`
+                left: '50%',
+                top: '50%',
+                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
               }}
               onMouseEnter={() => setActiveValue(i)}
             >
-              <div className={`w-16 h-16 md:w-20 md:h-20 bg-white/5 backdrop-blur-xl rounded-full border-2 border-white/20 flex flex-col items-center justify-center transition-all duration-500 ${
-                activeValue === i ? 'scale-125 border-indigo-400/70 shadow-2xl' : ''
-              }`}>
-                <value.icon className={`w-5 h-5 md:w-7 md:h-7 ${value.color} mb-1`} />
-                <span className="text-white text-xs font-bold text-center leading-tight">{value.name}</span>
+              <div 
+                className={`relative w-16 h-16 md:w-20 md:h-20 rounded-2xl border-2 backdrop-blur-xl transition-all duration-500 ${
+                  activeValue === i ? 'scale-125 shadow-2xl border-white/70' : 'border-white/30'
+                }`}
+                style={{ 
+                  backgroundColor: `${value.color}30`,
+                  borderColor: activeValue === i ? `${value.color}80` : `${value.color}40`
+                }}
+              >
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 to-transparent" />
+                <div className="relative h-full flex flex-col items-center justify-center p-2">
+                  <value.icon className="w-5 h-5 md:w-6 md:h-6 text-white mb-1" />
+                  <span className="text-white text-xs font-bold text-center leading-tight">{value.name}</span>
+                </div>
+                
+                {/* Enhanced Value Description */}
+                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[120px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                  <div className="text-white font-bold text-sm mb-1">{value.name}</div>
+                  <div className="text-white/80 text-xs mb-2">{value.description}</div>
+                  <div className="text-green-400 text-xs font-bold">{value.projects}</div>
+                </div>
               </div>
-              
-              {/* Enhanced Value Description */}
-              <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-slate-800/95 backdrop-blur-xl rounded-xl border border-white/20 p-3 min-w-[120px] text-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
-                <div className="text-white font-bold text-sm mb-1">{value.name}</div>
-                <div className="text-white/70 text-xs mb-2">{value.description}</div>
-                <div className="text-green-400 text-xs font-bold">{value.projects}</div>
-              </div>
+
+              {/* Connection Beam */}
+              <div
+                className="absolute w-0.5 origin-left opacity-30"
+                style={{
+                  left: '50%',
+                  top: '50%',
+                  height: `${radius}px`,
+                  background: `linear-gradient(to right, ${value.color}50, transparent)`,
+                  transform: `translate(-50%, -50%) rotate(${180 + angle}deg)`
+                }}
+              />
             </div>
           )
         })}
         </div>
       </div>
 
-      {/* Enhanced Timeline */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-1 md:gap-2 max-w-full px-2 z-10">
+      {/* Enhanced Timeline - Proper Spacing from Graphics */}
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-3 max-w-full px-4 z-10">
         {milestones.map((milestone, i) => (
           <div
             key={i}
-            className="text-center bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 p-2 hover:scale-105 transition-transform min-w-[60px] md:min-w-[70px]"
+            className="text-center bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 p-3 hover:scale-105 transition-transform min-w-[70px] md:min-w-[80px]"
           >
             <milestone.icon className="w-3 h-3 md:w-4 md:h-4 text-white mx-auto mb-1" />
             <div className="text-xs text-white font-bold">{milestone.year}</div>
@@ -619,64 +645,67 @@ export function StartupPipeline() {
   }, [stages.length])
 
   return (
-    <div className="relative w-full min-h-[500px] md:min-h-[650px] h-auto bg-gradient-to-br from-slate-900/90 to-red-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-4 md:p-8">
-      <div className="text-center mb-8 md:mb-12">
-        <h3 className="text-lg md:text-xl font-bold text-white mb-2">Startup Acceleration Pipeline</h3>
+    <div className="relative w-full min-h-[650px] md:min-h-[750px] h-auto bg-gradient-to-br from-slate-900/90 to-red-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-6 md:p-8">
+      {/* Title */}
+      <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-center z-10">
+        <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Startup Acceleration Pipeline</h3>
         <p className="text-xs md:text-sm text-white/60">From Application to Success</p>
       </div>
       
-      {/* Funnel Visualization - Much better spacing and no overlaps */}
-      <div className="flex flex-col items-center space-y-6 md:space-y-8 max-w-5xl mx-auto px-4">
-        {stages.map((stage, i) => (
-          <div 
-            key={i} 
-            className="relative w-full flex flex-col items-center"
-            onMouseEnter={() => setActiveStage(i)}
-          >
-            {/* Funnel Stage - Fixed width calculation for no overlaps */}
-            <div
-              className={`bg-gradient-to-r ${stage.color} rounded-xl border-2 border-white/20 flex items-center justify-between p-4 md:p-5 transition-all duration-500 cursor-pointer ${
-                activeStage === i ? 'border-white/70 shadow-2xl scale-105' : 'hover:scale-[1.02]'
-              }`}
-              style={{ 
-                width: `${Math.max(85 - i * 12, 45)}%`,
-                minWidth: '280px',
-                maxWidth: '500px'
-              }}
+      {/* Properly Centered Funnel Visualization */}
+      <div className="absolute inset-6 md:inset-8 pt-16 pb-20 flex items-center justify-center">
+        <div className="flex flex-col items-center space-y-6 md:space-y-8 w-full max-w-2xl">
+          {stages.map((stage, i) => (
+            <div 
+              key={i} 
+              className="relative w-full flex flex-col items-center"
+              onMouseEnter={() => setActiveStage(i)}
             >
-              {/* Stage Info */}
-              <div className="flex items-center space-x-3 md:space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                  <stage.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+              {/* Funnel Stage - Perfectly Centered with Better Proportions */}
+              <div
+                className={`bg-gradient-to-r ${stage.color} rounded-xl border-2 border-white/20 flex items-center justify-between p-4 md:p-5 transition-all duration-500 cursor-pointer ${
+                  activeStage === i ? 'border-white/70 shadow-2xl scale-105' : 'hover:scale-[1.02]'
+                }`}
+                style={{ 
+                  width: `${Math.max(90 - i * 15, 50)}%`,
+                  minWidth: '300px',
+                  maxWidth: '600px'
+                }}
+              >
+                {/* Stage Info */}
+                <div className="flex items-center space-x-3 md:space-x-4">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                    <stage.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm md:text-lg">{stage.name}</div>
+                    <div className="text-white/80 text-xs md:text-sm">{stage.rate} Selection Rate</div>
+                    <div className="text-white/60 text-xs">{stage.success}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-white font-bold text-sm md:text-lg">{stage.name}</div>
-                  <div className="text-white/80 text-xs md:text-sm">{stage.rate} Selection Rate</div>
-                  <div className="text-white/60 text-xs">{stage.success}</div>
+                
+                {/* Count */}
+                <div className="text-right">
+                  <div className="text-white font-bold text-xl md:text-3xl">{stage.count}</div>
+                  <div className="text-white/80 text-xs md:text-sm">Startups</div>
                 </div>
               </div>
               
-              {/* Count */}
-              <div className="text-right">
-                <div className="text-white font-bold text-xl md:text-3xl">{stage.count}</div>
-                <div className="text-white/80 text-xs md:text-sm">Startups</div>
-              </div>
+              {/* Flow Arrow - Better spacing and positioning */}
+              {i < stages.length - 1 && (
+                <div className="flex justify-center mt-4 mb-2">
+                  <ArrowRight className={`w-6 h-6 md:w-8 md:h-8 text-white/60 transition-all duration-300 transform rotate-90 ${
+                    activeStage === i ? 'text-yellow-300 scale-125' : ''
+                  }`} />
+                </div>
+              )}
             </div>
-            
-            {/* Flow Arrow - Better spacing */}
-            {i < stages.length - 1 && (
-              <div className="flex justify-center mt-4 mb-2">
-                <ArrowRight className={`w-6 h-6 md:w-8 md:h-8 text-white/60 transition-all duration-300 transform rotate-90 ${
-                  activeStage === i ? 'text-yellow-300 scale-125' : ''
-                }`} />
-              </div>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Success Metrics */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-6 max-w-full px-4 z-10">
+      {/* Success Metrics - Proper Spacing from Graphics */}
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-6 max-w-full px-4 z-10">
         {[
           { value: '$4.2M', label: 'Deployed Capital', color: '#10B981' },
           { value: '92%', label: 'Success Rate', color: '#3B82F6' },
@@ -684,7 +713,7 @@ export function StartupPipeline() {
         ].map((metric, i) => (
           <div
             key={i}
-            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-3 md:p-4 hover:scale-105 transition-transform min-w-[90px]"
+            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-3 md:p-4 hover:scale-105 transition-transform min-w-[100px]"
           >
             <div className="text-sm md:text-xl font-bold mb-1" style={{ color: metric.color }}>
               {metric.value}

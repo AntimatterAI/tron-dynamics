@@ -264,14 +264,14 @@ export default function PortfolioPage() {
               }
             ].map((approach, index) => (
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
-                <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 transition-all duration-300 p-8 text-center">
+                <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/20 transition-all duration-300 p-8 text-center h-full flex flex-col">
                   <div className="w-16 h-16 bg-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-6 text-orange-300">
                     {approach.icon}
                   </div>
                   <h3 className="text-xl font-light text-white mb-4 tracking-tight">
                     {approach.title}
                   </h3>
-                  <p className="text-orange-100/60 leading-relaxed font-light">
+                  <p className="text-orange-100/60 leading-relaxed font-light flex-grow">
                     {approach.description}
                   </p>
                 </div>
