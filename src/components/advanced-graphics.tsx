@@ -50,10 +50,10 @@ export function ServiceIntegrationMatrix() {
     <div className="relative w-full min-h-[500px] md:min-h-[600px] h-auto bg-gradient-to-br from-slate-950/90 via-blue-950/50 to-purple-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-4 md:p-8">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 20 }, (_, i) => (
+        {Array.from({ length: 15 }, (_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-blue-400/40 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -66,21 +66,21 @@ export function ServiceIntegrationMatrix() {
 
       {/* Central Hub */}
       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <div className="relative w-20 h-20 md:w-28 md:h-28">
+        <div className="relative w-16 h-16 md:w-20 md:h-20">
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/30 to-purple-600/30 backdrop-blur-xl border-2 border-white/40 animate-spin-slow" />
-          <div className="absolute inset-2 md:inset-3 rounded-full bg-gradient-to-r from-cyan-400/40 to-blue-600/40 backdrop-blur-xl flex items-center justify-center">
-            <Cpu className="w-6 h-6 md:w-10 md:h-10 text-cyan-300" />
+          <div className="absolute inset-1 md:inset-2 rounded-full bg-gradient-to-r from-cyan-400/40 to-blue-600/40 backdrop-blur-xl flex items-center justify-center">
+            <Cpu className="w-4 h-4 md:w-6 md:h-6 text-cyan-300" />
           </div>
         </div>
       </div>
 
-      {/* Tech Layer Orbits - Better spacing for mobile */}
+      {/* Tech Layer Orbits - Much better spacing */}
       <div className="relative h-full min-h-[400px] md:min-h-[500px] flex items-center justify-center">
-        <div className="transform scale-75 md:scale-100 transition-transform duration-300">
+        <div className="transform scale-60 md:scale-90 transition-transform duration-300">
         {techLayers.map((layer, index) => {
-          // Better radius calculation - using CSS calc
-          const radiusBase = 90 + index * 35 // Desktop radius
-          const angle = (index * 60) + (activeLayer * 8)
+          // Much larger radius for better spacing
+          const radiusBase = 120 + index * 50 // Increased spacing significantly
+          const angle = (index * 60) + (activeLayer * 5) // Reduced rotation speed
           const x = Math.cos((angle * Math.PI) / 180) * radiusBase
           const y = Math.sin((angle * Math.PI) / 180) * radiusBase
           
@@ -95,7 +95,7 @@ export function ServiceIntegrationMatrix() {
               onMouseEnter={() => setActiveLayer(index)}
             >
               <div
-                className={`relative w-16 h-16 md:w-20 md:h-20 rounded-xl border-2 backdrop-blur-xl transition-all duration-500 ${
+                className={`relative w-12 h-12 md:w-16 md:h-16 rounded-xl border-2 backdrop-blur-xl transition-all duration-500 ${
                   activeLayer === index ? 'scale-125 shadow-2xl border-white/60' : 'border-white/30'
                 }`}
                 style={{ 
@@ -105,7 +105,7 @@ export function ServiceIntegrationMatrix() {
               >
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent" />
                 <div className="relative h-full flex flex-col items-center justify-center p-1">
-                  <layer.icon className="w-5 h-5 md:w-6 md:h-6 text-white mb-1" />
+                  <layer.icon className="w-4 h-4 md:w-5 md:h-5 text-white mb-1" />
                   <span className="text-white text-xs font-bold text-center leading-tight">{layer.name}</span>
                 </div>
                 
@@ -119,12 +119,12 @@ export function ServiceIntegrationMatrix() {
                 </div>
               </div>
 
-                                            {/* Connection Line */}
+              {/* Connection Line */}
               <div
-                className="absolute left-1/2 top-1/2 w-0.5 origin-left opacity-50"
+                className="absolute left-1/2 top-1/2 w-0.5 origin-left opacity-40"
                 style={{
                   height: `${radiusBase}px`,
-                  background: `linear-gradient(to right, ${layer.color}60, transparent)`,
+                  background: `linear-gradient(to right, ${layer.color}50, transparent)`,
                   transform: `translate(-50%, -50%) rotate(${180 + angle}deg)`
                 }}
               />
@@ -185,19 +185,19 @@ export function InnovationPipeline() {
     <div className="relative w-full min-h-[500px] md:min-h-[650px] h-auto bg-gradient-to-br from-purple-950/90 via-indigo-950/50 to-cyan-950/30 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden p-4 md:p-8">
       {/* Spiral Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 15 }, (_, i) => {
-          const radius = 30 + i * 20
-          const x = Math.cos((i * 24 * Math.PI) / 180) * radius
-          const y = Math.sin((i * 24 * Math.PI) / 180) * radius
+        {Array.from({ length: 12 }, (_, i) => {
+          const radius = 30 + i * 25
+          const x = Math.cos((i * 30 * Math.PI) / 180) * radius
+          const y = Math.sin((i * 30 * Math.PI) / 180) * radius
           
           return (
             <div
               key={i}
-              className="absolute left-1/2 top-1/2 w-2 h-2 rounded-full opacity-30"
+              className="absolute left-1/2 top-1/2 w-1.5 h-1.5 rounded-full opacity-25"
               style={{
                 backgroundColor: innovationPhases[i % innovationPhases.length].color,
                 transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                animationDelay: `${i * 0.2}s`
+                animationDelay: `${i * 0.3}s`
               }}
             >
               <div className="absolute inset-0 rounded-full animate-pulse" />
@@ -208,30 +208,30 @@ export function InnovationPipeline() {
 
       {/* Central Innovation Hub */}
       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <div className="relative w-24 h-24 md:w-32 md:h-32">
+        <div className="relative w-20 h-20 md:w-24 md:h-24">
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/30 to-cyan-500/30 backdrop-blur-xl border-2 border-white/50 animate-spin-slow" />
-          <div className="absolute inset-3 md:inset-4 rounded-full bg-gradient-to-r from-indigo-400/50 to-purple-600/50 backdrop-blur-xl flex items-center justify-center">
-            <Brain className="w-8 h-8 md:w-12 md:h-12 text-white" />
+          <div className="absolute inset-2 md:inset-3 rounded-full bg-gradient-to-r from-indigo-400/50 to-purple-600/50 backdrop-blur-xl flex items-center justify-center">
+            <Brain className="w-6 h-6 md:w-8 md:h-8 text-white" />
           </div>
           
           {/* Pulsing Waves */}
           {[1, 2, 3].map((wave) => (
             <div
               key={wave}
-              className="absolute inset-0 rounded-full border-2 border-cyan-400/20 animate-ping"
+              className="absolute inset-0 rounded-full border-2 border-cyan-400/15 animate-ping"
               style={{ animationDelay: `${wave}s`, animationDuration: '4s' }}
             />
           ))}
         </div>
       </div>
 
-      {/* Innovation Phase Satellites - Better positioning */}
+      {/* Innovation Phase Satellites - Much better spacing */}
       <div className="relative h-full min-h-[400px] md:min-h-[550px] flex items-center justify-center">
-        <div className="transform scale-75 md:scale-100 transition-transform duration-300">
+        <div className="transform scale-60 md:scale-85 transition-transform duration-300">
         {innovationPhases.map((phase, index) => {
-          // Improved satellite positioning to avoid overlap
-          const satelliteRadius = 140 // Use fixed radius for consistency
-          const satelliteAngle = (index * 72) + (activePhase * 10)
+          // Much larger radius to prevent overlap
+          const satelliteRadius = 180 + (index % 2) * 20 // Alternating radius for better spacing
+          const satelliteAngle = (index * 72) + (activePhase * 5) // Reduced rotation speed
           const sx = Math.cos((satelliteAngle * Math.PI) / 180) * satelliteRadius
           const sy = Math.sin((satelliteAngle * Math.PI) / 180) * satelliteRadius
           
@@ -243,7 +243,7 @@ export function InnovationPipeline() {
               onMouseEnter={() => setActivePhase(index)}
             >
               <div
-                className={`relative w-18 h-18 md:w-24 md:h-24 rounded-2xl border-2 backdrop-blur-xl transition-all duration-500 ${
+                className={`relative w-16 h-16 md:w-20 md:h-20 rounded-2xl border-2 backdrop-blur-xl transition-all duration-500 ${
                   activePhase === index ? 'scale-125 shadow-2xl border-white/70' : 'border-white/30'
                 }`}
                 style={{ 
@@ -253,14 +253,14 @@ export function InnovationPipeline() {
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/25 to-transparent" />
                 <div className="relative h-full flex flex-col items-center justify-center p-2">
-                  <phase.icon className="w-6 h-6 md:w-8 md:h-8 text-white mb-1" />
+                  <phase.icon className="w-5 h-5 md:w-6 md:h-6 text-white mb-1" />
                   <span className="text-white text-xs font-bold text-center leading-tight">{phase.name}</span>
                 </div>
 
                 {/* Progress Ring */}
                 {activePhase === index && (
                   <div
-                    className="absolute -inset-1 rounded-2xl opacity-70"
+                    className="absolute -inset-1 rounded-2xl opacity-60"
                     style={{
                       background: `conic-gradient(${phase.color} ${phase.progress * 3.6}deg, transparent 0deg)`
                     }}
@@ -284,10 +284,10 @@ export function InnovationPipeline() {
 
               {/* Energy Beam */}
               <div
-                className="absolute left-1/2 top-1/2 w-0.5 origin-left opacity-40"
+                className="absolute left-1/2 top-1/2 w-0.5 origin-left opacity-30"
                 style={{
                   height: `${satelliteRadius}px`,
-                  background: `linear-gradient(to right, ${phase.color}60, transparent)`,
+                  background: `linear-gradient(to right, ${phase.color}50, transparent)`,
                   transform: `translate(-50%, -50%) rotate(${180 + satelliteAngle}deg)`
                 }}
               />
@@ -602,32 +602,38 @@ export function StartupPipeline() {
   }, [stages.length])
 
   return (
-    <div className="relative w-full min-h-[500px] md:min-h-[600px] h-auto bg-gradient-to-br from-slate-900/90 to-red-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-4 md:p-8">
-      <div className="text-center mb-6 md:mb-8">
+    <div className="relative w-full min-h-[500px] md:min-h-[650px] h-auto bg-gradient-to-br from-slate-900/90 to-red-900/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden p-4 md:p-8">
+      <div className="text-center mb-8 md:mb-12">
         <h3 className="text-lg md:text-xl font-bold text-white mb-2">Startup Acceleration Pipeline</h3>
         <p className="text-xs md:text-sm text-white/60">From Application to Success</p>
       </div>
       
-      {/* Funnel Visualization - Better spacing */}
-      <div className="space-y-3 md:space-y-4 max-w-4xl mx-auto">
+      {/* Funnel Visualization - Much better spacing and no overlaps */}
+      <div className="flex flex-col items-center space-y-6 md:space-y-8 max-w-5xl mx-auto px-4">
         {stages.map((stage, i) => (
           <div 
             key={i} 
-            className="relative"
+            className="relative w-full flex flex-col items-center"
             onMouseEnter={() => setActiveStage(i)}
           >
-            {/* Funnel Stage - Better width calculation */}
+            {/* Funnel Stage - Fixed width calculation for no overlaps */}
             <div
-              className={`mx-auto bg-gradient-to-r ${stage.color} rounded-lg border-2 border-white/20 flex items-center justify-between p-3 md:p-4 transition-all duration-500 cursor-pointer ${
-                activeStage === i ? 'border-white/60 shadow-2xl scale-[1.02]' : 'hover:scale-[1.01]'
+              className={`bg-gradient-to-r ${stage.color} rounded-xl border-2 border-white/20 flex items-center justify-between p-4 md:p-5 transition-all duration-500 cursor-pointer ${
+                activeStage === i ? 'border-white/70 shadow-2xl scale-105' : 'hover:scale-[1.02]'
               }`}
-              style={{ width: `${Math.max(100 - i * 15, 40)}%` }}
+              style={{ 
+                width: `${Math.max(85 - i * 12, 45)}%`,
+                minWidth: '280px',
+                maxWidth: '500px'
+              }}
             >
               {/* Stage Info */}
-              <div className="flex items-center space-x-2 md:space-x-3">
-                <stage.icon className="w-4 h-4 md:w-6 md:h-6 text-white flex-shrink-0" />
+              <div className="flex items-center space-x-3 md:space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <stage.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                </div>
                 <div>
-                  <div className="text-white font-bold text-sm md:text-base">{stage.name}</div>
+                  <div className="text-white font-bold text-sm md:text-lg">{stage.name}</div>
                   <div className="text-white/80 text-xs md:text-sm">{stage.rate} Selection Rate</div>
                   <div className="text-white/60 text-xs">{stage.success}</div>
                 </div>
@@ -635,15 +641,15 @@ export function StartupPipeline() {
               
               {/* Count */}
               <div className="text-right">
-                <div className="text-white font-bold text-lg md:text-2xl">{stage.count}</div>
+                <div className="text-white font-bold text-xl md:text-3xl">{stage.count}</div>
                 <div className="text-white/80 text-xs md:text-sm">Startups</div>
               </div>
             </div>
             
-            {/* Flow Arrow */}
+            {/* Flow Arrow - Better spacing */}
             {i < stages.length - 1 && (
-              <div className="flex justify-center mt-2">
-                <ArrowRight className={`w-4 h-4 md:w-6 md:h-6 text-white/50 transition-all duration-300 ${
+              <div className="flex justify-center mt-4 mb-2">
+                <ArrowRight className={`w-6 h-6 md:w-8 md:h-8 text-white/60 transition-all duration-300 transform rotate-90 ${
                   activeStage === i ? 'text-yellow-300 scale-125' : ''
                 }`} />
               </div>
@@ -653,7 +659,7 @@ export function StartupPipeline() {
       </div>
 
       {/* Success Metrics */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 md:gap-4 max-w-full px-2">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-3 md:gap-6 max-w-full px-4">
         {[
           { value: '$4.2M', label: 'Deployed Capital', color: '#10B981' },
           { value: '92%', label: 'Success Rate', color: '#3B82F6' },
@@ -661,12 +667,12 @@ export function StartupPipeline() {
         ].map((metric, i) => (
           <div
             key={i}
-            className="text-center bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 p-2 md:p-3 hover:scale-105 transition-transform min-w-[80px]"
+            className="text-center bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-3 md:p-4 hover:scale-105 transition-transform min-w-[90px]"
           >
-            <div className="text-sm md:text-lg font-bold mb-1" style={{ color: metric.color }}>
+            <div className="text-sm md:text-xl font-bold mb-1" style={{ color: metric.color }}>
               {metric.value}
             </div>
-            <div className="text-xs text-white/70">{metric.label}</div>
+            <div className="text-xs md:text-sm text-white/70">{metric.label}</div>
           </div>
         ))}
       </div>
