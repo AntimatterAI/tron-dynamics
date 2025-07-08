@@ -24,6 +24,10 @@ const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects
   ssr: false,
   loading: () => null
 })
+const ServiceIntegrationMatrix = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.ServiceIntegrationMatrix })), { 
+  ssr: false,
+  loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading service integration...</div></div>
+})
 const TechNetworkFloating = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TechNetworkFloating })), { 
   ssr: false,
   loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading visualization...</div></div>
@@ -170,6 +174,24 @@ export default function CapabilitiesPage() {
                 <div className="text-blue-100/50 text-xs">{stat.description}</div>
               </div>
             ))}
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Service Integration Visualization */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Integrated <span className="text-blue-300">Service Matrix</span>
+            </h2>
+            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Our capabilities work in perfect synergy, creating comprehensive solutions that exceed the sum of their parts.
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.2}>
+            <ServiceIntegrationMatrix />
           </AnimatedElement>
         </div>
       </section>

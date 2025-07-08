@@ -23,6 +23,10 @@ const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects
   ssr: false,
   loading: () => null
 })
+const MarketExpansionViz = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.MarketExpansionViz })), { 
+  ssr: false,
+  loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading market expansion...</div></div>
+})
 const BusinessGrowthChart = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.BusinessGrowthChart })), { 
   ssr: false,
   loading: () => <div className="h-64 flex items-center justify-center"><div className="text-white/60">Loading chart...</div></div>
@@ -183,6 +187,24 @@ export default function BusinessDevelopmentPage() {
                 <div className="text-emerald-100/50 text-xs">{stat.description}</div>
               </div>
             ))}
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Market Expansion Visualization */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Global Market <span className="text-green-300">Expansion</span>
+            </h2>
+            <p className="text-lg text-emerald-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              Watch as we connect African entrepreneurs with global markets, driving unprecedented growth across continents.
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.2}>
+            <MarketExpansionViz />
           </AnimatedElement>
         </div>
       </section>

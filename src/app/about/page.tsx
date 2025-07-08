@@ -13,6 +13,10 @@ const SimpleHeroEffects = dynamic(() => import("@/components/simple-hero-effects
   ssr: false,
   loading: () => null
 })
+const CompanyDNAViz = dynamic(() => import("@/components/advanced-graphics").then(mod => ({ default: mod.CompanyDNAViz })), { 
+  ssr: false,
+  loading: () => <div className="h-[500px] flex items-center justify-center"><div className="text-white/60">Loading company DNA...</div></div>
+})
 const TeamNetworkViz = dynamic(() => import("@/components/enhanced-graphics").then(mod => ({ default: mod.TeamNetworkViz })), { 
   ssr: false,
   loading: () => <div className="h-96 flex items-center justify-center"><div className="text-white/60">Loading network...</div></div>
@@ -101,6 +105,24 @@ export default function AboutPage() {
                 </div>
               </Button>
             </Link>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Company DNA Visualization */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement animation="slide" direction="up" className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Our <span className="text-indigo-300">DNA</span>
+            </h2>
+            <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
+              The core values and principles that define who we are and drive everything we do.
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement animation="slide" direction="up" delay={0.2}>
+            <CompanyDNAViz />
           </AnimatedElement>
         </div>
       </section>
