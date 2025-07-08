@@ -3,7 +3,7 @@
 import { useRef, Suspense, lazy } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Globe, Phone, Heart, Briefcase, ArrowRight, ChevronDown } from 'lucide-react'
+import { Globe, Phone, Heart, Briefcase, ArrowRight, ChevronDown, Code, Palette, Shield } from 'lucide-react'
 import { CallToActionGraphics, ImpactVisualization } from '@/components/africa-graphics'
 import { HeroGraphics, EnhancedCard } from '@/components/hero-graphics'
 
@@ -204,6 +204,95 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(0, 255, 135, 0.7)' }}>
                     <span className="text-sm font-medium">Explore Services</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                  </div>
+                </div>
+              </EnhancedCard>
+            </Link>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Core Capabilities Section */}
+      <section className="py-12 md:py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-r from-blue-950/10 to-purple-950/10">
+        <div className="max-w-6xl mx-auto">
+          
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white mb-3 md:mb-4 tracking-tight px-6" 
+                style={{ fontFamily: 'var(--font-orbitron), -apple-system, sans-serif' }}>
+              Our <span style={{ color: '#3B82F6' }}>Capabilities</span>
+            </h2>
+            <p className="text-sm md:text-base text-gray-300/60 max-w-2xl mx-auto font-light leading-relaxed px-6">
+              Comprehensive technology solutions spanning development, design, marketing, and security.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            
+            {/* Web, Mobile & AI Development */}
+            <Link href="/capabilities" className="group relative">
+              <EnhancedCard className="h-[280px] sm:h-[320px] md:h-[380px]" glowColor="blue">
+                <div className="p-4 sm:p-6 md:p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(59, 130, 246, 0.2)' }}>
+                      <Code className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#3B82F6' }} />
+                    </div>
+                    <h3 className="text-lg md:text-xl font-light text-white mb-3 md:mb-4 tracking-tight">
+                      Web, Mobile & AI Development
+                    </h3>
+                    <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
+                      Custom applications, AI-powered systems, and scalable platforms built with cutting-edge technology.
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(59, 130, 246, 0.7)' }}>
+                    <span className="text-sm font-medium">Learn More</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                  </div>
+                </div>
+              </EnhancedCard>
+            </Link>
+
+            {/* Design & Marketing */}
+            <Link href="/capabilities" className="group relative">
+              <EnhancedCard className="h-[280px] sm:h-[320px] md:h-[380px]" glowColor="orange">
+                <div className="p-4 sm:p-6 md:p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(255, 107, 53, 0.2)' }}>
+                      <Palette className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#FF6B35' }} />
+                    </div>
+                    <h3 className="text-lg md:text-xl font-light text-white mb-3 md:mb-4 tracking-tight">
+                      Design & Marketing
+                    </h3>
+                    <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
+                      Afro-futurist design, brand strategy, and data-driven marketing campaigns that resonate globally.
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(255, 107, 53, 0.7)' }}>
+                    <span className="text-sm font-medium">Learn More</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                  </div>
+                </div>
+              </EnhancedCard>
+            </Link>
+
+            {/* Cybersecurity & Compliance */}
+            <Link href="/capabilities" className="group relative">
+              <EnhancedCard className="h-[280px] sm:h-[320px] md:h-[380px]" glowColor="emerald">
+                <div className="p-4 sm:p-6 md:p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-colors duration-150" style={{ backgroundColor: 'rgba(16, 185, 129, 0.2)' }}>
+                      <Shield className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#10B981' }} />
+                    </div>
+                    <h3 className="text-lg md:text-xl font-light text-white mb-3 md:mb-4 tracking-tight">
+                      Cybersecurity & Compliance
+                    </h3>
+                    <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
+                      Comprehensive security frameworks and compliance solutions for African businesses.
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(16, 185, 129, 0.7)' }}>
+                    <span className="text-sm font-medium">Learn More</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </div>
                 </div>

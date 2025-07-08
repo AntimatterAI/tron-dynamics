@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { 
   ArrowLeft, 
   Calendar, 
@@ -8,7 +9,6 @@ import {
   Users, 
   MapPin, 
   TrendingUp,
-  Shield,
   Lock,
   Phone,
   ArrowRight,
@@ -164,15 +164,17 @@ export default function ShadowShieldAIPage() {
             <div>
               <AnimatedElement animation="slide" direction="left" delay={0.3}>
                 <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-400/20">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <Shield className="w-10 h-10 text-orange-300" />
-                    </div>
-                  </div>
+                  <Image
+                    src="/app-screenshots/shadowshield-ai/Admin.png"
+                    alt="ShadowShield AI Admin Dashboard - AI Security Platform"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-medium">AI Security Platform</p>
-                    <p className="text-white/70 text-sm">Enterprise Governance</p>
+                    <p className="text-white font-medium">AI Security & Governance Platform</p>
+                    <p className="text-white/70 text-sm">Enterprise Data Protection</p>
                   </div>
                 </div>
               </AnimatedElement>
@@ -238,6 +240,55 @@ export default function ShadowShieldAIPage() {
                   <h3 className="text-lg font-medium text-white mb-3">{product.name}</h3>
                   <p className="text-white/80 font-light text-sm leading-relaxed mb-3">{product.description}</p>
                   <p className="text-orange-400 font-medium text-sm">{product.users}</p>
+                </div>
+              ))}
+            </div>
+          </AnimatedElement>
+
+          {/* App Screenshots */}
+          <AnimatedElement animation="slide" direction="up" className="mb-16">
+            <h2 className="text-3xl font-light text-white mb-8 tracking-tight text-center" style={{fontFamily: 'var(--font-orbitron)'}}>
+              Platform <span className="text-orange-300">Interface</span>
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  src: "/app-screenshots/shadowshield-ai/DLP Rules.png",
+                  title: "DLP Rules Management",
+                  description: "Configure and manage data loss prevention rules"
+                },
+                {
+                  src: "/app-screenshots/shadowshield-ai/Alerts.png", 
+                  title: "Security Alerts",
+                  description: "Real-time threat detection and alert system"
+                },
+                {
+                  src: "/app-screenshots/shadowshield-ai/Users.png",
+                  title: "User Management",
+                  description: "Comprehensive user permissions and access control"
+                },
+                {
+                  src: "/app-screenshots/shadowshield-ai/Config and Settings.png",
+                  title: "Configuration Panel",
+                  description: "Advanced system settings and customization"
+                },
+                {
+                  src: "/app-screenshots/shadowshield-ai/DLP Modal.png",
+                  title: "DLP Policy Editor",
+                  description: "Create and edit data loss prevention policies"
+                }
+              ].map((screenshot, index) => (
+                <div key={index} className="bg-white/[0.02] backdrop-blur-xl rounded-xl border border-white/10 p-4 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group">
+                  <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-lg font-medium text-white mb-2">{screenshot.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">{screenshot.description}</p>
                 </div>
               ))}
             </div>

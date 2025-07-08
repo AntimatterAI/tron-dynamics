@@ -131,7 +131,7 @@ export default function PortfolioPage() {
                     <div className="grid lg:grid-cols-4 gap-8 items-start">
                       {/* Company Logo */}
                       <div className="lg:col-span-1 flex justify-center lg:justify-start">
-                        <div className={`relative ${company.name === "Synergies4 AI" ? "w-32 h-32 lg:w-40 lg:h-40" : "w-40 h-40 lg:w-48 lg:h-48"} bg-white rounded-2xl border border-white/20 flex items-center justify-center p-6 group-hover:border-orange-400/40 transition-colors duration-300 shadow-lg`}>
+                        <div className="relative w-40 h-40 lg:w-48 lg:h-48 bg-white rounded-2xl border border-white/20 flex items-center justify-center p-6 group-hover:border-orange-400/40 transition-colors duration-300 shadow-lg">
                           <div className="relative w-full h-full">
                             <Image
                               src={company.logo}
