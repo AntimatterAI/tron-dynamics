@@ -17,6 +17,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/capabilities`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/innovation`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/business-development`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/portfolio`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/studios`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -60,19 +84,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Portfolio Companies
     {
-      url: `${baseUrl}/ventures/portfolio/payflow-africa`,
+      url: `${baseUrl}/ventures/portfolio/clinix-ai`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/ventures/portfolio/educonnect`,
+      url: `${baseUrl}/ventures/portfolio/shadowshield-ai`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/ventures/portfolio/agritech-solutions`,
+      url: `${baseUrl}/ventures/portfolio/synergies4-ai`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,

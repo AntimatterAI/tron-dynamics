@@ -13,6 +13,7 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Portfolio Companies', href: '/portfolio' },
+    { name: 'Capabilities', href: '/capabilities' },
     { name: 'TRON Innovation', href: '/innovation' },
     { name: 'TRON Business & Development', href: '/business-development' },
     { name: 'About', href: '/about' },

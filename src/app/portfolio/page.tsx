@@ -2,6 +2,7 @@
 
 import { Suspense, lazy } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { 
   Building, 
   TrendingUp, 
@@ -29,7 +30,9 @@ export default function PortfolioPage() {
       description: "AI-powered medical documentation platform empowering physicians with automated note-taking and billing optimization",
       metrics: { users: "5K+", revenue: "$1.2M ARR", growth: "+250%" },
       founded: "2023",
-      slug: "clinix-ai"
+      slug: "clinix-ai",
+      logo: "/company-logos/clinix-ai-logo.png",
+      logoAlt: "Clinix AI Logo"
     },
     {
       name: "ShadowShield AI", 
@@ -39,7 +42,9 @@ export default function PortfolioPage() {
       description: "Enterprise-grade AI governance platform providing real-time security monitoring and data protection for AI interactions",
       metrics: { users: "200+", revenue: "$800K ARR", growth: "+300%" },
       founded: "2024",
-      slug: "shadowshield-ai"
+      slug: "shadowshield-ai",
+      logo: "/company-logos/shadowshield-ai-logo.svg",
+      logoAlt: "ShadowShield AI Logo"
     },
     {
       name: "Synergies4 AI",
@@ -49,7 +54,9 @@ export default function PortfolioPage() {
       description: "AI-powered learning platform offering personalized professional development courses and intelligent learning recommendations",
       metrics: { users: "10K+", revenue: "$400K ARR", growth: "+180%" },
       founded: "2024",
-      slug: "synergies4-ai"
+      slug: "synergies4-ai",
+      logo: "/company-logos/synergies4-ai-logo.svg",
+      logoAlt: "Synergies4 AI Logo"
     }
   ]
 
@@ -121,9 +128,36 @@ export default function PortfolioPage() {
               <AnimatedElement key={index} animation="slide" direction="up" delay={index * 0.1}>
                 <Link href={`/ventures/portfolio/${company.slug}`}>
                   <div className="group relative bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/10 hover:border-orange-400/30 overflow-hidden transition-all duration-300 hover:bg-white/[0.04] p-8">
-                    <div className="grid md:grid-cols-3 gap-8 items-start">
+                    <div className="grid lg:grid-cols-4 gap-8 items-start">
+                      {/* Company Logo */}
+                      <div className="lg:col-span-1 flex justify-center lg:justify-start">
+                        <div className="relative w-32 h-32 lg:w-40 lg:h-40 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 flex items-center justify-center p-6 group-hover:border-orange-400/20 transition-colors duration-300">
+                          <div className="relative w-full h-full">
+                            <Image
+                              src={company.logo}
+                              alt={company.logoAlt}
+                              fill
+                              className="object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                              sizes="(max-width: 768px) 128px, 160px"
+                              onError={(e) => {
+                                // Fallback to company name as text if logo fails to load
+                                e.currentTarget.style.display = 'none';
+                                const parent = e.currentTarget.parentElement;
+                                if (parent && !parent.querySelector('.logo-fallback')) {
+                                  const fallback = document.createElement('div');
+                                  fallback.className = 'logo-fallback text-white/60 text-lg font-light text-center w-full h-full flex items-center justify-center';
+                                  fallback.style.fontFamily = 'var(--font-orbitron)';
+                                  fallback.textContent = company.name;
+                                  parent.appendChild(fallback);
+                                }
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+
                       {/* Company Info */}
-                      <div className="md:col-span-2">
+                      <div className="lg:col-span-2">
                         <div className="flex items-start justify-between mb-6">
                           <div>
                             <h3 className="text-2xl md:text-3xl font-light text-white mb-2 tracking-tight group-hover:text-orange-300 transition-colors duration-300">
@@ -141,7 +175,7 @@ export default function PortfolioPage() {
                               </span>
                             </div>
                           </div>
-                          <ArrowRight className="w-6 h-6 text-orange-400/60 group-hover:text-orange-400 group-hover:translate-x-1 transition-all duration-300" />
+                          <ArrowRight className="w-6 h-6 text-orange-400/60 group-hover:text-orange-400 group-hover:translate-x-1 transition-all duration-300 hidden lg:block" />
                         </div>
                         
                         <p className="text-orange-100/70 leading-relaxed font-light mb-6">
@@ -154,20 +188,20 @@ export default function PortfolioPage() {
                       </div>
 
                       {/* Metrics */}
-                      <div className="grid grid-cols-3 md:grid-cols-1 gap-4">
-                        <div className="text-center md:text-left">
+                      <div className="lg:col-span-1 grid grid-cols-3 lg:grid-cols-1 gap-4">
+                        <div className="text-center lg:text-left">
                           <div className="text-xl font-light text-white mb-1" style={{fontFamily: 'var(--font-orbitron)'}}>
                             {company.metrics.users}
                           </div>
                           <div className="text-orange-300/70 text-xs">Users</div>
                         </div>
-                        <div className="text-center md:text-left">
+                        <div className="text-center lg:text-left">
                           <div className="text-xl font-light text-white mb-1" style={{fontFamily: 'var(--font-orbitron)'}}>
                             {company.metrics.revenue}
                           </div>
                           <div className="text-orange-300/70 text-xs">Revenue</div>
                         </div>
-                        <div className="text-center md:text-left">
+                        <div className="text-center lg:text-left">
                           <div className="text-xl font-light text-white mb-1" style={{fontFamily: 'var(--font-orbitron)'}}>
                             {company.metrics.growth}
                           </div>
