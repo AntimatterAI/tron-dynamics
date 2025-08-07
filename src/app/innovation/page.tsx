@@ -32,40 +32,40 @@ export default function InnovationPage() {
   const services = [
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "App Development & UI/UX Design",
-      description: "Mobile-first platforms, web apps, and progressive digital tools with UX tuned to African consumer behaviors and device usage patterns.",
+      title: "Web, Mobile & AI Development",
+      description: "Custom applications, AI automation, progressive web apps and API integration that transform business operations.",
       features: [
-        "Cross-platform mobile applications",
-        "Progressive web app development",
-        "User experience optimization",
-        "Performance-focused architecture",
-        "Localization for African markets"
+        "Custom applications",
+        "AI automation systems",
+        "Progressive web apps",
+        "API integration",
+        "Scalable architecture"
       ],
       color: "from-blue-500/20 to-indigo-600/20"
     },
     {
       icon: <Palette className="w-8 h-8" />,
-      title: "Brand & Design Systems",
-      description: "Afro-futurist design aesthetics combined with modern branding strategy, creating visual identities that resonate globally while celebrating African heritage.",
+      title: "Design & Marketing Systems",
+      description: "Afro‑futurist brand identity, UX design, digital campaigns and performance analytics that resonate globally.",
       features: [
-        "Visual identity & brand strategy", 
-        "Afro-futurist design language",
-        "Social media design systems",
-        "Campaign execution & localization",
-        "Cross-border brand reach"
+        "Afro-futurist brand identity", 
+        "UX design systems",
+        "Digital campaigns",
+        "Performance analytics",
+        "Global market positioning"
       ],
       color: "from-purple-500/20 to-pink-600/20"
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: "Data & Business Management",
-      description: "Custom dashboards, KPI tracking, CRM and POS integrations providing actionable insights for scaling and investor readiness.",
+      title: "Cybersecurity & Compliance",
+      description: "Security audits, incident response, penetration testing and regulatory compliance ensuring enterprise-grade protection.",
       features: [
-        "Custom dashboard development",
-        "CRM & POS system integration",
-        "Business intelligence analytics",
-        "Automated reporting systems",
-        "Investor-ready metrics tracking"
+        "Security audits",
+        "Incident response",
+        "Penetration testing",
+        "Regulatory compliance",
+        "Enterprise protection"
       ],
       color: "from-green-500/20 to-emerald-600/20"
     }
@@ -139,13 +139,13 @@ export default function InnovationPage() {
 
           <AnimatedElement animation="slide" direction="up" delay={0.2} className="mb-8">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent mb-8 tracking-tight leading-[0.9]" style={{fontFamily: 'var(--font-orbitron)', fontWeight: 300, letterSpacing: '-0.02em'}}>
-              Innovation Lab
+              Turning Ideas into Transformative Products
             </h1>
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.4} className="mb-16">
             <p className="text-lg sm:text-xl md:text-2xl text-blue-100/60 font-light tracking-wide max-w-4xl mx-auto leading-relaxed" style={{fontWeight: 300}}>
-              Transforming African businesses through cutting-edge technology, Afro-futurist design, and data-driven solutions.
+              TRON Innovation transforms bold ideas into market‑ready solutions. Its innovation lab has delivered 25+ apps, amassed 500K+ active users, operates in 12 countries and maintains a 95% success rate.
             </p>
           </AnimatedElement>
 
@@ -172,7 +172,7 @@ export default function InnovationPage() {
               Innovation <span className="text-purple-300">Pipeline</span>
             </h2>
             <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              From research to launch, witness our systematic approach to transforming ideas into market-ready solutions.
+              Innovation Pipeline: From research to deployment—success rates above 87% across each phase—ensuring products move smoothly from concept to market.
             </p>
           </AnimatedElement>
 
@@ -187,10 +187,10 @@ export default function InnovationPage() {
         <div className="max-w-6xl mx-auto">
           <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Core <span className="text-blue-300">Services</span>
+              Core <span className="text-blue-300">Capabilities</span>
             </h2>
             <p className="text-lg text-blue-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Comprehensive technology solutions designed for the modern African entrepreneur.
+              Web, Mobile & AI Development, Design & Marketing Systems, and Cybersecurity & Compliance - from research to deployment with success rates above 87% across each phase.
             </p>
           </AnimatedElement>
 

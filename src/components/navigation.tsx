@@ -15,7 +15,7 @@ export default function Navigation() {
     { name: 'Investments', href: '/portfolio' },
     { name: 'Capabilities', href: '/capabilities' },
     { name: 'TRON Innovation', href: '/innovation' },
-    { name: 'TRON Business & Development', href: '/business-development' },
+    { name: 'Business Consulting', href: '/business-development' },
     { name: 'TRON America', href: '/tron-america' },
     { name: 'About', href: '/about' },
   ]

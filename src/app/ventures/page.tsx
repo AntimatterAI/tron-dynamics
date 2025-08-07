@@ -60,27 +60,27 @@ export default function VenturesPage() {
   const investmentCriteria = [
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Early Stage Focus",
-      description: "We invest in pre-seed to Series A companies with proven traction",
-      details: ["MVP developed", "Initial revenue", "Growing user base", "Strong team"]
+      title: "Impact Investments",
+      description: "AI solutions in education, health technology and enterprise platforms",
+      details: ["HealthTech AI platforms", "Educational AI systems", "Enterprise solutions", "Scalable impact"]
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "African Market",
-      description: "Companies solving real problems for African consumers and businesses",
-      details: ["Local market knowledge", "Scalable solutions", "Cultural relevance", "Regional expansion"]
+      title: "Strategic Partnerships",
+      description: "Providing mentorship, strategic partnerships and advisory services to help startups scale",
+      details: ["Investor introductions", "Strategic guidance", "Market access", "Global expansion"]
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Technology Driven",
-      description: "Leveraging technology to create scalable and innovative solutions",
-      details: ["Tech-enabled", "Scalable model", "Innovation focus", "Digital-first"]
+      title: "Underrepresented Founders",
+      description: "Focus on startups led by underrepresented founders bridging innovation gaps",
+      details: ["Diverse leadership", "Innovative solutions", "Market disruption", "Social impact"]
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "Growth Potential",
-      description: "High-growth startups with clear path to profitability and scale",
-      details: ["Large market", "Growth metrics", "Unit economics", "Clear strategy"]
+      title: "Success Stories",
+      description: "Securing Series A funding and expanding across multiple US states",
+      details: ["$2.1M Series A secured", "5 US states expansion", "Healthcare AI platform", "Proven growth"]
     }
   ]
 
@@ -104,13 +104,13 @@ export default function VenturesPage() {
 
           <AnimatedElement animation="slide" direction="up" delay={0.2} className="mb-8">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light bg-gradient-to-r from-white via-orange-200 to-red-300 bg-clip-text text-transparent mb-8 tracking-tight leading-[0.9] max-w-full" style={{fontFamily: 'var(--font-orbitron)', fontWeight: 300, letterSpacing: '-0.02em'}}>
-              Investing in African Innovation
+              Fueling Startups. Bridging Gaps. Driving Change.
             </h1>
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.4} className="mb-16">
             <p className="text-lg sm:text-xl md:text-2xl text-orange-100/60 font-light tracking-wide max-w-3xl mx-auto leading-relaxed" style={{fontWeight: 300}}>
-              Empowering the next generation of African entrepreneurs with capital, mentorship, and strategic partnerships to build world-class companies.
+              TRON Ventures bridges the wealth and innovation gap by investing in startups led by underrepresented founders. Collectively, the portfolio boasts a $36M total valuation, +243% average growth and 15K+ active users.
             </p>
           </AnimatedElement>
 
@@ -119,28 +119,28 @@ export default function VenturesPage() {
               <div className="group text-center">
                 <div className="flex items-center justify-center mb-3">
                   <div className="text-3xl lg:text-4xl font-light text-white group-hover:text-orange-300 transition-colors duration-150" style={{fontFamily: 'var(--font-orbitron)'}}>
-                    $5K-$100K
+                    $36M
                   </div>
                 </div>
-                <div className="text-orange-100/40 font-normal text-sm tracking-wide uppercase">Investment Range</div>
+                <div className="text-orange-100/40 font-normal text-sm tracking-wide uppercase">Total Valuation</div>
               </div>
 
               <div className="group text-center">
                 <div className="flex items-center justify-center mb-3">
                   <div className="text-3xl lg:text-4xl font-light text-white group-hover:text-orange-300 transition-colors duration-150" style={{fontFamily: 'var(--font-orbitron)'}}>
-                    12+
+                    15K+
                   </div>
                 </div>
-                <div className="text-orange-100/40 font-normal text-sm tracking-wide uppercase">Portfolio Companies</div>
+                <div className="text-orange-100/40 font-normal text-sm tracking-wide uppercase">Active Users</div>
               </div>
 
               <div className="group text-center">
                 <div className="flex items-center justify-center mb-3">
                   <div className="text-3xl lg:text-4xl font-light text-white group-hover:text-orange-300 transition-colors duration-150" style={{fontFamily: 'var(--font-orbitron)'}}>
-                    +185%
+                    +243%
                   </div>
                 </div>
-                <div className="text-orange-100/40 font-normal text-sm tracking-wide uppercase">Average Return</div>
+                <div className="text-orange-100/40 font-normal text-sm tracking-wide uppercase">Average Growth</div>
               </div>
             </div>
           </AnimatedElement>
@@ -174,10 +174,10 @@ export default function VenturesPage() {
         <div className="max-w-6xl mx-auto">
           <AnimatedElement animation="slide" direction="up" className="text-center mb-20">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight" style={{fontFamily: 'var(--font-orbitron)'}}>
-              Investment <span className="text-orange-300">Criteria</span>
+              Areas of <span className="text-orange-300">Focus</span>
             </h2>
             <p className="text-lg text-orange-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              We look for exceptional entrepreneurs building innovative solutions for African markets.
+              Impact investments in AI solutions across education, health technology and enterprise platforms, with strategic partnerships and mentorship.
             </p>
           </AnimatedElement>
 

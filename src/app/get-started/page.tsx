@@ -22,34 +22,34 @@ export default function GetStartedPage() {
 
   const pathways = [
     {
-      id: "studios",
-      title: "Film Production",
-      subtitle: "TRON STUDIOS",
-      description: "Collaborate on authentic storytelling projects that amplify African narratives",
-      icon: <Film className="w-8 h-8" />,
-      benefits: ["Documentary Development", "Feature Film Production", "Post-Production Services", "Distribution Support"],
-      timeline: "2-6 months",
-      investment: "$25K - $500K"
+      id: "contact",
+      title: "Contact Us",
+      subtitle: "START A CONVERSATION",
+      description: "Start a conversation about partnerships and investments",
+      icon: <Phone className="w-8 h-8" />,
+      benefits: ["Strategic Partnerships", "Investment Opportunities", "Business Consulting", "Global Expansion"],
+      timeline: "Immediate",
+      investment: "Application form"
     },
     {
-      id: "ventures",
-      title: "Angel Investment",
-      subtitle: "TRON VENTURES",
-      description: "Secure funding and mentorship for your African-focused startup",
+      id: "pitch",
+      title: "Pitch Your Startup",
+      subtitle: "TRON VENTURES & AMERICA",
+      description: "Submit your venture for consideration by TRON Ventures or TRON America",
       icon: <Target className="w-8 h-8" />,
-      benefits: ["$5K-$100K Investment", "Strategic Mentorship", "Network Access", "Business Development"],
+      benefits: ["Funding Consideration", "Strategic Mentorship", "Network Access", "Business Development"],
       timeline: "6-8 weeks",
-      investment: "$5K - $100K"
+      investment: "Application form"
     },
     {
-      id: "impact",
-      title: "Social Impact",
-      subtitle: "TRON IMPACT",
-      description: "Partner with us on philanthropic initiatives that empower communities",
+      id: "network",
+      title: "Join Our Network",
+      subtitle: "ECOSYSTEM MEMBERSHIP",
+      description: "Become part of our ecosystem of founders, investors and creators",
       icon: <Heart className="w-8 h-8" />,
-      benefits: ["Program Partnership", "Volunteer Opportunities", "Corporate Sponsorship", "Impact Measurement"],
-      timeline: "1-3 months",
-      investment: "Varies"
+      benefits: ["Exclusive Events", "Network Access", "Industry Insights", "Collaboration Opportunities"],
+      timeline: "Ongoing",
+      investment: "Subscribe to email list"
     }
   ]
 
@@ -117,13 +117,13 @@ export default function GetStartedPage() {
 
           <AnimatedElement animation="slide" direction="up" delay={0.2} className="mb-8">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent mb-8 tracking-tight leading-[0.9] max-w-full" style={{fontFamily: 'var(--font-orbitron)', fontWeight: 300, letterSpacing: '-0.02em'}}>
-              Ready to Transform Your Vision?
+              Partner With Us to Drive Transformational Change in Africa
             </h1>
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.4} className="mb-16">
             <p className="text-lg sm:text-xl md:text-2xl text-violet-100/60 font-light tracking-wide max-w-3xl mx-auto leading-relaxed" style={{fontWeight: 300}}>
-              Whether you&apos;re a filmmaker, entrepreneur, or changemaker, TRON DYNAMIC is here to amplify your impact and accelerate your success.
+              Whether you&apos;re an investor, founder or storyteller, TRON DYNAMIC invites collaboration to foster innovation, amplify voices and create meaningful change in Africa.
             </p>
           </AnimatedElement>
 

@@ -157,19 +157,19 @@ export default function BusinessDevelopmentPage() {
           <AnimatedElement animation="fade" delay={0.1} className="mb-12">
             <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-emerald-200/80 text-sm font-medium tracking-wide">
               <Briefcase className="w-4 h-4" />
-              TRON BUSINESS & DEVELOPMENT
+              TRON BUSINESS CONSULTING
             </div>
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.2} className="mb-8">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light bg-gradient-to-r from-white via-emerald-200 to-green-300 bg-clip-text text-transparent mb-8 tracking-tight leading-[0.9]" style={{fontFamily: 'var(--font-orbitron)', fontWeight: 300, letterSpacing: '-0.02em'}}>
-              Growth Partners
+              Empowering Businesses to Scale Globally
             </h1>
           </AnimatedElement>
 
           <AnimatedElement animation="slide" direction="up" delay={0.4} className="mb-16">
             <p className="text-lg sm:text-xl md:text-2xl text-emerald-100/60 font-light tracking-wide max-w-4xl mx-auto leading-relaxed" style={{fontWeight: 300}}>
-              Connecting visionary entrepreneurs with capital, partnerships, and opportunities to scale globally.
+              The TRON Business & Development division connects visionary entrepreneurs with capital, partnerships and strategies to expand worldwide. It emphasizes measurable impact: $25M+ capital raised, 150+ partnerships, 93% funding success rate and operations in 20+ countries.
             </p>
           </AnimatedElement>
 
@@ -214,7 +214,7 @@ export default function BusinessDevelopmentPage() {
               Core <span className="text-emerald-300">Services</span>
             </h2>
             <p className="text-lg text-emerald-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-              Comprehensive business development solutions for the modern entrepreneur.
+              A four‑step approach—Discovery & Assessment, Strategy Development, Network Activation and Execution & Scaling—ensures sustainable growth.
             </p>
           </AnimatedElement>
 

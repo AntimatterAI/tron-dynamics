@@ -68,7 +68,7 @@ export default function HomePage() {
                 backgroundClip: 'text',
               }}
             >
-              TRON DYNAMIC
+              Where Innovation Meets Impact
             </h1>
           </div>
 
@@ -79,33 +79,32 @@ export default function HomePage() {
               className="lcp-text text-sm sm:text-base md:text-lg lg:text-xl text-gray-300/80 font-light tracking-wide max-w-2xl mx-auto leading-relaxed px-6"
               style={{ fontWeight: 300, opacity: 1 }}
             >
-              Where Innovation Meets Impact
+              Amplifying nomadic voices and fostering groundbreaking solutions that eradicate global challenges.
             </p>
           </div>
 
           {/* Optimized CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 md:mb-20 px-6 opacity-0 animate-fade-in-delayed">
-            <Button
-              onClick={() => handleCtaClick('call')}
-              className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 sm:py-4 text-sm font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-200 w-full sm:w-auto min-w-[200px]"
-            >
-              <div className="relative z-10 flex items-center justify-center gap-2">
-                <Phone className="w-4 h-4" />
-                <div className="flex flex-col items-center">
-                  <span>Give us a call</span>
-                  <span className="text-xs opacity-70 font-normal">(404) 939-4238</span>
-                </div>
-              </div>
-            </Button>
-
             <Link href="/about" className="w-full sm:w-auto">
+              <Button
+                className="group relative overflow-hidden bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white px-6 py-3 sm:py-4 text-sm font-medium rounded-xl border border-white/20 hover:border-white/30 transition-all duration-200 w-full sm:w-auto min-w-[200px]"
+              >
+                <div className="relative z-10 flex items-center justify-center gap-2">
+                  <Globe className="w-4 h-4" />
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-100" />
+                </div>
+              </Button>
+            </Link>
+
+            <Link href="/get-started" className="w-full sm:w-auto">
               <Button
                 className="group relative overflow-hidden bg-transparent border border-emerald-400/40 text-emerald-300/90 hover:text-white hover:border-emerald-400/60 px-6 py-3 sm:py-4 text-sm font-medium rounded-xl transition-all duration-200 w-full sm:w-auto min-w-[200px]"
                 style={{ borderColor: 'rgba(0, 255, 135, 0.4)', color: 'rgba(0, 255, 135, 0.9)' }}
               >
                 <div className="relative z-10 flex items-center justify-center gap-2">
                   <Globe className="w-4 h-4" />
-                  <span>Learn More</span>
+                  <span>Invest in the Future</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-100" />
                 </div>
               </Button>
@@ -132,10 +131,10 @@ export default function HomePage() {
           <div className="text-center mb-8 md:mb-16">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white mb-3 md:mb-4 tracking-tight px-6" 
                 style={{ fontFamily: 'var(--font-orbitron), -apple-system, sans-serif' }}>
-              Our <span style={{ color: '#00FF87' }}>Services</span>
+              Driving Growth Through <span style={{ color: '#00FF87' }}>Innovation, Ventures & Storytelling</span>
             </h2>
-            <p className="text-sm md:text-base text-gray-300/60 max-w-2xl mx-auto font-light leading-relaxed px-6">
-              Built in Africa. Ready for the World.
+            <p className="text-sm md:text-base text-gray-300/60 max-w-4xl mx-auto font-light leading-relaxed px-6">
+              TRON DYNAMIC is a forward‑thinking platform merging innovation, investment and storytelling to address global challenges. Through interconnected ventures, a studio and consulting initiatives, we empower underrepresented voices, scale groundbreaking startups, and produce narratives that inspire change.
             </p>
           </div>
 
@@ -150,10 +149,10 @@ export default function HomePage() {
                       <Briefcase className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#FF6B35' }} />
                     </div>
                     <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
-                      Portfolio Companies
+                      TRON Ventures
                     </h3>
                     <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
-                      Our strategic investments in cutting-edge AI, HealthTech, and EdTech companies transforming industries.
+                      Bridging the wealth and innovation gap by investing in startups led by underrepresented founders. Portfolio includes AI-powered medical documentation, cybersecurity governance, and EdTech platforms.
                     </p>
                   </div>
                   <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(255, 107, 53, 0.7)' }}>
@@ -176,7 +175,7 @@ export default function HomePage() {
                       TRON Innovation
                     </h3>
                     <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
-                      Technology development, app creation, and Afro-futurist design solutions for African entrepreneurs.
+                      Transforms bold ideas into market‑ready solutions. Our innovation lab has delivered 25+ apps, amassed 500K+ active users, and maintains a 95% success rate across 12 countries.
                     </p>
                   </div>
                   <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(59, 130, 246, 0.7)' }}>
@@ -196,10 +195,10 @@ export default function HomePage() {
                       <Heart className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#00FF87' }} />
                     </div>
                     <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 tracking-tight">
-                      Business & Development
+                      Business Consulting
                     </h3>
                     <p className="text-gray-300/60 mb-6 md:mb-8 leading-relaxed font-light text-sm md:text-base">
-                      Strategic business services, investor connections, and recruitment solutions for scaling companies.
+                      Connects visionary entrepreneurs with capital, partnerships and strategies to expand worldwide. $25M+ capital raised, 150+ partnerships, 93% funding success rate across 20+ countries.
                     </p>
                   </div>
                   <div className="flex items-center justify-between transition-colors duration-150" style={{ color: 'rgba(0, 255, 135, 0.7)' }}>
